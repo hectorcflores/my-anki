@@ -258,6 +258,7 @@
     .done p { margin: 0; color: var(--muted-foreground); font-size: 0.85rem; }
     .done .wait-time { font-size: 1.6rem; font-weight: 650; font-variant-numeric: tabular-nums; color: var(--foreground); }
     .foot-note { margin: 0; padding-top: 0.9rem; color: var(--muted-foreground); font-size: 0.7rem; text-align: center; line-height: 1.6; }
+    .foot-note .stale { color: #f59e0b; }
 
     /* ---- Desktop ----
        Below this width #app is just its natural mobile column, centered by
@@ -349,7 +350,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "202608281800";
+    const APP_BUILD = "202608291500";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -364,6 +365,11 @@
     // the currently-applied deck, compared structurally rather than by raw
     // bytes so re-fetching the same content never false-positives.
     let themes, books, THEME, cards, deckSnapshot;
+    // Provenance stamps written by build_deck.py: the day the nightly job
+    // published this deck, and the newest highlight the Kindle sync had seen
+    // when it did. Absent on decks generated before those fields existed, so
+    // every reader has to tolerate null.
+    let deckMeta = {};
 
     // Only highlights aligned with their book's core subject are reviewable.
     // build_deck.py already drops the rest, so a generated deck carries no
@@ -377,6 +383,7 @@
       cards = books.flatMap(b => b.highlights.map(h => ({ ...h, book: b })))
         .filter(c => c.aligned !== false)
         .sort((a, b) => hash(a.id) - hash(b.id));
+      deckMeta = { generated: data.generated || null, latest: data.latest || null };
       deckSnapshot = JSON.stringify(data);
       updateVerhint();
     }
@@ -596,6 +603,37 @@
       return { done, total: done + remaining };
     }
 
+    // Anki's other daily limit, and the one this app was missing. New cards
+    // were already capped; reviews were not, so every card that came due
+    // during a week away landed in a single session — the deck punished you
+    // for the days you skipped instead of absorbing them. With a cap, a
+    // backlog drains oldest-first over as many days as it takes and nothing
+    // is ever lost or rescheduled behind your back.
+    //
+    // 200 is Anki's own default, and it is deliberately loose: on a deck this
+    // size an ordinary day never reaches it. That is the point — the cap is a
+    // brake for the day you come back from three weeks away, not a daily
+    // ration. A tighter number would fire every day and permanently starve the
+    // new-card budget (see the limit order below), which is the opposite of
+    // what a backlog rule is for.
+    const MAX_REVIEWS_PER_DAY = 200;
+    // Review cards graded today. Derived from card state exactly the way
+    // newIntroducedToday() is, and for the same reasons: the limit is then
+    // shared across devices, and reopening the app can't refill it. A card
+    // whose `intro` is today is a new card, not a review — it is already
+    // counted against NEW_PER_DAY, and counting it twice would let a day of
+    // new cards eat the review budget.
+    function reviewsDoneToday() {
+      const today = dateStr(Date.now());
+      let n = 0;
+      for (const c of cards) {
+        const st = srs[c.id];
+        if (st && st.__lastReviewAt && dateStr(st.__lastReviewAt) === today
+            && !(st.intro && dateStr(st.intro) === today)) n += 1;
+      }
+      return n;
+    }
+
     // New cards are drawn in a different order every session. With a fixed
     // order, opening the app without grading anything always lands on the
     // same card, which makes a deck of a hundred feel like a deck of one.
@@ -608,20 +646,55 @@
       }
       return a;
     };
-    let newOrder = {};                       // theme -> shuffled ids, per session
-    function dueCards(theme) {
+    let newOrder = null;                     // one shuffled order of unseen ids, per session
+
+    // There is exactly one queue, built over the whole deck, and every pill is
+    // a filtered view of it. Both daily limits therefore apply once, across
+    // all themes together, the way a parent deck's limits cap its subdecks in
+    // Anki — which is also what makes the pill numbers add up to All instead
+    // of each theme quietly opening its own budget.
+    function buildQueue() {
       const now = Date.now();
-      const pool = cards.filter(c => theme === "all" || c.theme === theme);
       // Leeches (8+ lapses) are suspended: they never enter the queue again.
-      const due = pool.filter(c => srs[c.id] && !srs[c.id].leech && srs[c.id].due <= now)
+      const ready = cards.filter(c => srs[c.id] && !srs[c.id].leech && srs[c.id].due <= now)
         .sort((a, b) => srs[a.id].due - srs[b.id].due);
-      const unseen = pool.filter(c => !srs[c.id]);
-      if (!newOrder[theme]) newOrder[theme] = shuffle(unseen.map(c => c.id));
-      const rank = new Map(newOrder[theme].map((id, i) => [id, i]));
+
+      // Learning and relearning cards are never held back. A card you just
+      // graded Again has to come back within the session or the grade was a
+      // lie, and its step is minutes, not days. Only true review cards spend
+      // the daily budget — same split Anki makes.
+      let budget = Math.max(0, MAX_REVIEWS_PER_DAY - reviewsDoneToday());
+      const due = [];
+      let backlog = 0;
+      for (const c of ready) {
+        if (srs[c.id].st !== "rev") { due.push(c); continue; }
+        if (budget > 0) { budget -= 1; due.push(c); } else backlog += 1;
+      }
+
+      // Anki v3's limit order, and the reason there is no separate "pause new
+      // cards when behind" rule here: the review limit is applied first, and
+      // the new-card limit is then applied to whatever count is left under it.
+      // So a day whose reviews fill the cap introduces nothing new, on its
+      // own, as an arithmetic consequence rather than as a special case. That
+      // matters because every new card introduced today turns into several
+      // more reviews on exactly the days you are already failing to clear.
+      const newBudget = Math.min(
+        Math.max(0, NEW_PER_DAY - newIntroducedToday()),
+        Math.max(0, budget - newIntroducedToday()),
+      );
+      const unseen = cards.filter(c => !srs[c.id]);
+      if (!newOrder) newOrder = shuffle(unseen.map(c => c.id));
+      const rank = new Map(newOrder.map((id, i) => [id, i]));
       const fresh = unseen
         .sort((a, b) => (rank.get(a.id) ?? 0) - (rank.get(b.id) ?? 0))
-        .slice(0, Math.max(0, NEW_PER_DAY - newIntroducedToday()));
-      return [...due, ...fresh];
+        .slice(0, newBudget);
+
+      return { cards: [...due, ...fresh], backlog };
+    }
+
+    function dueCards(theme) {
+      const q = buildQueue().cards;
+      return theme === "all" ? q : q.filter(c => c.theme === theme);
     }
 
     // ---- Optional multi-device sync (Firestore) ----
@@ -1572,6 +1645,43 @@
       return n ? ` · ${n} suspended as leech${n === 1 ? "" : "es"}` : "";
     }
 
+    // What the daily review limit is holding back. A queue that silently
+    // stops short is indistinguishable from a bug, so the number the cap
+    // deferred is always on screen rather than implied.
+    function footBacklog() {
+      const n = buildQueue().backlog;
+      return n ? ` \u00b7 ${n} review${n === 1 ? "" : "s"} held for tomorrow` : "";
+    }
+
+    const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const fmtDay = (iso) => {
+      const [y, m, d] = iso.split("-").map(Number);
+      return `${d} ${MONTHS[m - 1]}`;
+    };
+    const daysSince = (iso) => Math.floor((Date.now() - Date.parse(iso + "T12:00:00")) / DAY);
+
+    // The pipeline, made visible from inside the app. Without this line a
+    // Kindle sync that quietly stopped three days ago looks exactly like three
+    // days with nothing new to highlight, and there is no way to tell them
+    // apart short of opening a terminal. Two facts answer it: when this deck
+    // was published, and the newest highlight it was built from. The build
+    // date goes amber at 3 days, the same threshold at which my-readwise
+    // emails about a stalled sync.
+    function footDeck() {
+      if (!deckMeta.generated) return "";
+      const stale = daysSince(deckMeta.generated) >= 3;
+      const latest = deckMeta.latest
+        ? ` \u00b7 newest highlight ${fmtDay(deckMeta.latest.date)}, ${esc(shortTitle(deckMeta.latest.title))}`
+        : "";
+      return `<span class="${stale ? "stale" : ""}">${stale ? "\u26a0 " : ""}deck ${fmtDay(deckMeta.generated)}${latest}</span>`;
+    }
+
+    function footNote() {
+      const deck = footDeck();
+      return `<p class="foot-note">${books.length} books \u00b7 ${cards.length} cards in the deck` +
+        `${footSuspended()}${footBacklog()}${deck ? "<br>" + deck : ""}</p>`;
+    }
+
     function pillsHtml() {
       const decks = [{ id: "all", label: "All" }, ...themes];
       const pills = decks.map(d =>
@@ -1683,7 +1793,7 @@
             <div class="wait-time" id="waitTime">${fmtCountdown(soonest - Date.now())}</div>
             <p>${s.pending.length} card${s.pending.length === 1 ? "" : "s"} due back shortly —<br>this is the real wait, not a shortcut.</p>
           </div>
-          <p class="foot-note">${books.length} books · ${cards.length} cards in the deck${footSuspended()}</p>`;
+          ${footNote()}`;
         bindPills();
         waitTimer = setInterval(() => render(), 1000);
         return;
@@ -1691,17 +1801,24 @@
 
       if (!s.queue.length) {
         const doneToday = reviewedToday(activeTheme);
+        // "Deck clear" would be a lie on a day the review cap stopped short of
+        // the backlog, and a lie here is the one that matters: it is exactly
+        // the moment you would otherwise wonder whether cards had gone
+        // missing. Say which of the two it is.
+        const held = buildQueue().backlog;
         app.innerHTML = `
           ${headerHtml("")}
           <div class="progress"><div style="width:100%"></div></div>
           <div class="done">
             <div class="big">✓</div>
-            <h2>${doneToday ? "Deck clear" : "Nothing due"}</h2>
-            <p>${doneToday
+            <h2>${held ? "Done for today" : doneToday ? "Deck clear" : "Nothing due"}</h2>
+            <p>${held
+              ? `${doneToday} card${doneToday === 1 ? "" : "s"} reviewed today.<br>${held} overdue review${held === 1 ? " is" : "s are"} held back on purpose —<br>the backlog drains oldest-first, ${MAX_REVIEWS_PER_DAY} a day.`
+              : doneToday
               ? `${doneToday} card${doneToday === 1 ? "" : "s"} reviewed today${activeTheme === "all" ? "" : " in " + esc(THEME[activeTheme])}.<br>The schedule takes it from here.`
               : `No ${activeTheme === "all" ? "" : esc(THEME[activeTheme]) + " "}cards due today.<br>Pick another theme or come back tomorrow.`}</p>
           </div>
-          <p class="foot-note">${books.length} books · ${cards.length} cards in the deck${footSuspended()}</p>`;
+          ${footNote()}`;
         bindPills();
         return;
       }
@@ -1735,7 +1852,8 @@
         <div class="controls">
           ${s.revealed ? `<div class="grades">${grades}</div>`
                        : `<button class="btn" id="reveal">Show answer</button>`}
-        </div>`;
+        </div>
+        ${footDeck() ? `<p class="foot-note">${footDeck()}</p>` : ""}`;
 
       bindPills();
       const rv = document.getElementById("reveal");

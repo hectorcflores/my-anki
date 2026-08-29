@@ -50,8 +50,40 @@ brings the card back — and that promise is real: a card graded "back in 6m"
 genuinely waits out those 6 minutes, it does not just reappear after a few
 other cards.
 
-Scheduling state lives in `localStorage` under `my-anki.srs.v2`. New cards are
-capped at 20 per deck per day, counted per account rather than per device.
+Scheduling state lives in `localStorage` under `my-anki.srs.v2`.
+
+Two daily limits, both of them Anki's, both counted per **account** rather than
+per device and both derived from card state rather than a separate counter — so
+reopening the app can't refill either one, and 20 new cards means 20 across
+phone and laptop together:
+
+- **200 reviews a day** — Anki's own default, and deliberately loose: an
+  ordinary day on a deck this size never reaches it. That is the point. The cap
+  is a brake for the day you come back from three weeks away, not a daily
+  ration; without it, every card that came due while you were gone lands in a
+  single session and the deck punishes you for the days you skipped. With it,
+  the backlog drains oldest-due-first over as many days as it takes, and
+  nothing is dropped or silently rescheduled. Learning and relearning cards are
+  exempt: a card you just graded Again has to come back within the session or
+  the grade was a lie.
+- **20 new cards a day**, applied *second*. This is Anki v3's limit order: the
+  review limit is applied first, and the new-card limit is then applied to
+  whatever count is left beneath it. A day whose reviews fill the cap therefore
+  introduces nothing new on its own, with no separate "pause new cards when
+  behind" rule — which matters because every new card introduced today becomes
+  several more reviews on exactly the days you are already failing to clear.
+
+There is exactly one queue, built over the whole deck, and every theme pill is
+a filtered view of it. Both limits therefore apply once, across all themes
+together, the way a parent deck's limits cap its subdecks in Anki — which is
+also what makes the pill numbers add up to All instead of each theme quietly
+opening its own budget of 20.
+
+The footer carries the deck's own provenance — the day the nightly job
+published it, and the newest Kindle highlight it was built from, going amber at
+three days. It is the only place the highlight pipeline is visible from inside
+the app, and without it a sync that quietly died looks exactly like a stretch
+of days with nothing new to highlight.
 
 ## Multi-device sync
 
@@ -93,9 +125,16 @@ can be deleted once the old app is gone from every device.
 
 ```bash
 node app/test/sync.test.mjs
+node app/test/scheduler.test.mjs
 ```
 
-A deterministic harness — an in-memory Firestore plus one `vm` context per
+`scheduler.test.mjs` covers the daily limits: that a backlog is capped instead
+of dumped, that the cap spends oldest-due-first, that learning cards are never
+held back by it, that new cards get only the room left beneath the cap, and
+that the pill numbers add up to All. Every one of those takes a week of not opening the app
+to observe by hand, which is the whole reason they are tests.
+
+`sync.test.mjs` is a deterministic harness — an in-memory Firestore plus one `vm` context per
 simulated device — for the one class of bug that can't be reproduced by
 clicking: two devices racing to sync. It runs in under a second and needs no
 browser and no network (the fake refuses any non-Firestore URL outright, so a
@@ -112,7 +151,9 @@ which is how the staggered-rollout orderings get exercised.
 [my-readwise](https://github.com/hectorcflores/my-readwise): a nightly GitHub
 Action (`build-deck.yml`) picks books highlighted recently, tags every
 highlight with a theme, an aligned/tangential verdict, and often a recall
-question via Claude, then builds this file and pushes it here.
+question via Claude, then builds this file and pushes it here. It also stamps
+the file with `generated` (the build date) and `latest` (the newest highlight
+in the whole library, with its book) — the two facts the app's footer reads.
 
 To ship a new deck by hand: replace `app/data.js`, bump `CACHE` in
 `app/sw.js`, push. GitHub Pages redeploys on push to `main`.
