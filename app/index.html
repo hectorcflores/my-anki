@@ -136,6 +136,15 @@
     .progress > div { height: 100%; background: var(--primary); border-radius: 999px; transition: width 0.2s ease; }
     @media (prefers-reduced-motion: reduce) { .progress > div { transition: none; } }
 
+    /* The sentence that says what the header number counts. It exists because
+       a bare "43" next to a pill also reading 43 is unambiguous only once you
+       already know the rule; spelled out, it is unambiguous the first time. */
+    .left-line { margin: 0.55rem 0 0; text-align: center; color: var(--muted-foreground); font-size: 0.75rem; }
+    .left-line b { color: var(--foreground); font-weight: 600; font-variant-numeric: tabular-nums; }
+    /* The line takes its own vertical space, so the card closes the gap back
+       up rather than letting the two margins stack into a hole. */
+    .left-line + .stage { margin-top: 1rem; }
+
     /* ---- Card stage ----
        Anchored near the top with its own card boundary rather than dead-
        centered in the full remaining height — a short question used to leave
@@ -350,7 +359,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "202608291500";
+    const APP_BUILD = "202608291730";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -601,6 +610,23 @@
       const done = reviewedToday(activeTheme);
       const remaining = s.queue.filter(c => !reviewedTodayCard(c)).length;
       return { done, total: done + remaining };
+    }
+
+    // How many cards are still in front of you, in the deck you are looking
+    // at. Deliberately the pills' own number — dueCards(), not the session
+    // queue — so the count in the bar and the count on the active pill are
+    // the same expression and cannot drift apart. They used to be two
+    // different ideas stacked on top of each other ("4 / 47" over a pill
+    // saying 43, both correct, together unreadable), which is the confusion
+    // this replaces. The done/total pair survives only where it is unambiguous
+    // on its own: as the width of the progress bar.
+    function cardsLeft() {
+      return dueCards(activeTheme).length;
+    }
+    function leftLine() {
+      const n = cardsLeft();
+      const where = activeTheme === "all" ? "" : ` in ${esc(THEME[activeTheme])}`;
+      return `<p class="left-line"><b>${n} card${n === 1 ? "" : "s"} left</b>${where}</p>`;
     }
 
     // Anki's other daily limit, and the one this app was missing. New cards
@@ -1787,7 +1813,7 @@
         const soonest = Math.min(...s.pending.map(c => srs[c.id].due));
         const { done: wDone, total: wTotal } = progress(s);
         app.innerHTML = `
-          ${headerHtml(`${wDone} / ${wTotal} · waiting`)}
+          ${headerHtml("waiting")}
           <div class="progress"><div style="width:${Math.round(100 * wDone / wTotal)}%"></div></div>
           <div class="done">
             <div class="wait-time" id="waitTime">${fmtCountdown(soonest - Date.now())}</div>
@@ -1846,8 +1872,9 @@
         `<button class="grade g${g}" data-g="${g}"><b>${label}</b><span>${delayLabel(st, g, c.id)}</span></button>`).join("");
 
       app.innerHTML = `
-        ${headerHtml(`${done} / ${total}${st ? "" : " · new"}`)}
+        ${headerHtml(`${cardsLeft()}${st ? "" : " · new"}`)}
         <div class="progress"><div style="width:${pct}%"></div></div>
+        ${leftLine()}
         <div class="stage">${front}${back}</div>
         <div class="controls">
           ${s.revealed ? `<div class="grades">${grades}</div>`

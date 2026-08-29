@@ -79,6 +79,13 @@ together, the way a parent deck's limits cap its subdecks in Anki — which is
 also what makes the pill numbers add up to All instead of each theme quietly
 opening its own budget of 20.
 
+The app reports one number, in one vocabulary: what is left. The bar shows the
+count for the deck you are on, and the line under the progress bar spells out
+what it counts ("13 cards left in Investing") — both read the same expression
+the active pill does, so they cannot drift apart. Progress is the bar itself.
+An earlier build put "4 / 47" in the bar directly above a pill reading 43: both
+correct (47 was today's total, 43 what remained), together unreadable.
+
 The footer carries the deck's own provenance — the day the nightly job
 published it, and the newest Kindle highlight it was built from, going amber at
 three days. It is the only place the highlight pipeline is visible from inside
