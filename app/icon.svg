@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Brain Gym">
+  <rect width="512" height="512" rx="112" fill="#09090b"/>
+  <!-- A dumbbell whose plates are closed books: lifting what you've read. -->
+  <g fill="none" stroke="#fafafa" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M176 256h160"/>
+    <rect x="96" y="176" width="72" height="160" rx="18"/>
+    <rect x="344" y="176" width="72" height="160" rx="18"/>
+    <path d="M132 176v160M380 176v160"/>
+  </g>
+</svg>
