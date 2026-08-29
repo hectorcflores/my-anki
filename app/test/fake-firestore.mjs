@@ -1,4 +1,4 @@
-// Minimal in-memory Firestore, mocking only what brain-gym/index.html's REST
+// Minimal in-memory Firestore, mocking only what the app's index.html REST
 // calls actually use: create-only :commit (409 on conflict), GET one doc,
 // and :runQuery in its two shapes (paginated createdAt>cursor, and equality
 // by cardId — plus an unfiltered listCollection scan for meta/baseline*).

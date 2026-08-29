@@ -1,6 +1,6 @@
-// Offline cache for Brain Gym. Bump CACHE when shipping new content —
+// Offline cache for My Anki. Bump CACHE when shipping new content —
 // old caches are dropped on activate, so a deploy never serves a stale deck.
-const CACHE = "brain-gym-202608281800";
+const CACHE = "my-anki-202608290900";
 const ASSETS = [
   "./",
   "./index.html",
@@ -26,10 +26,19 @@ self.addEventListener("install", (e) => {
   );
 });
 
+// Only this app's own caches are dropped, not every cache on the origin.
+// Cache Storage is shared across the whole of hectorcflores.github.io, which
+// also hosts the sibling apps and — until it is retired — the forwarder left
+// behind at the old /brain-gym/ path. Deleting by prefix means opening this
+// app can't strip another one of its offline copy; in particular the old
+// Brain Gym build stays intact and usable as the rollback until its own
+// self-destruct worker clears it deliberately.
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(
+        keys.filter((k) => k.startsWith("my-anki-") && k !== CACHE).map((k) => caches.delete(k))
+      ))
       .then(() => self.clients.claim())
   );
 });

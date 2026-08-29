@@ -1,15 +1,20 @@
 // Pulls the inline <script> (the plain one, not ./data.js and not the
 // type="module" Firebase loader) out of index.html, either from disk (the
-// working tree, i.e. whatever is currently being edited) or from a git ref
-// (e.g. "HEAD", to run the same scenarios against the pre-fix code and
-// confirm they're actually red there).
+// working tree, i.e. whatever is currently being edited) or from a git ref.
+//
+// The ref that matters here is the `brain-gym-import` tag: the first commit in
+// this repo, a content-identical copy of the app as it was before the My Anki
+// rename. Extracting from it gives the migration scenarios a genuine "device
+// still running the old build" — old localStorage keys, old Firestore
+// collection, old sync global — to run against the working tree in one shared
+// fake backend.
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const REL_PATH = "brain-gym/index.html";
+const REL_PATH = "app/index.html";
 
 function extractInlineScript(html) {
   const marker = "<script>";

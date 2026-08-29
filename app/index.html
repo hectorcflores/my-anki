@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Brain Gym</title>
+  <title>My Anki</title>
   <meta name="description" content="Spaced repetition over my Kindle highlights.">
   <meta name="theme-color" content="#09090b">
   <meta name="color-scheme" content="dark">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Brain Gym">
+  <meta name="apple-mobile-web-app-title" content="My Anki">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icon-180.png">
@@ -191,7 +191,7 @@
     .grade.g2 b { color: var(--good); } .grade.g3 b { color: var(--easy); }
 
     /* ---- Shared account + sync controls (identical across Pomodoro,
-       Reading List and Brain Gym; literal hex so it doesn't depend on each
+       Reading List and My Anki; literal hex so it doesn't depend on each
        app's own token names). Identity and sync health are deliberately two
        separate controls: one answers "who am I", the other "are my data
        safe". ---- */
@@ -240,7 +240,7 @@
       50%      { opacity: 1;    transform: scale(1.16); }
     }
     @media (prefers-reduced-motion: reduce) { .sync-status::before { animation: none !important; } }
-    /* Brain Gym's column is a fixed 27rem and the bar already carries a deck
+    /* My Anki's column is a fixed 27rem and the bar already carries a deck
        counter, so the account here is avatar-only at every width — the email
        lives in its tooltip and in the sign-out confirm. The sibling apps have
        wider headers and show the name. */
@@ -302,6 +302,39 @@
   <div id="verhint" aria-hidden="true" style="position:fixed;left:6px;bottom:4px;font-size:0.55rem;line-height:1;color:#52525b;opacity:0.55;font-variant-numeric:tabular-nums;pointer-events:none;z-index:9999;"></div>
   <script src="./data.js"></script>
   <script>
+    // ---- One-time key rename: brain-gym.* -> my-anki.* ----
+    // This app was called Brain Gym until 2026-08 and kept everything —
+    // scheduling state, sync cursor, client id, outbox — under a "brain-gym."
+    // prefix. It moved to a new path on the SAME origin, so those keys are
+    // still readable from here. Copy them once, before any code below reads a
+    // key, and leave the originals in place: they cost nothing, they are the
+    // rollback if this build has to be reverted, and the old app (still
+    // installed as a home-screen PWA until its forwarder is picked up) keeps
+    // working from them.
+    //
+    // `client.v1` in particular MUST come across. Review rows copied into the
+    // new Firestore collection keep their original clientId, and the pull path
+    // recognises a row as "already applied locally" only by matching it — a
+    // fresh id here would make this device's own history look foreign and
+    // re-fold on top of itself.
+    const KEYS_MIGRATED_KEY = "my-anki.keys-migrated.v1";
+    const RENAMED_KEY_SUFFIXES = [
+      "srs.v2", "sync.v1", "auth-migrated.v1", "outbox.v1", "cursor.v1",
+      "client.v1", "migrated.v1", "reconcile.v1", "lastsync.v1",
+    ];
+    // `newcount.v1` is deliberately absent: it is dead legacy state that the
+    // code below already deletes under its old name.
+    (function copyRenamedKeys() {
+      if (localStorage.getItem(KEYS_MIGRATED_KEY)) return;
+      for (const suffix of RENAMED_KEY_SUFFIXES) {
+        const prior = localStorage.getItem("brain-gym." + suffix);
+        if (prior !== null && localStorage.getItem("my-anki." + suffix) === null) {
+          localStorage.setItem("my-anki." + suffix, prior);
+        }
+      }
+      localStorage.setItem(KEYS_MIGRATED_KEY, "1");
+    })();
+
     const app = document.getElementById("app");
     const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -371,7 +404,7 @@
     // different. Due times are therefore timestamps, not day numbers.
     //
     // Card states: lrn (learning), rev (review), rel (relearning after a lapse).
-    const SRS_KEY = "brain-gym.srs.v2";
+    const SRS_KEY = "my-anki.srs.v2";
     const MIN = 60e3, DAY = 864e5;
     const LEARN_STEPS = [1 * MIN, 10 * MIN];   // new card path
     const RELEARN_STEPS = [10 * MIN];          // after a lapse
@@ -625,14 +658,38 @@
       projectId: "my-reading-list-3fa75",
       appId: "1:101190488885:web:f0401ddd67b862f163b27c",
     };
-    const LEGACY_CONFIG_KEY = "brain-gym.sync.v1";
-    const AUTH_MIGRATED_KEY = "brain-gym.auth-migrated.v1";
-    const OUTBOX_KEY = "brain-gym.outbox.v1";
-    const CURSOR_KEY = "brain-gym.cursor.v1";
-    const CLIENT_ID_KEY = "brain-gym.client.v1";
-    const MIGRATED_KEY = "brain-gym.migrated.v1";
-    const RECONCILE_KEY = "brain-gym.reconcile.v1";
+    const LEGACY_CONFIG_KEY = "my-anki.sync.v1";
+    const AUTH_MIGRATED_KEY = "my-anki.auth-migrated.v1";
+    const OUTBOX_KEY = "my-anki.outbox.v1";
+    const CURSOR_KEY = "my-anki.cursor.v1";
+    const CLIENT_ID_KEY = "my-anki.client.v1";
+    const MIGRATED_KEY = "my-anki.migrated.v1";
+    const RECONCILE_KEY = "my-anki.reconcile.v1";
+    // Set once the Brain Gym collection has been copied across. Holds that
+    // collection's tip at the moment of the copy, not a bare "1", so the
+    // stray probe below knows where to start looking for anything the old app
+    // wrote afterwards.
+    const FS_IMPORT_KEY = "my-anki.fs-import.v1";
+    // The old app's queue of grades that never reached the server. Read (and
+    // emptied) by the scavenger below; the one old key this build writes to.
+    const LEGACY_OUTBOX_KEY = "brain-gym.outbox.v1";
+    // Set when a fold had to be skipped because a row arrived out of order;
+    // cleared by the full replay that resolves it.
+    const PENDING_REBUILD_KEY = "my-anki.pending-rebuild.v1";
     const REVIEW_PAGE_SIZE = 300;
+
+    // Every Firestore path this app touches hangs off one of these two roots.
+    // The app was called Brain Gym until 2026-08 and wrote everything under
+    // `brain_gym/{uid}`; it now writes under `my_anki/{uid}`. The old root is
+    // still read — by the one-time import below, and by the stray probe that
+    // covers a device still running the old build — so it stays named here
+    // rather than being spelled out at each call site.
+    const COLLECTION = "my_anki";
+    const LEGACY_COLLECTION = "brain_gym";
+    // A cfg may carry an explicit `root` to read from somewhere other than
+    // this app's current collection (the Brain Gym import, the stray probe);
+    // everything else lands in COLLECTION.
+    function rootOf(cfg) { return cfg.root ?? COLLECTION; }
 
     function getClientId() {
       let id = localStorage.getItem(CLIENT_ID_KEY);
@@ -651,7 +708,12 @@
     }
     function isSyncEnabled() { return Boolean(authUser); }
     function liveCfg() { return { projectId: FIREBASE.projectId, apiKey: FIREBASE.apiKey, tenant: authUser.uid, auth: true }; }
-    function legacyCfg(old) { return { projectId: old.projectId, apiKey: old.apiKey, tenant: old.syncKeyHash, auth: false }; }
+    // The bookmark-era tenant predates both the account migration and the
+    // rename, so it is read from the old collection explicitly.
+    function legacyCfg(old) { return { projectId: old.projectId, apiKey: old.apiKey, tenant: old.syncKeyHash, auth: false, root: LEGACY_COLLECTION }; }
+    // The same account's data as it stood under the old name — the source of
+    // the one-time import and of the stray probe that follows it.
+    function brainGymCfg() { return { ...liveCfg(), root: LEGACY_COLLECTION }; }
     async function cfgHeaders(cfg) {
       return cfg.auth && authUser ? { Authorization: "Bearer " + await authUser.getToken() } : {};
     }
@@ -751,7 +813,7 @@
           fieldFilter: { field: { fieldPath: "createdAt" }, op: "GREATER_THAN", value: { timestampValue: afterIso } },
         };
       }
-      const parent = `${fsBase(cfg)}/brain_gym/${cfg.tenant}`;
+      const parent = `${fsBase(cfg)}/${rootOf(cfg)}/${cfg.tenant}`;
       const res = await fetch(`${parent}:runQuery?key=${encodeURIComponent(cfg.apiKey)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(await cfgHeaders(cfg)) },
@@ -776,7 +838,7 @@
         from: [{ collectionId: "reviews" }],
         where: { fieldFilter: { field: { fieldPath: "cardId" }, op: "EQUAL", value: { stringValue: cardId } } },
       };
-      const parent = `${fsBase(cfg)}/brain_gym/${cfg.tenant}`;
+      const parent = `${fsBase(cfg)}/${rootOf(cfg)}/${cfg.tenant}`;
       const res = await fetch(`${parent}:runQuery?key=${encodeURIComponent(cfg.apiKey)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(await cfgHeaders(cfg)) },
@@ -796,7 +858,7 @@
     // discover every meta/baseline* doc without knowing their ids up front.
     async function fsListCollection(cfg, collectionId) {
       const structuredQuery = { from: [{ collectionId }] };
-      const parent = `${fsBase(cfg)}/brain_gym/${cfg.tenant}`;
+      const parent = `${fsBase(cfg)}/${rootOf(cfg)}/${cfg.tenant}`;
       const res = await fetch(`${parent}:runQuery?key=${encodeURIComponent(cfg.apiKey)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(await cfgHeaders(cfg)) },
@@ -820,6 +882,58 @@
       flushOutbox();   // fire-and-forget
     }
 
+    // The old Brain Gym build may still be installed as a home-screen icon,
+    // and a home-screen icon opened offline runs entirely from its cache — it
+    // can take grades that queue under the old outbox key and never reach the
+    // server. Those grades are real reviews, so every open moves whatever is
+    // sitting there into this build's outbox (deduped by the row's own uuid,
+    // which both builds generate) and folds it into local state.
+    //
+    // This is the one old key this build writes to: it is emptied after the
+    // move so the same rows can't be picked up twice.
+    function scavengeLegacyOutbox() {
+      let legacy;
+      try { legacy = JSON.parse(localStorage.getItem(LEGACY_OUTBOX_KEY)) || []; } catch { legacy = []; }
+      if (!legacy.length) return;
+      const rows = loadOutbox();
+      const known = new Set(rows.map(r => r.id));
+      let folded = false, outOfOrder = false;
+      // Oldest first, the same order replayCard uses — folding a later grade
+      // before an earlier one would apply them backwards.
+      for (const row of legacy.slice().sort((a, b) => new Date(a.reviewedAt) - new Date(b.reviewedAt))) {
+        if (!known.has(row.id)) { rows.push(row); known.add(row.id); }
+        const ts = new Date(row.reviewedAt).getTime();
+        const lastApplied = srs[row.cardId]?.__lastReviewAt ?? -Infinity;
+        if (ts > lastApplied) {
+          srs[row.cardId] = schedule(srs[row.cardId], row.grade, ts, hash(row.cardId));
+          srs[row.cardId].__lastReviewAt = ts;
+          folded = true;
+        } else if (ts < lastApplied) {
+          // A grade older than something already applied to this card: an
+          // incremental fold would apply them out of order, so hand it to a
+          // full baseline-seeded replay instead once the log is complete.
+          outOfOrder = true;
+        }
+        // ts === lastApplied: this exact grade is already reflected locally
+        // (the key copy happened after the old app applied it). Nothing to do
+        // beyond making sure it reaches the log, which the queue above does.
+      }
+      saveOutbox(rows);
+      localStorage.setItem(LEGACY_OUTBOX_KEY, "[]");
+      if (folded) saveSrs(srs);
+      if (outOfOrder) localStorage.setItem(PENDING_REBUILD_KEY, "1");
+    }
+
+    // Resolves whatever the scavenger could not fold in order. Waits for the
+    // outbox to drain first: replaying against a log that is still missing
+    // this device's own pending rows would just rebuild the same gap.
+    async function drainPendingRebuild() {
+      if (!localStorage.getItem(PENDING_REBUILD_KEY)) return;
+      if (!isSyncEnabled() || loadOutbox().length) return;
+      await rebuildFromLog();
+      localStorage.removeItem(PENDING_REBUILD_KEY);
+    }
+
     let flushing = false;
     async function flushOutbox() {
       if (!isSyncEnabled() || flushing) return;
@@ -827,21 +941,28 @@
       let ok = true;
       setSyncStatus("syncing");
       try {
-        let rows = loadOutbox();
-        while (rows.length) {
+        // The queue is re-read on every pass and the sent row is removed by
+        // id, never by position against a snapshot taken before the write.
+        // Answering a card is deliberately not blocked on the network, so a
+        // grade made while a write is in flight appends to the stored queue
+        // mid-flush; writing back a pre-await copy of the array would erase
+        // it. It would still be in local state, so nothing looks wrong on
+        // this device — it would just never reach the log or the other one.
+        for (;;) {
+          const rows = loadOutbox();
+          if (!rows.length) break;
           const row = rows[0];
           try {
-            await fsCreateDoc(liveCfg(), `brain_gym/${authUser.uid}/reviews/${row.id}`, {
+            await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/reviews/${row.id}`, {
               cardId: row.cardId, grade: row.grade,
               reviewedAt: new Date(row.reviewedAt), clientId: getClientId(),
             });
           } catch (e) {
-            console.warn("Brain Gym sync: flush paused, will retry", e);
+            console.warn("My Anki sync: flush paused, will retry", e);
             ok = false;
             break;   // leave the rest queued; next trigger (open/online/grade) retries
           }
-          rows = rows.slice(1);
-          saveOutbox(rows);
+          saveOutbox(loadOutbox().filter((r) => r.id !== row.id));
         }
       } finally {
         flushing = false;
@@ -924,7 +1045,7 @@
             if (!fullLogByCard.has(row.cardId)) fullLogByCard.set(row.cardId, []);
             fullLogByCard.get(row.cardId).push(row);
           }
-          if (row.clientId === myClientId) {
+          if (row.clientId === myClientId && !startedFromScratch) {
             // Normally a no-op: this device's own applyGrade() already wrote
             // srs[cardId] before this row was ever enqueued, so there's
             // nothing to apply — just keep __lastReviewAt current. But if
@@ -935,6 +1056,18 @@
             // past it below. Route it through the same full replay the
             // out-of-order branch uses instead of trusting a shortcut that
             // no longer holds.
+            //
+            // The shortcut is also skipped entirely on a from-scratch pull
+            // (no cursor). There, `srs` is a seed — the baseline, or state
+            // inherited from an earlier build — not a record of what this
+            // device has applied, so "my own row is already in it" isn't
+            // something the cursor can vouch for. It specifically isn't true
+            // across the Brain Gym import: those rows keep the clientId they
+            // were written with, and this device carried that same client id
+            // over with the rest of its keys, so every imported row looks
+            // "own". Falling through to the two branches below reaches the
+            // right answer either way — already-reflected rows land on the
+            // tie and replay from the baseline, which is idempotent.
             if (srs[row.cardId]) srs[row.cardId].__lastReviewAt = Math.max(lastApplied, ts);
             else needsRebuild.add(row.cardId);
           } else if (ts > lastApplied) {
@@ -968,7 +1101,7 @@
         for (const cardId of needsRebuild) {
           const rows = fullLogByCard?.get(cardId) ?? await fsQueryReviewsForCard(cfg, cardId);
           if (baselineState === undefined) {
-            const baseline = await fsGetDoc(cfg, `brain_gym/${authUser?.uid}/meta/baseline`);
+            const baseline = await fsGetDoc(cfg, `${rootOf(cfg)}/${cfg.tenant}/meta/baseline`);
             baselineState = baseline?.state || {};
           }
           srs[cardId] = replayCard(baselineState[cardId], rows);
@@ -992,7 +1125,7 @@
     // nothing, if sync was never turned on anywhere yet) and replay the whole
     // log on top of it.
     async function rebuildFromLog() {
-      const baseline = await fsGetDoc(liveCfg(), `brain_gym/${authUser.uid}/meta/baseline`);
+      const baseline = await fsGetDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/meta/baseline`);
       srs = baseline ? { ...baseline.state } : {};
       localStorage.removeItem(CURSOR_KEY);
       await pullReviews();
@@ -1013,10 +1146,10 @@
       } else {
         let created;
         try {
-          created = await fsCreateDoc(liveCfg(), `brain_gym/${authUser.uid}/meta/baseline`,
+          created = await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/meta/baseline`,
             { state: srs, takenAt: new Date() });
         } catch (e) {
-          console.warn("Brain Gym sync: baseline write failed, will retry next launch", e);
+          console.warn("My Anki sync: baseline write failed, will retry next launch", e);
           return;   // don't mark migrated — try again on next open
         }
         // Lost the race: another device already authored the baseline
@@ -1028,7 +1161,7 @@
         // more recently; either side's card wins outright if the other
         // doesn't have it at all.
         if (!created.created) {
-          const baseline = await fsGetDoc(liveCfg(), `brain_gym/${authUser.uid}/meta/baseline`);
+          const baseline = await fsGetDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/meta/baseline`);
           if (baseline && baseline.state) {
             for (const [cardId, remote] of Object.entries(baseline.state)) {
               const local = srs[cardId];
@@ -1060,7 +1193,7 @@
       // once the outbox drains instead.
       if (loadOutbox().length) return;
       const cfg = liveCfg();
-      const baseline = await fsGetDoc(cfg, `brain_gym/${authUser.uid}/meta/baseline`);
+      const baseline = await fsGetDoc(cfg, `${COLLECTION}/${authUser.uid}/meta/baseline`);
       const baseState = baseline?.state || {};
       const rowsByCard = new Map();
       let cursor = null, lastCreatedAt = null;
@@ -1101,12 +1234,12 @@
         // not by lost pre-sync history. If it ever isn't empty, that's
         // surprising enough to want a loud signal rather than a silent
         // publish-and-move-on.
-        console.warn("Brain Gym sync: reconcile found local-only history with no server counterpart, publishing", Object.keys(residue));
+        console.warn("My Anki sync: reconcile found local-only history with no server counterpart, publishing", Object.keys(residue));
         try {
-          await fsCreateDoc(cfg, `brain_gym/${authUser.uid}/meta/baseline_${getClientId()}`,
+          await fsCreateDoc(cfg, `${COLLECTION}/${authUser.uid}/meta/baseline_${getClientId()}`,
             { state: residue, takenAt: new Date() });
         } catch (e) {
-          console.warn("Brain Gym sync: residue publish failed, will retry next launch", e);
+          console.warn("My Anki sync: residue publish failed, will retry next launch", e);
           return;   // don't mark reconciled — try again next open
         }
       }
@@ -1156,17 +1289,17 @@
       const old = loadLegacyConfig();
       if (old && old.apiKey && old.projectId && old.syncKeyHash) {
         const src = legacyCfg(old);
-        try { await pullReviews(src); } catch (e) { console.warn("Brain Gym sync: legacy pull failed", e); }
-        const baseline = await fsGetDoc(src, `brain_gym/${src.tenant}/meta/baseline`);
+        try { await pullReviews(src); } catch (e) { console.warn("My Anki sync: legacy pull failed", e); }
+        const baseline = await fsGetDoc(src, `${rootOf(src)}/${src.tenant}/meta/baseline`);
         if (baseline) {
-          await fsCreateDoc(liveCfg(), `brain_gym/${authUser.uid}/meta/baseline`,
+          await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/meta/baseline`,
             { state: baseline.state, takenAt: new Date(baseline.takenAt) });
         }
         let cursor = null;
         for (;;) {
           const page = await fsQueryReviews(src, cursor);
           for (const row of page) {
-            await fsCreateDoc(liveCfg(), `brain_gym/${authUser.uid}/reviews/${row.__id}`, {
+            await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/reviews/${row.__id}`, {
               cardId: row.cardId, grade: row.grade,
               reviewedAt: new Date(row.reviewedAt), clientId: row.clientId,
             });
@@ -1184,6 +1317,105 @@
         }
       }
       localStorage.setItem(AUTH_MIGRATED_KEY, "1");
+    }
+
+    // One-time, per device: copy this same account's Brain Gym era —
+    // `brain_gym/{uid}`, written by every build before the 2026-08 rename —
+    // into the collection this build reads and writes. Same shape as
+    // importLegacyTenant above, and idempotent for the same reason: create-only
+    // writes with preserved document ids mean two devices racing to migrate
+    // produce one copy, not two, and a re-run after a failed attempt is a
+    // sequence of no-ops.
+    async function importBrainGymCollection() {
+      if (localStorage.getItem(FS_IMPORT_KEY)) return;
+      const src = brainGymCfg();
+      // Fold anything on the old side this device hasn't applied yet. The
+      // cursor carried over from the old app is an old-collection watermark,
+      // which is exactly what this one pull wants; it's cleared below.
+      try { await pullReviews(src); } catch (e) { console.warn("My Anki sync: Brain Gym pull failed", e); }
+
+      // Meta first, so the review copy below can't trigger a replay that
+      // reads a baseline which hasn't arrived yet. Enumerated rather than
+      // assumed: the canonical `baseline` plus any `baseline_<clientId>`
+      // residue docs a past reconcile published.
+      for (const doc of await fsListCollection(src, "meta")) {
+        await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/meta/${doc.__id}`,
+          { state: doc.state, takenAt: new Date(doc.takenAt) });
+      }
+
+      // The log, oldest first. Preserving the document id is what makes the
+      // copy idempotent; preserving clientId keeps every row attributable to
+      // the device that actually made it, which is what lets the pull below
+      // recognise this device's own history instead of re-folding it.
+      // `createdAt` is deliberately NOT preserved — it is re-stamped server-
+      // side on arrival, and ascending copy order keeps the relative sequence
+      // intact. Replay correctness keys off `reviewedAt`, which is copied
+      // verbatim.
+      let cursor = null, tip = null;
+      for (;;) {
+        const page = await fsQueryReviews(src, cursor);
+        for (const row of page) {
+          await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/reviews/${row.__id}`, {
+            cardId: row.cardId, grade: row.grade,
+            reviewedAt: new Date(row.reviewedAt), clientId: row.clientId,
+          });
+          cursor = row.createdAt;
+          tip = row.createdAt;
+        }
+        if (page.length < REVIEW_PAGE_SIZE) break;
+      }
+
+      // A full pull of the new collection from a cleared cursor — NOT
+      // advanceCursorToTip, which importLegacyTenant can get away with only
+      // because nothing else writes to its destination. Here the other device
+      // may have migrated first and already be writing reviews to the new
+      // collection that this one has never seen; skipping the fold would drop
+      // them silently. The full pull is safe to repeat: this device's own rows
+      // only bump __lastReviewAt, and anything out of order falls through to a
+      // baseline-seeded replay.
+      localStorage.removeItem(CURSOR_KEY);
+      if (Object.keys(srs).length > 0) localStorage.setItem(MIGRATED_KEY, "1");
+      await pullReviews();
+      // Last, so a failure anywhere above simply re-runs the whole import on
+      // the next open rather than marking it done.
+      localStorage.setItem(FS_IMPORT_KEY, tip || new Date(0).toISOString());
+    }
+
+    // The old app can outlive the import: a home-screen icon whose service
+    // worker hasn't picked up the forwarder yet still writes to the old
+    // collection, and after the one-time copy above nothing would ever read
+    // those rows again. One bounded query per open closes that window. It
+    // stops finding anything once every device is on this build, and can be
+    // deleted along with the import.
+    async function probeBrainGymStrays() {
+      const tip = localStorage.getItem(FS_IMPORT_KEY);
+      if (!tip) return;   // import hasn't run yet — it will copy everything anyway
+      const src = brainGymCfg();
+      let cursor = tip, found = 0;
+      for (;;) {
+        const page = await fsQueryReviews(src, cursor);
+        for (const row of page) {
+          // Deliberately NOT copied under the original clientId, unlike the
+          // import above. A stray was written by the old app, whose state
+          // this build did not inherit — the row is not reflected in local
+          // `srs`, so letting the pull treat it as "my own, already applied"
+          // would drop the grade for good. Marking it foreign routes it
+          // through the normal fold (or a replay, if it lands out of order),
+          // which is correct on this device and on every other one.
+          const res = await fsCreateDoc(liveCfg(), `${COLLECTION}/${authUser.uid}/reviews/${row.__id}`, {
+            cardId: row.cardId, grade: row.grade,
+            reviewedAt: new Date(row.reviewedAt), clientId: `${row.clientId}|brain-gym`,
+          });
+          if (res.created) found += 1;
+          cursor = row.createdAt;
+        }
+        if (page.length < REVIEW_PAGE_SIZE) break;
+      }
+      localStorage.setItem(FS_IMPORT_KEY, cursor);
+      if (found) {
+        console.warn(`My Anki sync: recovered ${found} review(s) the old Brain Gym app wrote after this device migrated`);
+        await pullReviews();
+      }
     }
 
     // ---- App state: the review IS the app ----
@@ -1327,7 +1559,7 @@
         text = await res.text();
       } catch { return; }   // offline, or blocked — the loaded deck stays authoritative
       let data;
-      try { data = parseDeckText(text); } catch (e) { console.warn("Brain Gym: bad data.js, ignoring", e); return; }
+      try { data = parseDeckText(text); } catch (e) { console.warn("My Anki: bad data.js, ignoring", e); return; }
       if (!data || !Array.isArray(data.themes) || !Array.isArray(data.books)) return;
       if (JSON.stringify(data) === deckSnapshot) return;   // already current
       whenSafe({ deck: data });
@@ -1366,7 +1598,7 @@
       return "";
     }
 
-    const LASTSYNC_KEY = "brain-gym.lastsync.v1";
+    const LASTSYNC_KEY = "my-anki.lastsync.v1";
     let syncState = "local";   // local | syncing | synced | pending | offline | issue
     let agoTimer = null;
 
@@ -1424,7 +1656,7 @@
     function headerHtml(pos) {
       return `
         <div class="bar">
-          <h1>Brain Gym</h1>
+          <h1>My Anki</h1>
           <span class="account-bar">${syncStatusHtml()}${accountHtml()}<span class="pos">${pos}</span></span>
         </div>
         ${pillsHtml()}`;
@@ -1531,12 +1763,16 @@
       const acct = document.getElementById("accountBtn");
       if (acct) acct.addEventListener("click", async () => {
         if (authState === "out") {
-          try { await authApi.signIn(); } catch (e) { console.warn("Brain Gym sync: sign-in failed", e); }
+          try { await authApi.signIn(); } catch (e) { console.warn("My Anki sync: sign-in failed", e); }
         } else if (authState === "in" && confirm("Sign out of sync on this device?")) {
           authApi.signOutUser();
         }
       });
     }
+
+    // Before the first paint: grades the old app queued but never sent belong
+    // in local state whether or not this open ever reaches a signed-in sync.
+    scavengeLegacyOutbox();
 
     render();
     checkDeck();   // this load may itself have come from a stale SW/CDN copy
@@ -1567,7 +1803,7 @@
     // signed out — grades queue locally and follow the account once the
     // Sign in chip is used. The module script below builds the real
     // Firebase Auth services and calls start(); tests can pass fakes.
-    window.BrainGymSync = {
+    window.MyAnkiSync = {
       firebaseConfig: FIREBASE,
       start(api) {
         authApi = api;
@@ -1578,21 +1814,25 @@
           syncState = navigator.onLine ? "syncing" : "offline";
           render();
           try {
+            scavengeLegacyOutbox();
             await importLegacyTenant();
+            await importBrainGymCollection();
             await flushOutbox();
+            await probeBrainGymStrays();
+            await drainPendingRebuild();
             await migrateOrRebuild();
             await reconcile();
             session = newSession(activeTheme, session.queue[0]?.id);
             render();
             settleSyncStatus(true);
           } catch (e) {
-            console.warn("Brain Gym sync: startup failed", e);
+            console.warn("My Anki sync: startup failed", e);
             settleSyncStatus(false);
           }
         });
       },
       unavailable(e) {
-        console.warn("Brain Gym sync: auth unavailable", e);
+        console.warn("My Anki sync: auth unavailable", e);
         authState = "unavailable";
         setSyncStatus("offline");
         render();
@@ -1627,11 +1867,11 @@
           import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),
           import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"),
         ]);
-        const app = initializeApp(window.BrainGymSync.firebaseConfig);
+        const app = initializeApp(window.MyAnkiSync.firebaseConfig);
         const instance = auth.getAuth(app);
         const provider = new auth.GoogleAuthProvider();
         auth.getRedirectResult(instance).catch((e) => console.warn(e));
-        window.BrainGymSync.start({
+        window.MyAnkiSync.start({
           onAuthChange(cb) {
             auth.onAuthStateChanged(instance, (u) => {
               cb(u ? { uid: u.uid, email: u.email, getToken: () => u.getIdToken() } : null);
@@ -1654,7 +1894,7 @@
           signOutUser: () => auth.signOut(instance),
         });
       } catch (e) {
-        window.BrainGymSync.unavailable(e);
+        window.MyAnkiSync.unavailable(e);
       }
     })();
   </script>

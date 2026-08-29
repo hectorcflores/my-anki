@@ -1,6 +1,6 @@
 {
-  "name": "Brain Gym",
-  "short_name": "Brain Gym",
+  "name": "My Anki",
+  "short_name": "My Anki",
   "description": "Spaced repetition over my Kindle highlights.",
   "start_url": "./",
   "scope": "./",

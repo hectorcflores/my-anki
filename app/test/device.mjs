@@ -1,8 +1,12 @@
-// Runs brain-gym's inline script in its own vm context — one per simulated
+// Runs the app's inline script in its own vm context — one per simulated
 // "device" — with just enough DOM/browser stubbing for it to boot and run
 // its sync logic without a real browser. Two or more devices sharing one
 // fake-firestore instance (see fake-firestore.mjs) simulate two of Hector's
 // real devices signed into the same account.
+//
+// The script version is whatever the caller passes, so one device can run the
+// pre-rename Brain Gym build while another runs the current one — which is how
+// the migration scenarios exercise a staggered rollout.
 import vm from "node:vm";
 import crypto from "node:crypto";
 
@@ -71,12 +75,16 @@ export function createDevice({ source, firestore, deck, localStorageSeed = {}, l
   sandbox.window = sandbox;
   sandbox.globalThis = sandbox;
   vm.createContext(sandbox);
-  vm.runInContext(source, sandbox, { filename: "brain-gym-inline.js" });
+  vm.runInContext(source, sandbox, { filename: "app-inline.js" });
 
   // Mirrors the module script at the bottom of index.html: captures the
   // onAuthChange callback so the test can fire it on demand instead of
-  // waiting on a real Firebase Auth round trip.
-  sandbox.BrainGymSync.start({
+  // waiting on a real Firebase Auth round trip. The global was renamed with
+  // the app, so both script versions are accepted here — that's what lets one
+  // scenario drive an old device and a new one side by side.
+  const syncGlobal = sandbox.MyAnkiSync ?? sandbox.BrainGymSync;
+  if (!syncGlobal) throw new Error("device: script exposed neither MyAnkiSync nor BrainGymSync");
+  syncGlobal.start({
     onAuthChange(cb) { capturedAuthCb = cb; },
     async signIn() {},
     signOutUser() {},
@@ -89,7 +97,7 @@ export function createDevice({ source, firestore, deck, localStorageSeed = {}, l
     // -> reconcile, whichever of those exist in this script version) and
     // resolves once it's done.
     signIn(user) {
-      if (!capturedAuthCb) throw new Error("device: BrainGymSync.start never captured a callback");
+      if (!capturedAuthCb) throw new Error("device: sync global's start() never captured a callback");
       return capturedAuthCb(user);
     },
     // Sets the `let authUser`/`authState` bindings directly, bypassing the
