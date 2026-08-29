@@ -10,16 +10,16 @@ window.ANKI = {
    "label": "Health"
   },
   {
+   "id": "ideas",
+   "label": "Ideas"
+  },
+  {
    "id": "investing",
    "label": "Investing"
   },
   {
    "id": "mindfulness",
    "label": "Mindfulness"
-  },
-  {
-   "id": "ideas",
-   "label": "Ideas"
   }
  ],
  "books": [
@@ -1924,6 +1924,152 @@ window.ANKI = {
      "theme": "ideas",
      "text": "Contemplation on death will bring you a deepening sense of what we call “renunciation,” in Tibetan ngé jung. Ngé means “actually” or “definitely,” and jung means to “come out,” “emerge,” or “be born.”",
      "q": "What is the Tibetan term for renunciation, and what do its parts mean?"
+    }
+   ]
+  },
+  {
+   "id": "thinking-in-bets-making-smarter-decisions-when-you-don-t-have-all-the-facts--annie-duke",
+   "title": "Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts",
+   "author": "Annie Duke",
+   "subject": "making better decisions under uncertainty by treating them as bets and separating decision quality from luck",
+   "total": 24,
+   "highlights": [
+    {
+     "id": "17cebdf3abbe929a",
+     "loc": 138,
+     "theme": "ideas",
+     "text": "Thinking in bets starts with recognizing that there are exactly two things that determine how our lives turn out: the quality of our decisions and luck. Learning to recognize the difference between the two is what thinking in bets is all about.",
+     "q": "According to Duke, what two things determine how our lives turn out?"
+    },
+    {
+     "id": "5579dd26ebf4c265",
+     "loc": 171,
+     "theme": "ideas",
+     "text": "Pete Carroll was a victim of our tendency to equate the quality of a decision with the quality of its outcome. Poker players have a word for this: “resulting.” When I started playing poker, more experienced players warned me about the dangers of resulting, cautioning me to resist the temptation to change my strategy just because a few hands didn’t turn out well in the short run.",
+     "q": "What do poker players call the error of equating the quality of a decision with the quality of its outcome?"
+    },
+    {
+     "id": "52c9cf058c949da4",
+     "loc": 344,
+     "theme": "ideas",
+     "text": "In The Ascent of Man, scientist Jacob Bronowski recounted how von Neumann described game theory during a London taxi ride. Bronowski was a chess enthusiast and asked him to clarify. “You mean, the theory of games like chess?” Bronowski quoted von Neumann’s response: “‘No, no,’ he said. ‘Chess is not a game. Chess is a well-defined form of computation. You may not be able to work out the answers, but in theory there must be a solution, a right procedure in any position. Now, real games,’ he",
+     "q": "Why did von Neumann say chess is not a real 'game' in the game-theory sense?"
+    },
+    {
+     "id": "226de54675654703",
+     "loc": 347,
+     "theme": "ideas",
+     "text": "said, ‘are not like that at all. Real life is not like that. Real life consists of bluffing, of little tactics of deception, of asking yourself what is the other man going to think I mean to do. And that is what games are about in my theory.’”"
+    },
+    {
+     "id": "b8df668eea015985",
+     "loc": 362,
+     "theme": "ideas",
+     "text": "Poker, in contrast, is a game of incomplete information. It is a game of decision-making under conditions of uncertainty over time. (Not coincidentally, that is close to the definition of game theory.) Valuable information remains hidden. There is also an element of luck in any outcome. You could make the best possible decision at every point and still lose the hand, because you don’t know what new cards will be dealt and revealed. Once the game is finished and you try to learn from the results, separating the quality of your decisions from the influence of luck is difficult.",
+     "q": "Why does Duke say poker, unlike chess, is a game of decision-making under uncertainty?"
+    },
+    {
+     "id": "071251c95ada6554",
+     "loc": 452,
+     "theme": "ideas",
+     "text": "What good poker players and good decision-makers have in common is their comfort with the world being an uncertain and unpredictable place. They understand that they can almost never know exactly how something will turn out. They embrace that uncertainty and, instead of focusing on being sure, they try to figure out how unsure they are, making their best guess at the chances that different outcomes will occur. The accuracy of those guesses will depend on how much information they have and how experienced they are at making such guesses. This is part of the basis of all bets.",
+     "q": "What do good poker players and good decision-makers do instead of focusing on being sure?"
+    },
+    {
+     "id": "3e8a57b29d9ada20",
+     "loc": 542,
+     "theme": "ideas",
+     "text": "When we move away from a world where there are only two opposing and discrete boxes that decisions can be put in—right or wrong—we start living in the continuum between the extremes. Making better decisions stops being about wrong or right but about calibrating among all the shades of grey.",
+     "q": "What does making decisions become about once we abandon the right/wrong binary?"
+    },
+    {
+     "id": "7c64f91f52b6ea48",
+     "loc": 695,
+     "theme": "ideas",
+     "text": "In most of our decisions, we are not betting against another person. Rather, we are betting against all the future versions of ourselves that we are not choosing.",
+     "q": "In most decisions, who does Duke say we are really betting against?"
+    },
+    {
+     "id": "b6f026443b8db677",
+     "loc": 764,
+     "theme": "ideas",
+     "text": "“Findings from a multitude of research literatures converge on a single point: People are credulous creatures who find it very easy to believe and very difficult to doubt. In fact, believing is so easy, and perhaps so inevitable, that it may be more like involuntary comprehension than it is like rational assessment.”",
+     "q": "What does research say about how easy it is for people to believe versus doubt?"
+    },
+    {
+     "id": "ba0dff85c0e8c2db",
+     "loc": 829,
+     "theme": "ideas",
+     "text": "Truthseeking, the desire to know the truth regardless of whether the truth aligns with the beliefs we currently hold, is not naturally supported by the way we process information. We might think of ourselves as open-minded and capable of updating our beliefs based on new information, but the research conclusively shows otherwise. Instead of altering our beliefs to fit new information, we do the opposite, altering our interpretation of that information to fit our beliefs.",
+     "q": "When new information conflicts with our beliefs, what does Duke say we typically do instead of updating our beliefs?"
+    },
+    {
+     "id": "30b4f348521551ee",
+     "loc": 1026,
+     "theme": "ideas",
+     "text": "Incorporating uncertainty into the way we think about our beliefs comes with many benefits. By expressing our level of confidence in what we believe, we are shifting our approach to how we view the world. Acknowledging uncertainty is the first step in measuring and narrowing it. Incorporating uncertainty in the way we think about what we believe creates open-mindedness, moving us closer to a more objective stance toward information that disagrees with us.",
+     "q": "According to Duke, what is the first step in measuring and narrowing uncertainty?"
+    },
+    {
+     "id": "3e1772b5ab63ac30",
+     "loc": 1251,
+     "theme": "ideas",
+     "text": "Just as with motivated reasoning, our fielding errors aren’t random. They are, borrowing from psychologist and behavioral economist Dan Ariely,* “predictably irrational.” The way we field outcomes is predictably patterned: we take"
+    },
+    {
+     "id": "ee7ed1fe18d424db",
+     "loc": 1253,
+     "theme": "ideas",
+     "text": "credit for the good stuff and blame the bad stuff on luck so it won’t be our fault.",
+     "q": "What is the predictable pattern in how we field good versus bad outcomes?"
+    },
+    {
+     "id": "2603d44ecddddd15",
+     "loc": 1552,
+     "theme": "ideas",
+     "text": "The prospect of a bet makes us examine and refine our beliefs, in this case the belief about whether luck or skill was the main influence in the way things turned out. Betting on what we believe makes us take a closer look by making explicit what is already implicit: we have a great deal at risk in assessing why anything turned out the way it did. That sure sounds like a bet worth taking seriously.",
+     "q": "How does the prospect of a bet change the way we examine our beliefs?"
+    },
+    {
+     "id": "9c07103c18ea1ffa",
+     "loc": 1713,
+     "theme": "ideas",
+     "text": "Whatever the obstacles to recruiting people into a decision group (and this chapter points out several, along with strategies for overcoming them), it is worth it to get a buddy to watch your back—or your blind spot. The fortunate thing is that we need to find only a handful of people willing to do the exploratory thinking necessary for truthseeking. In fact, as long as there are three people in the group (two to disagree and one to referee*), the truthseeking group can be stable and productive.",
+     "q": "What is the minimum group size Duke says makes a truthseeking group stable and productive, and why?"
+    },
+    {
+     "id": "382498adebc3acbe",
+     "loc": 1745,
+     "theme": "ideas",
+     "text": "Philip Tetlock and Jennifer Lerner, leaders in the science of group interaction, described the two kinds of group reasoning styles in an influential 2002 paper: “Whereas confirmatory thought involves a one-sided attempt to rationalize a particular point of view, exploratory thought involves even-handed consideration of alternative points of view.”",
+     "q": "How do Tetlock and Lerner distinguish confirmatory thought from exploratory thought?"
+    },
+    {
+     "id": "0fcd746a91a9cd38",
+     "loc": 1748,
+     "theme": "ideas",
+     "text": "Confirmatory thought promotes a love and celebration of one’s own beliefs, distorting how the group processes information and works through decisions, the result of which can be groupthink. Exploratory thought, on the other hand, encourages an open-minded and objective consideration of alternative hypotheses and a tolerance of dissent to combat bias. Exploratory thought helps the members of a group reason toward a more accurate representation of the world.",
+     "q": "What are the respective effects of confirmatory and exploratory thought on a group's decision-making?"
+    },
+    {
+     "id": "9313e5bc8c68b9b8",
+     "loc": 1770,
+     "theme": "ideas",
+     "text": "A focus on accuracy (over confirmation), which includes rewarding truthseeking, objectivity, and open-mindedness within the group; Accountability, for which members have advance notice; and Openness to a diversity of ideas.",
+     "q": "What three features characterize a productive truthseeking group according to Duke?"
+    },
+    {
+     "id": "67141f2e1db3256c",
+     "loc": 1881,
+     "theme": "ideas",
+     "text": "Why might my belief not be true? What other evidence might be out there bearing on my belief? Are there similar areas I can look toward to gauge whether similar beliefs to mine are true? What sources of information could I have missed or minimized on the way to reaching my belief? What are the reasons someone else could have a different belief, what’s their support, and why might they be right instead of me? What other perspectives are there as to why things turned out the way they did?"
+    },
+    {
+     "id": "c459c20912f7ebc5",
+     "loc": 2066,
+     "theme": "ideas",
+     "text": "CUDOS stands for Communism (data belong to the group), Universalism (apply uniform standards to claims and evidence, regardless of where they came from), Disinterestedness (vigilance against potential conflicts that can influence the group’s evaluation), and Organized Skepticism (discussion among the group to encourage engagement and dissent).",
+     "q": "What do the four letters of CUDOS stand for as norms for a truthseeking group?"
     }
    ]
   },
