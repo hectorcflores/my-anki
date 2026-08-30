@@ -6,23 +6,521 @@ window.ANKI = {
    "label": "Work"
   },
   {
-   "id": "health",
-   "label": "Health"
-  },
-  {
    "id": "ideas",
    "label": "Ideas"
   },
   {
-   "id": "investing",
-   "label": "Investing"
-  },
-  {
    "id": "mindfulness",
    "label": "Mindfulness"
+  },
+  {
+   "id": "health",
+   "label": "Health"
+  },
+  {
+   "id": "investing",
+   "label": "Investing"
   }
  ],
  "books": [
+  {
+   "id": "21-lessons-for-the-21st-century--yuval-noah-harari",
+   "title": "21 Lessons for the 21st Century",
+   "author": "Yuval Noah Harari",
+   "subject": "the political, technological and existential challenges facing humanity in the twenty-first century",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "fe978e44aec68a75",
+     "loc": 149,
+     "theme": "ideas",
+     "text": "If the future of humanity is decided in your absence, because you are too busy feeding and clothing your kids, you and they will not be exempt from the consequences.",
+     "q": "According to Harari, why can't people disengage from deciding humanity's future by staying busy with everyday life?"
+    }
+   ]
+  },
+  {
+   "id": "a-love-supreme-the-story-of-john-coltrane-s-signature-album--ashley-kahn-and-elvin-jones",
+   "title": "A Love Supreme: The Story of John Coltrane's Signature Album",
+   "author": "Ashley Kahn and Elvin Jones",
+   "subject": "the making and legacy of John Coltrane's album A Love Supreme",
+   "total": 2,
+   "highlights": [
+    {
+     "id": "5083e2266e107ca9",
+     "loc": 208,
+     "theme": "ideas",
+     "text": "On the jazz front, a funky cousin of fifties hard bop was packing them in; groups led by Cannonball Adderley, Ramsey Lewis, and Chico Hamilton were at the crest of the “soul jazz” wave. The legends—Duke, the Count, Louis (whose freak hit “Hello, Dolly” had recently topped the pop charts)—were keeping veteran fans happy. The torch of “free” jazz, sparked only a few years earlier by Ornette Coleman, Charles Mingus, and Cecil Taylor, was now brandished by a new avant-garde. To many, their fierce, tradition-defying music blew with the politically charged anger of the time. The fraternity of the “New Thing”—Albert and Donald Ayler, Archie Shepp, Bill Dixon, and others—claimed a leader, a saxophonist whose aggressive style informed their own sound and exploratory spirit: John Coltrane.",
+     "q": "In the mid-1960s jazz landscape, which saxophonist was claimed as leader by the avant-garde 'New Thing' fraternity of Albert and Donald Ayler, Archie Shepp, and Bill Dixon?"
+    }
+   ]
+  },
+  {
+   "id": "a-man-for-all-markets-from-las-vegas-to-wall-street-how-i-beat-the-dealer-and-th--edward-o-thorp-and-nassim-nicholas-taleb",
+   "title": "A Man for All Markets: From Las Vegas to Wall Street, How I Beat the Dealer and the Market",
+   "author": "Edward O. Thorp and Nassim Nicholas Taleb",
+   "subject": "a mathematician's memoir of beating blackjack and the stock market through statistical edge",
+   "total": 6,
+   "highlights": [
+    {
+     "id": "5d2310e334ab32c7",
+     "loc": 4872,
+     "theme": "investing",
+     "text": "If the market does a good job of using today’s public information to set current prices, then the only investors who have an edge are those with material private information. The high-profile prosecution of investors in the 1980s for illegal trading on inside information makes the point.",
+     "q": "According to the efficient-market view, which investors actually have an edge if current prices reflect all public information?"
+    },
+    {
+     "id": "008620dd89368623",
+     "loc": 4878,
+     "theme": "investing",
+     "text": "Doing better than the market is not the same as beating it. The first is often simply luck; the second is finding a statistically significant edge that makes sense, then profiting from it.",
+     "q": "What distinction does Thorp draw between doing better than the market and beating it?"
+    },
+    {
+     "id": "84627c32227348ee",
+     "loc": 5009,
+     "theme": "investing",
+     "text": "Be a disciplined rational investor. Follow logic and analysis rather than sales pitches, whims, or emotion. Assume you may have an edge only when you can make a rational affirmative case that withstands your attempts to tear it down. Don’t gamble unless you are highly confident you have the edge. As Buffett says, “Only swing at the fat pitches.” 3. Find a superior method of analysis.",
+     "q": "What discipline does Thorp (echoing Buffett's 'only swing at the fat pitches') say a rational investor should apply before assuming they have an edge?"
+    },
+    {
+     "id": "d8abc86b3421d929",
+     "loc": 5101,
+     "theme": "investing",
+     "text": "The careful investor, when he hears such tales, should ask a key question: At what price is this company a good buy? What price is too high? Suppose, after doing your analysis of the company’s financial statements, management, business model, and prospects, you conclude that it’s worth buying at $40 a share, at which price you expect not only a satisfactory excess risk-adjusted return but have a margin of safety in case your analysis is flawed. Suppose you also conclude that the expected return at $80 is substandard, so the stock is likely overpriced. Typically you’ll avoid investing in stocks when they are trading above your buy price but, if you follow many companies carefully, from time to time some will be attractive purchases. The range between your “buy” price and the “likely overpriced” level, in this case from $40 to $80, is likely to be narrower for better, more experienced investors, enabling them to participate in more situations and with greater confidence.",
+     "q": "What key question should a careful investor ask when hearing a tale about a good company, and why does the buy-to-overpriced range narrow for better investors?"
+    },
+    {
+     "id": "1a642200a68c4e35",
+     "loc": 5180,
+     "theme": "investing",
+     "text": "My understanding of how to use leverage began with my experience in the casinos. When I deployed my card counting system for blackjack, it made intuitive sense to bet more when the expected gain, or edge, was greater. The question was, how much? The answer was in a 1956 article by Bell Labs physicist John L. Kelly, who some said was the smartest person there, after Claude Shannon. In his fascinating history of the topic, Fortune’s Formula, William Poundstone points out that for a favorable bet that pays odds of $A for a bet of $1, the optimal Kelly bet is the percent of your capital equal to your edge, divided by the odds, A. In blackjack, the typical favorable edge was usually between 1 and 5 percent and the odds, or payoff per dollar bet, averaged a little more than 1.",
+     "q": "According to Kelly's formula, what percent of your capital is the optimal bet for a favorable wager?"
+    }
+   ]
+  },
+  {
+   "id": "an-elegant-puzzle-systems-of-engineering-management--will-larson",
+   "title": "An Elegant Puzzle: Systems of Engineering Management",
+   "author": "Will Larson",
+   "subject": "systems-based engineering management and scaling organizations",
+   "total": 94,
+   "highlights": [
+    {
+     "id": "fdcf7eba1b7c840b",
+     "loc": 178,
+     "theme": "work",
+     "text": "It starts with the most important tool in my kit, “Organizations.” Organizational design gets the right people in the right places, empowers them to make decisions, and then holds them accountable for their results. Maintained consistently and changed sparingly, nothing else will help you scale more.",
+     "q": "According to Larson, what does organizational design accomplish and how often should it be changed?"
+    },
+    {
+     "id": "b3c9c96f0b1c3065",
+     "loc": 198,
+     "theme": "work",
+     "text": "Organizations An organization is a collection of people working toward a shared goal.",
+     "q": "How does Larson define an organization?"
+    },
+    {
+     "id": "2732527aea5126a2",
+     "loc": 204,
+     "theme": "work",
+     "text": "When I have a problem that I want to solve quickly and cheaply, I start thinking about process design. A problem I want to solve permanently and we have time to go slow? That’s a good time to evolve your culture. However, if process is too weak a force, and culture too slow, then organizational design lives between those two.",
+     "q": "When does Larson reach for process design, culture, or organizational design respectively?"
+    },
+    {
+     "id": "8a59b81698275d7c",
+     "loc": 211,
+     "theme": "work",
+     "text": "How many teams should we have? Should we create a new team for this initiative, or ask an existing team to take it on? What is the boundary between these two teams? These questions were the gateway to the obscure art of organizational design."
+    },
+    {
+     "id": "d94eab52dbceffb7",
+     "loc": 213,
+     "theme": "work",
+     "text": "As I’ve gotten more exposure, I’ve come to believe that the fundamental challenge of organizational design is sizing teams.",
+     "q": "What does Larson call the fundamental challenge of organizational design?"
+    },
+    {
+     "id": "f122d64afc9d25e9",
+     "loc": 218,
+     "theme": "work",
+     "text": "The guiding principles I use for sizing teams are: • Managers should support six to eight engineers This gives them enough time for active coaching, coordinating, and furthering their team’s mission by writing strategies,2 leading change,3 and so on.",
+     "q": "How many engineers does Larson say a manager should support, and why?"
+    },
+    {
+     "id": "561fdf3c327b1c82",
+     "loc": 223,
+     "theme": "work",
+     "text": "Tech Lead Managers (TLMs). Managers supporting fewer than four engineers tend to function as TLMs, taking on a share of design and implementation work.",
+     "q": "How do managers supporting fewer than four engineers tend to function?"
+    },
+    {
+     "id": "e06976f03b89711b",
+     "loc": 227,
+     "theme": "work",
+     "text": "Coaches. Managers supporting more than eight or nine engineers typically act as coaches and safety nets for problems.",
+     "q": "How do managers supporting more than eight or nine engineers typically operate?"
+    },
+    {
+     "id": "9add90a77c732297",
+     "loc": 230,
+     "theme": "work",
+     "text": "• Managers-of-managers should support four to six managers This gives them enough time to coach, to align with stakeholders, and to do a reasonable amount of investment in their organization. On the other hand, it will also keep them busy enough that they won’t be tempted to create work for their team.",
+     "q": "How many managers should a manager-of-managers support according to Larson?"
+    },
+    {
+     "id": "d854f5cabf7684e6",
+     "loc": 240,
+     "theme": "work",
+     "text": "• On-call rotations want eight engineers For production on-call responsibilities,4 I’ve found that two-tier 24/7 support requires eight engineers. As teams holding their own pagers have become increasingly mainstream, this has become an important sizing constraint, and I try to ensure that every engineering team’s steady state is eight people.",
+     "q": "How many engineers does Larson say two-tier 24/7 on-call support requires?"
+    },
+    {
+     "id": "a3c55a84ff911c7b",
+     "loc": 247,
+     "theme": "work",
+     "text": "• Small teams (fewer than four members) are not teams"
+    },
+    {
+     "id": "1565af42ec33fde2",
+     "loc": 249,
+     "theme": "work",
+     "text": "An important property of teams is that they abstract the complexities of the individuals that compose them. Teams with fewer than four individuals are a sufficiently leaky abstraction that they function indistinguishably from individuals. To reason about a small team’s delivery, you’ll have to know about each on-call shift, vacation, and interruption.",
+     "q": "Why does Larson argue teams with fewer than four people don't function as real teams?"
+    },
+    {
+     "id": "90bcf863b62ef082",
+     "loc": 253,
+     "theme": "work",
+     "text": "Keep innovation and maintenance together. A frequent practice is to spin up a new team to innovate while existing teams are bogged down in maintenance. I’ve historically done this myself, but I’ve moved toward innovating within existing teams.5 This requires very deliberate decision-making and some bravery, but in exchange you’ll get higher morale and a culture of learning, and will avoid creating a two-tiered class system of innovators and maintainers.",
+     "q": "Why does Larson favor innovating within existing teams rather than spinning up new innovation teams?"
+    },
+    {
+     "id": "595970bcd6f1f177",
+     "loc": 258,
+     "theme": "work",
+     "text": "Teams should be six to eight during steady state. To create a new team, grow an existing team to eight to ten, and then bud into two teams of four or five. Never create empty teams.",
+     "q": "How does Larson recommend creating a new team from an existing one?"
+    },
+    {
+     "id": "02c682f65958cce3",
+     "loc": 259,
+     "theme": "work",
+     "text": "Never leave managers supporting more than eight individuals."
+    },
+    {
+     "id": "e31dd0a97b8c9e4c",
+     "loc": 271,
+     "theme": "work",
+     "text": "While I believe that hiring is a very important approach to growing organizations, I also believe that we reach for it too often. In order to prioritize hiring for scenarios in which it’ll do the most good, over the past year I’ve developed a loose framework for reasoning about what a given team needs to increase performance."
+    },
+    {
+     "id": "bb9649174084ec91",
+     "loc": 276,
+     "theme": "work",
+     "text": "2.2.1 Four states of a team The framework starts with a vocabulary for describing teams and their performance within their surrounding context. Teams are slotted into a continuum of four states: A team is falling behind if each week their backlog is longer than it was the week before. Typically, people are working extremely hard but not making much progress, morale is low, and your users are vocally dissatisfied. A team is treading water if they’re able to get their critical work done, but are not able to start paying down technical debt or begin major new projects. Morale is a bit higher, but people are still working hard, and your users may seem happier because they’ve learned that asking for help won’t go anywhere. A team is repaying debt when they’re able to start paying down technical debt, and are beginning to benefit from the debt repayment snowball: each piece of debt you repay leads to more time to repay more debt. A team is innovating when their technical debt is sustainably low, morale is high, and the majority of work is satisfying new user needs.",
+     "q": "What are Larson's four states of a team along the performance continuum?"
+    },
+    {
+     "id": "797121d609f44733",
+     "loc": 291,
+     "theme": "work",
+     "text": "2.2.2 System fixes and tactical support In this framework, teams transition to a new state exclusively by adopting the appropriate system solution for their current state. As a manager, your obligation is to identify the correct system solution for a given transition, initiate that solution, and then support the team as best you can to create space for the solutions to work their magic. If you skip to supporting the team tactically before initiating the correct system solution, you’ll exhaust yourself with no promise of salvation.",
+     "q": "In Larson's framework, how do teams transition to a new performance state?"
+    },
+    {
+     "id": "e8bcd7f85813a43b",
+     "loc": 296,
+     "theme": "work",
+     "text": "When the team is falling behind, the system fix is to hire more people until the team moves into treading water. Provide tactical support by setting expectations with users, beating the drum around the easy wins you can find, and injecting optimism.",
+     "q": "What is the system fix when a team is falling behind?"
+    },
+    {
+     "id": "72c373c614eb2119",
+     "loc": 299,
+     "theme": "work",
+     "text": "As a caveat, the system fix is to hire net new people, increasing the overall capacity of the company. Sometimes people instead attempt to capture more resources from the existing company, and I’m pretty negative on that. People are not fungible, and generally folks end up in useful places, so I’m skeptical of reassigning existing individuals to drive optimality. By nature, it’s also impossible for this kind of discussion to not become political, even when everyone involved has deep trust in and respect for each other. When the team is treading water, the system fix is to consolidate the team’s efforts to finish more things, and to reduce concurrent work until they’re able to begin repaying debt (e.g., limit work in progress). Tactically, the focus here is on helping people transition from a personal view of productivity to a team view. When the team is repaying debt, the system fix is to add time. Everything is already working, you just need to find space to allow the compounding value of paying down technical debt to grow. Tactically try to find ways to support your users while also repaying debt, to avoid disappearing into technical debt repayment from your users’ perspective. Especially for a team that started out falling behind and is now repaying debt, your stakeholders are probably antsy waiting for the team to start delivering new stuff, and your obligation is to prevent that impatience from causing a…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What is the system fix for a team treading water?"
+    },
+    {
+     "id": "a49d80dc9fe1aae9",
+     "loc": 315,
+     "theme": "work",
+     "text": "I can’t stress enough that these fixes are slow. This is because systems accumulate months or years of static, and you have to drain that all away. Conversely, the same properties that make these fixes slow to fix make them extremely durable once in effect! The hard part is maintaining…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "Why does Larson say system fixes are slow but also durable?"
+    },
+    {
+     "id": "fbf55185debeaf94",
+     "loc": 325,
+     "theme": "work",
+     "text": "Many folks try to move all teams at the same time, peanut buttering7 their limited resources, but resist that indecision-framed-as-fairness: it’s not a fair outcome if no one gets anything. For each constraint, prioritize one team at a time. If most teams are falling behind, then hire onto one team until it’s staffed enough to tread water, and only then move to the next. While this is true for all constraints, it’s particularly important for hiring.",
+     "q": "Why does Larson warn against 'peanut buttering' limited resources across all teams at once?"
+    },
+    {
+     "id": "710d69ef8a644b9a",
+     "loc": 329,
+     "theme": "work",
+     "text": "Adding new individuals to a team disrupts that team’s gelling process, so I’ve found it much easier to have rapid growth periods for any given team, followed by consolidation/gelling periods during which the team gels. The organization will never stop growing, but each team will.",
+     "q": "Why does Larson favor rapid growth periods followed by consolidation over steady team growth?"
+    },
+    {
+     "id": "5734edc5e45b3c6a",
+     "loc": 343,
+     "theme": "work",
+     "text": "2.3.1 Team first Fundamentally, I believe that sustained productivity comes from high-performing teams, and that disassembling a high-performing team leads to a significant loss of productivity, even if the members are fully retained. In this worldview, high-performing teams are sacred, and I’m quite hesitant to disassemble them. Teams take a long time to gel. When a group has been working together for a few years, they understand each other and know how to set each other up for success in a truly remarkable way.",
+     "q": "Why is Larson hesitant to disassemble high-performing teams even if members are retained?"
+    },
+    {
+     "id": "22b51989201d8654",
+     "loc": 354,
+     "theme": "work",
+     "text": "2.3.2 Fixed costs Another reason that I lean away from moving folks off high-performing teams is that most teams have high fixed costs and relatively small variable costs: moving one person can shift an innovating team back into falling behind, and now neither team is doing particularly well. This is especially true on teams responsible for products and services.",
+     "q": "How do fixed versus variable costs argue against moving people off high-performing teams?"
+    },
+    {
+     "id": "2b8aef3edc820314",
+     "loc": 371,
+     "theme": "work",
+     "text": "Most importantly, “slackful” teams function as an organizational debugger: you don’t have to consider them when debugging the overall organizational throughput. I’ve found it much easier to work a couple constraints at a time, solving forward without needing to revisit previous constraints. The Goal by Eliyahu M. Goldratt10 and Thinking in Systems: A Primer by Donella H. Meadows11 are both phenomenal books on this topic.",
+     "q": "How does Larson say 'slackful' teams function as an organizational debugger?"
+    },
+    {
+     "id": "2705181135685731",
+     "loc": 379,
+     "theme": "work",
+     "text": "2.3.4 Shift scope; rotate Okay, so what does work? I’ve found it most fruitful to move scope between teams, preserving the teams themselves. If a team has significant slack, then incrementally move responsibility to them, at which point they’ll start locally optimizing their expanded workload. It’s best to do this slowly to maintain slack in the team, but if it’s a choice of moving people rapidly or shifting scope rapidly, I’ve found that the latter is more effective and less disruptive. Shifting scope works better than moving people because it avoids re-gelling costs, and it preserves system behavior.",
+     "q": "Why does Larson prefer shifting scope between teams over moving people?"
+    },
+    {
+     "id": "059442e02f6f9c6d",
+     "loc": 403,
+     "theme": "work",
+     "text": "2.4.1 More engineers, more problems All real-world systems have some degree of inherent self-healing properties: an overloaded database will slow down enough that someone fixes it, and overwhelmed employees will get slow at finishing work until someone finds a way to help.",
+     "q": "What self-healing property does Larson say all real-world systems have?"
+    },
+    {
+     "id": "0e059658b6ffab50",
+     "loc": 405,
+     "theme": "work",
+     "text": "Very few real-world systems have efficient and deliberate self-healing properties, and this is where things get exciting as you double engineers and customers year after year after year."
+    },
+    {
+     "id": "9e4096f25ed39ace",
+     "loc": 410,
+     "theme": "work",
+     "text": "Just how challenging this is depends on how quickly you can ramp engineers up to self-sufficient productivity, but if you’re doubling every six months and it takes six to twelve months to ramp up, then you can quickly find a scenario in which untrained engineers increasingly outnumber the trained engineers, and each trained engineer is devoting much of their time to training a couple of newer engineers.",
+     "q": "What happens when a company doubling every six months takes six to twelve months to ramp up engineers?"
+    },
+    {
+     "id": "bd7fd6a99512c1d5",
+     "loc": 430,
+     "theme": "work",
+     "text": "Most outages are caused by deployments, so more deployments drive more outages, which in turn require incident management, mitigations, and postmortems.",
+     "q": "What does Larson say causes most outages, and how does deployment frequency relate to them?"
+    },
+    {
+     "id": "0bf12ad1766fec89",
+     "loc": 440,
+     "theme": "work",
+     "text": "Although it’s rarely quite this extreme, this is where the oft-raised concern that “hiring is slowing us down” comes from: at high enough rates, the marginal added value of hiring gets very slow, especially if your training process is weak.",
+     "q": "Where does the concern that 'hiring is slowing us down' come from according to Larson?"
+    },
+    {
+     "id": "a0dba094c0072a4f",
+     "loc": 444,
+     "theme": "work",
+     "text": "We’ve looked a bit at productivity’s tortured relationship with engineering head count, so now let’s also think a bit about how the load on your systems is growing. Understanding the overall impact of increased load comes down to a few important trends: Most system-implemented systems are designed to support one to two orders’ magnitude of growth from the current load. Even…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "How many orders of magnitude of growth are most systems designed to support?"
+    },
+    {
+     "id": "b145c602c3beac49",
+     "loc": 449,
+     "theme": "work",
+     "text": "If your traffic doubles every six months, then your load increases an order of magnitude every 18 months. (And sometimes new features or products cause load to increase much more quickly.) The cardinality of supported systems increases over time as you add teams, and as “trivial” systems go from unsupported afterthoughts to focal points for entire teams as the systems reach scaling plateaus (things like Apache Kafka, mail delivery, Redis, etc.). If your company is designing systems to last one order of magnitude and is doubling every six months, then you’ll have to re-implement every system twice every three years. This creates a great deal of risk—almost every platform team is working on a critical scaling project—and can also create a great deal of resource contention to finish these concurrent rewrites. However, the real productivity killer is not system rewrites but the migrations that follow those rewrites. Poorly designed migrations expand the consequences of this rewrite loop from the…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "If a company designs systems to last one order of magnitude and doubles every six months, how often must every system be re-implemented?"
+    },
+    {
+     "id": "076d1ac7db9563ef",
+     "loc": 465,
+     "theme": "work",
+     "text": "2.4.3 Ways to manage entropy My favorite observation from The Phoenix Project by Gene Kim, Kevin Behr, and George Spafford15 is that you only get value from projects when they finish: to make progress, above all…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does Larson cite from The Phoenix Project about when you get value from projects?"
+    },
+    {
+     "id": "73636bc8fde7d540",
+     "loc": 484,
+     "theme": "work",
+     "text": "The second most effective time thief that I’ve found is ad hoc interruptions: getting pinged on HipChat or Slack, taps on the shoulder, alerts from your on-call system, high-volume email lists, and so on. The strategy here is to funnel interruptions into an increasingly small area, and then automate that area as much as possible. Ask people to file tickets, create chatbots that automate filing tickets, create a service cookbook, and so on.",
+     "q": "What strategy does Larson recommend for handling ad hoc interruptions?"
+    },
+    {
+     "id": "c1316fc6b3a05977",
+     "loc": 488,
+     "theme": "work",
+     "text": "With that setup in place, create a rotation for people who are available to answer questions, and train your team not to answer other forms of interruptions. This is remarkably uncomfortable because we want to be helpful humans, but it becomes necessary as the number of interruptions climbs higher. One specific tool that I’ve found extremely helpful here is an ownership registry, which allows you to look up who owns what, eliminating the frequent “Who owns X?” variety of question.",
+     "q": "What is an ownership registry and what problem does it solve?"
+    },
+    {
+     "id": "34a7d1703d248427",
+     "loc": 493,
+     "theme": "work",
+     "text": "A similar variant of this is ad hoc meeting requests. The best tool that I’ve found for this is to block out a few large chunks of time each week to focus. This can range from telecommuting on Thursday, to blocking out Monday and Wednesday afternoons, to blocking out from 8–11 each morning. Experiment a bit and find something that works well for you. Finally, the one thing that I’ve found at companies with very few interruptions and have observed almost nowhere else: really great, consistently available documentation. It’s probably even harder to bootstrap documentation into a non-documenting company than it is to bootstrap unit tests into a non-testing…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does Larson identify as the one thing found at companies with very few interruptions?"
+    },
+    {
+     "id": "06652998fb9ba11d",
+     "loc": 501,
+     "theme": "work",
+     "text": "In my opinion, probably the most important opportunity is designing your software to be flexible. I’ve described this as “fail open and layer policy”; the best system rewrite is the one that didn’t happen, and if you can avoid baking in arbitrary policy decisions that will change frequently over time, then…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does Larson mean by 'fail open and layer policy' as a design principle?"
+    },
+    {
+     "id": "1b7f0460a8294657",
+     "loc": 506,
+     "theme": "work",
+     "text": "Along these lines, if you can keep your interfaces generic, then you are able to skip the migration phase of system re-implementation, which tends to be the longest and trickiest phase, and you can iterate…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "According to Larson, what does keeping interfaces generic let you skip during system re-implementation?"
+    },
+    {
+     "id": "418a2a9ab2811ec7",
+     "loc": 510,
+     "theme": "work",
+     "text": "Finally, a related antipattern is the gatekeeper pattern. Having humans who perform gatekeeping activities creates very odd social dynamics, and is rarely a great use of a human’s time. When at all possible, build systems with sufficient isolation that you can allow most actions to go forward. And when…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What is the gatekeeper antipattern and why does Larson recommend against it?"
+    },
+    {
+     "id": "d26a4fd5ea90ea18",
+     "loc": 523,
+     "theme": "work",
+     "text": "2.5 Where to stash your organizational risk? Lately, I’m increasingly hearing folks reference the idea of organizational debt. This is the organizational sibling of technical debt, and it represents things like biased…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does Larson mean by organizational debt?"
+    },
+    {
+     "id": "f36248ba2b8162f7",
+     "loc": 527,
+     "theme": "work",
+     "text": "Within organizational debt, there is a volatile subset most likely to come abruptly due, and I call that subset organizational risk. Some good examples might be a toxic team culture,…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "How does Larson define organizational risk relative to organizational debt?"
+    },
+    {
+     "id": "1e528b6de31a72ca",
+     "loc": 532,
+     "theme": "work",
+     "text": "How you respond to this is, in my opinion, the core challenge of leading a large organization. How do you continue to remain emotionally engaged with the challenges faced by individuals you’re responsible to help, when their problem is low in your problems queue? In that moment, do you shrug off the responsibility, either by changing roles or picking…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does Larson call the core challenge of leading a large organization?"
+    },
+    {
+     "id": "29b88a8883f967df",
+     "loc": 536,
+     "theme": "work",
+     "text": "What I’ve found most successful is to identify a few areas to improve, ensure you’re making progress on those, and give yourself permission to do the rest poorly. Work with your manager to write this up as an explicit plan and agree on what reasonable…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What approach does Larson recommend when you can't do everything well?"
+    },
+    {
+     "id": "69d916add17b9184",
+     "loc": 539,
+     "theme": "work",
+     "text": "bags of risk and responsibility, but you’ve agreed on expectations. Now you have a set of organizational risks that you’re pretty confident will get fixed, and then you have all the others: known problems, likely to go sideways, that you don’t believe you’re able to address quickly. What do you do about those? I like to keep them close. Typically, my organizational philosophy is to stabilize team-by-team and organization-by-organization. Ensuring any given area is well on the path to health before moving my focus. I try not to push risks onto teams that are functioning well. You do need to delegate some risks, but generally I think it’s best to only delegate solvable risk. If something simply isn’t likely to go well, I think it’s best to hold the bag yourself. You may be the best suited to manage the risk, but you’re almost certainly the best…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What kind of risk does Larson say you should delegate versus hold onto yourself?"
+    },
+    {
+     "id": "49cc85b8ec68fb29",
+     "loc": 596,
+     "theme": "work",
+     "text": "Tools If you ask a manager about their proudest moments, they will probably tell you a story about helping someone grow. If you ask that same manager about their most challenging experience, they will probably talk about a layoff, a reorganization, a shift in company direction, or the time they weathered an economic downturn. In management, change is the catalyst of complexity.",
+     "q": "According to Larson, what is the catalyst of complexity in management?"
+    },
+    {
+     "id": "75440b5ab29f5e35",
+     "loc": 606,
+     "theme": "work",
+     "text": "Many effective leaders I’ve worked with have the uncanny knack for working on leveraged1 problems. In some problem domains, the product management skill set2 is extraordinarily effective for identifying useful problems, but systems thinking is the most universally useful tool kit I’ve found. If you really want a solid grasp on systems thinking fundamentals, you should read Thinking in Systems: A Primer3 by Donella H. Meadows, but I’ll do my best to describe some of the basics and to work through a recent scenario in which I found the systems thinking approach to be exceptionally useful. 3.1.1 Stocks and flows The fundamental observation of systems thinking is that the links between events are often more subtle than they appear. We want to describe events causally—our managers are too busy because we’re trying to ship our current project—but few events occur in a vacuum.",
+     "q": "What is the fundamental observation of systems thinking according to Larson?"
+    },
+    {
+     "id": "2d8385a0e1bacfa2",
+     "loc": 619,
+     "theme": "work",
+     "text": "In this example, perhaps the managers are busy because no one hired and trained the managers required to support this year’s project deadlines. These accumulations are called stocks, and are the memory of changes over time. A stock might be the number of trained managers at your company. Changes to stocks are called flows. These can be either inflows or outflows.…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "In systems thinking, what are stocks and what are flows?"
+    },
+    {
+     "id": "0ec4686e3c67cb95",
+     "loc": 623,
+     "theme": "work",
+     "text": "The other relationship, represented in figure 3.1 by a dashed line, is an information link. This indicates that the value of a stock is a factor in the size of a flow. The link here shows that the time available for…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does an information link indicate in a systems diagram?"
+    },
+    {
+     "id": "9fb203a0b7e9ff53",
+     "loc": 626,
+     "theme": "work",
+     "text": "Often, a stock outside of a diagram’s scope will be represented as a cloud, indicating that something complex happened there that we’re not currently exploring. It’s best practice to label every flow, and to keep in mind that every flow is a rate, whereas every stock is a quantity. 3.1.2 Developer velocity When I started thinking of an example of the usefulness of systems thinking, one came to mind immediately. Since reading Accelerate: The Science of Lean Software and DevOp, by Nicole Forsgren, Gene Kim, and Jez Humble,4 I’ve spent a lot of time pondering the authors’ definition of velocity. They focus on four measures of developer velocity: Delivery lead time is the time from the creation of code to its use…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "In systems diagrams, what is the difference between a rate and a quantity, and what does a cloud represent?"
+    },
+    {
+     "id": "19a41c3cfdcbdccd",
+     "loc": 639,
+     "theme": "work",
+     "text": "but let’s see if we can model them into a system that we can use to reason about developer productivity: Pull requests are converted into ready commits based on our code review rate. Ready commits convert into deployed commits at deploy rate. Deployed commits convert into incidents at defect rate. Incidents are remediated into reverted commits at recovery rate. Reverted commits are debugged into new pull requests at debug rate. Linking these pieces together, we see a feedback loop, in which the system’s downstream behavior impacts its upstream…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "How does Larson model developer velocity as a feedback loop of pull requests, commits, and incidents?"
+    },
+    {
+     "id": "2f70e18cc0e5680d",
+     "loc": 649,
+     "theme": "work",
+     "text": "If your model is a good one, opportunities for improvement should be immediately obvious, which I believe is true in this case. However, to truly identify where to invest, you need to identify the true values of these stocks and flows! For example, if you don’t have a backlog of ready commits, then speeding up your deploy rate may not be valuable. Likewise, if your…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "Why does Larson say you must know the true values of stocks and flows before deciding where to invest?"
+    },
+    {
+     "id": "bffd1d70ef984957",
+     "loc": 676,
+     "theme": "work",
+     "text": "Product management is an iterative elimination tournament, with each round consisting of problem discovery, problem selection, and solution validation. Problem discovery is uncovering possible problems to work on, problem selection is filtering those problems down to a viable subset, and solution validation is ensuring that your approach to solving those problems works as cheaply as possible. If you do a good job at all three phases, you win the luxury of doing it all again, this time with more complexity and scope. If you don’t do well, you end up forfeiting or being asked to leave the game.9",
+     "q": "What are the three rounds of the iterative elimination tournament Larson uses to describe product management?"
+    },
+    {
+     "id": "cdbe7473a23a24f2",
+     "loc": 683,
+     "theme": "work",
+     "text": "The first phase of a planning cycle is exploring the different problems that you could pick to solve. It’s surprisingly common to skip this phase, but that, unsurprisingly, leads to inertia-driven local optimization. Taking the time to evaluate which problem to solve is one of the best predictors I’ve found of a team’s long-term performance. The themes that I’ve found useful for populating the problem space are: Users’ pain. What are the problems that your users experience? It’s useful to go broad via survey mechanisms, as well as to go deep by interviewing a smaller set of interesting individuals across different user segments.",
+     "q": "Why does Larson say skipping the problem discovery phase leads to inertia-driven local optimization?"
+    },
+    {
+     "id": "02c3a61ec1bed9de",
+     "loc": 688,
+     "theme": "work",
+     "text": "Users’ purpose. What motivates your users to engage with your systems? How can you better enable users to accomplish their goals? Benchmark. Look at how your company compares to competitors in the same and similar industries. Are there areas in which you are quite weak? Those are areas to consider investing in. Sometimes folks keep to a narrow lens when benchmarking, but I’ve found that you learn the most interesting things by considering both fairly similar and rather different companies. Cohorts. What is hiding behind your clean distributions? Exploring your data for the cohorts hidden behind top-level analysis is an effective way to discover new kinds of users with surprising needs. Competitive advantages. By understanding the areas you’re exceptionally strong in, you can identify opportunities that you’re better positioned to fill than other companies. Competitive moats. Moats are a more extreme version of a competitive advantage. Moats represent a sustaining competitive advantage, which makes it possible for you to pursue offerings that others simply cannot. It’s useful to consider moats in three different ways: What do your existing moats enable you to do today?",
+     "q": "What themes does Larson suggest for populating the problem space during discovery?"
+    },
+    {
+     "id": "aa63f08ecbdc791a",
+     "loc": 699,
+     "theme": "work",
+     "text": "What are the potential moats you could build for the future? What moats are your competitors luxuriating behind? Compounding leverage. What are the composable blocks you could start building today that would compound into major product or technical leverage10 over time? I think of this category of work as finding ways to get the benefit at least twice. These are potentially tasks that initially don’t seem important enough to prioritize, but whose compounding value makes the work possible to prioritize.",
+     "q": "What does Larson mean by compounding leverage in problem discovery?"
+    },
+    {
+     "id": "72ff7136ddd862c9",
+     "loc": 709,
+     "theme": "work",
+     "text": "3.2.2 Problem selection Once you’ve identified enough possible problems, the next challenge is to narrow down to a specific problem portfolio. Some of the aspects that I’ve found useful to consider during this phase are: Surviving the round. Thinking back to the iterative elimination tournament, what do you need to do to survive the current round? This might be the revenue that the product will need to generate to avoid getting canceled, adoption, etc. Surviving the next round. Where do you need to be when the next round in order to avoid getting eliminated then?",
+     "q": "What survival-related questions does Larson recommend asking during problem selection?"
+    },
+    {
+     "id": "96c3309b0d9ccd44",
+     "loc": 716,
+     "theme": "work",
+     "text": "Winning rounds. It’s important to survive every round, but it’s also important to eventually win a round! What work would ensure that you’re trending toward winning a round?"
+    },
+    {
+     "id": "a921619e0dd246f1",
+     "loc": 728,
+     "theme": "work",
+     "text": "Experiments to learn. What could you learn now that would make problem selection in the future much easier?"
+    }
+   ]
+  },
   {
    "id": "anything-you-want-40-lessons-for-a-new-kind-of-entrepreneur--derek-sivers",
    "title": "Anything You Want: 40 lessons for a new kind of entrepreneur",
@@ -172,6 +670,166 @@ window.ANKI = {
    ]
   },
   {
+   "id": "boom-bubbles-and-the-end-of-stagnation--byrne-hobart-and-tobias-huber",
+   "title": "Boom: Bubbles and the End of Stagnation",
+   "author": "Byrne Hobart and Tobias Huber",
+   "subject": "how financial bubbles act as accelerators of technological innovation and an escape from stagnation",
+   "total": 13,
+   "highlights": [
+    {
+     "id": "07e37bf6c2212cff",
+     "loc": 60,
+     "theme": "ideas",
+     "text": "In postmodernity progress has occurred, to a large extent, through ever-improving technologies of simulation. One of the drivers of economic growth in the last half-century has been the observation that the real world of atoms can be described in sequences of bits. But as technologies of bit manipulation improve, the artificial worlds they create are improving faster than the real one. The philosopher Jean Baudrillard referred to this category as technologies of the “hyper-real”: simulacra that lack a referent and become substitutes for reality. In other words, instead of building the future, we are becoming better at developing increasingly realistic simulations of it.",
+     "q": "What did Baudrillard mean by technologies of the 'hyper-real', and how do the authors apply the idea to progress?"
+    },
+    {
+     "id": "fd4b3c15d076476c",
+     "loc": 83,
+     "theme": "investing",
+     "text": "Perhaps even more surprisingly, we find that technological breakthroughs and scientific megaprojects share an underlying dynamic with financial bubbles in one very specific sense: they coordinate behavior to build a complex future. Against the standard view in economics and finance, which holds that speculative financial bubbles are intrinsically negative phenomena, we develop a model of bubbles as innovation accelerators.",
+     "q": "In what specific sense do the authors argue technological megaprojects share a dynamic with financial bubbles?"
+    },
+    {
+     "id": "27a3264155eebe5f",
+     "loc": 89,
+     "theme": "ideas",
+     "text": "only innovation-accelerating bubbles can prevent the apocalypse. (In Chapter 9, we’ll explain why this isn’t an exaggeration for dramatic effect—we literally mean the apocalypse.) Technological innovation is more driven by excess, exuberance, and irrationality than by cost-benefit analyses, rational calculation, and careful and deliberate planning. Reality-bending delusions are underrated drivers of techno-economic progress.",
+     "q": "What do the authors claim drives technological innovation more than rational cost-benefit analysis?"
+    },
+    {
+     "id": "996c9b971effeb46",
+     "loc": 96,
+     "theme": "investing",
+     "text": "bubbles are wealth- and value-destroying events. By generating positive feedback cycles of excessive enthusiasm and investment, certain financial bubbles mobilize the capital necessary to fund disruptive technologies at the frontier of innovation and accelerate breakthroughs in science, technology, and engineering. Crucially, such bubbles decouple investment from purely rational, backward-looking expectations of economic return, which correspondingly reduces risk aversion. Therein lies our escape from the Great Stagnation.",
+     "q": "How do the authors argue certain bubbles decouple investment from rational backward-looking expectations, and why does that matter?"
+    },
+    {
+     "id": "dffbff5d78065b7f",
+     "loc": 138,
+     "theme": "ideas",
+     "text": "The contemporary “cult of innovation,” as philosopher René Girard called it, 9 seems to distract us from the fact that true progress has become an increasingly rare occurrence.",
+     "q": "What did René Girard call the contemporary obsession that the authors say distracts from the rarity of true progress?"
+    }
+   ]
+  },
+  {
+   "id": "breakneck-china-s-quest-to-engineer-the-future--dan-wang",
+   "title": "Breakneck: China's Quest to Engineer the Future",
+   "author": "Dan Wang",
+   "subject": "how China's engineering-driven state builds at speed while America's lawyerly society blocks, and the consequences of each model",
+   "total": 6,
+   "highlights": [
+    {
+     "id": "1747bd1d573c2c11",
+     "loc": 120,
+     "theme": "ideas",
+     "text": "The starkest contrast between the two countries is the competition that will define the twenty-first century: an American elite, made up of mostly lawyers, excelling at obstruction, versus a Chinese technocratic class, made up of mostly engineers, that excels at construction. That’s the big idea behind this book. It’s time for a new lens to understand the two superpowers: China is an engineering state, building big at breakneck speed, in contrast to the United States’ lawyerly society, blocking everything it can, good and bad.",
+     "q": "What is the central contrast Dan Wang draws between the US and China as superpowers?"
+    },
+    {
+     "id": "b7fb64b45a1df8c6",
+     "loc": 154,
+     "theme": "ideas",
+     "text": "As a corrective to the mayhem of the Mao years, Deng Xiaoping promoted engineers to the top ranks of China’s government throughout the 1980s and 1990s. By 2002, all nine members of the Politburo’s standing committee—the apex of the Communist Party—had trained as engineers.",
+     "q": "By 2002, what professional background did all nine members of China's Politburo standing committee share?"
+    },
+    {
+     "id": "dbf1c77dc419a803",
+     "loc": 161,
+     "theme": "ideas",
+     "text": "For his third term as the Communist Party’s general secretary starting in 2022, Xi filled the Politburo with executives from the country’s aerospace and weapons ministries. In the United States, it would be as if the CEO of Boeing became the governor of Alaska, the chief of Lockheed Martin became the secretary of energy, and the head of NASA was governor of a state as large as Georgia.",
+     "q": "How did Xi reshape the Politburo for his third term beginning in 2022?"
+    },
+    {
+     "id": "c9d52df96e699045",
+     "loc": 167,
+     "theme": "ideas",
+     "text": "Since 1980, after Deng’s reforms began, China has built an expanse of highways equal to twice the length of the US systems, a high-speed rail network twenty times more extensive than Japan’s, and almost as much solar and wind power capacity as the rest of the world put together.",
+     "q": "What has China built since 1980 in highways, high-speed rail, and renewable power capacity?"
+    },
+    {
+     "id": "da188fbfe1cb72e6",
+     "loc": 169,
+     "theme": "ideas",
+     "text": "A rough rule of thumb is that China produces one-third to one-half of nearly any manufactured product, whether that is structural steel, container ships, solar photovoltaic panels, or anything else.",
+     "q": "What is the rough rule of thumb for China's share of global manufactured products?"
+    },
+    {
+     "id": "02245fd92fc35f51",
+     "loc": 258,
+     "theme": "ideas",
+     "text": "Not everyone born in 1949 suffered terribly and not everyone born in 1959 lived comfortably. But the engineering state is characterized by peculiarly jerky rhythms, in which the decade of birth might determine whether a person stumbles into great wealth or a mass grave.",
+     "q": "What does Wang mean by the 'jerky rhythms' of the engineering state?"
+    }
+   ]
+  },
+  {
+   "id": "buffett-the-making-of-an-american-capitalist--roger-lowenstein",
+   "title": "Buffett: The Making of an American Capitalist",
+   "author": "Roger Lowenstein",
+   "subject": "the life and investment philosophy of Warren Buffett",
+   "total": 11,
+   "highlights": [
+    {
+     "id": "a998c67d9011036e",
+     "loc": 846,
+     "theme": "investing",
+     "text": "Graham’s approach—an oddity in the speculative climate of the late 1920s—was to look for companies that were so cheap as to be free of risk.",
+     "q": "What was Graham's approach to finding stocks in the speculative climate of the late 1920s?"
+    },
+    {
+     "id": "cff6730f67437747",
+     "loc": 884,
+     "theme": "investing",
+     "text": "Security Analysis offered an escape from such a trap. Graham and Dodd urged that investors pay attention not to the tape, but to the businesses beneath the stock certificates. By focusing on the earnings, assets, future prospects, and so forth, one could arrive at a notion of a company’s “intrinsic value” that was independent of its market price. The market, they argued, was not a “weighing machine” that determined value precisely. Rather, it was a “voting machine,” in which countless people registered choices that were the product partly of reason and partly of emotion.",
+     "q": "According to Graham and Dodd, what is the difference between the market as a 'weighing machine' and a 'voting machine'?"
+    },
+    {
+     "id": "75f76f09e8ed414c",
+     "loc": 906,
+     "theme": "investing",
+     "text": "It was not an exact science, but (and this was key) one did not need exactitude—only the skill to identify the occasional company that was priced well below its value. To use a homely simile, it is quite possible to decide by inspection that a woman is old enough to vote without knowing her age, or that a man is heavier than he should be without knowing his weight.22",
+     "q": "Why did Graham argue that identifying undervalued companies does not require exact valuation?"
+    },
+    {
+     "id": "5ba1832cd169a785",
+     "loc": 912,
+     "theme": "investing",
+     "text": "The answer appeared the year before Buffett arrived at Columbia. The Intelligent Investor boiled Graham’s philosophy down to three words—“margin of safety.”24 An investor, he said, ought to insist on a gap—a big gap—between the price he was willing to pay and his estimate of what a stock was worth.",
+     "q": "What three words did Graham use to summarize his investing philosophy in The Intelligent Investor?"
+    },
+    {
+     "id": "050ef915ebecb866",
+     "loc": 944,
+     "theme": "investing",
+     "text": "Graham’s accent was on cheap stocks—“cigar butts,” or stocks that one could pick up almost for free, like spent cigars, and that might have a couple of valuable “puffs” left in them.",
+     "q": "What did Graham mean by 'cigar butt' stocks?"
+    },
+    {
+     "id": "4569e260eb25aa35",
+     "loc": 984,
+     "theme": "investing",
+     "text": "and this is why Graham was invaluable. He liked to say, “You are neither right nor wrong because the crowd disagrees with you.”38",
+     "q": "What did Graham say about being right or wrong in relation to the crowd's opinion?"
+    },
+    {
+     "id": "7510783e170c77d5",
+     "loc": 1257,
+     "theme": "investing",
+     "text": "[But] we know from experience that eventually the market catches up with value. However elliptical, his answer was the basis for Buffett’s career. Stocks would rise to value; therefore, an investor who trusted his judgment could be patient.",
+     "q": "What belief about markets catching up with value formed the basis for Buffett's patient investing approach?"
+    },
+    {
+     "id": "58408ec3637d4560",
+     "loc": 1640,
+     "theme": "investing",
+     "text": "This is the cornerstone of our investment philosophy: Never count on making a good sale. Have the purchase price be so attractive that even a mediocre sale gives good results.43",
+     "q": "What is the cornerstone investment principle regarding purchase price and sale outcomes?"
+    }
+   ]
+  },
+  {
    "id": "early-retirement-extreme-a-philosophical-and-practical-guide-to-financial-indepe--jacob-lund-fisker-ann-beaver-and-zev-averbach",
    "title": "Early Retirement Extreme: A philosophical and practical guide to financial independence",
    "author": "Jacob Lund Fisker, Ann Beaver, and Zev Averbach",
@@ -245,6 +903,110 @@ window.ANKI = {
      "theme": "ideas",
      "text": "La avenida Ámsterdam es un largo óvalo construido sobre una pista de carreras de caballos que el Jockey Club de México levantó, a principios del siglo XX, en unos terrenos propiedad de la condesa de Miravalle, que era dueña de todas las tierras en varios kilómetros a la redonda; de ahí el nombre oficial del barrio: colonia Hipódromo Condesa.",
      "q": "¿Sobre qué se construyó la avenida Ámsterdam y de dónde viene el nombre de la colonia Hipódromo Condesa?"
+    }
+   ]
+  },
+  {
+   "id": "el-hijo-de-mister-playa-una-semblanza-biografica-de-roberto-bolano-spanish-editi--monica-maristain",
+   "title": "El hijo de míster playa: Una semblanza biográfica de Roberto Bolaño (Spanish Edition)",
+   "author": "Mónica Maristain",
+   "subject": "a biographical portrait of Chilean writer Roberto Bolaño",
+   "total": 8,
+   "highlights": [
+    {
+     "id": "c310c3a1d71585b6",
+     "loc": 154,
+     "theme": "ideas",
+     "text": "La familia Bolaño llegó a México en 1968, cuando Roberto tenía quince años.",
+     "q": "¿En qué año llegó la familia Bolaño a México y qué edad tenía Roberto?"
+    },
+    {
+     "id": "0297b096bc1207d9",
+     "loc": 161,
+     "theme": "ideas",
+     "text": "Los primeros meses de la familia transcurrieron en la casa de unos amigos de Victoria que habían venido a estudiar al Distrito Federal. Luego, alquilaron una casa en la colonia Nápoles que a León, en busca de trabajo, le resultó “carísima”. Finalmente, recalaron en la calle Samuel número 27 –en la colonia Guadalupe Tepeyac–, en un edi cio de tres pisos en donde vivieron de prestado."
+    },
+    {
+     "id": "9f43ba5314390831",
+     "loc": 205,
+     "theme": "ideas",
+     "text": "Cuando se habla del origen social de Roberto Bolaño, pocas veces se hace mención a su familia trabajadora. En Latinoamérica no es lo mismo una familia pobre que una trabajadora: hay un abismo entre ambos conceptos. La ropa planchada a la que hace mención Boullosa es el sello de distinción de toda familia obrera que se precie: la pulcritud es el escudo aristocrático para quien vive en el seno de un hogar empeñado en “salir adelante”.",
+     "q": "Según el autor, ¿qué diferencia hay en Latinoamérica entre una familia pobre y una familia trabajadora?"
+    },
+    {
+     "id": "3f299e74eb55f125",
+     "loc": 278,
+     "theme": "ideas",
+     "text": "El hombre viejo se conmueve y sus ojos, humedecidos, evocan la emoción experimentada cuando leyó por primera vez “Últimos atardeceres en la Tierra”, el relato del viaje que hizo con su hijo a Acapulco en los años ochenta. “Así fue, así fue tal cual lo cuenta en el libro”, dice León."
+    },
+    {
+     "id": "086fa994cf86eb46",
+     "loc": 534,
+     "theme": "ideas",
+     "text": "Como hombre despojado y poco interesado en los bienes materiales, Bolaño parecía estar hecho para cumplir una misión, la de la ilustración, desde edad muy temprana."
+    },
+    {
+     "id": "6d2ad8ba3f81b861",
+     "loc": 605,
+     "theme": "ideas",
+     "text": "“El Infrarrealismo plantea una cuestión ética muy importante. Lo estético es secundario, lo más importante es lo ético. Lo ético es asumir una marginalidad estratégica y crítica como poetas”, dice Medina.",
+     "q": "Según Medina, ¿qué cuestión antepone el Infrarrealismo a lo estético y en qué consiste?"
+    },
+    {
+     "id": "76a24244268d1443",
+     "loc": 838,
+     "theme": "ideas",
+     "text": "Ahí se nota que él viene de la escuela cercana a José Agustín, a Efraín Huerta, un mundo menos literario, por decirlo así, aunque la novela hace un giro y él empieza a perseguir a una escritora, que es cuando la novela cambia de bando. 69Empieza para mí escrita por alguien a liado a los efraínistas y termina como si la hubiera hecho alguien adscrito al régimen de Octavio Paz."
+    }
+   ]
+  },
+  {
+   "id": "elon-musk-tesla-spacex-and-the-quest-for-a-fantastic-future-a-bestselling-biogra--ashlee-vance",
+   "title": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future – A Bestselling Biography of a Technology Entrepreneur",
+   "author": "Ashlee Vance",
+   "subject": "the life and companies of entrepreneur Elon Musk",
+   "total": 7,
+   "highlights": [
+    {
+     "id": "034f3e94d69312c4",
+     "loc": 340,
+     "theme": "ideas",
+     "text": "He opened up about the major fear keeping him up at night: namely that Google’s cofounder and CEO Larry Page might well have been building a fleet of artificial-intelligence-enhanced robots capable of destroying mankind. “I’m really worried about this,” Musk said.",
+     "q": "What major fear did Musk say kept him up at night regarding Larry Page and Google?"
+    },
+    {
+     "id": "226444f6377f5525",
+     "loc": 388,
+     "theme": "work",
+     "text": "Yet, in the early part of 2012, the cynics like me had to take notice of what Musk was actually accomplishing. His once-beleaguered companies were succeeding at unprecedented things. SpaceX flew a supply capsule to the International Space Station and brought it safely back to Earth. Tesla Motors delivered the Model S, a beautiful, all-electric sedan that took the automotive industry’s breath away and slapped Detroit sober.",
+     "q": "What two milestones did SpaceX and Tesla achieve in early 2012 that silenced skeptics?"
+    },
+    {
+     "id": "0e32bc49ba3f04fd",
+     "loc": 404,
+     "theme": "work",
+     "text": "Musk had built an honest-to-God rocket factory in the middle of Los Angeles. And this factory was not making one rocket at a time. No. It was making many rockets—from scratch."
+    },
+    {
+     "id": "a8208ccc96d97d5e",
+     "loc": 438,
+     "theme": "ideas",
+     "text": "“I think there are probably too many smart people pursuing Internet stuff, finance, and law,” Musk said on the way. “That is part of the reason why we haven’t seen as much innovation.”",
+     "q": "According to Musk, why haven't we seen as much innovation in terms of where smart people go?"
+    },
+    {
+     "id": "12389fb745b11354",
+     "loc": 2079,
+     "theme": "work",
+     "text": "Two hours later, Mary Beth Brown appeared with an appointment card to see a Lasik eye surgery specialist. When Hollman visited the doctor, he discovered that Musk had already agreed to pay for the surgery. “Elon can be very demanding, but he’ll make sure the obstacles in your way are removed,” Hollman said.",
+     "q": "What did Hollman say about how Musk removes obstacles despite being demanding?"
+    },
+    {
+     "id": "3435c4aecbf56456",
+     "loc": 2475,
+     "theme": "work",
+     "text": "But the more the Tesla guys researched the industry, the more they realized that the big automakers don’t even really build their cars anymore. The days of Henry Ford having raw materials delivered to one end of his Michigan factory and then sending cars out the other end had long passed. “BMW didn’t make its windshields or upholstery or rearview mirrors,” Tarpenning said. “The only thing the big car companies had kept was internal combustion research, sales and marketing, and the final assembly. We thought naïvely that we could access all the same suppliers for our parts.”",
+     "q": "What did the Tesla founders discover about how big automakers actually build cars?"
     }
    ]
   },
@@ -325,6 +1087,186 @@ window.ANKI = {
      "theme": "mindfulness",
      "text": "Note that Mike didn’t write that optimal performance is what matters most, but rather optimal experience.",
      "q": "According to Csikszentmihalyi, what matters most — optimal performance or optimal experience?"
+    }
+   ]
+  },
+  {
+   "id": "extremely-hardcore-inside-elon-musk-s-twitter--zoe-schiffer",
+   "title": "Extremely Hardcore: Inside Elon Musk's Twitter",
+   "author": "Zoë Schiffer",
+   "subject": "Elon Musk's chaotic takeover and transformation of Twitter",
+   "total": 3,
+   "highlights": [
+    {
+     "id": "cceb3e894230cab6",
+     "loc": 296,
+     "theme": "work",
+     "text": "He didn’t just want to revolutionize banking—he wanted to create an everything app. He would cling to this idea for two more decades, nursing his obsession with the letter X.",
+     "q": "What was Musk's long-held ambition tied to the letter X beyond revolutionizing banking?"
+    },
+    {
+     "id": "dfc0fd95b4666886",
+     "loc": 597,
+     "theme": "ideas",
+     "text": "By the time he resigned, Dorsey no longer believed that Twitter should even be a company. “I believe it must be an open source protocol, funded by a foundation of sorts that doesn’t own the protocol, only advances it,” he texted Musk in March 2022. “It can’t have an advertising model. Otherwise you have a surface area that governments and advertisers will try to influence and control. If it has a centralized entity behind it, it will be attacked.”",
+     "q": "What did Dorsey text Musk about what Twitter should become and why it couldn't rely on an advertising model?"
+    }
+   ]
+  },
+  {
+   "id": "facebook-the-inside-story--steven-levy",
+   "title": "Facebook: The Inside Story",
+   "author": "Steven Levy",
+   "subject": "the rise of Facebook and Mark Zuckerberg",
+   "total": 12,
+   "highlights": [
+    {
+     "id": "3ead585d562975a2",
+     "loc": 192,
+     "theme": "ideas",
+     "text": "“I’m an engineer, like a lot of you guys,” he says. “And for me engineering comes down to two real principles: The first is that you think of every problem as a system. And every system can be better. No matter how good or bad it is, you can make anything better—and that goes for you whether you’re writing code or you’re building hardware, or your system is a company.” Facebook, he says, attacks problems of business and culture in the same way a coder solves problems. “Running [a company is] not so different from writing code where you’re writing different functions and in subroutines. . . . I do think there’s something really fundamental to this engineering mindset.”",
+     "q": "How does Zuckerberg describe the engineering mindset applied to running a company?"
+    },
+    {
+     "id": "d625ac748cefbb54",
+     "loc": 226,
+     "theme": "ideas",
+     "text": "“There’s this fundamental thing that at an early age you looked at something and felt like: This can be better. I can break down this system and make it better. I remember thinking about that when I was young; it didn’t dawn on me until I was older that this isn’t the way everyone thinks of things. I do think that’s the engineering mindset—it may even be more a value set than a mindset.”",
+     "q": "What does Zuckerberg say is the fundamental root of the engineering mindset?"
+    },
+    {
+     "id": "171d48a7a9cc604f",
+     "loc": 340,
+     "theme": "ideas",
+     "text": "But it was a simple announcement from Facebook’s communications team that made me realize that the breadth of the company’s ambitions could only be fully captured in a book-length study. The news was that a billion people had logged on to Facebook on the same day. It stopped me cold. In the space of twenty-four hours, a sizable chunk of the world’s population had been active on Mark Zuckerberg’s network. That was new. Occasionally a global audience of that size might be gathered for a broadcast of the World Cup final or some other major event. But in those cases, the masses were spectators. These were people logging on to a single interactive network.",
+     "q": "What Facebook milestone made Levy realize the company's scale needed a book-length study?"
+    },
+    {
+     "id": "9f5284e61fd77195",
+     "loc": 417,
+     "theme": "ideas",
+     "text": "Sixdegrees was something new and, had it succeeded, would have been the nexus of endless studies and assessments. But it did not succeed. Weinreich’s great idea was too early. At the time, most people didn’t have email, let alone persistent web connections. And sixdegrees didn’t let you do much besides enter your connections into the giant database. There was no temptation to relieve your boredom on sixdegrees. No way to stalk an ex-lover. No way to watch a silly cat video. You would query the database of your extended social network when you wanted a connection or recommendation. And leave. Those who did sign up to sixdegrees quickly noted how much better the service would be if you could see pictures of people.",
+     "q": "Why did sixdegrees fail as an early social network?"
+    },
+    {
+     "id": "a7c88d47e298662d",
+     "loc": 609,
+     "theme": "ideas",
+     "text": "Exeter students are required to create a senior project before graduation, and Zuckerberg was casting around for one, listening to tunes on his computer, when the playlist he had set up went silent after the final song played. There’s really no reason why my computer shouldn’t just know what I want to hear next, he told himself. He recruited D’Angelo to partner with him in creating what would be their senior project, a personalized virtual DJ they called Synapse.",
+     "q": "What was Synapse, Zuckerberg's Exeter senior project?"
+    },
+    {
+     "id": "ad4a2704fb2a372f",
+     "loc": 638,
+     "theme": "ideas",
+     "text": "Thus was the Exeter Facebook sanctioned, and Tillery released it to the school’s entire population, which included Mark Zuckerberg. It was devilishly useful: you could look up someone by name, of course, but users also had the ability to search other things. Phone numbers were included—every student had a landline in the dorm—and Exonians devised a game where the facebook would choose a random person, whom they would prank-call."
+    },
+    {
+     "id": "e0080cf00be646a2",
+     "loc": 735,
+     "theme": "work",
+     "text": "Overall, though, the Slashdot attention was a boon. Zuckerberg heard from multiple companies interested in the student project, including Microsoft and AOL. Zuckerberg and D’Angelo got an offer approaching a million dollars from one of those suitors. But the payout would be contingent on Zuckerberg and D’Angelo committing to work for that company for three years. They turned it down. Neither was willing to leave school—at least, not for that offer. They both moved on from Synapse. “We knew that we could do something better,” says Zuckerberg.",
+     "q": "Why did Zuckerberg and D'Angelo turn down a near-million-dollar offer for Synapse?"
+    },
+    {
+     "id": "7b040407fe9ad59a",
+     "loc": 756,
+     "theme": "ideas",
+     "text": "Tying your online persona to your true identity was a shift from other online services, where people went by fanciful or even gross nicknames, as if at a giant, messy costume ball where anonymity could let you misbehave without consequences. Knowing who you were actually dealing with, talking to, flirting with, pitching deals to, and stalking made all the difference. Anchoring people to their real names and networks forced them into portraying themselves more honestly. One feature in particular bolstered trust and lubricated social activity: once you “friended” someone, the connection could be seen from your profile.",
+     "q": "How did tying online personas to real identities change social behavior compared to earlier services?"
+    },
+    {
+     "id": "f9e19d51b3a9d769",
+     "loc": 832,
+     "theme": "ideas",
+     "text": "Course Match had taught him a very useful lesson: “People have this deep thirst to understand what’s going on with people around them.”",
+     "q": "What lesson did Course Match teach Zuckerberg about people's motivations?"
+    },
+    {
+     "id": "f8ef621b90f43725",
+     "loc": 1090,
+     "theme": "ideas",
+     "text": "“Facemash was probably one of the best things that could’ve happened to Mark and the future of Facebook because it made him extremely aware of the importance of people controlling their own data,” says his classmate Meagan Marks. “When he created Thefacebook.com it was fully opt-in. He didn’t scrape any data systems. You had to sign yourself up, and within a month they had more than half the student body using it. So there was no need to scrape the data.” The users would provide the data. Thefacebook started with no content whatsoever: just the scaffolding that allowed people to bring their own. They would do this by creating profiles of themselves. They were allotted much more space than a two-line description in a physical directory. Thefacebook urged students to upload a picture of themselves—something they chose, not the stiff-smiled portrait of their graduation photographer—and a host of other information, generally geared toward socializing and (one could dream) hooking up. You could put in your relationship status, and what you’re “looking for.” There was space for personal data like phone numbers or AIM handles, as well as your interests, political preferences and favorite books, the courses you were taking, and a “favorite quote.” Though you could not have a conversation via the system, Zuckerberg did concoct a means to send a direct signal to someone—designating another user to be a recipient of a digital “poke.”",
+     "q": "How did Thefacebook obtain its user data differently from Facemash?"
+    },
+    {
+     "id": "94486b361cfb3655",
+     "loc": 1103,
+     "theme": "ideas",
+     "text": "But it wasn’t only the profiles that provided valuable data for Thefacebook. As with Friendster, the site allowed you to “friend” other people to signal that they were in your network. But unlike Friendster, Thefacebook allowed others to browse each other’s networks. “A lot of people sort of just wanted to see who other people knew,” Zuckerberg would later say.",
+     "q": "How did Thefacebook's friend networks differ from Friendster's?"
+    },
+    {
+     "id": "3e782fc7552e2135",
+     "loc": 1120,
+     "theme": "ideas",
+     "text": "Lessin had idolized Andrew Weinreich. He had watched that company’s demise with sorrow and now was following the rise of Friendster, which he felt was a good product but flawed. The problem was a lack of trustworthiness, because users were not reliably identified by their true names. Now this kid from his own house had created a website that provided the security that comes with knowing whom you’re dealing with, and the privacy that comes from being bounded within your community.",
+     "q": "What flaw in Friendster did Thefacebook solve, according to Lessin?"
+    }
+   ]
+  },
+  {
+   "id": "fall-in-love-with-the-problem-not-the-solution-a-handbook-for-entrepreneurs-upda--uri-levine",
+   "title": "Fall in Love with the Problem, Not the Solution: A Handbook for Entrepreneurs, Updated Edition",
+   "author": "Uri Levine",
+   "subject": "how entrepreneurs build startups by focusing on solving significant problems",
+   "total": 9,
+   "highlights": [
+    {
+     "id": "7109aab34967e4c2",
+     "loc": 188,
+     "theme": "work",
+     "text": "In my opinion, there are only right decisions or NO decisions. Because when you make a decision—when you choose a path—you don’t know what it would be like if you had chosen a different path. Making decisions with conviction is one of the most important behaviors of a successful CEO and, in particular, in a start-up.",
+     "q": "According to Levine, why does he believe there are only right decisions or no decisions?"
+    },
+    {
+     "id": "edeb6ca6276b53f1",
+     "loc": 263,
+     "theme": "work",
+     "text": "But wait a minute: If all of them knew within the first month that the team was not right and they didn’t do anything, then the problem is not that the team was not right. The problem was that the CEO did not make the hard decision. Making easy decisions is easy, it is the hard decisions that are hard to make. This is why most people don’t like to call the shots. If the CEO doesn’t make the hard decisions, there is a major problem, and the top-performing people will leave",
+     "q": "What happens in a startup if the CEO fails to make the hard decisions?"
+    },
+    {
+     "id": "548b9d2afbccfe1f",
+     "loc": 305,
+     "theme": "work",
+     "text": "For me, it is always frustration that leads into understanding there is a problem. Then I try to figure out if it is a BIG PROBLEM—a problem worth solving. It is always the problem that triggers everything, and if the problem is significant, you can create a lot of value and become successful yourself by solving it.",
+     "q": "What does Levine say triggers everything and how does solving it create value?"
+    },
+    {
+     "id": "3422ea139c57923d",
+     "loc": 378,
+     "theme": "work",
+     "text": "If many people have this problem, however, then go and speak to them to understand their perception of the problem. Only afterwards, build the solution.",
+     "q": "Before building a solution, what does Levine say you should do about a widely shared problem?"
+    },
+    {
+     "id": "25bd7591e34fb3bd",
+     "loc": 399,
+     "theme": "work",
+     "text": "How do you know when you’re ready to launch a start-up? When you’re willing to sacrifice.",
+     "q": "According to Levine, how do you know when you're ready to launch a startup?"
+    },
+    {
+     "id": "0380e7d67e3ba040",
+     "loc": 414,
+     "theme": "work",
+     "text": "Problems fit into a matrix with two axes: Total Addressable Market and Pain.",
+     "q": "What two axes make up Levine's matrix for evaluating problems?"
+    },
+    {
+     "id": "c7fc49170e56cbbf",
+     "loc": 598,
+     "theme": "work",
+     "text": "Your passion for making a change must be greater than your fear of failure and the alternative cost. This is what I call the “entrepreneurship zone,” because not every person with a great idea has the personality to build a start-up.",
+     "q": "What does Levine mean by the 'entrepreneurship zone'?"
+    },
+    {
+     "id": "194088803f8fd156",
+     "loc": 672,
+     "theme": "work",
+     "text": "What about building a start-up as a second job, or building it while you still have other major commitments? That’s an easy answer. To go through the start-up journey successfully, you must put 200 percent of your time, effort, attention, and everything into the start-up and 0 percent into everything else.",
+     "q": "What is Levine's answer on building a startup as a second job?"
     }
    ]
   },
@@ -425,6 +1367,740 @@ window.ANKI = {
    ]
   },
   {
+   "id": "in-the-lap-of-the-buddha--gavin-harrison",
+   "title": "In the Lap of the Buddha",
+   "author": "Gavin Harrison",
+   "subject": "using Buddhist insight meditation to open to suffering and awaken compassion, drawn from the author's life with HIV",
+   "total": 88,
+   "highlights": [
+    {
+     "id": "e6feb84e30af8203",
+     "loc": 92,
+     "theme": "mindfulness",
+     "text": "In the midst of winter I finally learned that there was in me an invincible summer. —ALBERT CAMUS"
+    },
+    {
+     "id": "edbc0acd5f586214",
+     "loc": 156,
+     "theme": "health",
+     "text": "Preface On July 9, 1989, I was diagnosed HIV positive.",
+     "q": "What life event did Gavin Harrison experience on July 9, 1989?"
+    },
+    {
+     "id": "344beda0263429a5",
+     "loc": 160,
+     "theme": "mindfulness",
+     "text": "The highs have been glorious and the lows dark and often very difficult. I don’t know how I ever could have weathered the storms, had spiritual practice not been a full part of my life."
+    },
+    {
+     "id": "3545298406ea4702",
+     "loc": 164,
+     "theme": "mindfulness",
+     "text": "When I look back over the years of meditation practice before July 1989, I see that there was a readying and a ripening happening from the very beginning. The process of inner exploration and inquiry undoubtedly served me at the time of the diagnosis, but the unfolding of the practice clearly began in the moment I committed myself to being more careful and awake."
+    },
+    {
+     "id": "511bf2b5969e116a",
+     "loc": 166,
+     "theme": "mindfulness",
+     "text": "Of course, a dire illness or a history of abuse is not a prerequisite for serious exploration of the human dilemma. A spiritual journey is the birthright and perhaps even the responsibility of every human being. But suffering certainly serves to bring the importance of inner understanding more sharply into focus.",
+     "q": "According to Harrison, what role does suffering play in relation to inner understanding?"
+    },
+    {
+     "id": "cda9ef46fbbf2732",
+     "loc": 208,
+     "theme": "mindfulness",
+     "text": "The parallels between the youth of Prince Siddhartha and the society in which we live are poignantly similar. The palace walls that shielded the young prince from the knowledge of suffering have become the many mental, emotional, and behavioral walls within which we try to protect ourselves from the challenging realities of life.",
+     "q": "What modern parallel does Harrison draw to the palace walls that shielded Prince Siddhartha?"
+    },
+    {
+     "id": "83709a414bf1531f",
+     "loc": 228,
+     "theme": "mindfulness",
+     "text": "We come to believe that what we choose not to see or acknowledge just does not exist. So, too, we may find that what we are protecting ourselves from is nothing more than a specter born of our fears."
+    },
+    {
+     "id": "c4f339868f05f4b9",
+     "loc": 239,
+     "theme": "mindfulness",
+     "text": "Perhaps the most tragic palace wall we build is the one within ourselves. We carry carefully constructed ideas of who we are and how we should behave and then force ourselves into a prison of our own making. We usually expect nothing less than perfection from ourselves. The walls of this self-construction can be so high that there is no possibility for the great light of our hearts to shine or for our growing spirit to soar beyond its imprisonment.",
+     "q": "What does Harrison call the most tragic palace wall we build?"
+    },
+    {
+     "id": "53f925d182f0152e",
+     "loc": 258,
+     "theme": "mindfulness",
+     "text": "Yet, despite the familiarity and longevity of all the walls that limit and separate us, there sometimes is a call, far stronger than the isolation. The call beckons us to a place beyond what is familiar. The call challenges all delusion and asks that we accept nothing less than the truth."
+    },
+    {
+     "id": "3690dc7b66c53f97",
+     "loc": 288,
+     "theme": "mindfulness",
+     "text": "The forces of internal conditioning may also disconnect us from our deeper selves. Storms of fear, anger, envy, and grief may blow us about like helpless leaves. If we are not rooted in clarity and self-understanding, we can only react to outer situations and circumstances, instead of responding from our center. We are constantly thrown off balance. Powerful forces seem to victimize us within and without. Our hearts feel impoverished and barren.",
+     "q": "According to Harrison, what happens when we are not rooted in clarity and self-understanding?"
+    },
+    {
+     "id": "bd816ac697c78eda",
+     "loc": 307,
+     "theme": "mindfulness",
+     "text": "Among one of the tribes in Africa, when a woman decides that she wishes to have a child, she walks out alone from the village. Perhaps she finds a tree and sits down beneath it. Then she listens. She listens for the song of the child that she has decided to bear. The day she hears that song clearly is considered to be the birthday of the child. She teaches the song to her husband, and it then becomes a part of the mating ritual between the woman and the man. They sing the song during her pregnancy and again when the child is born. It is the song of that child, and it will be sung on each birthday and at each important passage of the child’s life. On any wedding day, the song of the groom and the song of the bride are sung together. The last time that song is sung is when that child’s body is lowered into its grave. The path of meditation is like remembering or rediscovering our original song. Through the deepening of self-understanding, we reconnect with ourselves and remember all that has been forgotten. Perhaps we have never known ourselves at all, but if we listen inwardly, we may hear again the beautiful strains of our long-lost melody. When we hear the song clearly, when we discover our true spirit, we stop blaming or praising others for making us feel bad or good. We no longer feel like victims of circumstance. Rooted in truth, we bend within the winds of circumstance, like fir trees. We engage with the forces in our lives instead of running away from who we are and from all that is painful. In that moment when we are willing to open to the ten thousand joys and the ten thousand sorrows of life, the gateway to our real selves opens. This is the gateway through the palace walls that have kept us isolated and limited for so long. Walking through the gates, we access the possibility of a profound happiness and peace that is not dependent on the conditions of our life.",
+     "q": "How does Harrison use the African tribe's 'song of the child' as a metaphor for meditation?"
+    },
+    {
+     "id": "bb737fac0ec4ae61",
+     "loc": 374,
+     "theme": "mindfulness",
+     "text": "In letting go of the absurdity and even the arrogance of believing that we know what the next moment will bring, we relinquish our grip on reality and surrender into the mystery of not knowing, moment to moment, what will appear next in awareness."
+    },
+    {
+     "id": "dd3a033c1b8442a9",
+     "loc": 378,
+     "theme": "mindfulness",
+     "text": "Very often, these separating processes are born of fear. We fear change. We fear the unknown. We codify and solidify our experience so that we have an illusion of control and security. In the grip of fear, we build walls and obscure what is true.",
+     "q": "What emotion, according to Harrison, gives rise to the walls that obscure what is true?"
+    },
+    {
+     "id": "52b59ba9cb06cb36",
+     "loc": 386,
+     "theme": "mindfulness",
+     "text": "Sadness is the mystery. Pain is the mystery. Joy is the mystery. Thoughts are the mystery. Can we be naked before all of this? We come to understand that our limitation, our separateness, and our fears are actually the material through which we discover the truth of our wholeness."
+    },
+    {
+     "id": "7d832cf8a79b4cdc",
+     "loc": 391,
+     "theme": "mindfulness",
+     "text": "On a planet that seems so busy and distracted, a clear awareness of what is true is a priceless gift that we give ourselves, others, and our world. For me, manifesting this awareness is the deepest gesture of love, inwardly and outwardly. Love is not a matter of doing any particular thing. It is not a matter of fixing our attention on a love object, nor of being sentimental in any way. This love that I am talking about does not gratify the ego. Rather, it is an attitude of receptivity, openness, and profound appreciation without regard for what “I” am going to receive back. Love is utter and complete acceptance.",
+     "q": "How does Harrison define the love he speaks of?"
+    },
+    {
+     "id": "8f7c911ea91995fe",
+     "loc": 394,
+     "theme": "mindfulness",
+     "text": "Rather, it is an attitude of receptivity, openness, and profound appreciation without regard for what “I” am going to receive back. Love is utter and complete acceptance."
+    },
+    {
+     "id": "1d9555a3ce063238",
+     "loc": 397,
+     "theme": "mindfulness",
+     "text": "The Tibetan teacher Chögyam Trungpa says: When you awaken your heart . . . you find, to your surprise, that your heart is empty. You find that you are looking into outer space. What are you, who are you, where is your heart? If you really look, you won’t find anything tangible and solid. Of course, you might find something very solid if you have a grudge against someone or you have fallen possessively in love. But that is not awakened heart. If you search for awakened heart, if you put your hand through your ribcage and feel for it, there is nothing there except for tenderness. You feel sore and soft, and if you open your eyes to the rest of the world, you feel a tremendous sadness. This kind of sadness doesn’t come from being mistreated. You don’t feel sad because someone has insulted you or because you feel impoverished. Rather, this experience of sadness is unconditioned. It occurs because your heart is completely exposed. There is no skin or tissue covering it; it is pure raw meat. Even if a tiny mosquito lands on it, you feel so touched. Your experience is raw and tender and so personal. . . . Real fearlessness is the product of tenderness. It comes from letting the world tickle your heart, your raw and beautiful heart.",
+     "q": "According to Chögyam Trungpa, what is real fearlessness the product of?"
+    },
+    {
+     "id": "c629acb90f368614",
+     "loc": 432,
+     "theme": "mindfulness",
+     "text": "Though the traditions differ, they all seem to agree that the remedy for suffering comes from within, and involves opening the heart and mind to the truth of reality rather than trying to change it.",
+     "q": "Where do contemplative traditions agree the remedy for suffering comes from?"
+    },
+    {
+     "id": "4acc512eb586a5c2",
+     "loc": 433,
+     "theme": "mindfulness",
+     "text": "An integral aspect of the Buddha’s enlightenment was the insight into human suffering. He saw deeply into the nature of reality and forcefully pointed out that suffering is ubiquitous in the world. This is the First Noble Truth.",
+     "q": "What does the First Noble Truth state?"
+    },
+    {
+     "id": "cfafe88228c86f0c",
+     "loc": 435,
+     "theme": "mindfulness",
+     "text": "The word that the Buddha used to describe suffering (dukkha) can also be translated as “unsatisfactoriness,” or the impossibility of finding lasting satisfaction in the outer objects of life.",
+     "q": "How can the word dukkha, which the Buddha used for suffering, also be translated?"
+    },
+    {
+     "id": "085ac14b82ec764b",
+     "loc": 436,
+     "theme": "mindfulness",
+     "text": "The next aspect of the Buddha’s first sermon was that the cause of suffering lies in the wish for things to be different or permanently satisfying. This is the Second Noble Truth.",
+     "q": "According to the Second Noble Truth, where does the cause of suffering lie?"
+    },
+    {
+     "id": "dee0600614b8fa8c",
+     "loc": 438,
+     "theme": "mindfulness",
+     "text": "The Third Noble Truth affirms that there is a solution to this problem—that suffering can be brought to an end. And the Fourth Noble Truth lays out the means to the end of suffering.",
+     "q": "What do the Third and Fourth Noble Truths affirm?"
+    },
+    {
+     "id": "1698cd5bb9a9d432",
+     "loc": 440,
+     "theme": "mindfulness",
+     "text": "Basically, he said that if we engage the suffering, understand it, and open to it, we simultaneously unleash the healing powers of our great heart.",
+     "q": "According to the Buddha, what do we unleash by engaging, understanding, and opening to suffering?"
+    },
+    {
+     "id": "df0f1e09b9833bd1",
+     "loc": 443,
+     "theme": "mindfulness",
+     "text": "Hermann Hesse wrote: “You know quite well, deep within you, that there is only a single magic, a single power, a single salvation, and that is called loving. Well, then, love your suffering, do not resist it, do not flee from it. Give yourself to it. It is only your aversion that hurts, nothing else.”",
+     "q": "According to Hermann Hesse, what is it that actually hurts about suffering?"
+    },
+    {
+     "id": "becb7d6ea1a06fe8",
+     "loc": 447,
+     "theme": "mindfulness",
+     "text": "An open heart is capable of working with any experience without contraction or aversion. (Specific meditations to strengthen the power of compassion and love in our lives are discussed in part 4, “Meditations of the Heart.”)"
+    },
+    {
+     "id": "77e17f2149da9c5b",
+     "loc": 454,
+     "theme": "mindfulness",
+     "text": "In meditation, on every level, we discover that we do not live in isolation. Other people and other lives deeply affect us."
+    },
+    {
+     "id": "9198029d5b583a2c",
+     "loc": 472,
+     "theme": "mindfulness",
+     "text": "The Buddha saw that the answer to suffering lies in the boundlessness of our great hearts. Another word for this boundlessness might be compassion.",
+     "q": "According to the Buddha, where does the answer to suffering lie?"
+    },
+    {
+     "id": "382208f6e7a3ea7c",
+     "loc": 473,
+     "theme": "mindfulness",
+     "text": "Compassion is the heartfelt wish that all beings be free of suffering, including ourselves. If we examine our hearts, we will find that compassion resides there naturally.",
+     "q": "How does Harrison define compassion?"
+    },
+    {
+     "id": "c48f528f67ae7c56",
+     "loc": 476,
+     "theme": "mindfulness",
+     "text": "When we picture ourselves perfectly satisfied, the desire to hurt those who have hurt us often vanishes, and we may instead wish them happiness and peace. This compassion is not something that must be learned or forced; it is our nature. It matures through spiritual practice."
+    },
+    {
+     "id": "2d28ee6b112abc37",
+     "loc": 486,
+     "theme": "mindfulness",
+     "text": "To manifest more compassion, we do not have to be saints. All that is needed is a greater willingness to give attention to the pain that is already there. If we are willing, aware, and open, then compassion must arise, for this is the way of nature.",
+     "q": "What does Harrison say is needed to manifest more compassion?"
+    },
+    {
+     "id": "0e3523aee194b3f3",
+     "loc": 490,
+     "theme": "mindfulness",
+     "text": "In meditation, we can feel this hardness of heart. We catch ourselves in the act of looking away, and we have an opportunity to choose to look more deeply. What is it that we are avoiding? What are the tricks we play on ourselves?"
+    },
+    {
+     "id": "1893fddfc05c0380",
+     "loc": 515,
+     "theme": "mindfulness",
+     "text": "The Buddha then responded: “Those things which I have realized and which I understand are a great amount, equal to all the leaves of the forest. However, those things that are necessary to know and practice in order to be completely freed from suffering are equal by comparison to the leaves within my hand.”",
+     "q": "In the leaves-of-the-forest parable, how did the Buddha describe what is necessary to know to be freed from suffering?"
+    },
+    {
+     "id": "ff80b6cc7572a920",
+     "loc": 546,
+     "theme": "mindfulness",
+     "text": "It is in the dignity and courage of opening to and facing the suffering, both within and outside of ourselves, that the heart begins to open into all its loveliness and power. This alchemy of the heart, the awakening of compassion in the face of suffering, is the essence of meditation practice.",
+     "q": "What does Harrison call the essence of meditation practice?"
+    },
+    {
+     "id": "406f3e53edbeef9b",
+     "loc": 560,
+     "theme": "mindfulness",
+     "text": "Buddhist meditation is not a “cushion trip” that begins when we sit down to practice and ends when we get up. Rather it is an embracing of life in a spirited attitude of inquiry, interest, and care, so that we might greet life and each moment with these questions: What is going on right now? What is the truth of this moment? What am I not accepting? Where am I attached? Who am I? . . . now? . . . now? Is who I am permanent? . . . changing? Is there anything that is not changing?",
+     "q": "According to Harrison, why is Buddhist meditation not just a 'cushion trip'?"
+    },
+    {
+     "id": "82e32bb57fd6623e",
+     "loc": 567,
+     "theme": "mindfulness",
+     "text": "This quality of mind is sometimes referred to as mindfulness, presence, wakefulness, or calm abiding. It is perhaps best expressed in an attitude of flinging one’s hands in the air and saying: “Okay, I give up the wrangling and manipulation. I’ve had it with fighting and holding on. Let’s see what’s happening now. No moving toward, no pushing away, no confusion, no words, no analysis, no intellectualizing. Simply ‘What is this?’"
+    },
+    {
+     "id": "b39aec411299e0a9",
+     "loc": 581,
+     "theme": "mindfulness",
+     "text": "Whenever things start feeling complicated, I’m sure that struggle, nonacceptance, and aversion are somewhere in the neighborhood. At those times, I remind myself that meditation is not about bullying the mind or shaping experience in any way. Meditation is about loving the mind back into the present moment.",
+     "q": "What does Harrison say meditation is really about when things feel complicated?"
+    },
+    {
+     "id": "c81604fc633bf77e",
+     "loc": 777,
+     "theme": "mindfulness",
+     "text": "Human suffering is both unique and universal. We all suffer, but how we suffer is personal and specific to our lives. While the experiences of fear, anger, and pain may be common to all of us, the circumstances that give rise to these difficult aspects of life are different."
+    },
+    {
+     "id": "2b9092435cbfff95",
+     "loc": 779,
+     "theme": "mindfulness",
+     "text": "Unlike the many psychological therapies that focus primarily on the story of our lives, our personal drama, meditation focuses on the level of experience that is common to all human beings.",
+     "q": "How does meditation's focus differ from that of many psychological therapies?"
+    },
+    {
+     "id": "5f83eaffa2bb2403",
+     "loc": 780,
+     "theme": "mindfulness",
+     "text": "Beneath the circumstances of our lives and the effects of our personal history are patterns of aversion, denial, confusion, fear, and anger that are similar for each of us. Understanding these deeper patterns contributes to our understanding of the drama of our everyday lives. Similarly, our engagement of the difficult aspects of living, in psychotherapy, bodywork, or any of the other ways that are possible, also serves understanding on the meditative level. Each serves the other, like two hands washing each other."
+    },
+    {
+     "id": "93e4d9783b285d62",
+     "loc": 789,
+     "theme": "health",
+     "text": "I was diagnosed HIV positive in 1989 and probably contracted the virus five to seven years before that."
+    },
+    {
+     "id": "67649c236171bd69",
+     "loc": 814,
+     "theme": "mindfulness",
+     "text": "The endless round of birth and death is referred to as samsara.",
+     "q": "What is the term for the endless round of birth and death?"
+    },
+    {
+     "id": "fd846402eb9fd46c",
+     "loc": 817,
+     "theme": "mindfulness",
+     "text": "He emphasized that although the beginning of samsara cannot be discovered, its cessation is clear. This freedom from suffering is the substance of the spiritual path."
+    },
+    {
+     "id": "569018f7ecdadc79",
+     "loc": 819,
+     "theme": "mindfulness",
+     "text": "The Buddha said “I teach one thing, and one thing only. The truth of suffering, and the way out of suffering.”",
+     "q": "What did the Buddha say was the one and only thing he teaches?"
+    },
+    {
+     "id": "4705d217ae3086c8",
+     "loc": 821,
+     "theme": "mindfulness",
+     "text": "One of the most powerful expressions of hatred is the energy of fear. The Buddha spoke often of the need to confront, grapple with, and understand the true nature of fear."
+    },
+    {
+     "id": "8efe88f1094360a1",
+     "loc": 828,
+     "theme": "mindfulness",
+     "text": "Fear is an inward manifestation of aversion, the second of the three forces that perpetuate birth and death. The outward manifestation of aversion strikes out in the form of anger and frustration. The inner manifestation is the paralyzing and contracting energy of fear, terror, panic, anxiety, angst.",
+     "q": "How does Harrison distinguish the inner and outer manifestations of aversion?"
+    },
+    {
+     "id": "e0e4e5d3baea96c1",
+     "loc": 832,
+     "theme": "mindfulness",
+     "text": "It may help to realize that fear is as much a part of our human birthright as the perfection."
+    },
+    {
+     "id": "d12e649139099637",
+     "loc": 834,
+     "theme": "mindfulness",
+     "text": "Saint Thomas, in the Gnostic Gospels, says: “If you bring forth what is within you, what you bring forth will save you. If you do not bring forth what is within you, what you do not bring forth will destroy you.” If our meditation practice is true, it must acknowledge the entire range of our experience.",
+     "q": "According to Saint Thomas in the Gnostic Gospels, what happens if you do not bring forth what is within you?"
+    },
+    {
+     "id": "0600611af852c41e",
+     "loc": 837,
+     "theme": "mindfulness",
+     "text": "As meditation practice deepens, we come again and again to our limits. These are places where we have probably not been before. They are also the edges of possibility. We come to the edge of what is acceptable and what is known, to places where the familiar ends and the unknown begins. Here, too, we might find that fear is the signal that we have touched a boundary. If we respond to that signal by obeying a fear-filled command to retreat, we remain bound within our habitual patterns. If the emotion of fear is workable, we have the choice to expand the limits of what is acceptable.",
+     "q": "According to Harrison, what signal often marks that we have touched a boundary in meditation?"
+    },
+    {
+     "id": "4610adb1b9745055",
+     "loc": 845,
+     "theme": "mindfulness",
+     "text": "When fear does arise, some reasonable questions to ask of oneself might be: Can I open to the fear completely? Can I acknowledge, examine, and explore the fear whole-heartedly? Is it possible to become totally naked in the presence of fear? Can I be completely vulnerable in the face of this fear? Can I feel the fear completely? Can I feel it in every cell of my body as long as the fear has life, again and again and again?"
+    },
+    {
+     "id": "a1fc61562326cebc",
+     "loc": 849,
+     "theme": "mindfulness",
+     "text": "This is a movement from fear into fearlessness. We do not eliminate fear, but we do move beyond the grip of fear.",
+     "q": "According to Harrison, what is the goal in working with fear \"a movement from fear into fearlessness\" actually mean?"
+    },
+    {
+     "id": "f66e678b53b1a42a",
+     "loc": 863,
+     "theme": "mindfulness",
+     "text": "Making love with the divine requires opening to all of our fears. It is not easy. In times of trial, you may find it useful to consider this gentle suggestion offered by the Dalai Lama: “Lay your head in the lap of the Buddha.” For me the thought is soothing and comforting.",
+     "q": "What gentle suggestion from the Dalai Lama does Harrison find soothing in times of trial?"
+    },
+    {
+     "id": "ebd38cf5a178aeb8",
+     "loc": 865,
+     "theme": "mindfulness",
+     "text": "Chögyam Trungpa, Rinpoche, speaks vividly of fear: Going beyond fear begins when we examine our fear: our anxiety, nervousness, concern, and restlessness. If we look into our fear, if we look beneath its veneer, the first thing we find is sadness, beneath the nervousness.",
+     "q": "According to Chögyam Trungpa, what do we find first when we look beneath the veneer of our fear?"
+    },
+    {
+     "id": "e642ca871a330afc",
+     "loc": 905,
+     "theme": "mindfulness",
+     "text": "Each of us has a personal style of both fighting with and hiding from what is difficult. Thus, exploring the workings of resistance is a personal inquiry too. Where do I hold the resistance? In the body? . . . in the mind? . . . in the heart? Do I feel it in the neck? . . . the chest? . . . the throat? . . . the back . . . the gut?"
+    },
+    {
+     "id": "39999536b0f385d1",
+     "loc": 910,
+     "theme": "mindfulness",
+     "text": "We also open to our fear of fear, with the same patience and tenderness. With loving acceptance, we become a friend of fear."
+    },
+    {
+     "id": "b36603e46c32a7f8",
+     "loc": 918,
+     "theme": "mindfulness",
+     "text": "In my experience in meditation, if the power of awareness is weak, I find that when I try to get close to the fear, I am easily deflected and get lost in a proliferation of thoughts. So when mindfulness and concentration are not strong, I’ve found it useful to allow the mind to expand even wider than the fear itself. I give the fear great space. When the concentration and mindfulness are strong again, I come closer to the fear and become intimate with its energy. There is a time for each strategy.",
+     "q": "What does Harrison suggest doing in meditation when mindfulness and concentration are too weak to get close to fear?"
+    },
+    {
+     "id": "60dd7a290e55bd18",
+     "loc": 922,
+     "theme": "mindfulness",
+     "text": "Fear requires a willingness to work our edges again and again. If we observe the fear in order that it might go away, we are still standing within our limitations.",
+     "q": "Why does Harrison say observing fear in order that it might go away keeps us within our limitations?"
+    },
+    {
+     "id": "8eba38574716f6be",
+     "loc": 945,
+     "theme": "health",
+     "text": "One way in which I have re-visioned my relationship with the virus is by giving it a name. I chose the name Sipho (pronounced see-poe), which is a Zulu name that I love. Each morning, I check in with Sipho: “How are you feeling today, Sipho?” “I feel a little under the weather.” “What do you need today, Sipho?” “Rest and quiet.”",
+     "q": "How did Harrison re-vision his relationship with the HIV virus?"
+    },
+    {
+     "id": "0f7ba4323a8dacf3",
+     "loc": 971,
+     "theme": "mindfulness",
+     "text": "Should we inadvertently slow down, we feel desperate and confused. We have a cup of coffee. We rev up the engine again and keep running. We fidget and twitch. We chew our nails. We doodle and fiddle and play with our hands in our pockets. Our faces are stretched, our bodies tight, tense, and rigid. We are adept at creating strategies to keep our minds off the fear, off all that is difficult. From a fearful point of view, slowing down seems dangerous. Winding down, we might realize what we have done to ourselves. Then fear might have the space to emerge, and our anxieties might rise to the surface. Difficulties would become obvious. This must be avoided at all costs!",
+     "q": "According to Harrison, why does slowing down seem dangerous from a fearful point of view?"
+    },
+    {
+     "id": "b74f703093ccd099",
+     "loc": 1014,
+     "theme": "mindfulness",
+     "text": "Jae Jah Noh says in his book Do You See What I See?: When the fears of the mind have been worked out upon the field of the heart, the mind sinks into the heart, into reality, and becomes one with it. Conscious relationship is established, in fact. Now the heart can be lived, faith can be lived, not in ignorance, but in true understanding. Understanding now no longer serves as proof of faith. One can live in his knowingness and unknowingness without fear or inhibition. Ignorance is not a limit to those who live in faith, but only for those who, living in ignorance, without faith, seek knowledge as security against fear."
+    },
+    {
+     "id": "7f2a6fc051e2c24c",
+     "loc": 1030,
+     "theme": "mindfulness",
+     "text": "Buddhist texts speak of the “four great elements”: these are the four general types of sensations. First is the element of fire, which includes all sensations of temperature, including both heat and cold. Second is the earth element, which encompasses sensations of pressure and heaviness. Air, the third element, includes the sensations of movement, touch, and feelings of hardness, softness, and piercing. The water element has a quality of…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What are the four great elements described in Buddhist texts as the general types of physical sensation?"
+    },
+    {
+     "id": "6d646fe085feaa11",
+     "loc": 1038,
+     "theme": "health",
+     "text": "When we are sick, for example, each ache and pain can take on a horrible meaning. We may lie awake at night, consumed by images of doom and destruction. But if we are able to be precisely aware of the difference between a twinge and the worry that is caused by that twinge, the situation is immediately more workable. We find more rest. This distinction reveals the very nature of spiritual freedom. We do not become…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "According to Harrison, how does distinguishing a physical twinge from the worry it causes make illness more workable?"
+    },
+    {
+     "id": "a4d5fbe71739407f",
+     "loc": 1043,
+     "theme": "mindfulness",
+     "text": "Rather than becoming lost in projection and distress, we ask, with balance, “What is the truth of this sensation? What is its real nature?” We see that ultimately all physical sensations are energies like heat, cold, tightness, piercing, twisting, or tingling that have arisen. If the mind is steady and clear, it is possible to move into the center of physical pain and ask again, “What is this?” Curiosity and interest arise. We see perhaps that the individual sensations arise and pass away. They are ever moving and never solid. The label “pain” is no longer meaningful. The conditioned chain of reactions, usually involving fear, anger, and self-judgment, have…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What questions does Harrison suggest asking to dissolve the label \"pain\" into its actual nature?"
+    },
+    {
+     "id": "06da8bb42193e306",
+     "loc": 1051,
+     "theme": "mindfulness",
+     "text": "There will naturally be times when the heart and mind are neither open nor clear. The mind may feel foggy and the attention scattered. Of course, it is not possible to be always crisp and clear, for it is the nature of all things to open and to close, just as the sky itself is not clear all the time. So, in meditation, we make peace with the clouds. We accept a…\n                Some highlights have been hidden or truncated due to export limits."
+    },
+    {
+     "id": "e5cfdccafcf8fcc0",
+     "loc": 1077,
+     "theme": "health",
+     "text": "Pain is an intrinsic part of being born in a physical body, as the Buddha has taught. In reality, aging and sickness begin the moment we enter the world.",
+     "q": "According to the Buddha, when do aging and sickness begin?"
+    },
+    {
+     "id": "33c8d01741a5dbf4",
+     "loc": 1078,
+     "theme": "health",
+     "text": "There are some important and challenging questions relating to physical pain and our bodies: Are we comfortable with the truth of our bodies? Do we feel a need to control the changes in our bodies? Do we need to change things in any way? Can our mind be sufficiently spacious and receptive to allow all that appears to arise without our resistance or aversion? Can we be OK with heat, pressure, tingling, cold, and throbbing in the body? Is it all OK? Can it be workable?"
+    },
+    {
+     "id": "5a96aea566c276c8",
+     "loc": 1083,
+     "theme": "mindfulness",
+     "text": "Pain is a riveting object of attention; to paraphrase Samuel Johnson, it concentrates the mind wonderfully. If we leave the breath and direct attention to whatever physical sensation is in the body, allowing ourselves to be present with whatever has arisen, the mind doesn’t tend to wander very much. If we are truly aware of the sensations, we find that pain can focus and calm the mind. There can be a joy that arises with this concentration. We are not scattered. The mind is happily focused.",
+     "q": "How can directing attention to physical pain actually focus and calm the mind?"
+    },
+    {
+     "id": "44da7ba470606252",
+     "loc": 1106,
+     "theme": "health",
+     "text": "The challenge is to let a cough be just a cough, an ache be just an ache, and a blemish just a blemish. Then I can respond appropriately to what is actually happening. I can respond with wisdom and tenderness rather than in terror and panic.",
+     "q": "What does Harrison say is the challenge in relating to a cough, an ache, or a blemish?"
+    },
+    {
+     "id": "befc200512b086fe",
+     "loc": 1122,
+     "theme": "mindfulness",
+     "text": "To do so is also to deny that there might be an altogether different outcome that we cannot even imagine. In some instances, people may imagine the worst as a way of “trying on” a situation, to prepare for how to deal with it if it happens. I don’t believe there’s anything wrong with such imaginative trying on, as long as it is a conscious activity.",
+     "q": "When does Harrison say imagining the worst is not harmful?"
+    },
+    {
+     "id": "04c62e9624441924",
+     "loc": 1137,
+     "theme": "mindfulness",
+     "text": "I was experiencing physical pain, and the fearful future-oriented thoughts were coming thick and fast. Soon I had labeled each one: “What a preposterous thought!” “Another preposterous thought!” “Yet another . . .” “So preposterous . . .” I kept the tone soft, light, and chirpy. This was a great contrast to the gloomy content of the thinking. Soon the process became playful, and the absurdity of thinking that I indeed had any idea of what the future held became very clear.",
+     "q": "How did Harrison use playful labeling to defuse fearful future-oriented thoughts during pain?"
+    },
+    {
+     "id": "b8dd283fe7b3772d",
+     "loc": 1146,
+     "theme": "health",
+     "text": "Working with physical pain is probably my central practice now. Even before I was diagnosed HIV positive, I had some problems with my back because of a separated lumbar vertebra. Digestion has been difficult for a long time, and neurological pain is now a part of life also. In fact, I deal with some degree of pain almost all the time. I have found that meditation practice is a powerful tool for making this pain as workable as possible."
+    }
+   ]
+  },
+  {
+   "id": "inner-excellence-train-your-mind-for-extraordinary-performance-and-the-best-poss--jim-murphy",
+   "title": "Inner Excellence: Train Your Mind for Extraordinary Performance and the Best Possible Life",
+   "author": "Jim Murphy",
+   "subject": "training the mind for peak performance by mastering fear, ego, and belief",
+   "total": 65,
+   "highlights": [
+    {
+     "id": "f50e1bcd05b916d2",
+     "loc": 534,
+     "theme": "mindfulness",
+     "text": "Western culture exposes us daily to the “affluenza” virus (the most dangerous type of virus—one that can steal your soul). Those afflicted with this virus idolize five things, which I’ll summarize with the acronym PALMS: Possessions Achievements Looks (physical appearance) Money Status",
+     "q": "What five things does the 'affluenza' virus make people idolize, per the PALMS acronym?"
+    },
+    {
+     "id": "b4b7d9fd47e0342f",
+     "loc": 552,
+     "theme": "mindfulness",
+     "text": "When those things come, you see that they’re hollow. It leaves an emptiness. This creates the “need” to pursue them harder to fill that emptiness—then the virus has you. In Western culture, the affluenza virus is everywhere, and when everyone around you has the cold or flu, it’s hard not to get it yourself; you must take measures to strengthen your immunity against it, or you will succumb as well.",
+     "q": "Why does chasing possessions and status create a self-reinforcing need to pursue them harder?"
+    },
+    {
+     "id": "849f0f3b0c2d6cf6",
+     "loc": 565,
+     "theme": "ideas",
+     "text": "About 1700 years ago lived a guy named Augustine Aurelius who was said to love wisdom and have a great thirst for truth. In his studies he shared an intriguing insight: “We are shaped most not by what we think, not by what we do, but by what we love. For when we ask whether somebody is a good person, we are not asking what he believes or hopes for, but what he loves.” In other words, it’s our loves that govern our actions and the direction of our lives.",
+     "q": "According to Augustine, what shapes us most and governs the direction of our lives?"
+    },
+    {
+     "id": "fb95f361c471a7b6",
+     "loc": 575,
+     "theme": "mindfulness",
+     "text": "How do you know what you love most? Ask yourself three questions: What do I dream about? What do I worry about? (What has regularly made me anxious?) What do I get upset about? (What has made me the angriest?)",
+     "q": "What three questions does Murphy suggest asking to discover what you love most?"
+    },
+    {
+     "id": "85823f7438b27f8a",
+     "loc": 724,
+     "theme": "mindfulness",
+     "text": "But this time, rather than just going through your routine, you think, I’ve gotta make this. That little switch in perspective is the beginning of a lifelong battle. You go from enjoying the moment to having to succeed, your heart on one side and ego on the other.",
+     "q": "What shift marks the beginning of the lifelong battle between heart and ego in performance?"
+    },
+    {
+     "id": "0b988fa8305a2151",
+     "loc": 738,
+     "theme": "mindfulness",
+     "text": "I’ve found that fear stifles our freedom and hurts our performance more than anything else.",
+     "q": "What does Murphy say stifles freedom and hurts performance more than anything else?"
+    },
+    {
+     "id": "357b138096eb3249",
+     "loc": 739,
+     "theme": "mindfulness",
+     "text": "Fear, however, is only the symptom of a more complex issue. The root cause of fear is a virus of the heart: self-centeredness.",
+     "q": "What does Murphy identify as the root cause of fear?"
+    },
+    {
+     "id": "e9a1fd26a8b0d650",
+     "loc": 749,
+     "theme": "mindfulness",
+     "text": "Fear is the opposite of love."
+    },
+    {
+     "id": "d73815ec06782916",
+     "loc": 757,
+     "theme": "mindfulness",
+     "text": "This fact is not good or bad, just limiting. It’s through this biased, limited filter that we see the world, and this filter is dotted with memories of past failures."
+    },
+    {
+     "id": "b5e8310d2c58d2cd",
+     "loc": 1092,
+     "theme": "mindfulness",
+     "text": "Fear separates us from the truth—of who you are and what’s possible in your life."
+    },
+    {
+     "id": "52063ce8d8e54aab",
+     "loc": 1095,
+     "theme": "mindfulness",
+     "text": "When the pressure is most intense and your greatest fears are imminent, there must be something greater to help you navigate through the fear—something beyond your goal, beyond winning, beyond, perhaps, even death.",
+     "q": "Under intense pressure, what does Murphy say you need to navigate through fear?"
+    },
+    {
+     "id": "ce02a75a586c2b29",
+     "loc": 1101,
+     "theme": "mindfulness",
+     "text": "When I was young, I thought that nervousness and fear would disappear over time. But I realized that not only does it not disappear, it gets even worse. The only thing that changed is, now I accept it. I know it’s going to be there. I know how to deal with it. Now, with experience, I know I’m gonna be scared when the fight is coming; I know I’m not going to sleep well the week of the fight, but I accept it.",
+     "q": "What did the fighter realize changes about fear over time, and what stays the same?"
+    },
+    {
+     "id": "77d2e5d5f43e1647",
+     "loc": 1105,
+     "theme": "mindfulness",
+     "text": "But now I know it’s normal. I accept it. It’s a suffering process that I have to go through before a fight. But it’s still as bad as it was; the only difference is that I accept it now."
+    },
+    {
+     "id": "2fa3e107a3f7fa92",
+     "loc": 1126,
+     "theme": "mindfulness",
+     "text": "What animates [mountain] climbers is not a death wish, but a life wish, a desire to truly live—fully, intensely, completely. I have never met a group of people more truly alive—physically, emotionally, intellectually, spiritually. Rather than courting danger for its own sake, they do so as a means of deepening and enriching their experience. —Nicholas O’Connell, Beyond Risk: Conversations with Climbers",
+     "q": "According to O'Connell, what actually animates mountain climbers rather than a death wish?"
+    },
+    {
+     "id": "93cc1ba7fb401607",
+     "loc": 1142,
+     "theme": "mindfulness",
+     "text": "Zoe is the state of being possessed of vitality, with absolute fullness of life, real and genuine, active and vigorous. It’s the full potential of your inner life, the generator of intense beauty and passion.",
+     "q": "What does 'zoe' mean in Murphy's framework?"
+    },
+    {
+     "id": "3e525b050c046328",
+     "loc": 1201,
+     "theme": "mindfulness",
+     "text": "As I’ve shared with you, your biggest adversary in the pursuit of zoe is your ego—the part of your mind that is always threatened, always comparing, and never satisfied. The ego is in direct opposition to your pursuit of mastery and zoe. Here are some reality checks to see how much your ego is influencing you: You’re worried about what people think of you. You’re nervous about doing or saying something embarrassing. You’re more concerned with being right and appearing smart than with learning the truth. You’re more obsessed with winning than with fully experiencing the moment and getting better. You become offended or angry when you feel embarrassed or humiliated.",
+     "q": "What reality checks does Murphy give for seeing how much your ego is influencing you?"
+    },
+    {
+     "id": "2ba583865430ddb7",
+     "loc": 1216,
+     "theme": "mindfulness",
+     "text": "Accordingly, when I think of self-mastery, I envision mastering the ego by becoming three things: Unembarrassable: to be completely humble/selfless, where nothing you or anyone else could say or do would embarrass you or reduce your sense of well-being. Unoffendable: to be completely humble/selfless, where people’s words or actions don’t push your buttons or make you angry; to have self-control, and not be self-protective. Unirritatable: to be steadfast, calm, and compassionate toward other people’s flaws; to be fully present to the beauty and possibilities that always await. To be unembarrassable is to get to the point where no mistake or foolish words or actions (of yourself or someone else) can make you feel less of a person or make you want to run or hide.",
+     "q": "What three qualities does Murphy envision for mastering the ego?"
+    },
+    {
+     "id": "78a3bb26b803e0dd",
+     "loc": 1225,
+     "theme": "mindfulness",
+     "text": "Humility isn’t thinking less of yourself; it’s thinking of yourself less, reducing the self-protection and fear that come from a self-centered life. To be unoffendable is to be so selfless (and therefore fearless) that no one could say or do anything to threaten your sense of self and steal your peace and presence.",
+     "q": "How does Murphy redefine humility?"
+    },
+    {
+     "id": "347df921328d61ba",
+     "loc": 1472,
+     "theme": "mindfulness",
+     "text": "A warrior considers it his foremost concern to keep death in mind at all times, every day and every night… As long as you keep death in mind at all times, you will fulfill the ways of loyalty, avoid myriad evils and calamities, be physically sound and healthy, and live a long life. What is more, your character will improve and your virtue will grow. —Taira Shigesuke, written four hundred years ago in a guide for young samurai",
+     "q": "According to the samurai guide, what benefits come from keeping death in mind at all times?"
+    },
+    {
+     "id": "b6fa04a6f475d259",
+     "loc": 1483,
+     "theme": "mindfulness",
+     "text": "You must die anew, every morning and every night. If you continually preserve the state of death in everyday life, you will understand the essence of Bushido. —Tsunetomo Yamamoto, samurai"
+    },
+    {
+     "id": "2d79e513cb21db36",
+     "loc": 1498,
+     "theme": "mindfulness",
+     "text": "Mastering others is strength. Mastering yourself makes you fearless. —Lau Tzu, Chinese philosopher",
+     "q": "According to Lao Tzu, what makes you fearless?"
+    },
+    {
+     "id": "e2189e934036e02d",
+     "loc": 1504,
+     "theme": "mindfulness",
+     "text": "Love is fully present and fearless. There’s no fear in love—perfect love drives out fear."
+    },
+    {
+     "id": "21a3ce086db27aae",
+     "loc": 2259,
+     "theme": "mindfulness",
+     "text": "In the sky, there is no distinction between east and west; people create distinctions in their own minds and then believe them to be true. —Gautama Siddhartha, Zen master",
+     "q": "According to the Buddha, where do distinctions like east and west actually come from?"
+    },
+    {
+     "id": "7a35ba7f1d501604",
+     "loc": 2271,
+     "theme": "mindfulness",
+     "text": "You’re the author and narrator of your story; you choose which moments of life have meaning and how meaningful they are. Every moment provides you with an opportunity to decide in which direction your story will head. Every thought is part of the story line. It’s these thoughts, and how they get directed, that determine the course of your life.",
+     "q": "What determines the course of your life, according to Murphy's 'author of your story' idea?"
+    },
+    {
+     "id": "04ed9f44915f8fe9",
+     "loc": 2363,
+     "theme": "mindfulness",
+     "text": "You might see it like a surfer waiting for waves, letting thoughts go by, riding only the ones you choose."
+    },
+    {
+     "id": "39d7c342390c0b7f",
+     "loc": 2366,
+     "theme": "mindfulness",
+     "text": "Shout, “Stop!” in your head, and see an oversize red stop sign or the letters S-T-O-P written across a whiteboard.",
+     "q": "What thought-stopping technique does Murphy suggest for interrupting unwanted thoughts?"
+    },
+    {
+     "id": "c295b14cc5bf3482",
+     "loc": 3195,
+     "theme": "mindfulness",
+     "text": "Find a place within yourself where success and failure don’t matter, a place where you can engage in battle without compromise. —Jim Steen, Kenyon College swim coach, winner of 31 consecutive national championships",
+     "q": "According to Jim Steen, what kind of inner place lets you engage in battle without compromise?"
+    },
+    {
+     "id": "a780015324fdbe7b",
+     "loc": 3211,
+     "theme": "mindfulness",
+     "text": "It’s the essence of competition—to be challenged in something where you can put your gifts to use, not knowing what the outcome will be. Pressure, in other words, is the opportunity for reward given to those who seek excellence.",
+     "q": "How does Inner Excellence reframe pressure in relation to those who seek excellence?"
+    },
+    {
+     "id": "ee1cabf6bfbeb10b",
+     "loc": 3227,
+     "theme": "mindfulness",
+     "text": "You may recall from the presuppositions at the start of the book that the quality of your performance is based on three elements: your belief about who you are and what’s possible for you; your ability to be fully present (i.e., fully engaged in the moment in heart, mind, and body), and your freedom to play like a kid.",
+     "q": "What three elements does the book say the quality of your performance is based on?"
+    }
+   ]
+  },
+  {
+   "id": "la-desaparicion-del-universo-un-relato-sobre-las-ilusiones-las-vidas-pasadas-la--gary-renard",
+   "title": "La desaparición del universo: Un relato sobre las ilusiones, las vidas pasadas, la religión, el sexo, la política y los milagros del perdón (Spanish Edition)",
+   "author": "Gary Renard",
+   "subject": "a channelled spiritual teaching presenting A Course in Miracles' non-dualist view of forgiveness, illusion and God",
+   "total": 7,
+   "highlights": [
+    {
+     "id": "c5f860678931e529",
+     "loc": 182,
+     "theme": "mindfulness",
+     "text": "Cuando volví de la meditación abrí los ojos y me quedé anonadado al comprobar que no estaba solo. Con la boca abierta, aunque no salió de ella ningún sonido, miré fijamente hacia el otro lado del salón, viendo a un hombre y una mujer que estaban sentados en mi sofá, mirándome directamente, con sus amables sonrisas y unos ojos lúcidos y penetrantes."
+    },
+    {
+     "id": "43a688e0271fd45a",
+     "loc": 325,
+     "theme": "ideas",
+     "text": "El Hijo piensa que él ha pecado y que no merece ser llamado Hijo de su Padre. Pero el Padre amoroso no quiere oír nada de esto. No está iracundo ni desea vengarse, y no tiene el menor interés en castigar a su Hijo. ¡Así es realmente Dios! Él no piensa como los humanos porque Él no es una persona. La historia es metafórica. El Amor de Dios corre a encontrarse con Su Hijo. Dios sabe que su Hijo es eternamente inocente, porque Él es Su Hijo.",
+     "q": "Según el libro, ¿por qué Dios no se muestra iracundo ni desea castigar a Su Hijo por haber pecado?"
+    },
+    {
+     "id": "71c15c7eaf98e6c9",
+     "loc": 571,
+     "theme": "ideas",
+     "text": "La historia del Génesis es la historia simbólica de la creación del mundo y de los cuerpos por parte de la mente inconsciente por razones de las que no eres consciente, pero de las que debes hacerte consciente.",
+     "q": "¿Qué representa simbólicamente la historia del Génesis según el libro?"
+    },
+    {
+     "id": "1e564cfb86e5ce8a",
+     "loc": 613,
+     "theme": "mindfulness",
+     "text": "Pero la principal razón por la que no podíamos entender el mensaje de J es que tomamos todas nuestras creencias anteriores y las superpusimos sobre lo que él decía. La gente siempre hace esto con su espiritualidad. Allí estaba J, retándonos a subir a su nivel, y nosotros seguíamos bajándole al nuestro.",
+     "q": "¿Por qué, según el texto, la gente no logró entender el mensaje de J?"
+    },
+    {
+     "id": "4312944a27c76265",
+     "loc": 689,
+     "theme": "mindfulness",
+     "text": "Aun así, hace falta un paso más, y ese paso se produce cuando la mente, que es la fabricante de la ilusión, elige ir completamente en contra de sí misma y a favor de Dios."
+    },
+    {
+     "id": "f9350b1d8ad45422",
+     "loc": 758,
+     "theme": "ideas",
+     "text": "Lo que no ha enseñado ninguna filosofía, excepto una, es una verdad raras veces aceptada: el hecho de que esta mente, en sí misma, también es una ilusión5.",
+     "q": "¿Qué verdad raras veces aceptada afirma el libro sobre la mente misma?"
+    },
+    {
+     "id": "39ec48c48351f73e",
+     "loc": 835,
+     "theme": "ideas",
+     "text": "De modo que cuando J hizo afirmaciones como «Por mí mismo no puedo hacer nada» y «yo y el Padre somos uno», él no estaba reivindicando que era especial en ningún sentido. De hecho, estaba renunciando a cualquier sensación de ser especial, a la individualidad o a la autoría, y estaba aceptando su verdadera fuerza: el poder de Dios.",
+     "q": "¿Qué renunciaba J al hacer afirmaciones como «yo y el Padre somos uno»?"
+    }
+   ]
+  },
+  {
    "id": "la-guerra-de-los-chips-edicion-mexicana-la-gran-lucha-por-el-dominio-mundial-spa--chris-miller-and-alex-guardia-berdiell",
    "title": "La guerra de los chips (Edición mexicana): La gran lucha por el dominio mundial (Spanish Edition)",
    "author": "Chris Miller and Àlex Guàrdia Berdiell",
@@ -493,6 +2169,280 @@ window.ANKI = {
      "theme": "ideas",
      "text": "Huang decidió regalar CUDA, pero el programa solo funciona con chips de Nvidia. Al dar utilidad a las GPU más allá de la industria gráfica, Nvidia descubrió un mercado nuevo y gigantesco para el procesamiento en paralelo, fuera para la química computacional o para la previsión meteorológica.6 Por aquel entonces, Huang no podía más que intuir vagamente las posibilidades de crecimiento en el que acabaría siendo el mayor caso de uso del procesamiento en paralelo: la inteligencia artificial.",
      "q": "¿Qué nuevo mercado descubrió Nvidia al regalar CUDA y hacer útiles las GPU más allá de los gráficos?"
+    }
+   ]
+  },
+  {
+   "id": "liftoff-elon-musk-and-the-desperate-early-days-that-launched-spacex--eric-berger",
+   "title": "Liftoff: Elon Musk and the Desperate Early Days That Launched SpaceX",
+   "author": "Eric Berger",
+   "subject": "the founding of SpaceX and its struggle to reach orbit with the Falcon 1",
+   "total": 8,
+   "highlights": [
+    {
+     "id": "7d357ec204c5dcce",
+     "loc": 61,
+     "theme": "work",
+     "text": "All of the aspirational talk about Mars would mean nothing if SpaceX could not put a relatively simple rocket like the Falcon 1 into orbit. And so, with a burning intensity, he pressed toward that goal. SpaceX began with nothing but an empty factory and a handful of employees. This small group launched its first rocket less than four years later and reached orbit in six.",
+     "q": "How quickly did SpaceX go from an empty factory to launching its first rocket and then reaching orbit?"
+    },
+    {
+     "id": "88fefc4e4819ccc4",
+     "loc": 82,
+     "theme": "work",
+     "text": "He understood he would go nowhere without the right people. So interview by interview, Musk sought out the brilliant and creative engineers who would commit themselves wholly to his goal—and make the impossible possible."
+    },
+    {
+     "id": "c2788ce0fc283da0",
+     "loc": 178,
+     "theme": "ideas",
+     "text": "The first step toward solving the multiplanetary problem, then, was bringing down the cost of the launch. If NASA and private companies spent less money getting satellites and people into space, they could do more things in space. And more commerce would open still more opportunities. This awakening galvanized Musk into action.",
+     "q": "According to Musk, what was the first step toward solving the multiplanetary problem?"
+    },
+    {
+     "id": "ce3a7a0541edee43",
+     "loc": 296,
+     "theme": "work",
+     "text": "But most of all, he channeled a preternatural force to move things forward. Elon Musk just wants to get shit done. The engineers sitting in those seats around the conference table had to possess a certain amount of mania, too. First they had to accept Musk’s ambitious, if not all-but-impossible vision. But it takes a rarer breed still who can sprint through thickets of technical problems as someone urges them on, faster and faster. One of Musk’s most valuable skills was his ability to determine whether someone would fit this mold. His people had to be brilliant. They had to be hardworking. And there could be no nonsense.",
+     "q": "What qualities did Musk look for in the engineers he hired at SpaceX?"
+    },
+    {
+     "id": "b27a856a0ac4a20d",
+     "loc": 303,
+     "theme": "work",
+     "text": "Musk made hiring a priority. He personally met with every single person the company hired through the first three thousand employees. It required late nights and weekends, but he felt it important to get the right people for his company.",
+     "q": "How involved was Musk personally in hiring during SpaceX's early years?"
+    },
+    {
+     "id": "6399dfe3371ddc12",
+     "loc": 360,
+     "theme": "work",
+     "text": "Musk differed from his competitors in another, important way—failure was an option. At most other aerospace companies, no employee wanted to make a mistake, lest it reflect badly on an annual performance review. Musk, by contrast, urged his team to move fast, build things, and break things.",
+     "q": "How did Musk's attitude toward failure differ from that of traditional aerospace companies?"
+    },
+    {
+     "id": "23e5dbcc758a5487",
+     "loc": 377,
+     "theme": "work",
+     "text": "Failure was an option at SpaceX, partly because the boss often asked the impossible of his team. In meetings, Musk might ask his engineers to do something that, on the face of it, seemed absurd. When they protested that it was impossible, Musk would respond with a question designed to open their minds to the problem, and potential solutions. He would ask, “What would it take?”",
+     "q": "What question did Musk use to open his engineers' minds when they said something was impossible?"
+    },
+    {
+     "id": "1fd1c6026aad342d",
+     "loc": 389,
+     "theme": "work",
+     "text": "Through it all, Musk kept their focus on launch. Originally, he wanted SpaceX to launch by the end of 2003. He had schedules posted above the urinals in the men’s room."
+    }
+   ]
+  },
+  {
+   "id": "managing-humans-biting-and-humorous-tales-of-a-software-engineering-manager--michael-lopp",
+   "title": "Managing Humans: Biting and Humorous Tales of a Software Engineering Manager",
+   "author": "Michael Lopp",
+   "subject": "how to be an effective software engineering manager and understand the people you work with",
+   "total": 38,
+   "highlights": [
+    {
+     "id": "10db02ed0e7b1005",
+     "loc": 112,
+     "theme": "work",
+     "text": "For having shot a bow and arrow maybe ten times in my life, it’s odd that I think of management skills as being arrows in quiver. But the metaphor works. Much of management is about solving problems, and what better way to solve a problem than to tape it to a target, step back, pull out the right arrow, and fire. Whether you hit the target or not, there’s a gratifying plunk sound. That’s the sound of progress."
+    },
+    {
+     "id": "fc1c24f72ff9012b",
+     "loc": 149,
+     "theme": "work",
+     "text": "My definition of a great manager is someone with whom you can make a connection no matter where you sit in the organization chart. What exactly I mean by connection varies wildly by who you are and what you want. And, yes, that means great managers have to work terribly hard to see the subtle differences in each of the people working for them.",
+     "q": "How does Lopp define a great manager?"
+    },
+    {
+     "id": "a1eb984b58fd51ea",
+     "loc": 152,
+     "theme": "work",
+     "text": "See. See the people who work with you. They say repetition improves long-term memory, so let’s say it once more. You must see the people who work with you."
+    },
+    {
+     "id": "54752a0d5ae59500",
+     "loc": 158,
+     "theme": "work",
+     "text": "Every single person with whom you work has a vastly different set of needs. Fulfilling these needs is one way to make them content and productive. It is your full-time job to listen to these people and mentally document how they are built. This is your most important job. I know the senior VP of engineering is telling you that hitting the date for the project is job number one, but you are not going to write the code, test the product, or document the features.",
+     "q": "According to Lopp, what is a manager's most important job?"
+    },
+    {
+     "id": "e5bb0c0b221850b1",
+     "loc": 162,
+     "theme": "work",
+     "text": "The team is going to do these things, and your job is managing the team."
+    },
+    {
+     "id": "aedb6407fce732cf",
+     "loc": 179,
+     "theme": "work",
+     "text": "they need, and figure out what motivates them. You need to remember that what worked one day as a motivational technique will backfire in two months because human beings are confusing, erratic, and emotional. In order to manage human beings in the moment, you’ve got to be one.",
+     "q": "Why does Lopp say a motivational technique that worked one day can backfire two months later?"
+    },
+    {
+     "id": "51a3d1e91f187a1f",
+     "loc": 195,
+     "theme": "work",
+     "text": "After that 60-minute debacle, I’ve got an hour and a half of one-on-ones. It’s during this time that I am asked the lamest question ever: “What, exactly, do you do?”"
+    },
+    {
+     "id": "dc51cba7f4028c0b",
+     "loc": 200,
+     "theme": "work",
+     "text": "This basic what-do-you-do disconnect between employees and managers is at the heart of why folks don’t trust their managers or even find them to be evil.",
+     "q": "What does Lopp say lies at the heart of why folks distrust their managers?"
+    },
+    {
+     "id": "89da4a4e3fc22f79",
+     "loc": 220,
+     "theme": "work",
+     "text": "Here’s the deal: your manager’s job is not your job."
+    },
+    {
+     "id": "26b1a94995ec979b",
+     "loc": 236,
+     "theme": "work",
+     "text": "I am going to hand you seven critical questions that you need to answer in order to figure out if this guy is capable of looking out for number one—you. Ideally, you’d be able to get answers to these questions before you took a new job, but you didn’t and now you’re working for a manager who isn’t speaking your language. These questions might give you insight into where he’s coming from. Where Does Your Manager Come From?"
+    },
+    {
+     "id": "858a181c3811cba6",
+     "loc": 264,
+     "theme": "work",
+     "text": "Your manager is your face to the rest of the organization. Right this second, someone you don’t know is saying something great about you because you took five minutes to pitch your boss on your work. Your manager did that. You gave him something to say.",
+     "q": "According to Lopp, what role does your manager play as your face to the rest of the organization?"
+    },
+    {
+     "id": "40b540e0aff84ef4",
+     "loc": 272,
+     "theme": "work",
+     "text": "I ask the same question in every interview I have: “Where do you need help?”",
+     "q": "What question does Lopp ask in every interview to gauge self-awareness?"
+    },
+    {
+     "id": "121a46b92ab8446a",
+     "loc": 274,
+     "theme": "work",
+     "text": "I’m a fan of pride; I want you to sell yourself in a interview. But if you suggest that you’re flawless, all I’m thinking is that your flaws are so big that you can’t talk about them or you have no clue what they are.",
+     "q": "What does Lopp conclude about a candidate who claims to be flawless in an interview?"
+    },
+    {
+     "id": "c7e83fe828af02a6",
+     "loc": 280,
+     "theme": "work",
+     "text": "A manager’s job is to transform his glaring deficiency into a strength by finding the best person to fill it and trusting him to do the job.",
+     "q": "How does Lopp say a manager should handle a glaring deficiency?"
+    },
+    {
+     "id": "485497c609a7184f",
+     "loc": 295,
+     "theme": "work",
+     "text": "The language you are speaking when you talk to your manager is a flavor of managementese (see Chapter 13 for more on managementese). Yeah, the language that Scott Adams has made millions of dollars exploiting. It is a carefully constructed language that is designed to convey information across the organization. Managementese allows managers from very different parts of the organization to communicate even though their respective jobs are chock-full of different acronyms and proper names.",
+     "q": "What is managementese and what purpose does it serve?"
+    },
+    {
+     "id": "3e6f3f72b109ee87",
+     "loc": 306,
+     "theme": "work",
+     "text": "My first piece of advice to all new managers is: “Schedule one-on-ones with direct reports, keep them on the same day and time, and never cancel them.” With this in mind, some of the trickiest transitions for me during the day are when these one-on-ones show up.",
+     "q": "What is Lopp's first piece of advice to all new managers?"
+    },
+    {
+     "id": "e0710d52d7910224",
+     "loc": 310,
+     "theme": "work",
+     "text": "In the brief second I try to figure out some way to reschedule this meeting, I remind myself of a simple rule, “You will always learn something in your one-on-one.”",
+     "q": "What simple rule does Lopp remind himself of when tempted to reschedule a one-on-one?"
+    },
+    {
+     "id": "bfc1f188efe77762",
+     "loc": 319,
+     "theme": "work",
+     "text": "He wants to learn. Whether it’s a one-on-one or a random hallway conversation, your manager should always be in active information acquisition. He should love it when you stop him in the hallway and tell him, “I hate your favorite feature.”",
+     "q": "What attitude does Lopp say a good manager should have toward information in one-on-ones and hallway talks?"
+    },
+    {
+     "id": "fb4e44eabd2a74c0",
+     "loc": 323,
+     "theme": "work",
+     "text": "Managers who don’t have a plan to talk to everyone on their team regularly are deluded. They believe they are going to learn what is going on in their group through some magical organizational osmosis and they won’t. Ideas will not be discovered, talent will be ignored, and the team will slowly begin to believe what they think does not matter, and the team is the company.",
+     "q": "What does Lopp say happens to managers who rely on 'organizational osmosis' instead of talking to everyone regularly?"
+    },
+    {
+     "id": "334093d78658ff94",
+     "loc": 338,
+     "theme": "work",
+     "text": "The act of delegation is a slippery slope for managers. Yes, you want to figure out how not to be a bottleneck in your organization and, yes, you want to figure out how to scale, but you also want to continue to get your hands dirty.",
+     "q": "Why does Lopp call delegation a slippery slope for managers?"
+    },
+    {
+     "id": "388d9eb3fdf4bc92",
+     "loc": 347,
+     "theme": "work",
+     "text": "Real work is visible action managers take to support their particular vision for their organization. The question you need to answer for your manager is simple: does he do what he says he’s going to do? Does he make something happen?",
+     "q": "How does Lopp define 'real work' for a manager?"
+    },
+    {
+     "id": "b00d0f8c62abd68c",
+     "loc": 364,
+     "theme": "work",
+     "text": "slippery. The difference between a manager who knows what’s going on in an organization and one who is a purely politically driven slimeball is thin. But I would take either of those over some passive manager who lets the organization happen to him. Politically active managers are informed managers. They know when change is afoot and they know what action to take to best represent their organization in that change. Of all the questions in this chapter, understanding your manager’s place in the political food chain is the trickiest",
+     "q": "Why does Lopp prefer a politically active manager over a passive one?"
+    },
+    {
+     "id": "fa9d1f08f60c4714",
+     "loc": 369,
+     "theme": "work",
+     "text": "The next best gauge of your manager’s political clout is cross-functional meetings where his peers are present. How are they treating him? Is it a familiar conversation or are they getting to know him? Should they know him? If it’s his meeting, is he driving it? If it’s not his meeting, can he actively contribute?",
+     "q": "What does Lopp say is the next best gauge of a manager's political clout after private superior meetings?"
+    },
+    {
+     "id": "ad5fdbeb58aeb6be",
+     "loc": 376,
+     "theme": "work",
+     "text": "What Happens When They Lose Their Shit? Pride and panic. The two delicious ends of the management spectrum."
+    },
+    {
+     "id": "82d719bfe81a1edd",
+     "loc": 381,
+     "theme": "work",
+     "text": "All of these are interesting developments, but they don’t show you half as much as panic and there is no bigger panic than a layoff."
+    },
+    {
+     "id": "cca3678fbee58eb7",
+     "loc": 383,
+     "theme": "work",
+     "text": "Your manager is not a manager until he participated in a layoff. I mean it.",
+     "q": "What experience does Lopp insist is required before someone is truly a manager?"
+    },
+    {
+     "id": "86d9611ffc93c32e",
+     "loc": 385,
+     "theme": "work",
+     "text": "There is no more pure a panic than a layoff, and you want to see who your manager will become because it’s often the first time he sees the organization is bigger than the people.",
+     "q": "Why does Lopp say a layoff reveals who your manager really is?"
+    },
+    {
+     "id": "a392f09fcc6dc71c",
+     "loc": 395,
+     "theme": "work",
+     "text": "Panic backs a person into a corner and their only means of getting out of that corner is relying on skills that have worked for them in the past. This is how a normally friendly manager can turn into a backstabbing asshole when it comes to a layoff. See, they were an asshole before; you just weren’t there to see it.",
+     "q": "According to Lopp, why does panic reveal a person's true character rather than change it?"
+    },
+    {
+     "id": "1b3ef743c90ee739",
+     "loc": 407,
+     "theme": "work",
+     "text": "Between each layer is a manager whose job it is to translate from one layer to the next … in both directions. He knows what his employees want. He knows what his manager wants, and he’s able to successfully navigate when those wants differ.",
+     "q": "What does Lopp say a manager's job is between organizational layers?"
+    },
+    {
+     "id": "ec39861a2e99626d",
+     "loc": 409,
+     "theme": "work",
+     "text": "The way he navigates these waters is by knowing the answer to two questions. Question #1: Where did I come from? Being able to relate to those you manage comes from intimately understanding their job. It allows you to speak their language. Question #2: Where am I going? A plan for your manager’s next big move is his incentive. It puts him in the uncomfortable position of trying to discern the murky political motivations of the major influencers of your company. It might not be a skill set he has, but he’s never going to stop trying because he knows where he wants to go. He’s got a map defined by his motivation",
+     "q": "What two questions does Lopp say a manager uses to navigate between organizational layers?"
     }
    ]
   },
@@ -575,6 +2525,62 @@ window.ANKI = {
    ]
   },
   {
+   "id": "miles-davis-y-kind-of-blue-minus-spanish-edition--ashley-kahn-and-victor-obiols",
+   "title": "Miles Davis y Kind of Blue (Minus) (Spanish Edition)",
+   "author": "Ashley Kahn and Víctor Obiols",
+   "subject": "the making and musical context of Miles Davis's album Kind of Blue",
+   "total": 40,
+   "highlights": [
+    {
+     "id": "649a85133a8a5bdd",
+     "loc": 112,
+     "theme": "ideas",
+     "text": "¿Qué podía yo oír o intuir que me revelara el secreto de ese día de primavera en que Davis reunió a su famoso sexteto (Coltrane, Adderley, Bill Evans, Paul Chambers y Jimmy Cobb con el pianista Wynton Kelly sustituyendo a Evans en un tema) en una antigua iglesia en el sur de Manhattan?"
+    },
+    {
+     "id": "8057fae54d7badda",
+     "loc": 392,
+     "theme": "ideas",
+     "text": "«Queríamos ese sonido.... pero lo más concentrado posible»,39 decía Davis, añadiendo: «Veía el grupo como si fuera un coro... quería que los instrumentos sonaran como voces humanas».",
+     "q": "¿Cómo describía Davis el sonido que buscaba, comparando el grupo con qué?"
+    },
+    {
+     "id": "145d24926d7df428",
+     "loc": 495,
+     "theme": "ideas",
+     "text": "La modalidad que Miles prefería entonces, y que acabaría siendo la «marca de la casa», era ésta: sin previo aviso juntar músicos de diferentes estilos y recursos, desafiando a sus acompañantes y, a veces, dejando a más de uno hecho polvo.",
+     "q": "¿Cuál era la modalidad preferida de Miles al reunir a sus músicos?"
+    },
+    {
+     "id": "af165d87940715b4",
+     "loc": 1138,
+     "theme": "ideas",
+     "text": "«Modal» (o su sinónimo, «escalar») literalmente significa «de escalas». Según esta definición, cualquier música, o sistema sónico, basado en un patrón con una nota central «tónica», es modal. «Jazz modal» en el contexto de finales de los cincuenta tiene, de alguna manera, esta connotación. Así es como Miles Davis lo explicó a Nat Hentoff en octubre de 1958: Cuando Gil escribió el arreglo de «I Loves You, Porgy», me escribió sólo una escala. Sin acordes. Y esto... te da mucha más libertad y espacio para escuchar cosas.",
+     "q": "¿Qué significa literalmente 'modal' o 'escalar' en música?"
+    },
+    {
+     "id": "e6ba46348e400055",
+     "loc": 1249,
+     "theme": "ideas",
+     "text": "A finales de los cincuenta el panorama cambió. Davis –con Coltrane y el resto del sexteto– estaba en la vanguardia de esta nueva ola de experimentación que conduciría a la primera proclama del jazz modal: Kind of Blue."
+    },
+    {
+     "id": "e9553e2950f34eb5",
+     "loc": 1268,
+     "theme": "ideas",
+     "text": "En apariencia es difícil imaginar dos músicos más dispares. Uno se había convertido en un intérprete carismático, cómodo y serenamente confiado en el centro del escenario; el otro, rata de biblioteca y reservado por naturaleza, cultivaba la música con extrema modestia. Mientras Miles había dejado el conservatorio para educarse en los clubs, cursando sólo el primer año en Juilliard, Bill tenía un bagaje académico considerable en música clásica y teoría de la música.",
+     "q": "¿En qué se diferenciaban las formaciones musicales de Miles Davis y Bill Evans?"
+    },
+    {
+     "id": "fd105dae3ddb4680",
+     "loc": 1273,
+     "theme": "ideas",
+     "text": "A pesar de sus características opuestas, Davis y Evans resultaron ser dos exploradores musicales unidos por pasiones y visiones comunes. Ambos eran fervientes admiradores de compositores clásicos modernos como Rachmaninov y los impresionistas franceses. Para ellos el jazz y el clásico eran dos corrientes que alimentaban el mismo río. La novia de Miles, con la que vivía, y que sería su futura esposa, la bailarina Frances Taylor, recuerda que «la música que constantemente escuchábamos en casa era Khatchaturian, Ravel, Brahms, y otros por el estilo».163 Tal como se refiere en la biografía de Evans, de Peter Pettinger, How My Heart Sings, una antigua novia del pianista recuerda su rutina diaria: «Normalmente tocaba música clásica... Rachmaninov... Beethoven y Bach. Tocaba este género y después empezaba a tocar jazz de manera muy",
+     "q": "¿Qué visión común sobre el jazz y el clásico compartían Davis y Evans?"
+    }
+   ]
+  },
+  {
    "id": "moneyball-the-art-of-winning-an-unfair-game--michael-lewis",
    "title": "Moneyball: The Art of Winning an Unfair Game",
    "author": "Michael Lewis",
@@ -627,6 +2633,208 @@ window.ANKI = {
    ]
   },
   {
+   "id": "poor-charlies-almanack-the-essential-wit-and-wisdom-of-charles-t-munger--charles-t-munger-peter-d-kaufman-john-collison-and-warren-buffett",
+   "title": "Poor Charlie’s Almanack: The Essential Wit and Wisdom of Charles T. Munger",
+   "author": "Charles T. Munger, Peter D. Kaufman, John Collison, and Warren Buffett",
+   "subject": "Charlie Munger's multidisciplinary mental models and principles for rational investing and decision-making",
+   "total": 33,
+   "highlights": [
+    {
+     "id": "9b3abf55f8fc84b3",
+     "loc": 542,
+     "theme": "ideas",
+     "text": "These models, discussed at length in several of the talks (especially Talks Two, Three, and Four), serve as a framework for gathering, processing, and acting on information."
+    },
+    {
+     "id": "849babfa192624af",
+     "loc": 545,
+     "theme": "ideas",
+     "text": "The unassailable logic of Charlie’s ecosystem approach to investment analysis: Just as multiple factors shape almost every system, multiple models from a variety of disciplines, applied with fluency, are needed to understand that system.",
+     "q": "What is the logic behind Charlie's ecosystem approach to investment analysis?"
+    },
+    {
+     "id": "96afbb9e574f6bd1",
+     "loc": 549,
+     "theme": "ideas",
+     "text": "When properly collected and organized, his multiple mental models (about 100 in number, he estimates) provide a context, or latticework, that leads to remarkable insights as to the purpose and nature of life.",
+     "q": "Roughly how many mental models does Charlie estimate he uses, and what do they form?"
+    },
+    {
+     "id": "6e620f9c3a45034a",
+     "loc": 574,
+     "theme": "investing",
+     "text": "In his view, a portfolio of three companies is plenty of diversification. Accordingly, Charlie is willing to commit uncommonly high percentages of his investment capital to individual, “focused” opportunities.",
+     "q": "How many companies does Charlie consider plenty of diversification for a portfolio?"
+    },
+    {
+     "id": "2136b9cf7b527843",
+     "loc": 581,
+     "theme": "investing",
+     "text": "Charlie is simply content to trust his own judgment even when it runs counter to the wisdom of the herd. This lone-wolf aspect of Charlie’s temperament is a rarely appreciated reason why he consistently outperforms the larger investment community."
+    },
+    {
+     "id": "a46f0e0ead2996e8",
+     "loc": 589,
+     "theme": "ideas",
+     "text": "Often, as in this case, Charlie generally focuses first on what to avoid—that is, on what not to do—before he considers the affirmative steps he will take in a given situation.",
+     "q": "What does Charlie generally focus on first before considering affirmative steps?"
+    },
+    {
+     "id": "57124f2fed68fe63",
+     "loc": 591,
+     "theme": "ideas",
+     "text": "In business, as in life, Charlie gains enormous advantage by summarily eliminating the unpromising portions of the chessboard, freeing his time and attention for the more productive regions. Charlie strives to reduce complex situations to their most basic, unemotional fundamentals."
+    },
+    {
+     "id": "9505f799cb5c92c3",
+     "loc": 603,
+     "theme": "ideas",
+     "text": "Personally, I’ve gotten so that I now use a kind of two-track analysis. First, what are the factors that really govern the interests involved, rationally considered? And second, what are the subconscious influences where the brain, at a subconscious level, is automatically doing these things—which, by and large, are useful but which often misfunction?",
+     "q": "What are the two tracks in Charlie's two-track analysis?"
+    },
+    {
+     "id": "a58052e61f723268",
+     "loc": 611,
+     "theme": "ideas",
+     "text": "“Quickly eliminate the big universe of what not to do; follow up with a fluent, multidisciplinary attack on what remains; then act decisively when, and only when, the right circumstances appear.”",
+     "q": "What is Charlie's three-step approach to decision-making?"
+    },
+    {
+     "id": "a3c82c6f55a57d9b",
+     "loc": 618,
+     "theme": "investing",
+     "text": "To stay within these circles, he first applies a basic, overall screen, designed to limit his investment field to only “simple, understandable candidates.” As he says, “We have three baskets for investing: yes, no, and too tough to understand.” To identify potential “yes” candidates, Charlie looks for an easy-to-understand, dominant business franchise that can sustain itself and thrive in all market environments.",
+     "q": "What are Charlie's three baskets for investing?"
+    },
+    {
+     "id": "6012534f5cea3946",
+     "loc": 650,
+     "theme": "investing",
+     "text": "On this subject he is famous for his viewpoint that “a great business at a fair price is superior to a fair business at a great price.”",
+     "q": "What is Charlie's famous view comparing a great business at a fair price to a fair business at a great price?"
+    },
+    {
+     "id": "ede10838bc379b70",
+     "loc": 652,
+     "theme": "investing",
+     "text": "Charlie’s insight helped Buffett move from pure Benjamin Graham–style investing to focusing on great businesses such as The Washington Post, GEICO, Coca-Cola, Gillette, and others."
+    },
+    {
+     "id": "5f57c0231071949b",
+     "loc": 659,
+     "theme": "investing",
+     "text": "Knowing that a necessary companion to proper valuation is proper timing, he applies yet a finer screen, a “prior to pulling the trigger” checklist, which is especially useful in evaluating what he refers to as close calls. The checklist includes such items as: What are the current price, volume, and trading considerations? What disclosure timing or other sensitivities exist? Do contingent exit strategies exist? Are better uses of capital currently or potentially available? Is sufficient liquid capital currently on hand or must it be borrowed? What is the opportunity cost of that capital? And so on."
+    },
+    {
+     "id": "68047aed87e44c98",
+     "loc": 667,
+     "theme": "ideas",
+     "text": "Like world-class bridge player Richard Zeckhauser, Charlie scores himself not so much on whether he won the hand but rather on how well he played it. While poor outcomes are excusable in the Munger–Buffett world—given the fact that some outcomes are outside of their control—sloppy preparation and decision-making are never excusable because they are controllable.",
+     "q": "In the Munger–Buffett world, which is excusable—poor outcomes or sloppy decision-making—and why?"
+    },
+    {
+     "id": "6a6f38e4a81b1cb7",
+     "loc": 676,
+     "theme": "investing",
+     "text": "What makes a great business model for Charlie? His recommended reading materials provide some guidance. Guns, Germs, and Steel, The Selfish Gene, Ice Age, and Darwin’s Blind Spot all have a certain theme: a focus on the issue of competitive destruction and an examination of why some entities are nevertheless able to adapt, survive, and even dominate over time."
+    },
+    {
+     "id": "212a255f6eb8a8fb",
+     "loc": 680,
+     "theme": "investing",
+     "text": "the preferred Munger business emerges: some thrive by outcompeting (à la Selfish Gene) and others by out-cooperating (à la Darwin’s Blind Spot).",
+     "q": "What two ways can a preferred Munger business thrive?"
+    },
+    {
+     "id": "39863255df30523b",
+     "loc": 693,
+     "theme": "investing",
+     "text": "Risk All investment evaluations should begin by measuring risk, especially reputational.",
+     "q": "According to Charlie, how should all investment evaluations begin?"
+    },
+    {
+     "id": "4dfe3035b0ba2356",
+     "loc": 697,
+     "theme": "ideas",
+     "text": "Independence “Only in fairy tales are emperors told they are naked.”"
+    },
+    {
+     "id": "819e8f09496a58ab",
+     "loc": 698,
+     "theme": "investing",
+     "text": "Remember that just because other people agree or disagree with you doesn’t make you right or wrong—the only thing that matters is the correctness of your analysis and judgment. Mimicking the herd invites regression to the mean (merely average performance). Preparation “The only way to win is to work, work, work, work, and hope to have a few insights.”",
+     "q": "According to Charlie, what alone determines whether you are right, regardless of the herd's agreement?"
+    },
+    {
+     "id": "9c93ea5efd0d8e29",
+     "loc": 703,
+     "theme": "work",
+     "text": "More important than the will to win is the will to prepare.",
+     "q": "What does Charlie say is more important than the will to win?"
+    },
+    {
+     "id": "57f548b3d88117e9",
+     "loc": 706,
+     "theme": "ideas",
+     "text": "Identify and reconcile disconfirming evidence."
+    },
+    {
+     "id": "d27b4c162c946f1a",
+     "loc": 707,
+     "theme": "ideas",
+     "text": "Above all, never fool yourself, and remember that you are the easiest person to fool. Analytic rigor Use of the scientific method and effective checklists minimizes errors and omissions.",
+     "q": "According to Charlie, who is the easiest person to fool?"
+    },
+    {
+     "id": "5c8208dc2ad42c8e",
+     "loc": 710,
+     "theme": "ideas",
+     "text": "It is better to remember the obvious than to grasp the esoteric.",
+     "q": "What does Charlie say is better than grasping the esoteric?"
+    },
+    {
+     "id": "ac8b030374cdb2be",
+     "loc": 712,
+     "theme": "investing",
+     "text": "Think forward and backward: Invert, always invert. Allocation Proper allocation of capital is an investor’s number one job. Remember that the highest and best use is always measured by the next best use (opportunity cost).",
+     "q": "By what is the highest and best use of capital always measured?"
+    },
+    {
+     "id": "54de5d714c9d10a7",
+     "loc": 716,
+     "theme": "investing",
+     "text": "Patience Resist the natural human bias to act."
+    },
+    {
+     "id": "e0e4fea809ba27d0",
+     "loc": 721,
+     "theme": "investing",
+     "text": "Be fearful when others are greedy and greedy when others are fearful.",
+     "q": "What is the contrarian rule about others' greed and fear?"
+    },
+    {
+     "id": "2f96db82962e4521",
+     "loc": 727,
+     "theme": "ideas",
+     "text": "Remember that reputation and integrity are your most valuable assets—and can be lost in a heartbeat.",
+     "q": "What does Charlie say are your most valuable assets that can be lost in a heartbeat?"
+    },
+    {
+     "id": "c317c55269d1de90",
+     "loc": 728,
+     "theme": "ideas",
+     "text": "Don’t overlook the obvious by drowning in minutiae."
+    },
+    {
+     "id": "668e0ac9fdf1790a",
+     "loc": 733,
+     "theme": "ideas",
+     "text": "In the end, it comes down to Charlie’s most basic guiding principles, his fundamental philosophy of life: Preparation. Discipline. Patience. Decisiveness.",
+     "q": "What are the four elements of Charlie's fundamental philosophy of life?"
+    }
+   ]
+  },
+  {
    "id": "pretotype-it10th-anniversary-edition-how-to-make-sure-you-are-building-the-right--alberto-savoia",
    "title": "Pretotype It—10th Anniversary Edition: How to make sure you are building The Right It before you build It right",
    "author": "Alberto Savoia",
@@ -639,6 +2847,28 @@ window.ANKI = {
      "theme": "ideas",
      "text": "Prototypes should be built to answer questions such as, “Can we build it?”, “Will it work as expected?”, or “How will people use it?” These are important questions that you need to eventually answer. But an even more important question that you need to answer first is: “Is there a big enough market for this new product?” Answering this last question is where pretotypes come in.",
      "q": "According to Savoia, what question do pretotypes answer that prototypes do not, and that you must answer first?"
+    }
+   ]
+  },
+  {
+   "id": "runnin-down-a-dream-how-to-thrive-in-a-career-you-actually-love--bill-gurley",
+   "title": "Runnin' Down a Dream: How to Thrive in a Career You Actually Love",
+   "author": "Bill Gurley",
+   "subject": "how to build a fulfilling career doing work you love",
+   "total": 2,
+   "highlights": [
+    {
+     "id": "6f82e17b785ab92e",
+     "loc": 82,
+     "theme": "work",
+     "text": "Your time is limited, so don’t waste it living someone else’s life. —Steve Jobs"
+    },
+    {
+     "id": "8c37a62d47e02ff5",
+     "loc": 98,
+     "theme": "work",
+     "text": "Consider this: You will likely spend one-third of your life working. That’s at least eighty thousand hours. Wouldn’t you rather spend those hours doing something you love? Or are you comfortable just passing the time, swallowing a regret or two along the way?",
+     "q": "Roughly how many hours will you spend working over your lifetime, and why does Gurley say that matters?"
     }
    ]
   },
@@ -661,6 +2891,330 @@ window.ANKI = {
      "loc": 3486,
      "theme": "work",
      "text": "I couldn’t bring myself to look Cale in the eye. Here we were, a dozen years out of Stanford, and while he was an eminently successful businessman, I was still struggling to keep my head above water."
+    }
+   ]
+  },
+  {
+   "id": "source-code-my-beginnings--bill-gates",
+   "title": "Source Code: My Beginnings",
+   "author": "Bill Gates",
+   "subject": "Bill Gates's childhood and the early experiences that shaped his path into computing",
+   "total": 6,
+   "highlights": [
+    {
+     "id": "c9d19c738721747b",
+     "loc": 2599,
+     "theme": "ideas",
+     "text": "By the time I arrived in Cambridge for freshman orientation, years of major government investments in defense technology had remade the Boston area. DEC and dozens of other companies in the region had spun out of projects at MIT to build computers and other technologies for military use. Before Silicon Valley took its place as America’s high-tech hub, the sixty-mile Route 128 around Boston held the title.",
+     "q": "Before Silicon Valley became America's high-tech hub, which region held the title?"
+    },
+    {
+     "id": "c6d5b5b384a0698d",
+     "loc": 2617,
+     "theme": "ideas",
+     "text": "In much of academia, computers were not yet a serious area of study in their own right. Computer science at most universities typically nested within more established departments, such as at Harvard, where it was part of Engineering and Applied Physics. The pride of that department was fluid dynamics, a field built on centuries of elegant math invented to describe how birds fly and blood flows. Computer science might be a nice tool to study those phenomena but was in no way seen as an equal. Typically, a student interested in computers majored in applied math or engineering. It would be another ten years before Harvard offered an undergraduate degree in computer science.",
+     "q": "How was computer science typically positioned within universities like Harvard when Gates arrived?"
+    }
+   ]
+  },
+  {
+   "id": "spark-the-revolutionary-new-science-of-exercise-and-the-brain--eric-hagerman-and-john-j-ratey-md",
+   "title": "Spark: The Revolutionary New Science of Exercise and the Brain",
+   "author": "Eric Hagerman and John J. Ratey MD",
+   "subject": "how physical exercise improves brain function, learning, mood, and mental health",
+   "total": 25,
+   "highlights": [
+    {
+     "id": "9b67385d668756c9",
+     "loc": 65,
+     "theme": "health",
+     "text": "But the real reason we feel so good when we get our blood pumping is that it makes the brain function at its best, and in my view, this benefit of physical activity is far more important—and fascinating—than what it does for the body. Building muscles and conditioning the heart and lungs are essentially side effects. I often tell my patients that the point of exercise is to build and condition the brain.",
+     "q": "According to Ratey, what does he tell his patients is the real point of exercise?"
+    },
+    {
+     "id": "bdc1652090300337",
+     "loc": 69,
+     "theme": "health",
+     "text": "Ironically, the human capacity to dream and plan and create the very society that shields us from our biological imperative to move is rooted in the areas of the brain that govern movement. As we adapted to an ever-changing environment over the past half million years, our thinking brain evolved from the need to hone motor skills.",
+     "q": "How does the book say the human thinking brain evolved in relation to movement?"
+    },
+    {
+     "id": "9d3faa4ef3071095",
+     "loc": 72,
+     "theme": "health",
+     "text": "The relationship between food, physical activity, and learning is hardwired into the brain’s circuitry."
+    },
+    {
+     "id": "dc476a3b3a4b743c",
+     "loc": 78,
+     "theme": "health",
+     "text": "What’s even more disturbing, and what virtually no one recognizes, is that inactivity is killing our brains too—physically shriveling them.",
+     "q": "What does the book say inactivity does to the brain physically?"
+    },
+    {
+     "id": "a6a4033faf5ab2c4",
+     "loc": 85,
+     "theme": "health",
+     "text": "To keep our brains at peak performance, our bodies need to work hard. In Spark, I’ll demonstrate how and why physical activity is crucial to the way we think and feel. I’ll explain the science of how exercise cues the building blocks of learning in the brain; how it affects mood, anxiety, and attention; how it guards against stress and reverses some of the effects of aging in the brain; and how in women it can help stave off the sometimes tumultuous effects of hormonal changes."
+    },
+    {
+     "id": "8eaf6d2c9576c4ae",
+     "loc": 90,
+     "theme": "health",
+     "text": "It was already known that exercise increases levels of serotonin, norepinephrine, and dopamine—important neurotransmitters that traffic in thoughts and emotions.",
+     "q": "Which three neurotransmitters does exercise increase levels of?"
+    },
+    {
+     "id": "a9f222d64bd1723d",
+     "loc": 92,
+     "theme": "health",
+     "text": "They don’t know that toxic levels of stress erode the connections between the billions of nerve cells in the brain or that chronic depression shrinks certain areas of the brain. And they don’t know that, conversely, exercise unleashes a cascade of neurochemicals and growth factors that can reverse this process, physically bolstering the brain’s infrastructure. In fact, the brain responds like muscles do, growing with use, withering with inactivity.",
+     "q": "How does the brain respond to use versus inactivity, according to Ratey?"
+    },
+    {
+     "id": "34766c7671ebf0b1",
+     "loc": 99,
+     "theme": "health",
+     "text": "It turns out that moving our muscles produces proteins that travel through the bloodstream and into the brain, where they play pivotal roles in the mechanisms of our highest thought processes.",
+     "q": "What do moving muscles produce that travels to the brain and aids higher thought processes?"
+    },
+    {
+     "id": "c9c6917725ed86f5",
+     "loc": 118,
+     "theme": "health",
+     "text": "(It probably wouldn’t help: experiments with lab rats suggest that forced exercise doesn’t do the trick quite like voluntary exercise.)",
+     "q": "What do lab rat experiments suggest about forced versus voluntary exercise?"
+    },
+    {
+     "id": "bdda42394e6df750",
+     "loc": 121,
+     "theme": "health",
+     "text": "In October of 2000 researchers from Duke University made the New York Times with a study showing that exercise is better than sertraline (Zoloft) at treating depression.",
+     "q": "What did the 2000 Duke University study find about exercise compared to sertraline (Zoloft) for depression?"
+    },
+    {
+     "id": "e3433fa46242b645",
+     "loc": 134,
+     "theme": "health",
+     "text": "In Naperville, Illinois, gym class has transformed the student body of nineteen thousand into perhaps the fittest in the nation. Among one entire class of sophomores, only 3 percent were overweight, versus the national average of 30 percent. What’s more surprising—stunning—is that the program has also turned those students into some of the smartest in the nation. In 1999 Naperville’s eighth graders were among some 230,000 students from around the world who took an international standards test called TIMSS (Trends in International Mathematics and Science Study), which evaluates knowledge of math and science.",
+     "q": "What happened to Naperville students' fitness and academic performance under their gym program?"
+    },
+    {
+     "id": "fd8fc08b15c01695",
+     "loc": 151,
+     "theme": "health",
+     "text": "A trim young physical education teacher named Neil Duncan lays out the morning’s assignment: “OK, once you’re done with your warm-up, we’re going to head out to the track and run the mile,” he says, presenting a black satchel full of chest straps and digital watches—heart rate monitors of the type used by avid athletes to gauge their physical exertion. “Every time you go around the track, hit the red button. What that’s going to do—it’s going to give you a split. It’s going to tell you, this is how fast I did my first lap, second lap, third lap. On the fourth and final lap—which will be just as fast if you do it right—” he says, pausing to survey his sleepy charges, “you hit the blue button, OK? And that’ll stop your watch. Your goal is—well, to try to run your fastest mile. Last but not least, your average heart rate should be above 185.”"
+    },
+    {
+     "id": "67b7ce267efe8f8c",
+     "loc": 159,
+     "theme": "health",
+     "text": "This is not good old gym class. This is Zero Hour PE, the latest in a long line of educational experiments conducted by a group of maverick physical education teachers who have turned the nineteen thousand students in Naperville District 203 into the fittest in the nation—and also some of the smartest. (The",
+     "q": "What is Zero Hour PE in Naperville District 203?"
+    },
+    {
+     "id": "0e87574da1dc950f",
+     "loc": 162,
+     "theme": "health",
+     "text": "The objective of Zero Hour is to determine whether working out before school gives these kids a boost in reading ability and in the rest of their subjects.",
+     "q": "What is the objective of the Zero Hour program?"
+    },
+    {
+     "id": "8b67a99a7bbd4b9f",
+     "loc": 163,
+     "theme": "health",
+     "text": "The notion that it might is supported by emerging research showing that physical activity sparks biological changes that encourage brain cells to bind to one another. For the brain to learn, these connections must be made; they reflect the brain’s fundamental ability to adapt to challenges. The more neuroscientists discover about this process, the clearer it becomes that exercise provides an unparalleled stimulus, creating an environment in which the brain is ready, willing, and able to learn.",
+     "q": "According to emerging research, how does physical activity prepare the brain for learning?"
+    },
+    {
+     "id": "2a1ba3a0cf6dee50",
+     "loc": 167,
+     "theme": "health",
+     "text": "Aerobic activity has a dramatic effect on adaptation, regulating systems that might be out of balance and optimizing those that are not—it’s an indispensable tool for anyone who wants to reach his or her full potential.",
+     "q": "What effect does aerobic activity have on the body's systems and adaptation?"
+    },
+    {
+     "id": "cb70d34ae02b0653",
+     "loc": 182,
+     "theme": "health",
+     "text": "They’re required to stay between 80 and 90 percent of their maximum heart rate. “What we’re really doing is trying to get them prepared to learn, through rigorous exercise,” says Duncan. “Basically, we’re getting them to that state of heightened awareness and then sending them off to class.”",
+     "q": "What heart rate range do Zero Hour students maintain, and to what end?"
+    },
+    {
+     "id": "3421a18470e94095",
+     "loc": 184,
+     "theme": "health",
+     "text": "How do they feel about being Mr. Duncan’s guinea pigs? “I guess it’s OK,” says Michelle. “Besides getting up early and being all sweaty and gross, I’m more awake during the day. I mean, I was cranky all the time last year.”"
+    },
+    {
+     "id": "5a53881e5231ba63",
+     "loc": 189,
+     "theme": "health",
+     "text": "The administration is so impressed that it incorporates Zero Hour into the high school curriculum as a first-period literacy class called Learning Readiness PE."
+    },
+    {
+     "id": "e7c697800915e8a9",
+     "loc": 192,
+     "theme": "health",
+     "text": "The strategy spreads beyond freshmen who need to boost their reading scores, and guidance counselors begin suggesting that all students schedule their hardest subjects immediately after gym, to capitalize on the beneficial effects of exercise.",
+     "q": "What did Naperville counselors advise students to do after gym to capitalize on exercise's effects?"
+    },
+    {
+     "id": "e192621958425de8",
+     "loc": 203,
+     "theme": "health",
+     "text": "This couldn’t be more important, particularly since statistics show that children who exercise regularly are likely to do the same as adults.",
+     "q": "What do statistics show about children who exercise regularly and their adult habits?"
+    }
+   ]
+  },
+  {
+   "id": "spark-the-revolutionary-new-science-of-exercise-and-the-brain--john-j-ratey-md-and-eric-hagerman",
+   "title": "Spark: The Revolutionary New Science of Exercise and the Brain",
+   "author": "John J. Ratey MD and Eric Hagerman",
+   "subject": "how aerobic exercise improves brain function, learning, mood, and mental health",
+   "total": 25,
+   "highlights": [
+    {
+     "id": "9186128c5c53233e",
+     "loc": 65,
+     "theme": "health",
+     "text": "But the real reason we feel so good when we get our blood pumping is that it makes the brain function at its best, and in my view, this benefit of physical activity is far more important—and fascinating—than what it does for the body. Building muscles and conditioning the heart and lungs are essentially side effects. I often tell my patients that the point of exercise is to build and condition the brain.",
+     "q": "According to Ratey, what does he tell his patients the real point of exercise is?"
+    },
+    {
+     "id": "6ed9f63fb1b959f9",
+     "loc": 69,
+     "theme": "health",
+     "text": "Ironically, the human capacity to dream and plan and create the very society that shields us from our biological imperative to move is rooted in the areas of the brain that govern movement. As we adapted to an ever-changing environment over the past half million years, our thinking brain evolved from the need to hone motor skills.",
+     "q": "How does Ratey say the human thinking brain evolved?"
+    },
+    {
+     "id": "8dd7ce2c5cd9b5ab",
+     "loc": 72,
+     "theme": "health",
+     "text": "The relationship between food, physical activity, and learning is hardwired into the brain’s circuitry."
+    },
+    {
+     "id": "827876e2013d05d2",
+     "loc": 78,
+     "theme": "health",
+     "text": "What’s even more disturbing, and what virtually no one recognizes, is that inactivity is killing our brains too—physically shriveling them.",
+     "q": "What does Ratey say inactivity does to our brains physically?"
+    },
+    {
+     "id": "a2412b2f9fd0156d",
+     "loc": 85,
+     "theme": "health",
+     "text": "To keep our brains at peak performance, our bodies need to work hard. In Spark, I’ll demonstrate how and why physical activity is crucial to the way we think and feel. I’ll explain the science of how exercise cues the building blocks of learning in the brain; how it affects mood, anxiety, and attention; how it guards against stress and reverses some of the effects of aging in the brain; and how in women it can help stave off the sometimes tumultuous effects of hormonal changes."
+    },
+    {
+     "id": "11ba030fcdcc302b",
+     "loc": 90,
+     "theme": "health",
+     "text": "It was already known that exercise increases levels of serotonin, norepinephrine, and dopamine—important neurotransmitters that traffic in thoughts and emotions.",
+     "q": "Which three neurotransmitters does exercise increase levels of?"
+    },
+    {
+     "id": "f51bb27241b0ec82",
+     "loc": 92,
+     "theme": "health",
+     "text": "They don’t know that toxic levels of stress erode the connections between the billions of nerve cells in the brain or that chronic depression shrinks certain areas of the brain. And they don’t know that, conversely, exercise unleashes a cascade of neurochemicals and growth factors that can reverse this process, physically bolstering the brain’s infrastructure. In fact, the brain responds like muscles do, growing with use, withering with inactivity.",
+     "q": "How does Ratey say the brain responds to use versus inactivity?"
+    },
+    {
+     "id": "e3bad8bef4217fed",
+     "loc": 99,
+     "theme": "health",
+     "text": "It turns out that moving our muscles produces proteins that travel through the bloodstream and into the brain, where they play pivotal roles in the mechanisms of our highest thought processes.",
+     "q": "How do moving muscles influence the brain's highest thought processes?"
+    },
+    {
+     "id": "c8c0a1bfe24bcac7",
+     "loc": 118,
+     "theme": "health",
+     "text": "(It probably wouldn’t help: experiments with lab rats suggest that forced exercise doesn’t do the trick quite like voluntary exercise.)",
+     "q": "What do lab rat experiments suggest about forced versus voluntary exercise?"
+    },
+    {
+     "id": "3c9c2ec74e706102",
+     "loc": 121,
+     "theme": "health",
+     "text": "In October of 2000 researchers from Duke University made the New York Times with a study showing that exercise is better than sertraline (Zoloft) at treating depression.",
+     "q": "What did the 2000 Duke University study find about exercise versus sertraline (Zoloft) for depression?"
+    },
+    {
+     "id": "419c3b833a8f590f",
+     "loc": 134,
+     "theme": "health",
+     "text": "In Naperville, Illinois, gym class has transformed the student body of nineteen thousand into perhaps the fittest in the nation. Among one entire class of sophomores, only 3 percent were overweight, versus the national average of 30 percent. What’s more surprising—stunning—is that the program has also turned those students into some of the smartest in the nation. In 1999 Naperville’s eighth graders were among some 230,000 students from around the world who took an international standards test called TIMSS (Trends in International Mathematics and Science Study), which evaluates knowledge of math and science.",
+     "q": "What were the overweight rates and academic results for Naperville students after their fitness-focused gym program?"
+    },
+    {
+     "id": "7442858520af2082",
+     "loc": 151,
+     "theme": "health",
+     "text": "A trim young physical education teacher named Neil Duncan lays out the morning’s assignment: “OK, once you’re done with your warm-up, we’re going to head out to the track and run the mile,” he says, presenting a black satchel full of chest straps and digital watches—heart rate monitors of the type used by avid athletes to gauge their physical exertion. “Every time you go around the track, hit the red button. What that’s going to do—it’s going to give you a split. It’s going to tell you, this is how fast I did my first lap, second lap, third lap. On the fourth and final lap—which will be just as fast if you do it right—” he says, pausing to survey his sleepy charges, “you hit the blue button, OK? And that’ll stop your watch. Your goal is—well, to try to run your fastest mile. Last but not least, your average heart rate should be above 185.”"
+    },
+    {
+     "id": "8ecf3745d4955a42",
+     "loc": 159,
+     "theme": "health",
+     "text": "This is not good old gym class. This is Zero Hour PE, the latest in a long line of educational experiments conducted by a group of maverick physical education teachers who have turned the nineteen thousand students in Naperville District 203 into the fittest in the nation—and also some of the smartest. (The",
+     "q": "What is Zero Hour PE in Naperville District 203?"
+    },
+    {
+     "id": "764e94fed760c003",
+     "loc": 162,
+     "theme": "health",
+     "text": "The objective of Zero Hour is to determine whether working out before school gives these kids a boost in reading ability and in the rest of their subjects.",
+     "q": "What is the objective of Zero Hour PE?"
+    },
+    {
+     "id": "1c01877361c37495",
+     "loc": 163,
+     "theme": "health",
+     "text": "The notion that it might is supported by emerging research showing that physical activity sparks biological changes that encourage brain cells to bind to one another. For the brain to learn, these connections must be made; they reflect the brain’s fundamental ability to adapt to challenges. The more neuroscientists discover about this process, the clearer it becomes that exercise provides an unparalleled stimulus, creating an environment in which the brain is ready, willing, and able to learn.",
+     "q": "Why does physical activity create an ideal environment for the brain to learn?"
+    },
+    {
+     "id": "ce5c7e86c28f26d6",
+     "loc": 167,
+     "theme": "health",
+     "text": "Aerobic activity has a dramatic effect on adaptation, regulating systems that might be out of balance and optimizing those that are not—it’s an indispensable tool for anyone who wants to reach his or her full potential."
+    },
+    {
+     "id": "9d706608b698ad69",
+     "loc": 182,
+     "theme": "health",
+     "text": "They’re required to stay between 80 and 90 percent of their maximum heart rate. “What we’re really doing is trying to get them prepared to learn, through rigorous exercise,” says Duncan. “Basically, we’re getting them to that state of heightened awareness and then sending them off to class.”",
+     "q": "What heart-rate range do Zero Hour students maintain, and why?"
+    },
+    {
+     "id": "8df5c46f62cf02ff",
+     "loc": 184,
+     "theme": "health",
+     "text": "How do they feel about being Mr. Duncan’s guinea pigs? “I guess it’s OK,” says Michelle. “Besides getting up early and being all sweaty and gross, I’m more awake during the day. I mean, I was cranky all the time last year.”"
+    },
+    {
+     "id": "f6fa9af7cc4bf391",
+     "loc": 189,
+     "theme": "health",
+     "text": "The administration is so impressed that it incorporates Zero Hour into the high school curriculum as a first-period literacy class called Learning Readiness PE."
+    },
+    {
+     "id": "eaaa13a790a4cfda",
+     "loc": 192,
+     "theme": "health",
+     "text": "The strategy spreads beyond freshmen who need to boost their reading scores, and guidance counselors begin suggesting that all students schedule their hardest subjects immediately after gym, to capitalize on the beneficial effects of exercise.",
+     "q": "What scheduling advice did Naperville guidance counselors give to capitalize on exercise?"
+    },
+    {
+     "id": "26e3295fcbe26591",
+     "loc": 203,
+     "theme": "health",
+     "text": "This couldn’t be more important, particularly since statistics show that children who exercise regularly are likely to do the same as adults.",
+     "q": "What do statistics show about children who exercise regularly?"
     }
    ]
   },
@@ -876,6 +3430,249 @@ window.ANKI = {
      "theme": "work",
      "text": "By using the defense of “busyness,” no work would ever be transferred to anyone else, and we would all be stuck in a weird productivity stasis (which, due to the link between productivity and profitability, and the inevitability of change, is the equivalent of an organizational death spiral). The question becomes, in a world in which everyone is busy with too much to do, “What work is most valuable to the organization?” That's the work we have to get done, right? And, in a general sense, the more important work of the organization is being done at higher levels.",
      "q": "In a world where everyone is busy, what question determines what work must get done, and where is the more important work generally being done?"
+    }
+   ]
+  },
+  {
+   "id": "the-everything-store-jeff-bezos-and-the-age-of-amazon--brad-stone",
+   "title": "The Everything Store: Jeff Bezos and the Age of Amazon",
+   "author": "Brad Stone",
+   "subject": "Jeff Bezos's building of Amazon and its relentless growth",
+   "total": 9,
+   "highlights": [
+    {
+     "id": "f58e61cbd134111d",
+     "loc": 588,
+     "theme": "work",
+     "text": "Bezos tapped Lovejoy to assist with recruiting and told him to go hire the smartest people he knew—just like David Shaw, Bezos wanted all of his employees to be high-IQ brainiacs."
+    }
+   ]
+  },
+  {
+   "id": "the-infinity-machine-demis-hassabis-deepmind-and-the-quest-for-superintelligence--sebastian-mallaby",
+   "title": "The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence",
+   "author": "Sebastian Mallaby",
+   "subject": "Demis Hassabis and DeepMind's pursuit of artificial general intelligence",
+   "total": 29,
+   "highlights": [
+    {
+     "id": "c504841497670f23",
+     "loc": 97,
+     "theme": "ideas",
+     "text": "Hassabis had concluded that neuroscience was the more important of the two: The internal trumped the external. Intelligence is fundamental; it is the root of all else. It is the mechanism through which humans perceive reality.",
+     "q": "Why did Hassabis conclude that neuroscience was more important than the external world?"
+    },
+    {
+     "id": "a1b50c947c62bdbc",
+     "loc": 99,
+     "theme": "ideas",
+     "text": "Hassabis invoked the eighteenth-century philosopher Immanuel Kant. “The mind interprets the world,” Kant had declared. “It’s the mind that creates our reality around us,” Hassabis now said, by way of emphasis.",
+     "q": "What Kantian idea did Hassabis invoke about the relationship between mind and reality?"
+    },
+    {
+     "id": "2aabce62adbc6a83",
+     "loc": 189,
+     "theme": "ideas",
+     "text": "“But doing science is, sort of, like reading the mind of God. Understanding the deep mystery of the universe is my religion, kind of."
+    },
+    {
+     "id": "50cb748d34032bf8",
+     "loc": 191,
+     "theme": "ideas",
+     "text": "“Computers are just bits of sand and copper,” Hassabis continued, now sounding more urgent. “Why should these combine to do anything? I mean, it’s absurd! The electrons move around and then that creates an AI system that can defeat a Go master? Why should that be possible?"
+    },
+    {
+     "id": "df81855066f416dc",
+     "loc": 198,
+     "theme": "ideas",
+     "text": "“I sit at my desk at two a.m., and I feel like reality is staring at me, screaming at me. “Literally, screaming at me. Trying to tell me something if I could just listen hard enough. “That’s how I feel every day. So, you can see why I’m trying to build AI. I’ve felt that since I was very young: that there’s a deep, deep mystery about what’s going on here."
+    },
+    {
+     "id": "8313ab04204e09c9",
+     "loc": 248,
+     "theme": "work",
+     "text": "Like Ender, Hassabis had dedicated every fiber of his being to the accomplishment of a mission, which was why he worked night shifts from ten in the evening until around four in the morning in addition to his normal office hours. Like Ender, Hassabis felt a burden of responsibility. “If you are trying to solve humanity’s problems and understand the nature of reality, you don’t have any time to waste,” he said.",
+     "q": "How did Hassabis structure his work schedule to pursue his mission?"
+    },
+    {
+     "id": "58b5e5b41fde8c5a",
+     "loc": 255,
+     "theme": "work",
+     "text": "But then he continued, weighing his words deliberately. “Demis has an extraordinary level of determination. Unlike pretty much anybody. Astonishing, incredible determination. That’s his most defining characteristic. Just unbelievable determination.” “What do you mean?” “He works, sleeps, eats, breathes the mission, twenty-four hours a day. To a degree that I just haven’t seen with other people.”",
+     "q": "What did a colleague describe as Hassabis's most defining characteristic?"
+    },
+    {
+     "id": "6b130704aa19a18d",
+     "loc": 430,
+     "theme": "ideas",
+     "text": "Hassabis knew Bullfrog as one of the top game studios in Europe. Its founder, Peter Molyneux, was a big-eared, big-talking, lanky creative who did not just design games; he invented entire new genres of games, notably the “god games” in which players controlled the fates of hordes of digital characters.",
+     "q": "What kind of games did Peter Molyneux's Bullfrog studio pioneer?"
+    },
+    {
+     "id": "baf341c97af29cfd",
+     "loc": 484,
+     "theme": "ideas",
+     "text": "Sometime in this period, Molyneux gave Hassabis a copy of Gödel, Escher, Bach, a fire hose of a book that has inspired a remarkable number of future AI scientists.[28]"
+    },
+    {
+     "id": "2b4f580d272daffa",
+     "loc": 531,
+     "theme": "ideas",
+     "text": "Molyneux and Gödel, Escher, Bach had planted the idea: Computers would soon do whatever the brain could do. Iain Banks had supplied a utopian vision of what AI’s realization could mean: boundless human flourishing. And the Carnegie Mellon professor had inadvertently established that Hassabis possessed the requisite talent: If he could impress an eminent scientist before even attending university, there was no limit to what he might accomplish in the future.",
+     "q": "What three influences convinced Hassabis that building AGI was both possible and within his reach?"
+    },
+    {
+     "id": "fe9572c11461f093",
+     "loc": 654,
+     "theme": "ideas",
+     "text": "Silver, like Hassabis, had read Gödel, Escher, Bach: The first name in the book’s title belonged to the mathematician Kurt Gödel, who had proved that, contrary to the Dartmouth pioneers’ presumption, no system of logical deduction could encompass all possible true statements.",
+     "q": "What did Kurt Gödel prove about systems of logical deduction?"
+    },
+    {
+     "id": "bf5781d099f51847",
+     "loc": 667,
+     "theme": "ideas",
+     "text": "Because learning from examples requires many examples, an inductive machine can succeed only by taking in as much data as possible. But then it will hit the limits of its computational power, requiring a strategy for deciding which parts of its training data to focus on. This gets to the challenge that defines AI: the challenge of teaching a machine to navigate copious data. The human mind relies on mental shortcuts to pull off this trick; but at the time when Hassabis and Silver were at Cambridge, scientists had found no way to codify these human “heuristics” so that they could be fed into a computer. Ever since the Dartmouth workshop, artificial intelligence pioneers had wrestled with this conundrum, which philosophers termed the “problem of induction.”",
+     "q": "What is the 'problem of induction' that defines the core challenge of AI?"
+    },
+    {
+     "id": "c9d2fc201ee18a0a",
+     "loc": 688,
+     "theme": "ideas",
+     "text": "The sessions with Daugman led Hassabis to his next epiphany. He realized that a superhuman computer would be more than just a means to a scientific end, the end being progress in scientific understanding. Rather, the computer might itself be the end, because information, marshaled by computer science, was the basic unit of reality. The traditional contenders for the status of fundamental building block—energy, matter—were less compelling by far; only information provided the basis for explaining all facets of experience. The behavior of particles, the flow of energy, and even human consciousness could be seen as examples of information processing.",
+     "q": "Why did Hassabis conclude that information, rather than energy or matter, is the fundamental unit of reality?"
+    },
+    {
+     "id": "645f652e8c2b3ccb",
+     "loc": 699,
+     "theme": "ideas",
+     "text": "“That’s the way I still view the whole universe,” Hassabis said later. “I think information is the fundamental unit.”"
+    },
+    {
+     "id": "2237f04e67ae147a",
+     "loc": 704,
+     "theme": "ideas",
+     "text": "Perhaps the answer was to move another level up: from information on level one, to human-designed computation on level two, to machines that figured out how to design their own computation on a third level. Such machines—artificial intelligence systems, or programs that designed programs—barely existed, but they would fill an obvious gap: If humans lacked the wisdom to teach machines induction, the infinity machines of the future would teach themselves to crack the problem.",
+     "q": "What is an 'infinity machine' and how would it solve the problem of induction?"
+    },
+    {
+     "id": "ac379cd53173901d",
+     "loc": 715,
+     "theme": "ideas",
+     "text": "Over the ensuing years, Hassabis’s two-part epiphany stuck with him. First, information was the fundamental unit of reality. Second, a machine that learned for itself how to induce nature’s patterns was the most powerful imaginable tool with which to apprehend reality.",
+     "q": "What were the two parts of Hassabis's epiphany that guided his career?"
+    },
+    {
+     "id": "0e2cad8fbbc7b542",
+     "loc": 1038,
+     "theme": "ideas",
+     "text": "“The structure of the world is, basically, created by the mind,” Hassabis told me during one of our long talks. “I was trying to prove that with my neuroscience work: that reality might be a simulation.”"
+    },
+    {
+     "id": "5129c34cdbb9a5de",
+     "loc": 1220,
+     "theme": "ideas",
+     "text": "Rather, the true mark of intelligence was generality. Together with Hutter, Legg landed on a summarizing phrase: “Intelligence measures an agent’s ability to achieve goals in a wide range of environments.”",
+     "q": "How did Legg and Hutter define intelligence in a single summarizing phrase?"
+    },
+    {
+     "id": "7af9699540073314",
+     "loc": 1537,
+     "theme": "ideas",
+     "text": "Fifteen years later, with the benefit of hindsight, not all DeepMind’s prophecies look accurate. Insights from neuroscience proved useful during DeepMind’s early days, but not after 2015 or so. The question of whether AI systems need to be “grounded” is still hotly debated. Large language models such as ChatGPT or Gemini are not directly taught concepts, yet these systems exhibit an impressive grasp of how the world functions. A feeling for concepts somehow emerges as a by-product of statistical mastery, bypassing DeepMind’s ambition to program conceptual understanding explicitly. And yet, despite these debates and details, DeepMind’s road map was prescient. The computational power driving AI models grew almost exactly in line with the business plan’s projection.[17] More to the point, the prediction that it would be possible to build human-level AGI by around the year 2030 seemed outlandish in 2010. But as of 2026, and allowing for the fact that the definition of AGI remains fuzzy, DeepMind’s forecast appears to have been just slightly conservative.",
+     "q": "How did DeepMind's 2010 forecast for building human-level AGI compare to what actually happened by 2026?"
+    },
+    {
+     "id": "adae9163a72dba4e",
+     "loc": 1766,
+     "theme": "ideas",
+     "text": "Starting in 2010, speech recognition systems began to work, and in October 2012 a soft-spoken Hinton protégé named Alex Krizhevsky showed up at a conference in Italy and announced something astonishing. Working from his bedroom at his parents’ home, Krizhevsky had trained a deep-learning system that smashed all previous records in computer vision: In a competition called ImageNet, devised by the pioneering Stanford computer scientist Fei-Fei Li, his model was nearly twice as accurate as the next one.[1] Hinton immediately formed a company with Krizhevsky and his charismatic collaborator, Ilya Sutskever. Such was the excitement that, after just two months, the trio sold their outfit, consisting of nothing but themselves, to Google for $44 million.",
+     "q": "What did Alex Krizhevsky achieve in the 2012 ImageNet competition, and what happened afterward?"
+    },
+    {
+     "id": "ce7c48103a53bdae",
+     "loc": 1778,
+     "theme": "ideas",
+     "text": "Hassabis did not merely anticipate Hinton’s success. He had a strategy to surpass it. As he had stressed in his business plan, the road to AGI would involve more than just replicating the various components of the human brain; the components would have to be integrated. The progress in image recognition was therefore just one piece of the puzzle. The larger challenge was to combine deep learning, which would solve challenges such as computer vision, with reinforcement learning, which would deliver other facets of intelligence, including the ability to hatch plans and think strategically.",
+     "q": "What was Hassabis's strategy to surpass Hinton's image-recognition success?"
+    },
+    {
+     "id": "c4659764056c7cd5",
+     "loc": 1788,
+     "theme": "ideas",
+     "text": "But although he was a Hintonite, Mnih was less tribal than many of his colleagues. For the most part, Hinton’s deep-learning group in Toronto barely communicated with the premier center for reinforcement learning at the University of Alberta, where David Silver did his PhD."
+    },
+    {
+     "id": "66e58b4484c1b956",
+     "loc": 1796,
+     "theme": "ideas",
+     "text": "There were reasons for the Toronto–Alberta division. The reinforcement learners loved developing mathematical proofs showing that their systems worked in theory, even if they were difficult to build in practice. The deep learners were the opposite: They loved building systems that worked in practice, even if there was no elegant theory to explain them. A deep neural network was a mysterious black box: impressive when measured by its outward results, opaque when it came to its internal functioning.",
+     "q": "How did the deep-learning and reinforcement-learning research cultures differ in their priorities?"
+    },
+    {
+     "id": "972a7dd7da343752",
+     "loc": 1829,
+     "theme": "ideas",
+     "text": "Deep learning took you only so far: It could recognize patterns and make sense of data, but it could not create agents that interacted with their environments. This set a limit on what deep learning could achieve, since much human learning occurs through trial and error. By dropping an object, a child learns about gravity. By saying “please” and getting what she wants, she learns the value of good manners. Reinforcement learning equips machines to do the same: to act, and to learn by acting. Unlike deep learning, which involved layered neural networks, reinforcement learning was a conceptual framework rather than a computational architecture. RL researchers described their systems in general terms. Like David Levy’s chess system, an agent would require a “value function,” which estimated the rewards that would accrue from a particular environmental state. It would require a “policy,” meaning a way of deciding what to do next. It might also be equipped with a “model,” allowing it to predict how the environment would change based on its actions.",
+     "q": "What are the three components—value function, policy, and model—that a reinforcement-learning agent may require?"
+    },
+    {
+     "id": "94eee24669a35ca0",
+     "loc": 1843,
+     "theme": "ideas",
+     "text": "Whereas deep learning depended on the availability of training data—human-labeled cat photos, for example—reinforcement learning held out the hope that an AI could collect its own data by acting in the world and observing the consequences of its actions. In principle, there was no limit to the scope of such actions. An RL system could learn anything.",
+     "q": "What key advantage does reinforcement learning hold over deep learning regarding training data?"
+    }
+   ]
+  },
+  {
+   "id": "the-intelligent-investor-rev-ed-the-definitive-book-on-value-investing-a-timeles--benjamin-graham-jason-zweig-and-warren-e-buffett",
+   "title": "The Intelligent Investor, Rev. Ed: The Definitive Book on Value Investing – A Timeless Investment Strategy for Navigating the Stock Market and Mastering Finance",
+   "author": "Benjamin Graham, Jason Zweig, and Warren E. Buffett",
+   "subject": "value investing and the disciplined mindset needed to navigate the stock market",
+   "total": 6,
+   "highlights": [
+    {
+     "id": "b3ac73db9c35e1bd",
+     "loc": 125,
+     "theme": "investing",
+     "text": "To invest successfully over a lifetime does not require a stratospheric IQ, unusual business insights, or inside information. What’s needed is a sound intellectual framework for making decisions and the ability to keep emotions from corroding that framework.",
+     "q": "According to Graham, what does successful lifetime investing actually require, rather than a high IQ or inside information?"
+    },
+    {
+     "id": "1962728b725332b5",
+     "loc": 2805,
+     "theme": "investing",
+     "text": "There are two possible ways by which he may try to do this: the way of timing and the way of pricing. By timing we mean the endeavor to anticipate the action of the stock market—to buy or hold when the future course is deemed to be upward, to sell or refrain from buying when the course is downward. By pricing we mean the endeavor to buy stocks when they are quoted below their fair value and to sell them when they rise above such value.",
+     "q": "What are the two ways—timing and pricing—by which an investor may try to profit, as Graham defines them?"
+    },
+    {
+     "id": "d92e855be7d20aba",
+     "loc": 2811,
+     "theme": "investing",
+     "text": "We are convinced that the intelligent investor can derive satisfactory results from pricing of either type. We are equally sure that if he places his emphasis on timing, in the sense of forecasting, he will end up as a speculator and with a speculator’s financial results.",
+     "q": "What does Graham say happens to an investor who emphasizes timing in the sense of forecasting?"
+    },
+    {
+     "id": "1ecc17f54bd3e59f",
+     "loc": 2831,
+     "theme": "investing",
+     "text": "What this means is that timing is of no real value to the investor unless it coincides with pricing—that is, unless it enables him to repurchase his shares at substantially under his previous selling price.",
+     "q": "When does Graham say timing has real value to the investor?"
+    },
+    {
+     "id": "6d8f29f6627358a6",
+     "loc": 2878,
+     "theme": "investing",
+     "text": "Our recommended policy has, however, made provision for changes in the proportion of common stocks to bonds in the portfolio, if the investor chooses to do so, according as the level of stock prices appears less or more attractive by value standards.*",
+     "q": "How does Graham's recommended policy allow the stock-to-bond proportion to change?"
+    },
+    {
+     "id": "15b967faffbed648",
+     "loc": 2894,
+     "theme": "investing",
+     "text": "The moral seems to be that any approach to moneymaking in the stock market which can be easily described and followed by a lot of people is by its terms too simple and too easy to last.† Spinoza’s concluding remark applies to Wall Street as well as to philosophy: “All things excellent are as difficult as they are rare.”",
+     "q": "What does Graham conclude about any stock-market moneymaking approach that is easily described and followed by many people?"
     }
    ]
   },
@@ -1163,6 +3960,282 @@ window.ANKI = {
      "theme": "work",
      "text": "The first part in understanding how you lead is to know your strengths—the things you’re talented at and love to do. This is crucial because great management typically comes from playing to your strengths rather than from fixing your weaknesses. There are some useful frameworks for understanding your strengths, like StrengthsFinder 2.0 by Tom Rath or StandOut by Marcus Buckingham.",
      "q": "Why does Zhuo say great management comes from playing to strengths rather than fixing weaknesses, and what tools does she recommend?"
+    }
+   ]
+  },
+  {
+   "id": "the-man-who-solved-the-market-how-jim-simons-launched-the-quant-revolution--gregory-zuckerman",
+   "title": "The Man Who Solved the Market: How Jim Simons Launched the Quant Revolution",
+   "author": "Gregory Zuckerman",
+   "subject": "how Jim Simons and Renaissance Technologies built a quantitative trading empire",
+   "total": 44,
+   "highlights": [
+    {
+     "id": "2b791c89fa082741",
+     "loc": 142,
+     "theme": "investing",
+     "text": "former math professor, Simons is arguably the most successful trader in the history of modern finance. Since 1988, Renaissance’s flagship Medallion hedge fund has generated average annual returns of 66 percent, racking up trading profits of more than $100 billion (see Appendix 1 for how I arrive at these numbers). No one in the investment world comes close. Warren Buffett, George Soros, Peter Lynch, Steve Cohen, and Ray Dalio all fall short (see Appendix 2).",
+     "q": "What average annual returns has Renaissance's Medallion fund generated since 1988, and how does that compare to other famous investors?"
+    },
+    {
+     "id": "80ef7fc180572908",
+     "loc": 155,
+     "theme": "investing",
+     "text": "By early 2019, hedge funds and other quantitative, or quant, investors had emerged as the market’s largest players, controlling about 30 percent of stock trading, topping the activity of both individual investors and traditional investing firms.",
+     "q": "By 2019, what share of stock trading did quant investors control?"
+    },
+    {
+     "id": "d8bb35a6dc97fcf1",
+     "loc": 176,
+     "theme": "investing",
+     "text": "I was most fascinated by a striking paradox: Simons and his team shouldn’t have been the ones to master the market. Simons never took a single finance class, didn’t care very much for business, and, until he turned forty, only dabbled in trading. A decade later, he still hadn’t made much headway. Heck, Simons didn’t even do applied mathematics, he did theoretical math, the most impractical kind.",
+     "q": "Why did the author find Simons's success paradoxical given his background?"
+    },
+    {
+     "id": "6c67f0f882ba9738",
+     "loc": 783,
+     "theme": "investing",
+     "text": "The odds weren’t in favor of a forty-year-old mathematician embarking on his fourth career, hoping to revolutionize the centuries-old world of investing. Indeed, Simons appeared closer to retirement than any sort of historic breakthrough. His graying hair was long and stringy, almost to his shoulders. A slight paunch made him look even more like an aging professor out of step with modern finance."
+    },
+    {
+     "id": "cc5acbd8bdfeb2b9",
+     "loc": 800,
+     "theme": "investing",
+     "text": "Simons concluded that markets didn’t always react in explainable or rational ways to news or other events, making it difficult to rely on traditional research, savvy, and insight. Yet, financial prices did seem to feature at least some defined patterns, no matter how chaotic markets appeared, much as the apparent randomness of weather patterns can mask identifiable trends. It looks like there’s some structure here, Simons thought. He just had to find it.",
+     "q": "What did Simons conclude about markets that motivated his search for hidden patterns?"
+    },
+    {
+     "id": "b6f0a12846c3cbab",
+     "loc": 832,
+     "theme": "ideas",
+     "text": "Over the course of several summers in the late 1960s, Baum and Lloyd Welch, an information theorist working down the hall, developed an algorithm to analyze Markov chains, which are sequences of events in which the probability of what happens next depends only on the current state, not past events. In a Markov chain, it is impossible to predict future steps with certainty, yet one can observe the chain to make educated guesses about possible outcomes. Baseball can be seen as a Markov game. If a batter has three balls and two strikes, the order in which they came and the number of fouls in between don’t matter. If the next pitch is a strike, the batter is out.",
+     "q": "What defines a Markov chain?"
+    },
+    {
+     "id": "45eae7772cb732a2",
+     "loc": 837,
+     "theme": "ideas",
+     "text": "A hidden Markov process is one in which the chain of events is governed by unknown, underlying parameters or variables. One sees the results of the chain but not the “states” that help explain the progression of the chain.",
+     "q": "What is a hidden Markov process?"
+    },
+    {
+     "id": "99d5a9ab3c708f78",
+     "loc": 840,
+     "theme": "ideas",
+     "text": "Some investors liken financial markets, speech recognition patterns, and other complex chains of events to hidden Markov models. The Baum-Welch algorithm provided a way to estimate probabilities and parameters within these complex sequences with little more information than the output of the processes.",
+     "q": "What does the Baum-Welch algorithm allow you to estimate?"
+    },
+    {
+     "id": "e50b99afd72ed38b",
+     "loc": 845,
+     "theme": "ideas",
+     "text": "The algorithm would allow someone to infer a sense of the sport’s rules from the distribution of scores, even as the full rules remained hidden. “The Baum-Welch algorithm gets you closer to the final answer by giving you better probabilities,” Welch explains. Baum usually minimized the importance of his accomplishment. Today, though, Baum’s algorithm, which allows a computer to teach itself states and probabilities, is seen as one of the twentieth century’s notable advances in machine learning, paving the way for breakthroughs affecting the lives of millions in fields from genomics to weather prediction.",
+     "q": "Why is Baum's algorithm now regarded as a notable advance in machine learning?"
+    },
+    {
+     "id": "ceb2f81e67194729",
+     "loc": 978,
+     "theme": "investing",
+     "text": "“I don’t want to have to worry about the market every minute. I want models that will make money while I sleep,” Simons said. “A pure system without humans interfering.”",
+     "q": "What kind of trading system did Simons say he wanted, free of human interference?"
+    },
+    {
+     "id": "a27f2b23ff300782",
+     "loc": 1091,
+     "theme": "investing",
+     "text": "One day, Simons was speaking with a friend who mentioned that his wife, a jeweler, was rifling through his closet, removing gold cuff links and tie clips to sell. “Are you going broke or something?” Simons asked with concern. “No—she can cut the line to sell,” the friend responded. “There’s a line to sell gold?” The friend explained that people around the country were queuing up to sell jewelry, taking advantage of surging prices. Simons turned scared; if the supply of gold was swelling, that could crush prices.",
+     "q": "What everyday observation about people queuing to sell gold made Simons worry prices would crash?"
+    },
+    {
+     "id": "315ce642483c5823",
+     "loc": 1435,
+     "theme": "investing",
+     "text": "When the Axcom team started testing the approach, they quickly began to see improved results. The firm began incorporating higher dimensional kernel regression approaches, which seemed to work best for trending models, or those predicting how long certain investments would keep moving in a trend.",
+     "q": "What kind of models did higher-dimensional kernel regression work best for at Axcom?"
+    },
+    {
+     "id": "eba2ea30eae53da3",
+     "loc": 1499,
+     "theme": "investing",
+     "text": "Shannon hadn’t told many others, but he had begun building mathematical formulas to try to beat the stock market."
+    },
+    {
+     "id": "eed62664983debce",
+     "loc": 1582,
+     "theme": "investing",
+     "text": "Buying investments as they became more expensive and selling them as they fell in value was at odds with leading academic theory, which recommended buying when prices cheapened and taking money off the table when prices richened. Warren Buffett and other big-name investors embraced that value style of investing. Still, some aggressive traders, including hedge-fund manager Paul Tudor Jones, had adopted trend following strategies similar to those Simons’s team relied on. Simons needed new approaches to stay a step ahead of the pack.",
+     "q": "How did trend-following differ from the value-investing style favored by Buffett?"
+    },
+    {
+     "id": "2068fbaede35da28",
+     "loc": 1586,
+     "theme": "investing",
+     "text": "Berlekamp began sharing his suggestions. He told Ax that Axcom’s trading models didn’t seem to size trades properly. They should buy and sell larger amounts when their model suggested a better chance of making money, Berlekamp argued, precepts he had learned from Kelly. “We ought to be loading up here,” Berlekamp said one day.",
+     "q": "What did Berlekamp, drawing on Kelly, argue about how Axcom should size its trades?"
+    },
+    {
+     "id": "0950e841d97ef5f0",
+     "loc": 1628,
+     "theme": "investing",
+     "text": "Ax relied on his instincts for a portion of the portfolio, edging away from trading based on the sophisticated models he and Straus had developed, much as Baum had drifted toward traditional trading years earlier and Simons was initially uncomfortable with Carmona’s “kernels.” It seemed quantitative investing didn’t come naturally, even to math professors. Ax figured out that West Coast copies of the New York Times were printed in the city of Torrance, about forty miles away, and arranged for the next day’s paper to be delivered to his home just after midnight. Ax proceeded to make trades in overnight, international markets based on comments from government officials and others he had read in the paper, hoping to get a step on competitors. He also installed enormous television screens throughout his home to monitor the news and communicate with colleagues through a video connection he had established.",
+     "q": "What did Ax's drift toward instinct-based trading suggest about quantitative investing even for mathematicians?"
+    },
+    {
+     "id": "7b0855a2ec5b99dd",
+     "loc": 1667,
+     "theme": "investing",
+     "text": "Simons had spent more than a decade backing various traders and attempting a new approach to investing. He hadn’t made much headway. Baum had flamed out, Henry Laufer wasn’t around much, and now his fund with Ax and Straus was down to $20 million amid mounting losses."
+    },
+    {
+     "id": "c181acc40c2516b4",
+     "loc": 1928,
+     "theme": "investing",
+     "text": "Simons hadn’t spent much time delving into financial history, though. Had he done so, Simons might have realized that his approach wasn’t especially novel. For centuries, speculators had embraced various forms of pattern recognition, relying on methods that bore similarity to some of the things Renaissance was doing. The fact that many of these colorful characters had failed miserably, or were outright charlatans, didn’t augur well for Simons.",
+     "q": "What did financial history suggest about the novelty of Simons's pattern-recognition approach?"
+    },
+    {
+     "id": "8cd7b1ad2066a736",
+     "loc": 2166,
+     "theme": "investing",
+     "text": "Simons had discarded a thriving academic career to do something special in the investing world. But, after a full decade in the business, he was managing barely more than $45 million, a mere quarter the assets of Shaw’s firm."
+    },
+    {
+     "id": "6ee2231c31ba05d6",
+     "loc": 2179,
+     "theme": "investing",
+     "text": "“Now I really have it,” Simons enthused. “We’ve had a breakthrough.” He asked Sussman for a $10 million investment in his hedge fund, expressing certainty he could generate big gains and grow Renaissance into a major investment firm. “I’ve had a revelation,” Simons said. “I can do it in size.”"
+    },
+    {
+     "id": "9d1a15ac10784169",
+     "loc": 2232,
+     "theme": "investing",
+     "text": "Laufer made an early decision that would prove extraordinarily valuable: Medallion would employ a single trading model rather than maintain various models for different investments and market conditions, a style most quantitative firms would embrace. A collection of trading models was simpler and easier to pull off, Laufer acknowledged. But, he argued, a single model could draw on Straus’s vast trove of pricing data, detecting correlations, opportunities, and other signals across various asset classes. Narrow, individual models, by contrast, can suffer from too little data.",
+     "q": "Why did Laufer decide Medallion should use a single trading model rather than many?"
+    },
+    {
+     "id": "776c453e6d6465c4",
+     "loc": 2255,
+     "theme": "investing",
+     "text": "It was as if the Medallion team had donned glasses for the first time, seeing the market anew. One early discovery: Certain trading bands from Friday morning’s action had the uncanny ability to predict bands later that same afternoon, nearer to the close of trading.",
+     "q": "What early predictive discovery did the Medallion team make about Friday morning trading bands?"
+    },
+    {
+     "id": "0aa908b0e5d79f25",
+     "loc": 2258,
+     "theme": "investing",
+     "text": "The team uncovered predictive effects related to volatility, as well as a series of combination effects, such as the propensity of pairs of investments—such as gold and silver, or heating oil and crude oil—to move in the same direction at certain times in the trading day compared with others.",
+     "q": "What combination effect did the team find between pairs like gold and silver or heating oil and crude oil?"
+    },
+    {
+     "id": "807b17a915fe9e72",
+     "loc": 2264,
+     "theme": "investing",
+     "text": "“How do we pull the trigger?” he asked Laufer and the rest of the team. Simons was challenging them to solve yet another vexing problem: Given the range of possible trades they had developed and the limited amount of money that Medallion managed, how much should they bet on each trade? And which moves should they pursue and prioritize? Laufer began developing a computer program to identify optimal trades throughout the day, something Simons began calling his betting algorithm. Laufer decided it would be “dynamic,” adapting on its own along the way and relying on real-time analysis to adjust the fund’s mix of holdings given the probabilities of future market moves—an early form of machine learning.",
+     "q": "What was the purpose of Laufer's 'betting algorithm' at Medallion?"
+    },
+    {
+     "id": "1172341501f96705",
+     "loc": 2342,
+     "theme": "investing",
+     "text": "Profitable trade ideas are only half the game; the act of buying and selling investments can itself affect prices to such a degree that gains can be whittled away. It’s meaningless to know that copper prices will rise from $3.00 a contract to $3.10, for example, if your buying pushes the price up to $3.05 before you even have a chance to complete your transaction—perhaps as dealers hike the price or as rivals do their own buying—slashing potential profits by half. From the earliest days of the fund, Simons’s team had been wary of these transaction costs, which they called slippage. They regularly compared their trades against a model that tracked how much the firm would have profited or lost were it not for those bothersome trading costs. The group coined a name for the difference between the prices they were getting and the theoretical trades their model made without the pesky costs. They called it The Devil.",
+     "q": "What did Renaissance call slippage—the effect of one's own trading on prices—internally?"
+    },
+    {
+     "id": "3792e037da3d6c67",
+     "loc": 2367,
+     "theme": "investing",
+     "text": "The Renaissance team was curious by nature, as were many of its investors. They couldn’t help wonder what the heck was going on. If Medallion was emerging as a big winner in most of its trades, who was on the other side suffering steady losses? Over time, Simons came to the conclusion that the losers probably weren’t those who trade infrequently, such as buy-and-hold individual investors, or even the “treasurer of a multinational corporation,” who adjusts her portfolio of foreign currencies every once in a while to suit her company’s needs, as Simons told his investors. Instead, it seemed Renaissance was exploiting the foibles and faults of fellow speculators, both big and small.",
+     "q": "Who did Simons conclude was on the losing side of Medallion's winning trades?"
+    },
+    {
+     "id": "4ebbbf1c2d7226ba",
+     "loc": 2380,
+     "theme": "investing",
+     "text": "Simons and his colleagues sensed the professors were wrong. They believed investors are prone to cognitive biases, the kinds that lead to panics, bubbles, booms, and busts. Simons didn’t realize it, but a new strain of economics was emerging that would validate his instincts. In the 1970s, Israeli psychologists Amos Tversky and Daniel Kahneman had explored how individuals make decisions, demonstrating how prone most are to act irrationally. Later, economist Richard Thaler used psychological insights to explain anomalies in investor behavior, spurring the growth of the field of behavioral economics, which explored the cognitive biases of individuals and investors.",
+     "q": "Which field of economics, pioneered by Tversky, Kahneman and Thaler, validated Simons's instinct that investors act irrationally?"
+    },
+    {
+     "id": "cb4b8ffe4d6b8fc6",
+     "loc": 2391,
+     "theme": "investing",
+     "text": "Like most investors, Simons, too, became nervous when his fund went through rocky times. In a few rare circumstances, he reacted by paring the firm’s overall positions. On the whole, though, Simons maintained faith in his trading model, recalling how difficult it had been for him to invest using his instincts. He made a commitment to refrain from overriding the model, hoping to ensure that neither Medallion’s returns, nor the emotions of his employees at Renaissance, influenced the fund’s moves.",
+     "q": "What commitment did Simons make about overriding his trading model during rocky times?"
+    },
+    {
+     "id": "7806c732604258fa",
+     "loc": 2397,
+     "theme": "investing",
+     "text": "Simons hadn’t embraced a statistics-based approach because of the work of any economists or psychologists, nor had he set out to program algorithms to avoid, or take advantage of, investors’ biases. Over time, though, Simons and his team came to believe that these errors and overreactions were at least partially responsible for their profits, and that their developing system seemed uniquely capable of taking advantage of the common mistakes of fellow traders. “What you’re really modeling is human behavior,” explains Penavic, the researcher. “Humans are most predictable in times of high stress—they act instinctively and panic. Our entire premise was that human actors will react the way humans did in the past . . . we learned to take advantage.”",
+     "q": "According to Penavic, when are humans most predictable, and how did Renaissance exploit this?"
+    },
+    {
+     "id": "c15ad00b3b3206ca",
+     "loc": 2412,
+     "theme": "investing",
+     "text": "Simons did an about-face. By the end of 1993, Medallion managed $280 million, and Simons worried profits might suffer if the fund got too big and its trades started pushing prices higher when it bought, or lower when it sold. Simons decided not to let any more clients into the fund.",
+     "q": "Why did Simons stop admitting new clients to Medallion by the end of 1993?"
+    },
+    {
+     "id": "75df104478a691a0",
+     "loc": 2509,
+     "theme": "investing",
+     "text": "No one ever made a decision because of a number. They need a story. Daniel Kahneman, economist Jim Simons seemed to have discovered the perfect way to trade commodities, currencies, and bonds: predictive mathematical models. Yet, Simons knew, if he wanted Renaissance Technologies to amount to much of anything, he’d have to get his computers to make money in stocks. It wasn’t clear why Simons thought he had a chance of success. The early 1990s was a golden age for fundamental investors, those who generally chat up companies and digest annual reports, financial filings and statements à la Warren Buffett. These investors tap instinct, cunning, and experience. It was all about brainpower, not computing power. When it came to stocks, Simons seemed well out of his depth.",
+     "q": "Why did Simons face skepticism about applying computer models to stock trading in the early 1990s?"
+    },
+    {
+     "id": "2879eb9cb6c440ad",
+     "loc": 2583,
+     "theme": "investing",
+     "text": "It was self-evident that the surest way to score huge sums in the market was by unearthing corporate information and analyzing economic trends. The idea that someone could use computers to beat these seasoned pros seemed far-fetched."
+    },
+    {
+     "id": "ea46014687e62737",
+     "loc": 2590,
+     "theme": "investing",
+     "text": "Kepler’s twist was to apply this approach to statistical arbitrage, buying stocks that didn’t rise as much as expected based on the historic returns of these various underlying factors, while simultaneously selling short, or wagering against, shares that underperformed. If shares of Apple Computer and Starbucks each rose 10 percent amid a market rally, but Apple historically did much better than Starbucks during bullish periods, Kepler might buy Apple and short Starbucks. Using time-series analysis and other statistical techniques, Frey and a colleague searched for trading errors, behavior not fully explained by historic data tracking the key factors, on the assumption that these deviations likely would disappear over time. Betting on relationships and relative differences between groups of stocks, rather than an outright rise or fall of shares, meant Frey didn’t need to predict where shares were headed, a difficult task for anyone. He and his colleagues also didn’t really care where the overall market was going. As a result, Kepler’s portfolio was market neutral, or reasonably immune to the stock market’s moves. Frey’s models usually just focused on whether relationships between clusters of stocks returned to their historic norms—a reversion-to-the-mean strategy. Constructing a portfolio of these investments figured to dampen the fund’s volatility, giving it a high Sharpe ratio. Named after economist William F. Sharpe, the Sharpe ratio is a commonly used measure of returns that incorporates a portfolio’s risk. A high Sharpe suggests a strong and stable historic performance.",
+     "q": "What is statistical arbitrage, and what does it mean for a portfolio to be market neutral with a high Sharpe ratio?"
+    },
+    {
+     "id": "b4f193b9d4a341bd",
+     "loc": 3071,
+     "theme": "investing",
+     "text": "Each year, tens of thousands of peer-reviewed research papers are published in disciplines including economics, finance, and psychology. Many delve into the inner workings of financial markets and demonstrate methods of scoring outsize returns, yet are left in history’s dustpan. Each week, Simons decided, Brown, Mercer, and other senior executives would be assigned three papers to read, digest, and present—a book club for quants with a passion for money rather than sex or murder. After reading several hundred papers, Simons and his colleagues gave up. The tactics sounded tantalizing, but when Medallion’s researchers tested the efficacy of the strategies proposed by the academics, the trade recommendations usually failed to pan out. Reading so many disappointing papers reinforced a certain cynicism within the firm about the ability to predict financial moves.",
+     "q": "What did Medallion's researchers find when they tested strategies proposed in academic finance papers?"
+    },
+    {
+     "id": "30992dcb444d1692",
+     "loc": 3087,
+     "theme": "investing",
+     "text": "Rival trading firms often dealt with the issue by allowing researchers and others to work in silos, sometimes even competing with each other. Simons insisted on a different approach—Medallion would have a single, monolithic trading system. All staffers enjoyed full access to each line of the source code underpinning their moneymaking algorithms, all of it readable in cleartext on the firm’s internal network.",
+     "q": "How did Simons's single monolithic trading system differ from rivals' siloed approach?"
+    },
+    {
+     "id": "672b6666067342f2",
+     "loc": 3146,
+     "theme": "investing",
+     "text": "By 1997, Medallion’s staffers had settled on a three-step process to discover statistically significant moneymaking strategies, or what they called their trading signals. Identify anomalous patterns in historic pricing data; make sure the anomalies were statistically significant, consistent over time, and nonrandom; and see if the identified pricing behavior could be explained in a reasonable way.",
+     "q": "What three-step process did Medallion use by 1997 to discover trading signals?"
+    },
+    {
+     "id": "fe1243e844ce032b",
+     "loc": 3155,
+     "theme": "investing",
+     "text": "Most quant firms ignore signals if they can’t develop a reasonable hypothesis to explain them, but Simons and his colleagues never liked spending too much time searching for the causes of market phenomena. If their signals met various measures of statistical strength, they were comfortable wagering on them. They only steered clear of the most preposterous ideas.",
+     "q": "How did Renaissance treat signals it couldn't explain, unlike most quant firms?"
+    },
+    {
+     "id": "aa3dd5bf127ba236",
+     "loc": 3179,
+     "theme": "investing",
+     "text": "By then, Medallion increasingly was relying on strategies that its system taught itself, a form of machine learning. The computers, fed with enough data, were trained to spit out their own answers. A consistent winner, for example, might automatically receive more cash, without anyone approving the shift or even being aware of it.",
+     "q": "How did Medallion's machine-learning system reallocate cash to consistent winners?"
+    },
+    {
+     "id": "a74093d69087a9a6",
+     "loc": 3407,
+     "theme": "investing",
+     "text": "Some of the new information, such as quarterly corporate earnings reports, didn’t provide much of an advantage. But data on the earnings predictions of stock analysts and their changing views on companies sometimes helped. Watching for patterns in how stocks traded following earnings announcements, and tracking corporate cash flows, research-and-development spending, share issuance, and other factors, also proved to be useful activities. The team improved its predictive algorithms by developing a rather simple measure of how many times a company was mentioned in a news feed—no matter if the mentions were positive, negative, or even pure rumors.",
+     "q": "What simple news-based measure improved Medallion's predictive algorithms?"
     }
    ]
   },
@@ -1586,6 +4659,241 @@ window.ANKI = {
    ]
   },
   {
+   "id": "the-smartest-investment-book-you-ll-ever-read-the-proven-way-to-beat-the-pros-an--daniel-r-solin",
+   "title": "The Smartest Investment Book You'll Ever Read: The Proven Way to Beat the \"Pros\" and Take Control of Your Financial Future",
+   "author": "Daniel R. Solin",
+   "subject": "why passive index investing beats active management for individual investors",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "1cb38b65c10358c7",
+     "loc": 204,
+     "theme": "investing",
+     "text": "Chimp Story The investor’s chief problem—and even his worst enemy—is likely to be himself. —Benjamin Graham, author of The Intelligent",
+     "q": "According to Benjamin Graham, who is likely to be the investor's chief problem and worst enemy?"
+    }
+   ]
+  },
+  {
+   "id": "the-steersman-metabeliefs-and-self-navigation--john-c-lilly-m-d",
+   "title": "The Steersman: Metabeliefs and Self-Navigation",
+   "author": "John C. Lilly M.D.",
+   "subject": "using metabeliefs and mind-as-biocomputer models to examine and reprogram one's own belief systems",
+   "total": 87,
+   "highlights": [
+    {
+     "id": "0db0adeed1bfae2e",
+     "loc": 38,
+     "theme": "ideas",
+     "text": "The human software for changing belief systems, expanding them, opening them up and incorporating the unknown as part of our belief systems is becoming available."
+    },
+    {
+     "id": "6c13a4d8648d0534",
+     "loc": 41,
+     "theme": "mindfulness",
+     "text": "To investigate my own belief systems, I used the tool of solitude, isolation, and confinement in a silent dark tank of fifteen percent saline solution. In solitude I could see very clearly after several hours of exposure where my belief systems were; what I believed to be true, to be real, to be unequivocally correct, trustworthy, reliable, certain.",
+     "q": "What tool did Lilly use to see clearly where his belief systems were?"
+    },
+    {
+     "id": "5bcc5cf4cc9477b5",
+     "loc": 43,
+     "theme": "ideas",
+     "text": "Man is the animal that simulates reality and believes…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "How does Lilly define man as an animal?"
+    },
+    {
+     "id": "c4824ceec5dce19b",
+     "loc": 65,
+     "theme": "ideas",
+     "text": "Metaprogramming is done outside the computer by the human programmer or, more properly, the human metaprogrammer. All choices and assignments the computer does, - how it operates, what…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "Who or what performs metaprogramming, according to Lilly?"
+    },
+    {
+     "id": "25d222cb2e99639c",
+     "loc": 70,
+     "theme": "ideas",
+     "text": "so out of the metaprograms as substrate comes something else: the controller - the steersman, the programmer in the…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What emerges out of the metaprograms as substrate?"
+    },
+    {
+     "id": "c67ddff77eb5a8d9",
+     "loc": 72,
+     "theme": "ideas",
+     "text": "Most of us have several controllers or \"selves\" - self-metaprograms, which divide control among them, in sequences of control,…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "How many controllers or selves does Lilly say most of us have?"
+    },
+    {
+     "id": "ecf613108e23b763",
+     "loc": 84,
+     "theme": "ideas",
+     "text": "The quality of our models of the universe are measured by how well they match the real universe. There is no guarantee that our current model does match the reality, no matter how certain we feel that…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "By what standard does Lilly say the quality of our models of the universe is measured?"
+    },
+    {
+     "id": "9a38d047342f1338",
+     "loc": 88,
+     "theme": "mindfulness",
+     "text": "Feelings such as awe and reverence are biocomputer energy sources rather than determinants of truth, that is, of the trueness…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What role does Lilly assign to feelings like awe and reverence in the biocomputer?"
+    },
+    {
+     "id": "f4cd6585efa86a53",
+     "loc": 91,
+     "theme": "ideas",
+     "text": "In the province of the mind, what we believe to be true either is true or becomes true within certain limits to be found experientially and experimentally.These limits are further beliefs to be…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What does Lilly say happens to what we believe to be true in the province of the mind?"
+    },
+    {
+     "id": "d4c5be7fc6c782dd",
+     "loc": 107,
+     "theme": "ideas",
+     "text": "You are not your opinion of you. You are a small program in an immense space that contains billions of programs. You are one…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "How does Lilly describe what 'you' actually are relative to your opinion of yourself?"
+    },
+    {
+     "id": "82c2b682cd1cba70",
+     "loc": 126,
+     "theme": "mindfulness",
+     "text": "We should have neither shame nor pride in regard to our knowledge. Our knowledge just is. Our ignorance just is.",
+     "q": "What attitude does Lilly urge toward our knowledge and ignorance?"
+    },
+    {
+     "id": "fef7a9c7e6c80015",
+     "loc": 153,
+     "theme": "ideas",
+     "text": "asic beliefs are basic postulates operative through long-term behavior, writings, and vocal productions of a given individual.",
+     "q": "How does Lilly define basic beliefs?"
+    },
+    {
+     "id": "1164fa43032eebce",
+     "loc": 171,
+     "theme": "ideas",
+     "text": "beliefs in addition to \"true\" and \"false\". These are the \"as if\" beliefs \"as if true\" and \"as if false\". This is the pair used when we describe or model or represent or simulate a system.",
+     "q": "What pair of beliefs beyond true and false does Lilly use for modeling a system?"
+    },
+    {
+     "id": "bdb4c3f457286797",
+     "loc": 194,
+     "theme": "mindfulness",
+     "text": "A safer way than the use of consciousness-changing drugs is to separate yourself from society while you progress through your self-examination is to use the solitude, isolation and confinement tank.",
+     "q": "What safer alternative to consciousness-changing drugs does Lilly recommend for self-examination?"
+    },
+    {
+     "id": "8e4d0eb30fa90eda",
+     "loc": 195,
+     "theme": "ideas",
+     "text": "In the quest of empirical answers to these questions, I developed the technique of solitude, isolation and confinement of the essential human being in 1954 at the National Institute of Mental Health, Bethesda, Maryland, where I was doing research on the brain.",
+     "q": "When and where did Lilly develop the solitude, isolation and confinement technique?"
+    },
+    {
+     "id": "25fdf30bb1e82429",
+     "loc": 198,
+     "theme": "mindfulness",
+     "text": "The tank method of solitude, isolation and confinement offered me a way to be freed of the social necessities and able to take on any belief system to purposefully experience it \"as if true\" for a few hours and to study it at a metalevel.",
+     "q": "What did the tank method let Lilly do with any belief system?"
+    },
+    {
+     "id": "4e5ed580b0cb2fff",
+     "loc": 215,
+     "theme": "mindfulness",
+     "text": "We are essentially alone and our contacts with and feedbacks from others are through rather limited channels-channels prejudiced by our own beliefs andby the beliefs of those with whom we communicate. We can eliminate fear, guilt, and all the other negative aspects of existence. We can also eliminate all the positive aspects of existence and finally arrive at the state of \"High Indifference.\"",
+     "q": "What state does Lilly say we finally arrive at by eliminating both negative and positive aspects of existence?"
+    },
+    {
+     "id": "98ff04a7c4f8fd0a",
+     "loc": 221,
+     "theme": "mindfulness",
+     "text": "The state of high computational indifference is amazing. We are the neutral observer, the neutral operator in a biocomputer who does not care about reward or punishment, who cares only about achieving neutral.",
+     "q": "What characterizes the state of high computational indifference?"
+    },
+    {
+     "id": "8213f152003ce9f4",
+     "loc": 222,
+     "theme": "mindfulness",
+     "text": "In this state we can become ecstatic, logically, rationally ecstatic; we can become angry, logically, rationally angry; we can become sexually aroused, logically, rationally sexually aroused,"
+    },
+    {
+     "id": "6cc03c35c2471680",
+     "loc": 223,
+     "theme": "ideas",
+     "text": "and so on, all within the confines of total computation and rationality. This state is the next level of evolution of that organism from which I speak as a so-called Homo Sapien."
+    },
+    {
+     "id": "f8a2abe6b45c125f",
+     "loc": 255,
+     "theme": "ideas",
+     "text": "In the older terminology the self-metaprogrammer is the central sphere, and the metaprogrammatic space is the next sphere out. For the purposes of experiment, assume that the external reality with its programming is attenuated by solitude, isolation and confinement or by the efforts of the observer in cutting off the external reality, such as is done with a hypnotic trance.",
+     "q": "In Lilly's older terminology, what occupies the central sphere and what is the next sphere out?"
+    },
+    {
+     "id": "f6d7a6a93d421292",
+     "loc": 264,
+     "theme": "mindfulness",
+     "text": "During the time that the observer is in this space, we feel eternal - that we have no beginning, that we will have no end, and that the other entities with which we are sharing this space are the same as us in this sense."
+    },
+    {
+     "id": "33571a42818be50f",
+     "loc": 266,
+     "theme": "ideas",
+     "text": "There is no matter in this universe - there are only communicational energies.",
+     "q": "What does Lilly claim there is no matter of in this universe, only what instead?"
+    },
+    {
+     "id": "309ebe06eae812b1",
+     "loc": 268,
+     "theme": "ideas",
+     "text": "The Me, administering them, must somehowrespect, admire, love each one but first know each. This new Me is to become Fair Witness to the rest."
+    },
+    {
+     "id": "77b965735d66b2fa",
+     "loc": 293,
+     "theme": "ideas",
+     "text": "These processes continue automatically below your level of awareness and generate motivations for increasing your intensity of experience with others to resolve problems set up by the tape loops. A tape loop occurs when a loop of tape in a tape reproducer repeats a message again and again.",
+     "q": "What is a tape loop in Lilly's model of the biocomputer?"
+    },
+    {
+     "id": "212e222986d52cda",
+     "loc": 295,
+     "theme": "ideas",
+     "text": "The young biocomputer in fear, terror, panic, guilt, and so forth, tends to put in overriding orders or instructions for the future operation of that biocomputer as if the current situation",
+     "q": "What does the young biocomputer do under fear, terror, panic or guilt?"
+    },
+    {
+     "id": "5c19deecb35aafcf",
+     "loc": 346,
+     "theme": "health",
+     "text": "However, one class of drugs known as \"entheogens\" alters the mind in such a way as to render it hyper-programmable.",
+     "q": "What effect do 'entheogens' have on the mind, according to Lilly?"
+    },
+    {
+     "id": "96dfcaf1c138db2f",
+     "loc": 477,
+     "theme": "health",
+     "text": "After approximately twenty-five years of experimentation with each of these methods, I came to the same conclusion. It is far better to use consistent daily exercises - mental, physical and spiritual - than it is to use drugs.",
+     "q": "After 25 years of experimentation, what did Lilly conclude was better than using drugs?"
+    },
+    {
+     "id": "d5a205c3af302837",
+     "loc": 483,
+     "theme": "health",
+     "text": "They are merely chemical tools useful in the proper context for those who are exploring the human brain and the human mind and the possible parameters and variations of its states of being."
+    },
+    {
+     "id": "b1b50219bc89bbcb",
+     "loc": 673,
+     "theme": "mindfulness",
+     "text": "First of all, we can examine within ourselves the instructions dictating behavior within given groups that we have acquired. We can very carefully scan such"
+    },
+    {
+     "id": "a262aeff0ac5adfe",
+     "loc": 674,
+     "theme": "mindfulness",
+     "text": "instructions from our infantile, childhood and adolescent years. We can examine the laws legislated for us that are not consonant with a full and satisfying life on our planet. We can examine our current group relationships and see how much we are paying for the benefits we receive from the group.",
+     "q": "What does Lilly suggest we examine about our current group relationships?"
+    }
+   ]
+  },
+  {
    "id": "the-surrender-experiment-my-journey-into-life-s-perfection--michael-a-singer",
    "title": "The Surrender Experiment: My Journey into Life's Perfection",
    "author": "Michael A. Singer",
@@ -1928,6 +5236,215 @@ window.ANKI = {
    ]
   },
   {
+   "id": "the-warren-buffett-portfolio-mastering-the-power-of-the-focus-investment-strateg--robert-g-hagstrom",
+   "title": "The Warren Buffett Portfolio: Mastering the Power of the Focus Investment Strategy",
+   "author": "Robert G. Hagstrom",
+   "subject": "the focus-investing strategy of concentrating on a few high-conviction stocks, drawn from Warren Buffett's approach",
+   "total": 19,
+   "highlights": [
+    {
+     "id": "cad8048baa8ee56f",
+     "loc": 62,
+     "theme": "investing",
+     "text": "The essence of focus investing can be stated quite simply:Choose a few stocks that are likely to produce above-average returns over the long haul, concentrate the bulk of your investments in those stocks, and have the fortitude to hold steady during any short-term market gyrations.",
+     "q": "How does Hagstrom sum up the essence of focus investing?"
+    },
+    {
+     "id": "faadf448351f2835",
+     "loc": 78,
+     "theme": "investing",
+     "text": "Active portfolio management, as commonly practiced today, stands a very small chance of outperforming the S&P 500.",
+     "q": "What does Hagstrom claim about active portfolio management's chance of beating the S&P 500?"
+    },
+    {
+     "id": "6b3e5cf960c517f6",
+     "loc": 102,
+     "theme": "investing",
+     "text": "The analytical process that Buffett uses involves checking each opportunity against a set of investment tenets, or fundamental principles. These tenets, presented in depth in The Warren Buffett Way and…\n                Some highlights have been hidden or truncated due to export limits."
+    },
+    {
+     "id": "4ffb13f458c6379a",
+     "loc": 111,
+     "theme": "investing",
+     "text": "Tenets of the Warren Buffett WayBusiness TenetsIs the business simple and understandable?Does the business have a consistent operating history?Does the business have favorable long-term prospects?Management TenetsIs management rational?Is management candid with its shareholders?Does management resist the institutional imperative?Financial TenetsFocus on return on equity, not earnings per share.Calculate \"owner earnings.\"Look for companies with high profit margins.For every dollar retained, make sure the company has created at least one…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What are the three categories of tenets in the Warren Buffett Way, and what does each cover?"
+    },
+    {
+     "id": "542d3735237c2604",
+     "loc": 138,
+     "theme": "investing",
+     "text": "Today, Warren Buffett echoes that thinking: \"With each investment you make, you should have the courage and the conviction to place at least 10 percent of your net worth in that stock.\"10You can see why Buffett says the…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What minimum share of net worth does Buffett say you should have the conviction to place in a single stock?"
+    },
+    {
+     "id": "89b5cb8ad8c41d7d",
+     "loc": 142,
+     "theme": "investing",
+     "text": "Along with probability theory, mathematics provides another piece of the focus investing rationale: the Kelly Optimization Model. The Kelly model is represented in a formula that uses probability to calculate optimization-in this case, optimal investment proportion. (The model, along with the…\n                Some highlights have been hidden or truncated due to export limits."
+    },
+    {
+     "id": "2d4a7e6cc371070b",
+     "loc": 155,
+     "theme": "investing",
+     "text": "I suggest that, as a general rule of thumb, we should be thinking of a turnover rate between 10 and 20 percent. A 10 percent turnover rate suggests that you would hold the stock for ten years,…\n                Some highlights have been hidden or truncated due to export limits.",
+     "q": "What turnover rate does Hagstrom suggest as a rule of thumb for focus investors?"
+    },
+    {
+     "id": "4dc548c48cc855dd",
+     "loc": 1131,
+     "theme": "investing",
+     "text": "He explains: \"If I think an event has a 90 percent chance of occurring and there is 3 points on the upside, and there is a 10 percent chance that it will fall through, and there's 9 points on the downside, then that's $.90 off of $2.70 leaving $1.80 mathematical expectation.\" (OID)13"
+    },
+    {
+     "id": "829569b6b4eaeccc",
+     "loc": 1164,
+     "theme": "investing",
+     "text": "In the multiple scenarios that Buffett mentally laid out, the probability of any major long-lasting damage to Wells Fargo was, at best, low. Still, the market priced Wells Fargo's shares down by 50 percent. In Buffett's mind, the odds of making money by purchasing shares of Wells Fargo were now in the order of 2:1, with no corresponding increase in the probabilities of being wrong.",
+     "q": "How did Buffett assess the odds of making money on Wells Fargo after the market halved its shares?"
+    },
+    {
+     "id": "4965edfe9046784e",
+     "loc": 1191,
+     "theme": "investing",
+     "text": "The Kelly Optimization Model, often called the optimal growth strategy, is based on the concept that if you know the probability of success, you bet the fraction of your bankroll that maximizes the growth rate. It is expressed as a formula:2p-1=xwhere 2 times the probability of winning minus 1 equals the percentage of one's bankroll that should be bet. For example, if theprobability of beating the house is 55 percent, you should bet 10 percent of your bankroll to achieve maximum growth of your winnings. If the probability is 70 percent, bet 40 percent. And if you know the odds of winning are 100 percent, the model would say, bet your entire bankroll.The Kelly formula is optimal under two criteria: (1) the minimal expected time to achieve a level of winnings and (2) the maximal rate of wealth increase.",
+     "q": "What is the Kelly Optimization Model and how is its bet size expressed as a formula?"
+    },
+    {
+     "id": "78b66f5083dac254",
+     "loc": 1214,
+     "theme": "investing",
+     "text": "If you judge an event has a 70 percent probability of success when in fact it is only 55 percent, you run the risk of \"gambler's ruin.\" The way to minimize that risk is un- derbetting-using a half-Kelly or a fractional-Kelly model. Thisincreases the safety of your bet and provides a very real psychological level of comfort. For example, if the Kelly model would tell you to bet 10 percent of your capital (indicating the event has a 55 percent probability of success), you might choose to invest only 5 percent (a half-Kelly) instead.",
+     "q": "How can an investor guard against 'gambler's ruin' when using the Kelly model?"
+    },
+    {
+     "id": "20420449093cc146",
+     "loc": 1252,
+     "theme": "investing",
+     "text": "Large profits in most years, occasional huge losses, and a truly terrible year at some point-that profile could easily describe the focus investing style as well as super-catastrophe insurance.",
+     "q": "What return profile does Hagstrom say focus investing shares with super-catastrophe insurance?"
+    }
+   ]
+  },
+  {
+   "id": "things-become-other-things-a-walking-memoir--craig-mod",
+   "title": "Things Become Other Things: A Walking Memoir",
+   "author": "Craig Mod",
+   "subject": "a solo walking pilgrimage across Japan's Kii Peninsula as a meditation on memory, place and a lost childhood friend",
+   "total": 31,
+   "highlights": [
+    {
+     "id": "00b247fe165b8485",
+     "loc": 146,
+     "theme": "health",
+     "text": "I walk twenty, thirty, sometimes forty or more kilometers until my feet feel wonky, hot in spots, minced. Until I’m sure I can’t take another step. And then do the same thing again the next day. And then the next."
+    },
+    {
+     "id": "9be34e2eec0b6fe4",
+     "loc": 148,
+     "theme": "mindfulness",
+     "text": "I dictate my observations and thoughts into a recorder, talking to myself like that bag lady who roamed our suburban sidewalks, who walked past our homes."
+    },
+    {
+     "id": "e26c7692d2171025",
+     "loc": 154,
+     "theme": "ideas",
+     "text": "Down the road I see what might be a kissa, an old café. These have become my favorite places of all the places in the world—kissaten or kissa for short, Japanese cafés with the air of mid-century American diners but entirely of their own mirror-world aesthetic."
+    },
+    {
+     "id": "19de43317dc458cb",
+     "loc": 181,
+     "theme": "mindfulness",
+     "text": "Above camp was a rocky lip on the edge of the epic moraine. Unable to sleep, I hiked up alone at night, sweet coffee in a small thermos tucked into my jacket, sat on the edge of that vast frozen plain, looked out at the towering peaks of Machapuchare and Hiunchuli and Singu Chuli and Gangapurna and, of course, the 8,000-meter god of Annapurna itself, as the clock ticked over and I turned twenty-eight years old, feeling as small and lost as anyone could feel in a place like that, a place that felt like the moon. I didn’t know it then, but I was coming to the end of a tough decade, and things were finally going to change for the better. In that moment, though, it took everything I had to keep myself from diving off the edge in the face of all that beauty and loneliness."
+    },
+    {
+     "id": "f5383532e8520161",
+     "loc": 230,
+     "theme": "mindfulness",
+     "text": "What did I feel on the road that first time? Nothing explicit, nothing I could name in the moment. Just the diffuse scent of purpose out there between the villages and the trees and mountains."
+    },
+    {
+     "id": "6914bc903c0c7d9c",
+     "loc": 237,
+     "theme": "ideas",
+     "text": "The Kii Peninsula sits as—and I feel like this is the easiest way to explain it to you, though I hesitate, and yet here I go—the chubby dangling penis of Japan. It hangs right down at the central belly of the Honshu landmass."
+    },
+    {
+     "id": "1077405bd5d4c8ae",
+     "loc": 243,
+     "theme": "ideas",
+     "text": "It is sliced up by dozens of ancient paths and pilgrimage routes, all with individual names but many lumped together as the famous Kumano Kodō. Many of the routes are just a few dozen kilometers in length, but together, it can take months to walk them, years to fully piece them together, and a lifetime to know them.",
+     "q": "What are the ancient pilgrimage paths of the Kii Peninsula collectively known as?"
+    },
+    {
+     "id": "85688ce130e03423",
+     "loc": 289,
+     "theme": "mindfulness",
+     "text": "But more than any of that, I fell in love with long walks, of being subtly changed by the lives I heard behind open windows. That very first shot in Akira—the one after the boom, the anonymous alley with the blinking rectangular sign—that image was seared into my mind and I spent countless nights looking for it (still looking for it now, a quarter of a century later)."
+    },
+    {
+     "id": "10da51c60ad34da6",
+     "loc": 301,
+     "theme": "ideas",
+     "text": "Since then I’ve learned that Japan was once a country filled with remarkable pilgrim walkers. Pilgrims who’d regularly clock ten ri a day. One ri is about four kilometers. They were marked off by ichi-ri-zuka milestones—hulking mounds of dirt alongside the road.",
+     "q": "In Japan's pilgrim-walking tradition, how far is one ri and how was it marked along the road?"
+    },
+    {
+     "id": "da9708a733adba31",
+     "loc": 318,
+     "theme": "mindfulness",
+     "text": "I’ve come to crave the solitude and asceticism of these solo walks. There is no quieter place on earth than the third hour of a good long day of walking. It’s alone in this space, this walk-induced hypnosis, that the mind is finally able to receive the strange gifts and charities of the world. If that sounds like woo-woo nonsense, it feels even more woo-woo to experience.",
+     "q": "What does Mod say the third hour of a long walk offers the mind?"
+    },
+    {
+     "id": "18551556dcc61fdc",
+     "loc": 325,
+     "theme": "mindfulness",
+     "text": "I’ve come to realize the only true walk is the re-walk. You cannot know a place without returning. And even then, once isn’t enough. That’s why I’m back. Back on the Peninsula.",
+     "q": "What does Mod mean by claiming the only true walk is the re-walk?"
+    },
+    {
+     "id": "0e7f71091e78ec1c",
+     "loc": 345,
+     "theme": "ideas",
+     "text": "Strange thing, he says, history. The mess of our past, still touching us today. Far back now, far back, can’t be helped."
+    },
+    {
+     "id": "333dad10ff6efc60",
+     "loc": 522,
+     "theme": "ideas",
+     "text": "The only pilgrimage routes in the world to have World Heritage designation are the Kii Peninsula’s Kumano Kodō and the Camino de Santiago in northern Spain. If you walk them both, and collect the right stamps, you get a special, dorky, fabulous pin. (Of course, I have the special pin. I mean, come on.)",
+     "q": "Which two pilgrimage routes are the only ones in the world with World Heritage designation?"
+    },
+    {
+     "id": "3153d8bac3f1d4e4",
+     "loc": 577,
+     "theme": "mindfulness",
+     "text": "When walking with someone, the voices in my head are quieted and I miss the chance to turn inward, which is a primary quality and primary purpose of a solo walk. That inward turn. A little mental pirouette that’s tough to pull off in the normal day-to-day.",
+     "q": "Why does Mod say walking with a companion undermines a primary purpose of the solo walk?"
+    },
+    {
+     "id": "e27f883fd422baa6",
+     "loc": 594,
+     "theme": "mindfulness",
+     "text": "The joy of the ippon-ura lies in bearing witness to lives being lived. This, a core tenet of a good walk: real-time observation of unfiltered life.",
+     "q": "What does Mod identify as a core tenet of a good walk?"
+    },
+    {
+     "id": "76eccb0efcbbedbb",
+     "loc": 596,
+     "theme": "mindfulness",
+     "text": "Walk these small back roads, do so for kilometer after kilometer, day after day, look closely and closer still, and you might pick up on the people and patterns of a general area. I wouldn’t go so far as to say you’ll “know” or “understand” it, but I would say that walking—and walking slowly and deliberately, alone—is probably the first step to familiarizing yourself with a place.",
+     "q": "According to Mod, what is the first step to familiarizing yourself with a place?"
+    },
+    {
+     "id": "6cf6511cc605a12f",
+     "loc": 724,
+     "theme": "mindfulness",
+     "text": "Time passes, life moves, and that’s what happens: Things become…other things."
+    }
+   ]
+  },
+  {
    "id": "thinking-in-bets-making-smarter-decisions-when-you-don-t-have-all-the-facts--annie-duke",
    "title": "Thinking in Bets: Making Smarter Decisions When You Don't Have All the Facts",
    "author": "Annie Duke",
@@ -2168,6 +5685,62 @@ window.ANKI = {
      "theme": "work",
      "text": "We break the what and how into four sections: how Bill got the details right in management skills ranging from one-on-one and staff meetings to handling challenging employees; how he built trust with the people he worked with; how he built and created teams; and finally, how he made it okay to bring love into the workplace.",
      "q": "What four sections does the book use to break down Bill's approach to coaching and management?"
+    }
+   ]
+  },
+  {
+   "id": "una-realidad-aparte-nuevas-conversaciones-con-don-juan-coleccion-popular-spanish--carlos-castaneda",
+   "title": "Una realidad aparte Nuevas conversaciones con don Juan (Colección Popular) (Spanish Edition)",
+   "author": "Carlos Castaneda",
+   "subject": "a Yaqui sorcerer's teachings on the warrior's path and altered states of perception",
+   "total": 7,
+   "highlights": [
+    {
+     "id": "e7909bbcdae9e66b",
+     "loc": 2377,
+     "theme": "mindfulness",
+     "text": "”De ese modo, para ser un guerrero un hombre debe estar, antes que nada y con justa razón, terriblemente consciente de su propia muerte. Pero preocuparse por la muerte forzaría a cualquiera de nosotros a enfocar su propia persona, y eso es debilitante. De modo que lo otro que uno necesita para ser guerrero es el desapego. La idea de la muerte inminente, en vez de convertirse en obsesión, se convierte en indiferencia.”",
+     "q": "Según don Juan, ¿cuáles son las dos cosas que un hombre necesita para ser guerrero respecto a su muerte?"
+    },
+    {
+     "id": "860401ed0320a11e",
+     "loc": 2388,
+     "theme": "mindfulness",
+     "text": "”Sólo la idea de la muerte da al hombre el despego suficiente para que sea incapaz de abandonarse a nada. Sólo la idea de la muerte da al hombre el desapego suficiente para que no pueda negarse nada. Pero un hombre de tal suerte no ansía, porque ha adquirido una lujuria callada por la vida y por todas las cosas de la vida. Sabe que su muerte lo anda cazando y que no le dará tiempo de adherirse a nada, así que prueba, sin ansias, todo de todo.",
+     "q": "¿Qué da al hombre, según don Juan, el desapego suficiente para no abandonarse ni negarse nada?"
+    },
+    {
+     "id": "98972abbbe82028c",
+     "loc": 2391,
+     "theme": "mindfulness",
+     "text": "”Un hombre despegado, sabiendo que no tiene posibilidad de poner vallas a su muerte, sólo tiene una cosa que lo respalde: el poder de sus decisiones. Tiene que ser, por así decirlo, el amo de su elección. Debe comprender por completo que su preferencia es su responsabilidad, y una vez que hace su selección no queda tiempo para lamentos ni recriminaciones. Sus decisiones son definitivas, simplemente porque su muerte no le da tiempo de adherirse a nada.",
+     "q": "¿Qué es lo único que respalda a un hombre despegado que no puede poner vallas a su muerte?"
+    },
+    {
+     "id": "e7fdf4691842fad5",
+     "loc": 2395,
+     "theme": "mindfulness",
+     "text": "”Y así, con la conciencia de su muerte, con desapego y con el poder de sus decisiones, un guerrero arma su vida en forma estratégica.",
+     "q": "¿Con qué tres cosas arma un guerrero su vida en forma estratégica?"
+    },
+    {
+     "id": "692081c9aeff577f",
+     "loc": 2396,
+     "theme": "mindfulness",
+     "text": "El conocimiento de su muerte lo guía y le da desapego y lujuria callada; el poder de sus decisiones definitivas le permite escoger sin lamentar, y lo que escoge es siempre estratégicamente lo mejor; así cumple con gusto y con eficiencia lujuriosa, todo cuanto tiene que hacer."
+    },
+    {
+     "id": "06a61ed50f911bfd",
+     "loc": 2403,
+     "theme": "mindfulness",
+     "text": "—Cuando un guerrero ha adquirido paciencia, está en camino hacia la voluntad.",
+     "q": "Según don Juan, ¿hacia qué está en camino un guerrero cuando ha adquirido paciencia?"
+    },
+    {
+     "id": "d9aa14769c6cb587",
+     "loc": 2405,
+     "theme": "mindfulness",
+     "text": "Yo diría que el guerrero aprende sin apuro porque sabe que está esperando su voluntad, y un día logra hacer algo que por lo común es imposible de ejecutar."
     }
    ]
   },
@@ -3507,9 +7080,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-08-29",
+ "generated": "2026-08-30",
  "latest": {
-  "date": "2026-08-28",
-  "title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
+  "date": "2026-08-30",
+  "title": "In the Lap of the Buddha"
  }
 };
