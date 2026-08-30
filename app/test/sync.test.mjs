@@ -3,7 +3,7 @@
 //
 //   node app/test/sync.test.mjs
 //
-// Two families of scenarios live here.
+// Three families of scenarios live here.
 //
 // S* are regressions for the multi-device sync bugs found in 2026-08. They
 // run against the working tree only; the "red" halves that used to prove each
@@ -16,6 +16,10 @@
 // build. Those scenarios need genuine old code to run against, which is what
 // the `brain-gym-import` tag at the root of this repo is for — a
 // content-identical copy of the app as it shipped before the rename.
+//
+// B* cover the manual sync button added in 2026-08: the press guard, and the
+// two ways a pull that lands while an answer is on screen could damage the
+// session it lands in.
 import assert from "node:assert/strict";
 import { getScriptSource } from "./extract-script.mjs";
 import { createFakeFirestore } from "./fake-firestore.mjs";
@@ -455,6 +459,72 @@ await scenario("M8 — a grade written to the old collection post-migration is r
 
   await devB.call("pullReviews");
   assert.deepEqual(devB.snapshotSrs(), reopened.snapshotSrs(), "and must reach the other device too");
+});
+
+// Wraps a fake Firestore so a scenario can count what actually went over the
+// wire. Only `fetch` is used by the device harness; everything else passes
+// through untouched.
+function countingFirestore(fs) {
+  const calls = [];
+  return { ...fs, calls, fetch: (url, opts) => { calls.push(url); return fs.fetch(url, opts); } };
+}
+
+// ---- B1: the press guard ----
+// The pill is a button now, and buttons get double-tapped. Two presses in the
+// same tick must cost exactly one sync: `pullReviews` has no guard of its own,
+// and two concurrent pulls share one cursor.
+await scenario("B1 — a double press costs exactly one sync", async () => {
+  async function press(times) {
+    const fs = createFakeFirestore();
+    const spy = countingFirestore(fs);
+    const dev = createDevice({ source: NEW, firestore: spy, deck: makeDeck(["c1"]), localStorageSeed: CLIENT_A });
+    dev.setAuthUser(user());
+    seedReview(fs, dev, "r1", { cardId: "c1", grade: 3, clientId: "device-b", ts: 1000 });
+    await Promise.all(Array.from({ length: times }, () => dev.call("syncNow")));
+    return { fetches: spy.calls.length, srs: dev.snapshotSrs() };
+  }
+  const one = await press(1);
+  const two = await press(2);
+  assert.ok(one.fetches > 0, "fixture check: a single press does talk to the server");
+  assert.equal(two.fetches, one.fetches, "the second press must be a no-op while the first is in flight");
+  assert.deepEqual(two.srs, one.srs, "and must leave the same state behind");
+  assert.equal(one.srs.c1.reps, 1, "the foreign review is folded exactly once");
+});
+
+// ---- B2: a pull that lands mid-answer ----
+// Folding into `srs` is always safe and always immediate. Rebuilding the
+// visible queue is not: newSession() returns revealed:false, so doing it while
+// an answer is on screen hides the answer being read.
+await scenario("B2 — a pull mid-answer folds now and rebuilds later", async () => {
+  const fs = createFakeFirestore();
+  const dev = createDevice({ source: NEW, firestore: fs, deck: makeDeck(["c1", "c2"]), localStorageSeed: CLIENT_A });
+  dev.setAuthUser(user());
+  dev.run("session.revealed = true; pendingApply = null;");
+  seedReview(fs, dev, "r1", { cardId: "c1", grade: 3, clientId: "device-b", ts: 1000 });
+  await dev.call("pullReviews");
+
+  assert.equal(dev.run("session.revealed"), true, "the answer on screen must survive the pull");
+  assert.equal(dev.run("pendingApply"), "session", "the rebuild is deferred, not dropped");
+  assert.equal(dev.snapshotSrs().c1.reps, 1, "but the review itself is folded immediately");
+
+  dev.run("session.revealed = false;");
+  assert.equal(dev.run("applyDeferred()"), true, "the next grade is the safe moment");
+  assert.equal(dev.run("pendingApply"), null);
+});
+
+// ---- B3: precedence between deferred actions ----
+// reload > deck > session. Without an explicit rank, a deferred session
+// rebuild arriving after a deck swap would drop the fresh deck and leave this
+// device on a stale catalog.
+await scenario("B3 — a deferred session rebuild never clobbers a pending deck", async () => {
+  const dev = createDevice({ source: NEW, firestore: createFakeFirestore(), deck: makeDeck(["c1"]), localStorageSeed: CLIENT_A });
+  dev.run("session.revealed = true; pendingApply = null;");
+  dev.run(`whenSafe({ deck: ${JSON.stringify(makeDeck(["c1", "c2"]))} })`);
+  dev.run('whenSafe("session")');
+  assert.equal(dev.run("pendingApply && pendingApply.deck ? 'deck' : pendingApply"), "deck",
+    "the fresher deck must survive a session rebuild queued behind it");
+  dev.run('whenSafe("reload")');
+  assert.equal(dev.run("pendingApply"), "reload", "and a reload still beats both");
 });
 
 const failed = results.filter((r) => !r.ok);

@@ -226,13 +226,20 @@
     .account.off { cursor: default; opacity: 0.6; color: #a1a1aa; }
     .account:focus-visible, .sync-status:focus-visible { outline: 2px solid #52525b; outline-offset: 2px; }
 
+    /* Also the manual sync trigger: tap the thing that reports the state to
+       refresh it. A separate button would have cost ~28px of a header that
+       already carries the pill, the account chip and the deck count, and it
+       would have needed its own icon vocabulary to say what this pill says in
+       words. Signed out it is aria-disabled rather than disabled — still
+       readable as "Local only", just inert. */
     .sync-status {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 3px 10px;
       border: 1px solid #27272a; border-radius: 999px;
-      color: #a1a1aa;
+      background: transparent; color: #a1a1aa;
       font: inherit; font-size: 12px; font-weight: 500; line-height: 1.3;
       font-variant-numeric: tabular-nums; white-space: nowrap;
+      cursor: pointer;
     }
     .sync-status::before {
       content: ""; width: 6px; height: 6px; border-radius: 999px;
@@ -244,6 +251,7 @@
     .sync-status[data-status="pending"]::before { background: #fbbf24; }
     .sync-status[data-status="issue"] { color: #f87171; }
     .sync-status[data-status="issue"]::before { background: #f87171; }
+    .sync-status[aria-disabled="true"] { cursor: default; }
     @keyframes sync-pulse {
       0%, 100% { opacity: 0.35; transform: scale(0.82); }
       50%      { opacity: 1;    transform: scale(1.16); }
@@ -359,7 +367,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "202608291730";
+    const APP_BUILD = "202609022049";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -1215,8 +1223,12 @@
       if (cursor) saveCursor(cursor);
       if (appliedAny) {
         saveSrs(srs);
-        session = newSession(activeTheme, session.queue[0]?.id);
-        render();
+        // `srs` is already correct — this only decides when the screen catches
+        // up. Deferred while an answer is revealed, because a pull landing
+        // mid-answer used to rebuild the session under the reviewer and hide
+        // the answer they were reading. Rare when the only triggers were
+        // implicit; a button makes it something you can do to yourself.
+        whenSafe("session");
       }
     }
 
@@ -1591,23 +1603,48 @@
     const DECK_CHECK_MIN_INTERVAL_MS = 60e3;
 
     // ---- Applying an update safely ----
-    // Two different things can land while this tab is open — a new deck, or
-    // a new build of the app itself (via a service-worker update) — and both
-    // share the same one rule: never yank the question out from under a
-    // reviewer mid-answer. `pendingApply` holds at most one of them; a
-    // reload always wins over a deck swap, since a reload picks up whatever
-    // deck is current anyway.
-    let pendingApply = null;   // null | "reload" | { deck: <object> }
+    // Three different things can land while this tab is open — a new deck, a
+    // new build of the app itself (via a service-worker update), or reviews
+    // pulled from another device — and all three share the same one rule:
+    // never yank the question out from under a reviewer mid-answer.
+    // `pendingApply` holds at most one of them, so when two arrive during the
+    // same answer, rank decides which survives:
+    //
+    //   reload > deck > session
+    //
+    // A reload picks up whatever deck is current anyway, and a deck swap
+    // rebuilds the session on its way through, so each level subsumes the one
+    // below it. The ranking has to be explicit: with a bare "last one wins", a
+    // session rebuild arriving after a deck swap would drop the fresh deck and
+    // leave this device on a stale catalog — the exact failure the deck
+    // re-fetch exists to prevent.
+    //
+    // "session" is a marker, never a pre-built session object. Capturing
+    // newSession() at defer time would freeze a queue computed while the
+    // graded card was still on it, undoing the grade's effect on screen and
+    // wiping `pending` (the cards waiting out a learning step).
+    const APPLY_RANK = { reload: 3, session: 1 };
+    const rankOf = (a) => (typeof a === "string" ? APPLY_RANK[a] ?? 0 : a && a.deck ? 2 : 0);
+    let pendingApply = null;   // null | "reload" | { deck: <object> } | "session"
     function whenSafe(action) {
       if (session.revealed) {
-        if (action === "reload" || pendingApply !== "reload") pendingApply = action;
+        if (rankOf(action) >= rankOf(pendingApply)) pendingApply = action;
         return;
       }
       applyPending(action);
     }
     function applyPending(action) {
       if (action === "reload") { location.reload(); return; }
+      if (action === "session") { rebuildSession(); return; }
       if (action && action.deck) swapDeck(action.deck);
+    }
+    // Rebuilds the visible queue from current `srs` — what a pull of foreign
+    // reviews needs once it has folded them in. Keeps the card on screen at
+    // the front if it's still due, the same way every other session rebuild
+    // here does.
+    function rebuildSession() {
+      session = newSession(activeTheme, session.queue[0]?.id);
+      render();
     }
     // Called right after a grade is applied and the card is no longer on
     // screen mid-answer — the one moment it's always safe to apply anything
@@ -1762,19 +1799,31 @@
       }
       return "Local only";
     }
+    // The pill is also the button (see syncNow below). `aria-live` sits on the
+    // inner span rather than the button itself so a focused control doesn't
+    // re-announce its own name every time the status ticks; the button's name
+    // stays "Sync now", which is what it does, while the span carries what it
+    // reports.
     function syncStatusHtml() {
-      return `<div class="sync-status" id="syncStatus" data-status="${syncState}" aria-live="polite">${syncLabel()}</div>`;
+      const off = !isSyncEnabled();
+      return `<button type="button" class="sync-status" id="syncStatus" data-status="${syncState}"` +
+        ` aria-label="Sync now"${off ? ' aria-disabled="true"' : ""}>` +
+        `<span id="syncLabel" aria-live="polite">${syncLabel()}</span></button>`;
     }
     // Patches the pill in place rather than re-rendering the app: a status
     // change must never yank the card you're mid-answer out from under you.
+    // Only the two things that change with state are touched — aria-disabled
+    // tracks sign-in, which always re-renders the header anyway.
     function setSyncStatus(state) {
       syncState = state;
       const el = document.getElementById("syncStatus");
-      if (el) { el.dataset.status = state; el.textContent = syncLabel(); }
+      if (el) el.dataset.status = state;
+      const label = document.getElementById("syncLabel");
+      if (label) label.textContent = syncLabel();
       if (agoTimer) { clearInterval(agoTimer); agoTimer = null; }
       // Keep the "· 2m" honest while the tab stays open, cheaply.
       if (state === "synced") agoTimer = setInterval(() => {
-        const e = document.getElementById("syncStatus");
+        const e = document.getElementById("syncLabel");
         if (e && syncState === "synced") e.textContent = syncLabel();
       }, 60e3);
     }
@@ -1787,6 +1836,40 @@
       if (loadOutbox().length) return setSyncStatus("pending");
       localStorage.setItem(LASTSYNC_KEY, String(Date.now()));
       setSyncStatus("synced");
+    }
+
+    // ---- Sync, on purpose ----
+    // Every other trigger is implicit — app open, tab foregrounded, network
+    // back, a 15-minute timer. They cover the normal case, but they leave no
+    // way to *ask*, which is exactly what you want when the phone and the
+    // laptop disagree and you are standing there holding both.
+    //
+    // The guard is a timestamp rather than a boolean because no fetch in this
+    // file has a timeout: a request that never settles would leave a boolean
+    // stuck true for the life of the tab, and the pill would pulse "Syncing"
+    // forever with a dead button under it. Thirty seconds costs one wasted
+    // press in that case instead.
+    //
+    // Deliberately NOT wired into the automatic triggers above. Sharing one
+    // guard across all of them would mean a single hung request kills every
+    // sync path at once; they keep their own independent calls.
+    let syncingSince = 0;
+    async function syncNow() {
+      if (!isSyncEnabled()) return;
+      if (!navigator.onLine) return setSyncStatus("offline");
+      if (Date.now() - syncingSince < 30e3) return;
+      syncingSince = Date.now();
+      try {
+        pokeForUpdates();          // a manual sync means "get me current", deck included
+        await flushOutbox();
+        await pullReviews();
+      } catch (e) {
+        // pullReviews has already settled the pill to "issue"; nothing else
+        // to say, and throwing out of a click handler helps no one.
+        console.warn("My Anki sync: manual sync failed", e);
+      } finally {
+        syncingSince = 0;
+      }
     }
 
     function headerHtml(pos) {
@@ -1913,6 +1996,8 @@
           authApi.signOutUser();
         }
       });
+      const sync = document.getElementById("syncStatus");
+      if (sync) sync.addEventListener("click", () => { syncNow(); });
     }
 
     // Before the first paint: grades the old app queued but never sent belong

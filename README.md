@@ -109,6 +109,21 @@ other.
 The status pill in the header shows syncing / synced / offline. Failures also
 log to the console as `My Anki sync:` warnings.
 
+**The pill is also the button.** Sync otherwise happens only on implicit
+triggers — app open, tab foregrounded, network back, and a 15-minute timer —
+which covers the normal case but leaves no way to *ask*, which is exactly what
+you want when the phone and the laptop disagree and you are holding both. Tap
+it and it pushes, pulls, and rechecks the deck. A second tap while one is in
+flight is ignored for 30 seconds; the window is a timestamp rather than a flag
+because no request here has a timeout, and a flag would leave the button dead
+for the life of the tab if one ever hung. The automatic triggers deliberately
+do not share that guard, so a hung request can never take all of them down at
+once. Signed out, the pill still reads "Local only" and does nothing.
+
+A pull that arrives while an answer is on screen folds into `srs` immediately
+but waits to rebuild the visible queue, the same way a new deck or a new app
+build waits — rebuilding would have cleared the answer being read.
+
 ### Migrating off Brain Gym
 
 Two one-time steps run automatically and are safe to re-run:
