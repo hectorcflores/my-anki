@@ -7080,9 +7080,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-08-30",
+ "generated": "2026-08-31",
  "latest": {
-  "date": "2026-08-30",
-  "title": "In the Lap of the Buddha"
+  "date": "2026-08-31",
+  "title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
  }
 };
