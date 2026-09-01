@@ -7080,7 +7080,7 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-08-31",
+ "generated": "2026-09-01",
  "latest": {
   "date": "2026-08-31",
   "title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
