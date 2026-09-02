@@ -1367,6 +1367,21 @@ window.ANKI = {
    ]
   },
   {
+   "id": "i-forgot-to-die--khalil-rafati",
+   "title": "I Forgot to Die",
+   "author": "Khalil Rafati",
+   "subject": "a memoir of addiction, homelessness, and recovery",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "4482bf0173814af0",
+     "loc": 77,
+     "theme": "health",
+     "text": "I don’t know what happened to my brother while he was at that orphanage, but I am certain it was horrible. The first time he touched me was very confusing because I was so desperate for attention, but I knew immediately that something was wrong. Over time, the incidents became more and more aggressive. He was eight years older than I was, a young man going though puberty and confused about his sexuality, and I was just something to experiment on."
+    }
+   ]
+  },
+  {
    "id": "in-the-lap-of-the-buddha--gavin-harrison",
    "title": "In the Lap of the Buddha",
    "author": "Gavin Harrison",
@@ -7080,9 +7095,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-01",
+ "generated": "2026-09-02",
  "latest": {
-  "date": "2026-08-31",
+  "date": "2026-09-02",
   "title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
  }
 };
