@@ -7113,7 +7113,7 @@ window.ANKI = {
  ],
  "generated": "2026-09-03",
  "latest": {
-  "date": "2026-09-02",
-  "title": "What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry"
+  "date": "2026-09-03",
+  "title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
  }
 };
