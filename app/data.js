@@ -6290,6 +6290,22 @@ window.ANKI = {
    ]
   },
   {
+   "id": "what-the-dormouse-said-how-the-sixties-counterculture-shaped-the-personal-comput--john-markoff",
+   "title": "What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry",
+   "author": "John Markoff",
+   "subject": "how 1960s counterculture and psychedelic experimentation shaped the birth of personal computing",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "9d054d2f82f92ef3",
+     "loc": 127,
+     "theme": "ideas",
+     "text": "Out of that convergence came a remarkable idea: personal computing, the notion that one person should control all of the functions of a computer and that the machine would in turn respond as an idea amplifier.",
+     "q": "What does Markoff say the idea of personal computing was — one person controlling all functions of a machine that would act as what?"
+    }
+   ]
+  },
+  {
    "id": "why-buddhism-is-true-the-science-and-philosophy-of-meditation-and-enlightenment--robert-wright",
    "title": "Why Buddhism is True: The Science and Philosophy of Meditation and Enlightenment",
    "author": "Robert Wright",
@@ -7095,9 +7111,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-02",
+ "generated": "2026-09-03",
  "latest": {
   "date": "2026-09-02",
-  "title": "Trillion Dollar Coach: The Leadership Playbook of Silicon Valley's Bill Campbell"
+  "title": "What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry"
  }
 };
