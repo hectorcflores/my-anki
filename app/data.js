@@ -6,12 +6,12 @@ window.ANKI = {
    "label": "Work"
   },
   {
-   "id": "ideas",
-   "label": "Ideas"
-  },
-  {
    "id": "mindfulness",
    "label": "Mindfulness"
+  },
+  {
+   "id": "ideas",
+   "label": "Ideas"
   },
   {
    "id": "health",
@@ -103,6 +103,233 @@ window.ANKI = {
      "text": "My understanding of how to use leverage began with my experience in the casinos. When I deployed my card counting system for blackjack, it made intuitive sense to bet more when the expected gain, or edge, was greater. The question was, how much? The answer was in a 1956 article by Bell Labs physicist John L. Kelly, who some said was the smartest person there, after Claude Shannon. In his fascinating history of the topic, Fortune’s Formula, William Poundstone points out that for a favorable bet that pays odds of $A for a bet of $1, the optimal Kelly bet is the percent of your capital equal to your edge, divided by the odds, A. In blackjack, the typical favorable edge was usually between 1 and 5 percent and the odds, or payoff per dollar bet, averaged a little more than 1.",
      "date": "2026-07-10",
      "q": "According to Kelly's formula, what percent of your capital is the optimal bet for a favorable wager?"
+    }
+   ]
+  },
+  {
+   "id": "a-new-earth-oprah-s-book-club-awakening-to-your-life-s-purpose--eckhart-tolle",
+   "title": "A New Earth: Oprah's Book Club: Awakening to Your Life's Purpose",
+   "author": "Eckhart Tolle",
+   "subject": "awakening from ego-identification to a new state of human consciousness",
+   "total": 20,
+   "highlights": [
+    {
+     "id": "aa0e7e1ea7f27a13",
+     "loc": 261,
+     "theme": "mindfulness",
+     "text": "Seeing beauty in a flower could awaken humans, however briefly, to the beauty that is an essential part of their own innermost being, their true nature. The first recognition of beauty was one of the most significant events in the evolution of human consciousness.",
+     "date": "2026-01-01",
+     "q": "According to Tolle, why was the first recognition of beauty a significant event in the evolution of human consciousness?"
+    },
+    {
+     "id": "18b614ba47720d47",
+     "loc": 269,
+     "theme": "mindfulness",
+     "text": "Any life-form in any realm—mineral, vegetable, animal, or human—can be said to undergo “enlightenment.” It is, however, an extremely rare occurrence since it is more than an evolutionary progression: It also implies a discontinuity in its development, a leap to an entirely different level of Being and, most important, a lessening of materiality.",
+     "date": "2026-01-01",
+     "q": "What distinguishes enlightenment from mere evolutionary progression, according to Tolle?"
+    },
+    {
+     "id": "cf503d5a4820cfe2",
+     "loc": 294,
+     "theme": "mindfulness",
+     "text": "Is humanity ready for a transformation of consciousness, an inner flowering so radical and profound that compared to it the flowering of plants, no matter how beautiful, is only a pale reflection?",
+     "date": "2026-01-01"
+    },
+    {
+     "id": "9504fcff99f081f9",
+     "loc": 327,
+     "theme": "mindfulness",
+     "text": "The first part of this truth is the realization that the “normal” state of mind of most human beings contains a strong element of what we might call dysfunction or even madness. Certain teachings at the heart of Hinduism perhaps come closest to seeing this dysfunction as a form of collective mental illness. They call it maya, the veil of delusion. Ramana Maharshi, one of the greatest Indian sages, bluntly states: “The mind is maya.”",
+     "date": "2026-01-01",
+     "q": "What does the Hindu concept of maya describe about the normal human state of mind?"
+    },
+    {
+     "id": "cd6ed1b3a670429b",
+     "loc": 334,
+     "theme": "ideas",
+     "text": "Sin is a word that has been greatly misunderstood and misinterpreted. Literally translated from the ancient Greek in which the New Testament was written, to sin means to miss the mark, as an archer who misses the target, so to sin means to miss the point of human existence. It means to live unskillfully, blindly, and thus to suffer and cause suffering.",
+     "date": "2026-01-01",
+     "q": "What is the literal meaning of 'sin' when translated from the ancient Greek of the New Testament?"
+    },
+    {
+     "id": "eb460186836c0152",
+     "loc": 377,
+     "theme": "mindfulness",
+     "text": "They make plans without taking into account the blueprint for dysfunction that every human being carries within: the ego.",
+     "date": "2026-01-01"
+    },
+    {
+     "id": "70e096be6326e8ee",
+     "loc": 381,
+     "theme": "mindfulness",
+     "text": "arises a second insight: the good news of the possibility of a radical transformation of human consciousness. In Hindu teachings (and sometimes in Buddhism also), this transformation is called enlightenment. In the teachings of Jesus, it is salvation, and in Buddhism, it is the end of suffering. Liberation and awakening are other terms used to describe this transformation.",
+     "q": "What terms do Hinduism, Buddhism, and Jesus's teachings use for the radical transformation of consciousness?"
+    },
+    {
+     "id": "ee6e4817234d7b72",
+     "loc": 467,
+     "theme": "mindfulness",
+     "text": "We are coming to the end not only of mythologies but also of ideologies and belief systems. The change goes deeper than the content of your mind, deeper than your thoughts. In fact, at the heart of the new consciousness lies the transcendence of thought, the newfound ability of rising above thought, of realizing a dimension within yourself that is infinitely more vast than thought. You then no longer derive your identity, your sense of who you are, from the incessant stream of thinking that in the old consciousness you take to be yourself. What a liberation to realize that the “voice in my head” is not who I am. Who am I then? The one who sees that. The awareness that is prior to thought, the space in which the thought—or the emotion or sense perception—happens.",
+     "date": "2026-01-03",
+     "q": "According to Tolle, who are you if the 'voice in your head' is not who you are?"
+    },
+    {
+     "id": "a18a83162f6233f4",
+     "loc": 473,
+     "theme": "mindfulness",
+     "text": "If evil has any reality—and it has a relative, not an absolute, reality—this is also its definition: complete identification with form—physical forms, thought forms, emotional forms. This results in a total unawareness of my connectedness with the whole, my intrinsic oneness with every “other” as well as with the Source. This forgetfulness is original sin, suffering, delusion.",
+     "date": "2026-01-03",
+     "q": "How does Tolle define evil in terms of identification with form?"
+    },
+    {
+     "id": "6fbdbc480a5f60a5",
+     "loc": 485,
+     "theme": "mindfulness",
+     "text": "“A new heaven” is the emergence of a transformed state of human consciousness, and “a new earth” is its reflection in the physical realm.",
+     "date": "2026-01-03",
+     "q": "What do 'a new heaven' and 'a new earth' represent in Tolle's interpretation?"
+    },
+    {
+     "id": "a051c2e6d4b7f06e",
+     "loc": 503,
+     "theme": "mindfulness",
+     "text": "When you don’t cover up the world with words and labels, a sense of the miraculous returns to your life that was lost a long time ago when humanity, instead of using thought, became possessed by thought. A depth returns to your life. Things regain their newness, their freshness. And the greatest miracle is the experiencing of your essential self as prior to any words, thoughts, mental labels, and images.",
+     "date": "2026-01-04"
+    },
+    {
+     "id": "e56132d9d2e09c09",
+     "loc": 608,
+     "theme": "mindfulness",
+     "text": "And so in many cases you are not buying a product but an “identity enhancer.”",
+     "date": "2026-01-04"
+    },
+    {
+     "id": "78da2ea1db30b493",
+     "loc": 614,
+     "theme": "mindfulness",
+     "text": "Paradoxically, what keeps the so-called consumer society going is the fact that trying to find yourself through things doesn’t work: The ego satisfaction is short-lived and so you keep looking for more, keep buying, keep consuming.",
+     "date": "2026-01-05",
+     "q": "According to Tolle, why does trying to find yourself through things keep the consumer society going?"
+    },
+    {
+     "id": "d43415daebd72514",
+     "loc": 623,
+     "theme": "mindfulness",
+     "text": "Ego-identification with things creates attachment to things, obsession with things, which in turn creates our consumer society and economic structures where the only measure of progress is always more. The unchecked striving for more, for endless growth, is a dysfunction and a disease.",
+     "date": "2026-01-13",
+     "q": "What does Tolle say ego-identification with things creates in society and economics?"
+    },
+    {
+     "id": "eaf5e0efec83dea3",
+     "loc": 659,
+     "theme": "mindfulness",
+     "text": "“Whatever the ego seeks and gets attached to are substitutes for the Being that it cannot feel. You can value and care for things, but whenever you get attached to them, you will know it’s the ego. And you are never really attached to a thing but to a thought that has ‘I,’ ‘me,’ or ‘mine’ in it.",
+     "date": "2026-01-13",
+     "q": "According to Tolle, are you attached to a thing itself, or to something else?"
+    },
+    {
+     "id": "398a3b6bec57b661",
+     "loc": 668,
+     "theme": "mindfulness",
+     "text": "Life will give you whatever experience is most helpful for the evolution of your consciousness. How do you know this is the experience you need? Because this is the experience you are having at this moment.",
+     "date": "2026-01-13",
+     "q": "How does Tolle say you can know an experience is the one you need for your consciousness's evolution?"
+    },
+    {
+     "id": "f9d8adad2059073e",
+     "loc": 688,
+     "theme": "mindfulness",
+     "text": "“Blessed are the poor in spirit,” Jesus said, “for theirs will be the kingdom of heaven.”1 What does “poor in spirit” mean? No inner baggage, no identifications. Not with things, nor with any mental concepts that have a sense of self in them.",
+     "q": "How does Tolle interpret Jesus's phrase 'poor in spirit'?"
+    },
+    {
+     "id": "ef33b5a3935eba08",
+     "loc": 709,
+     "theme": "mindfulness",
+     "text": "The ego’s sense of self-worth is in most cases bound up with the worth you have in the eyes of others.",
+     "date": "2026-01-13"
+    },
+    {
+     "id": "444eeb2013525c96",
+     "loc": 719,
+     "theme": "mindfulness",
+     "text": "Concealed within it remains a deep-seated sense of dissatisfaction, of incompleteness, of “not enough.” “I don’t have enough yet,” by which the ego really means, “I am not enough yet.”",
+     "date": "2026-03-22",
+     "q": "What does the ego really mean when it says 'I don't have enough yet'?"
+    },
+    {
+     "id": "4cbc687a666ee25a",
+     "loc": 724,
+     "theme": "mindfulness",
+     "text": "The ego wants to want more than it wants to have.",
+     "date": "2026-03-22"
+    }
+   ]
+  },
+  {
+   "id": "a-tradecraft-primer-structured-analytic-techniques-for-improving-intelligence-an--us-government",
+   "title": "A Tradecraft Primer: Structured Analytic Techniques for Improving Intelligence Analysis",
+   "author": "US Government",
+   "subject": "structured analytic techniques for improving intelligence analysis",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "064d4f98de7badf0",
+     "loc": 4,
+     "theme": "ideas",
+     "text": "Rather, the primer highlights how structured analytic techniques can help one challenge judgments, identify mental mindsets, stimulate creativity, and manage uncertainty.",
+     "date": "2026-05-02",
+     "q": "What does the primer say structured analytic techniques can help an analyst do?"
+    }
+   ]
+  },
+  {
+   "id": "advice-not-given-a-guide-to-getting-over-yourself--mark-epstein-m-d",
+   "title": "Advice Not Given: A Guide to Getting Over Yourself",
+   "author": "Mark Epstein M.D.",
+   "subject": "applying Buddhist psychology and mindfulness to everyday life and the ego",
+   "total": 5,
+   "highlights": [
+    {
+     "id": "1b836743ca4764c8",
+     "loc": 1962,
+     "theme": "mindfulness",
+     "text": "The trick to Right Mindfulness is not to turn it into another method of self-improvement.",
+     "date": "2026-05-03",
+     "q": "According to Epstein, what is the trick to practicing Right Mindfulness?"
+    },
+    {
+     "id": "0a002640c8501391",
+     "loc": 1981,
+     "theme": "mindfulness",
+     "text": "It turns out that meditation-induced anxiety is very familiar to Buddhist monks and was well cataloged in medieval Tibetan medical texts. Meditators who try too hard to be mindful make themselves agitated and depressed. Their minds rear up like angry horses determined not to be brought under control by their riders.",
+     "date": "2026-05-04",
+     "q": "What happens to meditators who try too hard to be mindful, according to Tibetan medical texts?"
+    },
+    {
+     "id": "ad48e34b6d4360c0",
+     "loc": 1984,
+     "theme": "mindfulness",
+     "text": "Tibetan doctors have such afflicted patients do simple tasks like sweeping the temple halls or chopping vegetables in the kitchen rather than prescribing more meditation. They know that the treatment for meditation-induced anxiety disorders is less meditation, not more.",
+     "date": "2026-05-04",
+     "q": "How do Tibetan doctors treat meditation-induced anxiety disorders?"
+    },
+    {
+     "id": "706c3e2080ac048e",
+     "loc": 2067,
+     "theme": "mindfulness",
+     "text": "While it does not necessarily make the painful aspects of impermanence welcome—the Buddha did not call old age, sickness, separation, and death suffering for no reason—it does help people become more accepting of that which they cannot control. Mindfulness brings transience into the foreground; it makes it incontrovertible.",
+     "date": "2026-05-07",
+     "q": "How does mindfulness help people relate to impermanence and things they cannot control?"
+    },
+    {
+     "id": "5917d3e279c9ad7c",
+     "loc": 2080,
+     "theme": "mindfulness",
+     "text": "Egotism starts to feel painful and one discovers that one can step away from it. In a world in which nothing is as fixed as it seems, it comes as a great relief to discover that even the ego is impermanent. One’s defensive posture does not have to be etched in stone.",
+     "date": "2026-05-07",
+     "q": "What relief does Epstein say comes from discovering that even the ego is impermanent?"
     }
    ]
   },
@@ -739,6 +966,61 @@ window.ANKI = {
    ]
   },
   {
+   "id": "be-useful-seven-tools-for-life--arnold-schwarzenegger",
+   "title": "Be Useful: Seven Tools for Life",
+   "author": "Arnold Schwarzenegger",
+   "subject": "the seven principles and mindset Schwarzenegger credits for his success across bodybuilding, business, and public life",
+   "total": 13,
+   "highlights": [
+    {
+     "id": "9b8a2ef6e46c3254",
+     "loc": 915,
+     "theme": "health",
+     "text": "Pain isn’t just an indicator of sacrifice, though, it’s also a measure of growth potential. In the gym, if an exercise doesn’t start to hurt, then I know I haven’t done enough to unleash the growth potential of the muscle I’m targeting. Reps build strength, but pain builds size.",
+     "date": "2026-04-12",
+     "q": "How does Schwarzenegger distinguish what reps build from what pain builds in the gym?"
+    },
+    {
+     "id": "8a966d77c5e31a9f",
+     "loc": 939,
+     "theme": "mindfulness",
+     "text": "The great Japanese novelist Haruki Murakami once wrote, “I can bear any pain as long as it has meaning.” I’ve learned over the years that this is true: pain only needs to have meaning to you for it to be bearable.",
+     "date": "2026-04-12",
+     "q": "What did Haruki Murakami write about pain that Schwarzenegger endorses?"
+    },
+    {
+     "id": "1431cec53859214a",
+     "loc": 971,
+     "theme": "work",
+     "text": "Shit happens. Signals get crossed. People are lazy. Some people are just plain stupid. If you have a job to do or a goal you’re trying to achieve, or you’ve made a commitment to protect something or someone, and it’s important to you that everything happens the way it’s supposed to, it’s up to you to follow through all the way.",
+     "date": "2026-04-12"
+    },
+    {
+     "id": "cd526589d360593e",
+     "loc": 1012,
+     "theme": "work",
+     "text": "The only time you are allowed to use the phrase “I took care of it” is when it is done. Completely.",
+     "date": "2026-04-12",
+     "q": "When is the only time Schwarzenegger says you're allowed to say 'I took care of it'?"
+    },
+    {
+     "id": "610c1bd956371c94",
+     "loc": 1035,
+     "theme": "work",
+     "text": "I actually think it was the American country singer and sausage maker Jimmy Dean who nailed it. He said, “Do what you say you’re going to do, and try to do it a little better than you said you would.”",
+     "date": "2026-04-12",
+     "q": "What advice from Jimmy Dean does Schwarzenegger say nailed following through?"
+    },
+    {
+     "id": "082b719d798f1065",
+     "loc": 1132,
+     "theme": "work",
+     "text": "What about time for rest and relaxation? First of all, rest is for babies and relaxation is for retired people. Which one are you? If you want to do something special, if you have a big dream that you want to achieve, I believe you’re going to have to put relaxation aside for a while.",
+     "date": "2026-04-12"
+    }
+   ]
+  },
+  {
    "id": "boom-bubbles-and-the-end-of-stagnation--byrne-hobart-and-tobias-huber",
    "title": "Boom: Bubbles and the End of Stagnation",
    "author": "Byrne Hobart and Tobias Huber",
@@ -917,6 +1199,47 @@ window.ANKI = {
    ]
   },
   {
+   "id": "buy-back-your-time-get-unstuck-reclaim-your-freedom-and-build-your-empire--dan-martell",
+   "title": "Buy Back Your Time: Get Unstuck, Reclaim Your Freedom, and Build Your Empire",
+   "author": "Dan Martell",
+   "subject": "delegating and outsourcing tasks so founders reclaim time to scale their business",
+   "total": 5,
+   "highlights": [
+    {
+     "id": "09721c4f208062d8",
+     "loc": 274,
+     "theme": "work",
+     "text": "The little-known secret to reaching the next stage of your business is spending your time on only the tasks that: (a) you excel at, (b) you truly enjoy, and (c) add the highest value (usually in the form of revenue) to your business. Likely, two to three tasks fit that description.",
+     "date": "2026-04-05",
+     "q": "According to Martell, what three criteria identify the two or three tasks a founder should keep spending time on?"
+    },
+    {
+     "id": "ae18200eaffc9dff",
+     "loc": 277,
+     "theme": "work",
+     "text": "Yes, someone else should be handling about 95 percent of your current work so you can get back to what matters.",
+     "date": "2026-04-05",
+     "q": "What proportion of a founder's current work does Martell say someone else should be handling?"
+    },
+    {
+     "id": "04194c3ed65869e1",
+     "loc": 303,
+     "theme": "work",
+     "text": "That’s what the Buyback Principle is all about: How to spend the most finite asset your business possesses: the founder’s time How to invest that time into what will bring the founder more energy and more money",
+     "date": "2026-04-05",
+     "q": "What are the two central concerns of the Buyback Principle regarding a founder's time?"
+    },
+    {
+     "id": "4b217bc7797effaa",
+     "loc": 310,
+     "theme": "work",
+     "text": "The Buyback Principle: Don’t hire to grow your business. Hire to buy back your time.",
+     "date": "2026-04-05",
+     "q": "What does Martell say you should hire for, instead of hiring to grow your business?"
+    }
+   ]
+  },
+  {
    "id": "early-retirement-extreme-a-philosophical-and-practical-guide-to-financial-indepe--jacob-lund-fisker-ann-beaver-and-zev-averbach",
    "title": "Early Retirement Extreme: A philosophical and practical guide to financial independence",
    "author": "Jacob Lund Fisker, Ann Beaver, and Zev Averbach",
@@ -944,32 +1267,37 @@ window.ANKI = {
      "loc": 127,
      "theme": "mindfulness",
      "text": "Aunque suene ilógico, en aquel momento sentía que todo aquello debía estar relacionado con alguna clase de problema o de enigma que solo podría solucionarse en la Ciudad de México o en mi modo de relacionarme con ella. Muchas veces pensé, por ejemplo, que lo que tenía que hacer era irme de ahí y empezar de nuevo en otro sitio, algún lugar en el que no hubiera vivido nunca antes, libre de recuerdos y de reminiscencias de Aura, donde me fuera más fácil escapar de mi papel de viudo público y privado al mismo tiempo. Sin embargo, cuando volvía a pensarlo siempre concluía que irme era inconcebible, y que la solución probablemente fuera quedarme; y no solo quedarme, sino ir más allá y aferrarme con más fuerza a ese lugar que había estado tentado a abandonar: quizás ésa fuera la manera de aprender a vivir en el DF sin Aura.",
+     "date": "2024-11-24",
      "q": "¿A qué conclusión llegó el autor sobre irse o quedarse en el DF tras la muerte de Aura?"
     },
     {
      "id": "e17f0affd64e53ff",
      "loc": 155,
      "theme": "mindfulness",
-     "text": "¿y si mi plan no era sino más de lo mismo: otro ritual relacionado con mi duelo, una simple maniobra –a través de un performance muy del gusto de Aura– para dar rienda suelta al deseo de explorar las calles donde ella había vivido su infancia; recorrer su ciudad tal como me habría gustado recorrer con los dedos sus labios, sus ojos, su cara?"
+     "text": "¿y si mi plan no era sino más de lo mismo: otro ritual relacionado con mi duelo, una simple maniobra –a través de un performance muy del gusto de Aura– para dar rienda suelta al deseo de explorar las calles donde ella había vivido su infancia; recorrer su ciudad tal como me habría gustado recorrer con los dedos sus labios, sus ojos, su cara?",
+     "date": "2024-11-24"
     },
     {
      "id": "9e0acd2f83d61f4a",
      "loc": 179,
      "theme": "ideas",
      "text": "La Guía Roji también sugiere una especie de infinito borgiano: un denso caos que en realidad posee un orden, aunque incluso aquellos que pasan la vida explorando la ciudad solo pueden percibirlo vagamente.",
+     "date": "2024-11-24",
      "q": "¿Qué clase de orden borgiano sugiere la Guía Roji según el autor?"
     },
     {
      "id": "68aff3601941bb6d",
      "loc": 197,
      "theme": "ideas",
-     "text": "Cada vez que hojeo las páginas de mi Guía Roji, me gusta dejar caer el dedo, al azar, sobre una de ellas, y después entornar los ojos y mirar de cerca para descubrir, en letra pequeñísima, el nombre de la calle: ahora mismo, Metalúrgicos, en el mapa de la página 133, en la colonia Trabajadores del Hierro (jamás la había oído nombrar)."
+     "text": "Cada vez que hojeo las páginas de mi Guía Roji, me gusta dejar caer el dedo, al azar, sobre una de ellas, y después entornar los ojos y mirar de cerca para descubrir, en letra pequeñísima, el nombre de la calle: ahora mismo, Metalúrgicos, en el mapa de la página 133, en la colonia Trabajadores del Hierro (jamás la había oído nombrar).",
+     "date": "2026-05-25"
     },
     {
      "id": "f90399529e33f65c",
      "loc": 207,
      "theme": "ideas",
      "text": "Ése es el juego que me inventé: para descubrirlo, tenía que ir manejando hasta ahí. La idea era usar la Guía Roji más o menos como se usaría el I Ching: abrirla en cualquier página, señalar al azar con el dedo, con los ojos cerrados, e intentar luego ir manejando hasta el lugar elegido. Un juego de azar y destino (si no de Destino).",
+     "date": "2024-11-24",
      "q": "¿En qué consiste el juego que el autor se inventó con la Guía Roji, usándola como el I Ching?"
     },
     {
@@ -977,19 +1305,22 @@ window.ANKI = {
      "loc": 243,
      "theme": "ideas",
      "text": "Entre otros factores, una docena de años de liderazgo político aceptablemente progresista y enérgico en el DF –continué– lo habían convertido en una ciudad vibrante, relativamente próspera y particularmente tolerante. Pese a seguir lastrada por la pobreza y otros problemas, y a ser absolutamente idiosincrásica, era una gran ciudad global, incomparable con ninguna otra. Mucha gente dice que Buenos Aires parece una ciudad europea, ¿pero qué otra ciudad del mundo se parece al DF? Ninguna.",
+     "date": "2026-05-26",
      "q": "¿Qué factores, según el autor, habían convertido al DF en una ciudad vibrante y particularmente tolerante?"
     },
     {
      "id": "451d6b083f5418d2",
      "loc": 488,
      "theme": "ideas",
-     "text": "Era 1995, de modo que no me tocó vivir nada parecido al ambiente que Daniel Hernández evoca en su libro de memorias El bajón y el delirio, donde narra su experiencia con las «tribus urbanas» de la ciudad en la década siguiente; sin embargo, también viví lo mío."
+     "text": "Era 1995, de modo que no me tocó vivir nada parecido al ambiente que Daniel Hernández evoca en su libro de memorias El bajón y el delirio, donde narra su experiencia con las «tribus urbanas» de la ciudad en la década siguiente; sin embargo, también viví lo mío.",
+     "date": "2024-11-24"
     },
     {
      "id": "e8b6f70fbde451d5",
      "loc": 498,
      "theme": "ideas",
      "text": "La avenida Ámsterdam es un largo óvalo construido sobre una pista de carreras de caballos que el Jockey Club de México levantó, a principios del siglo XX, en unos terrenos propiedad de la condesa de Miravalle, que era dueña de todas las tierras en varios kilómetros a la redonda; de ahí el nombre oficial del barrio: colonia Hipódromo Condesa.",
+     "date": "2024-11-24",
      "q": "¿Sobre qué se construyó la avenida Ámsterdam y de dónde viene el nombre de la colonia Hipódromo Condesa?"
     }
    ]
@@ -1052,6 +1383,77 @@ window.ANKI = {
      "theme": "ideas",
      "text": "Ahí se nota que él viene de la escuela cercana a José Agustín, a Efraín Huerta, un mundo menos literario, por decirlo así, aunque la novela hace un giro y él empieza a perseguir a una escritora, que es cuando la novela cambia de bando. 69Empieza para mí escrita por alguien a liado a los efraínistas y termina como si la hubiera hecho alguien adscrito al régimen de Octavio Paz.",
      "date": "2026-07-05"
+    }
+   ]
+  },
+  {
+   "id": "elon-musk--walter-isaacson",
+   "title": "Elon Musk",
+   "author": "Walter Isaacson",
+   "subject": "the life, ventures, and management style of entrepreneur Elon Musk",
+   "total": 9,
+   "highlights": [
+    {
+     "id": "3f5c3484791c8e8c",
+     "loc": 1134,
+     "theme": "work",
+     "text": "That was more than just a metaphor. Many years later, Levchin was at a friend’s bachelor pad hanging out with Musk. Some people were playing a high-stakes game of Texas Hold ’Em. Although Musk was not a card player, he pulled up to the table. “There were all these nerds and sharpsters who were good at memorizing cards and calculating odds,” Levchin says. “Elon just proceeded to go all in on every hand and lose. Then he would buy more chips and double down. Eventually, after losing many hands, he went all in and won. Then he said, ‘Right, fine, I’m done.’ ” It would be a theme in his life: avoid taking chips off the table; keep risking them. That would turn out to be a good strategy.",
+     "date": "2026-04-03",
+     "q": "What risk-taking pattern did Levchin observe in Musk's poker play that recurred throughout his life?"
+    },
+    {
+     "id": "36860bbad1d1c7b6",
+     "loc": 1215,
+     "theme": "work",
+     "text": "Reid Hoffman, another PayPal veteran, had a similar reaction. After listening to Musk describe his plan to send rockets to Mars, Hoffman was puzzled. “How is this a business?” he asked. Later Hoffman would realize that Musk didn’t think that way. “What I didn’t appreciate is that Elon starts with a mission and later finds a way to backfill in order to make it work financially,” he says. “That’s what makes him a force of nature.”",
+     "date": "2026-04-03",
+     "q": "According to Reid Hoffman, how does Musk's approach differ from starting with a business plan?"
+    },
+    {
+     "id": "b2653ea3f7128ab7",
+     "loc": 1433,
+     "theme": "work",
+     "text": "In laying out the factory, Musk followed his philosophy that the design, engineering, and manufacturing teams would all be clustered together. “The people on the assembly line should be able to immediately collar a designer or engineer and say, ‘Why the fuck did you make it this way?’ ” he explained to Mueller.",
+     "date": "2026-04-05",
+     "q": "What was Musk's rationale for clustering design, engineering, and manufacturing teams together?"
+    },
+    {
+     "id": "655ee1d688e57726",
+     "loc": 1477,
+     "theme": "work",
+     "text": "All requirements should be treated as recommendations, he repeatedly instructed. The only immutable ones were those decreed by the laws of physics.",
+     "date": "2026-04-08",
+     "q": "How did Musk instruct his teams to treat requirements, and which ones were immutable?"
+    },
+    {
+     "id": "18f16a998227a103",
+     "loc": 1484,
+     "theme": "work",
+     "text": "Mueller agreed and arbitrarily cut the schedule in half. “And guess what?” he says. “We ended up developing it in about the time that we had put in that original schedule.” Sometimes Musk’s insane schedules produced the impossible, sometimes they didn’t. “I learned never to tell him no,” Mueller says. “Just say you’re going to try, then later explain why if it doesn’t work out.” Musk insisted on setting unrealistic deadlines even when they weren’t necessary, such as when he ordered test stands to be erected in weeks for rocket engines that had not yet been built. “A maniacal sense of urgency is our operating principle,” he repeatedly declared.",
+     "date": "2026-04-08",
+     "q": "What did Musk declare was his companies' operating principle regarding urgency?"
+    },
+    {
+     "id": "7f2462be5b7064e9",
+     "loc": 1497,
+     "theme": "work",
+     "text": "Musk took an iterative approach to design. Rockets and engines would be quickly prototyped, tested, blown up, revised, and tried again, until finally something worked. Move fast, blow things up, repeat. “It’s not how well you avoid problems,” Mueller says. “It’s how fast you figure out what the problem is and fix it.”",
+     "date": "2026-04-08",
+     "q": "How did Mueller describe the key to Musk's iterative design approach?"
+    },
+    {
+     "id": "017da279628fc70b",
+     "loc": 1532,
+     "theme": "work",
+     "text": "“Elon believes that every situation is salvageable. That taught us a lot. And it actually was fun.” It also saved SpaceX months in getting its initial rocket tested. Of course that didn’t always work.",
+     "date": "2026-04-08"
+    },
+    {
+     "id": "715d495fe71f1f7a",
+     "loc": 1544,
+     "theme": "work",
+     "text": "A pattern was set: try new ideas and be willing to blow things up.",
+     "date": "2026-04-08"
     }
    ]
   },
@@ -1403,6 +1805,162 @@ window.ANKI = {
    ]
   },
   {
+   "id": "finite-and-infinite-games--james-p-carse",
+   "title": "Finite and Infinite Games",
+   "author": "James P. Carse",
+   "subject": "the distinction between finite games played to win and infinite games played to continue play",
+   "total": 2,
+   "highlights": [
+    {
+     "id": "1528ac955750443d",
+     "loc": 37,
+     "theme": "ideas",
+     "text": "THERE ARE at least two kinds of games. One could be called finite, the other infinite. A finite game is played for the purpose of winning, an infinite game for the purpose of continuing the play.",
+     "date": "2026-04-11",
+     "q": "How does Carse distinguish a finite game from an infinite game by their purpose?"
+    },
+    {
+     "id": "c0a22dfffe809257",
+     "loc": 107,
+     "theme": "ideas",
+     "text": "For this reason the rules of an infinite game have a different status from those of a finite game. They are like the grammar of a living language, where those of a finite game are like the rules of debate. In the former case we observe rules as a way of continuing discourse with each other; in the latter we observe rules as a way of bringing the speech of another person to an end.",
+     "date": "2026-04-11",
+     "q": "According to Carse, how do the rules of an infinite game differ in status from those of a finite game?"
+    }
+   ]
+  },
+  {
+   "id": "genius-makers-the-mavericks-who-brought-ai-to-google-facebook-and-the-world--cade-metz",
+   "title": "Genius Makers: The Mavericks Who Brought AI to Google, Facebook, and the World",
+   "author": "Cade Metz",
+   "subject": "the researchers and companies behind the deep learning revolution in AI",
+   "total": 17,
+   "highlights": [
+    {
+     "id": "c45108739e66beb1",
+     "loc": 203,
+     "theme": "ideas",
+     "text": "Two months earlier, Hinton and his students had changed the way machines saw the world. They had built what was called a neural network, a mathematical system modeled on the web of neurons in the brain, and it could identify common objects—like flowers, dogs, and cars—with an accuracy that had previously seemed impossible. As Hinton and his students showed, a neural network could learn this very human skill by analyzing vast amounts of data. He called this “deep learning,” and its potential was enormous. It promised to transform not just computer vision but everything from talking digital assistants to driverless cars to drug discovery.",
+     "date": "2025-11-29",
+     "q": "What did Hinton call the technique in which a neural network learns human skills like object recognition by analyzing vast amounts of data?"
+    },
+    {
+     "id": "d9a046c07e758a67",
+     "loc": 234,
+     "theme": "ideas",
+     "text": "Spurred on by his students and realizing that Baidu and its rivals were much more likely to pay enormous sums of money to acquire a company than they were to shell out the same dollars for a few new hires from the world of academia, he created his tiny start-up. He called it DNNresearch in a nod to the “deep neural networks” they specialized in, and he asked a Toronto lawyer how he could maximize the price of a start-up with three employees, no products, and virtually no history.",
+     "date": "2025-11-29",
+     "q": "Why did Hinton create the tiny start-up DNNresearch rather than seek new academic hires?"
+    },
+    {
+     "id": "615919066636aa88",
+     "loc": 238,
+     "theme": "ideas",
+     "text": "Hinton chose an auction. In the end, four names joined the bidding for his new company: Baidu, Google, Microsoft, and a two-year-old start-up most of the world had never heard of. This was DeepMind, a London company founded by a young neuroscientist named Demis Hassabis that would grow to become the most celebrated and influential AI lab of the decade.",
+     "date": "2025-11-29",
+     "q": "Which four names joined the bidding auction for Hinton's company DNNresearch?"
+    },
+    {
+     "id": "de025020f2183f35",
+     "loc": 297,
+     "theme": "ideas",
+     "text": "Alongside a small group of other scientists—spread across those same four companies, one more American Internet giant, and, eventually, a new upstart—Hinton and his students soon pushed this single idea into the heart of the tech industry.",
+     "date": "2025-11-29"
+    },
+    {
+     "id": "1022fab75ccec975",
+     "loc": 346,
+     "theme": "ideas",
+     "text": "a twenty-nine-year-old Cornell University professor named Frank Rosenblatt. As a newspaper reporter looked on, Rosenblatt and his Navy cohorts fed two white cards into the machine, one marked with a small square on the left, the other marked on the right. Initially, the machine couldn’t tell them apart, but after it read another fifty cards, that changed. Almost every time, it correctly identified where the card was marked—left or right. As Rosenblatt explained it, the machine had learned this skill on its own, thanks to a mathematical system modeled on the human brain. He called it a Perceptron.",
+     "date": "2025-12-21",
+     "q": "What did Cornell professor Frank Rosenblatt call his brain-modeled machine that learned to identify where a card was marked?"
+    },
+    {
+     "id": "91305b920c9baef5",
+     "loc": 1785,
+     "theme": "ideas",
+     "text": "By the middle of 2013, Zuckerberg decided he had to get there, too, even if he was racing for only second place. It didn’t matter that Facebook was merely a social network. It didn’t matter that deep learning was not an obvious fit for anything beyond ad targeting and image recognition on this social network. It didn’t matter that the company didn’t really do long-term research. Zuckerberg was intent on bringing deep learning research to Facebook.",
+     "date": "2025-12-21"
+    },
+    {
+     "id": "c274a047746322fb",
+     "loc": 1849,
+     "theme": "ideas",
+     "text": "At dinner with LeCun, just between the two of them, Zuckerberg explained his grand vision for AI at Facebook. In the future, he told LeCun, interactions on the social network would be driven by technologies powerful enough to perform tasks on their own. In the short term, these technologies would identify faces in photos, recognize spoken commands, and translate between languages. In the longer term, “intelligent agents” or “bots” would patrol Facebook’s digital world, take instructions, and carry them out as need be.",
+     "date": "2025-12-21"
+    },
+    {
+     "id": "22b33c1e99f6b97d",
+     "loc": 1879,
+     "theme": "ideas",
+     "text": "Since most of the leading researchers at places like Google and Facebook came from academia—and so many remained academics, at least in part—Yann LeCun’s vision of open research became the norm. “I don’t know how to do research unless it’s open, unless we are part of the research community,” LeCun says. “Because if you do it in secret, you get bad-quality research. You can’t attract the best. You’re not going to have people who can push the state of the art.”",
+     "date": "2025-12-21",
+     "q": "Why did Yann LeCun insist that AI research be done openly rather than in secret?"
+    },
+    {
+     "id": "049cbf5f4e766cb6",
+     "loc": 1948,
+     "theme": "ideas",
+     "text": "What these more conventionally minded Googlers didn’t appreciate was that deep learning was the future—and that GPUs could accelerate this emerging technology at a rate ordinary computer chips could not.",
+     "date": "2025-12-21",
+     "q": "What advantage did GPUs offer over ordinary computer chips for deep learning?"
+    },
+    {
+     "id": "1a098bdd2e557a40",
+     "loc": 1996,
+     "theme": "ideas",
+     "text": "But in 2014, this was the direction Google turned. The moment was part of a much larger shift inside the company. This single idea—a neural network—now transformed the way Google built technology across its growing empire, in both the physical world and the digital. With help from those forty thousand GPU chips and soon many more—a data center overhaul the company called Project Mack Truck—deep learning moved into everything from the Google Photos app, where it instantly found objects in a sea of images, to Gmail, where it helped predict the word you were about to type. It also greased the wheels inside AdWords, the online ad system that generated a vast majority of the company’s $56 billion in annual revenue. By analyzing data showing which ads people had clicked on in the past, deep learning could help predict what they would click on in the future. More clicks meant more money. Google was spending hundreds of millions of dollars buying GPU chips—and millions more acquiring researchers—but it was already making those dollars back.",
+     "date": "2025-12-21",
+     "q": "How did deep learning improve Google's AdWords revenue?"
+    },
+    {
+     "id": "43d88a888b87706e",
+     "loc": 2006,
+     "theme": "ideas",
+     "text": "In 2015, they unveiled a system called RankBrain, which used neural networks to help choose search results. It helped drive about 15 percent of the company’s search queries and was, on the whole, more accurate than veteran search engineers when trying to predict what people would click on.",
+     "date": "2025-12-21",
+     "q": "What was Google's 2015 neural-network system RankBrain used for?"
+    },
+    {
+     "id": "753ec293efe9063a",
+     "loc": 2018,
+     "theme": "ideas",
+     "text": "Spurred by the $130 million in graphics chips it sold to Google, Nvidia reorganized itself around the deep learning idea, and soon it was not merely selling chips for AI research, it was doing its own research, exploring the boundaries of image recognition and self-driving cars, hoping to expand the market even further.",
+     "date": "2025-12-21",
+     "q": "How did Nvidia respond to the demand for chips created by the deep learning boom?"
+    },
+    {
+     "id": "977f7b51db3fe08c",
+     "loc": 2117,
+     "theme": "ideas",
+     "text": "During a standing meeting with Hölzle and a few other Googlers who specialized in data center infrastructure, however, Dean suggested an alternative: They could build a new computer chip just for delivering neural networks. Google had a long history of building its own data center hardware. Its data centers were so large, sucking up so much electrical power, Hölzle and his team spent years designing computer servers, networking gear, and other equipment that could deliver Google services in cheaper and more efficient ways.",
+     "date": "2025-12-23"
+    },
+    {
+     "id": "3906bca530542371",
+     "loc": 2135,
+     "theme": "ideas",
+     "text": "Now Dean and Hölzle tapped into this talent for the new chip project while also hiring seasoned chip engineers from Silicon Valley companies like HP. The result was the tensor processing unit, or TPU. It was designed to process the tensors—mathematical objects—that underpinned a neural network. The trick was that its calculations were less precise than typical processors. The number of calculations made by a neural network was so vast, each calculation didn’t have to be exact. It dealt in integers rather than floating point numbers. Rather than multiply 13.646 by 45.828, the TPU lopped off the decimal points and just multiplied 13 and",
+     "date": "2026-03-09",
+     "q": "How did Google's TPU achieve efficiency in neural network calculations?"
+    },
+    {
+     "id": "16c22798111cb9d7",
+     "loc": 2449,
+     "theme": "ideas",
+     "text": "Hinton saw the same combination of skills in Hassabis. “He ran AlphaGo like Oppenheimer ran the Manhattan Project. If anybody else had run it,” Hinton says, “they would not have gotten it working so fast, so well.”",
+     "date": "2026-04-11"
+    },
+    {
+     "id": "76e22458be6cfb7a",
+     "loc": 2650,
+     "theme": "ideas",
+     "text": "Mustafa Suleyman was one of the founders of DeepMind, but he seemed like a better fit for Google Brain. The man everyone called “Moose” wanted to build technology for today, not for the distant future. He wasn’t a gamer or a neuroscientist or even an AI researcher. The son of a Syria-born London cabdriver, he was an Oxford dropout who created a helpline for Muslim youths and worked for the mayor of London on human rights.",
+     "date": "2026-04-11"
+    }
+   ]
+  },
+  {
    "id": "getting-to-yes-negotiating-agreement-without-giving-in--roger-fisher-william-l-ury-and-bruce-patton",
    "title": "Getting to Yes: Negotiating Agreement Without Giving In",
    "author": "Roger Fisher, William L. Ury, and Bruce Patton",
@@ -1508,6 +2066,30 @@ window.ANKI = {
      "theme": "work",
      "text": "Again during the discussion stage, when the parties communicate back and forth, looking toward agreement, the same four elements are the best subjects to discuss.",
      "date": "2024-05-15"
+    }
+   ]
+  },
+  {
+   "id": "i-couldn-t-even-imagine-that-they-would-kill-us-an-oral-history-of-the-attacks-a--john-gibler-and-ariel-dorfman",
+   "title": "I Couldn't Even Imagine That They Would Kill Us: An Oral History of the Attacks Against the Students of Ayotzinapa (City Lights Open Media)",
+   "author": "John Gibler and Ariel Dorfman",
+   "subject": "the 2014 enforced disappearance of 43 students from Ayotzinapa, told through survivor testimony",
+   "total": 4,
+   "highlights": [
+    {
+     "id": "ec36e9b808c8a5fd",
+     "loc": 93,
+     "theme": "ideas",
+     "text": "Desaparecer was something that objects or people might do (“that cousin disappeared from our lives”) but not an action perpetrated on those things, and certainly not something done to human beings.",
+     "date": "2026-04-19"
+    },
+    {
+     "id": "c1f35bf4a1ff001c",
+     "loc": 97,
+     "theme": "ideas",
+     "text": "It was in Paris that we began to hear desaparecer deployed actively: lo desaparecieron, la desaparecieron, they disappeared him or her or them. To disappear became a verb that described a crime, an act of violence committed against someone, something done to a living human being.",
+     "date": "2026-04-19",
+     "q": "How did the meaning of the verb 'desaparecer' shift from passive to active as described in the foreword?"
     }
    ]
   },
@@ -2448,6 +3030,39 @@ window.ANKI = {
    ]
   },
   {
+   "id": "la-tirania-del-sentido-comun-la-reconversion-posneoliberal-en-mexico-spanish-edi--irmgard-emmelhainz",
+   "title": "La tiranía del sentido común: La reconversión posneoliberal en México (Spanish Edition)",
+   "author": "Irmgard Emmelhainz",
+   "subject": "the post-neoliberal reconfiguration of Mexican politics, culture and economy",
+   "total": 3,
+   "highlights": [
+    {
+     "id": "9626ed48b48cffcb",
+     "loc": 65,
+     "theme": "ideas",
+     "text": "Por otro lado, una de las herramientas neoliberales para reparar los daños en el tejido social generados por dichas políticas ha sido la vindicación de los derechos humanos. Como consecuencia, la figura principal de la imaginación política es la de la víctima.",
+     "date": "2026-03-22",
+     "q": "¿Cuál es, según Emmelhainz, la figura principal de la imaginación política que resulta de la vindicación neoliberal de los derechos humanos?"
+    },
+    {
+     "id": "eac076a903c29d59",
+     "loc": 72,
+     "theme": "ideas",
+     "text": "Parte del problema es que la oposición —encarnada por López Obrador— es la hegemonía y no permite disidencia, la cual está siendo sistemáticamente fulminada con instrumentos como la hacienda, los linchamientos mediáticos, la muerte social y la muerte real.",
+     "date": "2026-03-22",
+     "q": "¿Con qué instrumentos afirma la autora que la hegemonía encarnada por López Obrador fulmina la disidencia?"
+    },
+    {
+     "id": "0fb49cd9750cc359",
+     "loc": 94,
+     "theme": "ideas",
+     "text": "la actual imposibilidad de politizar la violencia extractivista a una escala más amplia que las luchas locales es el machismo, ya que el extractivismo, que se plantea como la base del desarrollo económico y el progreso, está intrínsecamente ligado a la explotación del trabajo y cuerpo femeninos, que son la base de la modernidad colonial.",
+     "date": "2026-03-22",
+     "q": "¿Por qué vincula la autora el extractivismo con el machismo y la explotación del cuerpo femenino?"
+    }
+   ]
+  },
+  {
    "id": "liftoff-elon-musk-and-the-desperate-early-days-that-launched-spacex--eric-berger",
    "title": "Liftoff: Elon Musk and the Desperate Early Days That Launched SpaceX",
    "author": "Eric Berger",
@@ -2910,6 +3525,23 @@ window.ANKI = {
    ]
   },
   {
+   "id": "mindulness-nuevo-manual-practico-el-camino-de-la-atencion-plena-mindfulness-medi--javier-garcia-campayo",
+   "title": "Mindulness. Nuevo manual práctico: El camino de la atención plena (Mindfulness, meditación, budismo, yoga y otras tradiciones contemplativas) (Spanish Edition)",
+   "author": "Javier García Campayo",
+   "subject": "mindfulness practice and contemplative traditions as a path to present-moment awareness",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "df3a1fa8298a195b",
+     "loc": 3372,
+     "theme": "mindfulness",
+     "text": "dolor x resistencia (o no aceptación) = sufrimiento",
+     "date": "2025-11-30",
+     "q": "Según la fórmula del libro, ¿cómo se define el sufrimiento en relación con el dolor?"
+    }
+   ]
+  },
+  {
    "id": "moneyball-the-art-of-winning-an-unfair-game--michael-lewis",
    "title": "Moneyball: The Art of Winning an Unfair Game",
    "author": "Michael Lewis",
@@ -2963,6 +3595,46 @@ window.ANKI = {
      "theme": "investing",
      "text": "At the core of Groupon was the Daily Deal. At the beginning of the company’s history, consumers were offered one promotional deal a day—for example, 25% off a pizza and pasta lunch for four or 30% off flowers at the local florist—if enough consumers signed up for the deal that day.",
      "date": "2026-07-30"
+    }
+   ]
+  },
+  {
+   "id": "open-the-brilliant-autobiography-of-the-wimbledon-champion--andre-agassi",
+   "title": "Open: The brilliant autobiography of the Wimbledon champion",
+   "author": "Andre Agassi",
+   "subject": "Andre Agassi's life in and hatred of professional tennis",
+   "total": 7,
+   "highlights": [
+    {
+     "id": "86ad54bf5be11c83",
+     "loc": 62,
+     "theme": "work",
+     "text": "Upon opening my eyes I’m a stranger to myself, and while, again, this isn’t new, in the mornings it’s more pronounced. I run quickly through the basic facts. My name is Andre Agassi. My wife’s name is Stefanie Graf. We have two children, a son and daughter, five and three. We live in Las Vegas, Nevada, but currently reside in a suite at the Four Seasons hotel in New York City, because I’m playing in the 2006 U.S. Open. My last U.S. Open. In fact my last tournament ever. I play tennis for a living, even though I hate tennis, hate it with a dark and secret passion, and always have.",
+     "date": "2023-07-26"
+    },
+    {
+     "id": "6d4b829297fd8e41",
+     "loc": 206,
+     "theme": "health",
+     "text": "STEFANIE AND THE KIDS RETURN. Time to make the Gil Water. I sweat a lot, more than most players, so I need to begin hydrating many hours before a match. I down quarts of a magic elixir invented for me by Gil, my trainer for the last seventeen years. Gil Water is a blend of carbs, electrolytes, salt, vitamins, and a few other ingredients Gil keeps a closely guarded secret. (He’s been tinkering with his recipe for two decades.)",
+     "date": "2026-03-22",
+     "q": "What is Gil Water and why does Agassi start drinking it hours before a match?"
+    },
+    {
+     "id": "e7f05cfaeab5492f",
+     "loc": 230,
+     "theme": "mindfulness",
+     "text": "Butterflies are funny. Some days they make you run to the toilet. Other days they make you horny. Other days they make you laugh, and long for the fight. Deciding which type of butterflies you’ve got going (monarchs or moths) is the first order of business when you’re driving to the arena. Figuring out your butterflies, deciphering what they say about the status of your mind and body, is the first step to making them work for you. One of the thousand lessons I’ve learned from Gil.",
+     "date": "2026-03-22",
+     "q": "What does Agassi say is the first order of business when driving to the arena regarding your butterflies?"
+    },
+    {
+     "id": "21ca57a8f588da10",
+     "loc": 259,
+     "theme": "work",
+     "text": "When I pull a fresh racket from my bag and try to serve out a match, the string tension can be worth hundreds of thousands of dollars. Because I’m playing for my family, my charitable foundation, my school, every string is like a wire in an airplane engine. Given all that lies beyond my control, I obsess about the few things I can control, and racket tension is one such thing.",
+     "date": "2026-03-22",
+     "q": "How does Agassi handle the things beyond his control, such as racket string tension?"
     }
    ]
   },
@@ -3193,6 +3865,46 @@ window.ANKI = {
      "text": "In the end, it comes down to Charlie’s most basic guiding principles, his fundamental philosophy of life: Preparation. Discipline. Patience. Decisiveness.",
      "date": "2026-07-10",
      "q": "What are the four elements of Charlie's fundamental philosophy of life?"
+    }
+   ]
+  },
+  {
+   "id": "poor-economics-a-radical-rethinking-of-the-way-to-fight-global-poverty--abhijit-v-banerjee-and-esther-duflo",
+   "title": "Poor Economics: A Radical Rethinking of the Way to Fight Global Poverty",
+   "author": "Abhijit V. Banerjee and Esther Duflo",
+   "subject": "why specific development-economics interventions do or don't reduce global poverty",
+   "total": 8,
+   "highlights": [
+    {
+     "id": "13d6121887b6b917",
+     "loc": 244,
+     "theme": "ideas",
+     "text": "The first flyer raised an average of $1.16 from each student. The second flyer, in which the plight of millions became the plight of one, raised $2.83. The students, it seems, were willing to take some responsibility for helping Rokia, but when faced with the scale of the global problem, they felt discouraged.",
+     "date": "2026-04-02",
+     "q": "In the flyer experiment, why did framing poverty as one identifiable child (Rokia) raise more money than citing millions of sufferers?"
+    },
+    {
+     "id": "df2df3cbb0557942",
+     "loc": 253,
+     "theme": "ideas",
+     "text": "This book is an invitation to think again, again: to turn away from the feeling that the fight against poverty is too overwhelming, and to start to think of the challenge as a set of concrete problems that, once properly identified and understood, can be solved one at a time.",
+     "date": "2026-04-02"
+    },
+    {
+     "id": "d73dcd767da07333",
+     "loc": 287,
+     "theme": "ideas",
+     "text": "This book will not tell you whether aid is good or bad, but it will say whether particular instances of aid did some good or not.",
+     "date": "2026-04-02",
+     "q": "What does the book claim it can and cannot tell you about aid?"
+    },
+    {
+     "id": "8fedb6c9e95a42c0",
+     "loc": 394,
+     "theme": "ideas",
+     "text": "There will be a poverty trap whenever the scope for growing income or wealth at a very fast rate is limited for those who have too little to invest, but expands dramatically for those who can invest a bit more. On the other hand, if the potential for fast growth is high among the poor, and then tapers off as one gets richer, there is no poverty trap.",
+     "date": "2026-04-04",
+     "q": "According to the authors, under what conditions does a poverty trap exist versus not exist?"
     }
    ]
   },
@@ -3737,6 +4449,224 @@ window.ANKI = {
    ]
   },
   {
+   "id": "the-book-of-elon-a-guide-to-purpose-and-success--eric-jorgenson-and-naval-ravikant",
+   "title": "The Book of Elon: A Guide to Purpose and Success",
+   "author": "Eric Jorgenson and Naval Ravikant",
+   "subject": "Elon Musk's principles on purpose, entrepreneurship and wealth creation",
+   "total": 30,
+   "highlights": [
+    {
+     "id": "78a6b7e36fdade0f",
+     "loc": 181,
+     "theme": "ideas",
+     "text": "Wealth, as the physicist David Deutsch wrote, is the set of physical transformations that we can effect—true for both individuals and societies. The main component of wealth is knowledge, not capital. By creating new knowledge, and then instantiating it in products that are duplicated and distributed, Elon and his fellow entrepreneurs are engines of wealth creation and distribution.",
+     "date": "2026-03-28",
+     "q": "According to David Deutsch's definition cited here, what is the main component of wealth?"
+    },
+    {
+     "id": "25bc2da4d424b3bc",
+     "loc": 195,
+     "theme": "work",
+     "text": "Your energy is best spent with like-minded people who are unstoppable on a mission to make something beautiful. Don’t make the thing to make the money, make the money so that you can make the thing. Don’t get paid for work, get paid so that you can do your best work.",
+     "date": "2026-03-28",
+     "q": "What does Musk say about the relationship between money and the thing you want to make?"
+    },
+    {
+     "id": "28f2dd39910fda67",
+     "loc": 210,
+     "theme": "ideas",
+     "text": "He models our moral duty to grab the impossible and drag it into the possible through massive effort, ingenuity, and force of will.",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "23344baddcee88e4",
+     "loc": 212,
+     "theme": "ideas",
+     "text": "Now, the richest man on Earth is an engineer, entrepreneur, and American immigrant who has taken massive personal risks to build new things that solve problems on a planetary—and interplanetary—scale.",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "0672c064bd6dac6f",
+     "loc": 265,
+     "theme": "work",
+     "text": "The measure of success in my life is: “How many useful things can I get done?”",
+     "date": "2026-04-01",
+     "q": "How does Musk define the measure of success in his life?"
+    },
+    {
+     "id": "2d8976a5697d6129",
+     "loc": 279,
+     "theme": "ideas",
+     "text": "Q: How do you know if you’re helping? I think about it mathematically. How many people you helped, multiplied by how much help you provided each person, on average.",
+     "date": "2026-04-01",
+     "q": "How does Musk mathematically frame whether he is helping people?"
+    },
+    {
+     "id": "48fbaa96405efdb0",
+     "loc": 286,
+     "theme": "ideas",
+     "text": "Building something that makes a big difference to a small number of people is just as great as something that makes a small difference for a vast number of people. Mathematically, the total positive impact would be roughly similar for those two things. It’s about trying to be useful.11",
+     "date": "2026-04-01",
+     "q": "Why does Musk say a big difference to a small number of people equals a small difference to a vast number?"
+    },
+    {
+     "id": "7f679cec4621cc05",
+     "loc": 311,
+     "theme": "ideas",
+     "text": "I use scale and scope because we benefit from more consciousness and more variety in consciousness. If everyone is thinking about exactly the same things the same way, that may not create new knowledge.18 I’m motivated by curiosity more than anything.19",
+     "date": "2026-04-02"
+    },
+    {
+     "id": "ca4f3d808727657a",
+     "loc": 331,
+     "theme": "work",
+     "text": "My core personal competence is technology. If something has to be designed or invented and you must ensure the value of the thing you create is greater than the cost of the inputs—that’s my core skill.24",
+     "date": "2026-04-02",
+     "q": "How does Musk describe his core personal competence?"
+    },
+    {
+     "id": "848655e60307642b",
+     "loc": 353,
+     "theme": "work",
+     "text": "Don’t start a company because you want to be an entrepreneur or because you want to make money. It is better to approach from this angle: What is a useful thing you could build that you wish existed in the world?31",
+     "date": "2026-04-02",
+     "q": "What angle does Musk say you should approach starting a company from?"
+    },
+    {
+     "id": "407cd3336bd7f56f",
+     "loc": 367,
+     "theme": "work",
+     "text": "Successful entrepreneurs come in all sizes, shapes, and flavors. I’m not sure there’s any one particular trait that makes them. However, if there is one to focus on, it would be to have an obsessive nature about the quality of the product. In this context, being obsessive-compulsive is a good thing.",
+     "date": "2026-04-02",
+     "q": "If there is one trait to focus on for entrepreneurial success, what does Musk say it is?"
+    },
+    {
+     "id": "e00d6df421d84f93",
+     "loc": 374,
+     "theme": "work",
+     "text": "If you like what you’re doing, you think about it even when you’re not working. It’s something your mind is drawn to. If you don’t like it, it’s much harder to make yourself work.",
+     "date": "2026-04-02"
+    },
+    {
+     "id": "c095731b2212ebe3",
+     "loc": 377,
+     "theme": "work",
+     "text": "If you’re creating something you love and think other people will love, it’s much easier to sacrifice the time and effort. If it doesn’t work out, you won’t regret it.38 My way of dealing with mental problems is to make sure you really care about what you’re doing—and take the pain.39",
+     "date": "2026-04-02"
+    },
+    {
+     "id": "0adaf236033272f4",
+     "loc": 396,
+     "theme": "ideas",
+     "text": "The economy is a positive-sum game, a “grow the pie” situation. Those who assume the economy is zero-sum believe the only way to get ahead is by taking things from another. But obviously the economy today is much, much greater than it was in the past. The economic output per person is massively greater than the past. Obviously the pie has grown, and grown much faster than the population has grown.44",
+     "date": "2026-04-03",
+     "q": "What does Musk say people who assume the economy is zero-sum believe, and how does he counter it?"
+    },
+    {
+     "id": "b0c8df11b63d577c",
+     "loc": 412,
+     "theme": "ideas",
+     "text": "It’s much better to work on adding to the economic pie. Create more than you consume.47",
+     "date": "2026-04-03"
+    },
+    {
+     "id": "d39c382616df338d",
+     "loc": 421,
+     "theme": "work",
+     "text": "The amount I torture myself is next level.50 You need to have some kind of rage demon in your skull that drives you.51"
+    },
+    {
+     "id": "c45780dc18fbd7e3",
+     "loc": 425,
+     "theme": "work",
+     "text": "How many days a year do I not put in some meaningful amount of work? Maybe two or three.52",
+     "date": "2026-04-03"
+    },
+    {
+     "id": "6a709b9077db8aa0",
+     "loc": 428,
+     "theme": "work",
+     "text": "You must be extremely tenacious. Work like hell. You have to put in eighty- to one-hundred-hour weeks every week. This will improve your odds of success.53",
+     "date": "2026-04-03",
+     "q": "How many hours per week does Musk say you must work to improve your odds of success?"
+    },
+    {
+     "id": "852ea8a33973c4d6",
+     "loc": 1313,
+     "theme": "work",
+     "text": "What you actually get as CEO is a distillation of the worst things going on in the company.191",
+     "date": "2026-03-28",
+     "q": "What does Musk say a CEO actually gets as a distillation of the company?"
+    },
+    {
+     "id": "27bb6a7b18cc4c1a",
+     "loc": 1330,
+     "theme": "work",
+     "text": "I was concerned if I didn’t study business I would be forced to work for someone who did, because they would know special things I didn’t know. I didn’t like the sound of that, so I made sure I knew those things, too.196",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "e8584bfb0bb652e8",
+     "loc": 1347,
+     "theme": "work",
+     "text": "I encounter CEOs who don’t know the details of their technology, and that’s ridiculous to me.201",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "ae80356d35eb1e91",
+     "loc": 1350,
+     "theme": "work",
+     "text": "To make the right decisions, you need to understand something at a detailed level.202",
+     "date": "2026-03-28",
+     "q": "What level of understanding does Musk say you need to make the right decisions?"
+    },
+    {
+     "id": "944831ecf48a6b10",
+     "loc": 1362,
+     "theme": "work",
+     "text": "Most of the time I did not sleep in a conference room because people could not see me in the conference room—I slept on the floor in the factory. Otherwise how would people know? They wouldn’t. Seeing is believing. I slept on the floor outside the conference room so they could see I was there.",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "fa7547915bbba09d",
+     "loc": 1374,
+     "theme": "work",
+     "text": "Nobody bleeds for the prince in the palace. Get out there on the front line. Show them that you care and that you’re not in some plush office somewhere.208",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "04d14453068c0443",
+     "loc": 1380,
+     "theme": "work",
+     "text": "Never ask your troops to do something you’re not willing to do.",
+     "date": "2026-03-28"
+    },
+    {
+     "id": "a7ae748887e6b944",
+     "loc": 1398,
+     "theme": "work",
+     "text": "A major failure mode is a high ego-to-ability ratio. If your ego-to-ability ratio gets too high, then you’ve broken the feedback loop to reality.",
+     "date": "2026-03-28",
+     "q": "According to Musk, what happens when your ego-to-ability ratio gets too high?"
+    },
+    {
+     "id": "0d2d975cc255ebb3",
+     "loc": 1468,
+     "theme": "work",
+     "text": "Q: How do you keep your focus on the big picture when you’re constantly faced with being bankrupt in a month? A very small percentage of mental energy is spent on the big picture. You know where you’re generally heading, and the actual path is going to be a zigzag in that direction. You’re trying not to deviate too far from the path you want to be on, but you have to, to some degree.236",
+     "date": "2026-03-28",
+     "q": "How does Musk describe balancing focus on the big picture versus the zigzag path?"
+    },
+    {
+     "id": "1a091af8a1bc89ff",
+     "loc": 1477,
+     "theme": "work",
+     "text": "That said, many people fear starting a company too much. What’s the worst that could happen? You’re not gonna starve to death; you’re not gonna die of exposure—really, what’s the worst that could happen?238",
+     "date": "2026-03-28"
+    }
+   ]
+  },
+  {
    "id": "the-effective-manager--mark-horstman",
    "title": "The Effective Manager",
    "author": "Mark Horstman",
@@ -3870,6 +4800,68 @@ window.ANKI = {
    ]
   },
   {
+   "id": "the-essential-psycho-cybernetics-the-science-of-success-contains-complete-and-or--maxwell-maltz-m-d-f-i-c-s",
+   "title": "The Essential Psycho-Cybernetics: The Science of Success: Contains Complete and Original Editions of 4 Classic Bestsellers, Plus Bonus Material",
+   "author": "Maxwell Maltz M.D. F.I.C.S.",
+   "subject": "using self-image psychology and relaxation to turn crises into personal growth",
+   "total": 17,
+   "highlights": [
+    {
+     "id": "607b2a9fa79534ee",
+     "loc": 949,
+     "theme": "mindfulness",
+     "text": "Too often, we resort to violence on ourselves—to violence on our own dignity, because of frustration, which brings with it resentment and hatred, brings with it the fact that we are traitors to ourselves. And, symbolically, we put a knife in ourselves, committing violence upon ourselves because of some error, some blunder, some heartache.",
+     "date": "2025-07-02"
+    },
+    {
+     "id": "3a1c7c2fabe8d346",
+     "loc": 980,
+     "theme": "mindfulness",
+     "text": "Insecurity. No one can make you insecure without your consent. Loneliness. No one can make you lonely without your consent.",
+     "date": "2026-04-24",
+     "q": "What does Maltz say about who can make you insecure or lonely?"
+    },
+    {
+     "id": "72b29c3b67190678",
+     "loc": 989,
+     "theme": "mindfulness",
+     "text": "You must remember that, in the room of your mind, you should set up a decompression chamber where, when you are overcome with frustration, you can get back to yourself, reassert your identity, regroup your positive instincts, giving yourself that other chance that every human being is entitled to.",
+     "date": "2026-04-19",
+     "q": "What does Maltz suggest you set up in the room of your mind for when frustration overwhelms you?"
+    },
+    {
+     "id": "7556878fb4990d56",
+     "loc": 997,
+     "theme": "mindfulness",
+     "text": "Learn to relax so that you can solve problems, dissolve crises. So simple, yet so difficult to achieve. Relaxation, denied sometimes even to millionaires and kings—you cannot buy it.",
+     "date": "2025-07-02"
+    },
+    {
+     "id": "39f3ec393c554c0b",
+     "loc": 1088,
+     "theme": "mindfulness",
+     "text": "Now I’d like to give you a first aid kit. A first aid kit to turn a crisis into a golden, enriching opportunity: You let the telephone in your mind ring. Make believe you’re so loaded with money that you can have five people pick up the phone for you. You’re letting the telephone ring: you’re not picking it up. This gives you a tranquilizer—a buffer—between you and your negative feelings. You insist on your relaxation; you protect yourself from negative feelings. You stop over-responding to crises. You substitute a new habit of delaying your response for an old habit of over-responding. If you don’t feel emotionally rich, all you have to do is take the receiver off the hook.",
+     "date": "2026-04-24",
+     "q": "What is Maltz's 'telephone in your mind' technique for handling a crisis?"
+    },
+    {
+     "id": "789c8ba83c15bcb3",
+     "loc": 1093,
+     "theme": "mindfulness",
+     "text": "You deal with crises with reason, not with worry. Relax. Relaxation is Nature’s greatest tranquilizer. See yourself at your best in crises. Keep up with yourself in crises. But stop worrying; worry will only hurt you.",
+     "date": "2026-04-24"
+    },
+    {
+     "id": "f981357a56f826e0",
+     "loc": 1095,
+     "theme": "mindfulness",
+     "text": "You make relaxation a habit. You work to make relaxation a habit and a goal in itself, repeated and repeated, like the habit of brushing your teeth, until it becomes second nature.",
+     "date": "2026-04-24",
+     "q": "How does Maltz say you should make relaxation part of your life?"
+    }
+   ]
+  },
+  {
    "id": "the-everything-store-jeff-bezos-and-the-age-of-amazon--brad-stone",
    "title": "The Everything Store: Jeff Bezos and the Age of Amazon",
    "author": "Brad Stone",
@@ -3882,6 +4874,23 @@ window.ANKI = {
      "theme": "work",
      "text": "Bezos tapped Lovejoy to assist with recruiting and told him to go hire the smartest people he knew—just like David Shaw, Bezos wanted all of his employees to be high-IQ brainiacs.",
      "date": "2026-04-25"
+    }
+   ]
+  },
+  {
+   "id": "the-hero-with-a-thousand-faces-the-collected-works-of-joseph-campbell--joseph-campbell",
+   "title": "The Hero with a Thousand Faces (The Collected Works of Joseph Campbell)",
+   "author": "Joseph Campbell",
+   "subject": "the universal monomyth structure underlying world myths and the hero's journey",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "dd85bea0107afcc8",
+     "loc": 1398,
+     "theme": "ideas",
+     "text": "A blunder — apparently the merest chance — reveals an unsuspected world, and the individual is drawn into a relationship with forces that are not rightly understood. As Freud has shown,[2] blunders are not the merest chance. They are the result of suppressed desires and conflicts. They are ripples on the surface of life, produced by unsuspected springs.",
+     "date": "2026-04-30",
+     "q": "According to Campbell citing Freud, what do blunders actually reveal rather than being mere chance?"
     }
    ]
   },
@@ -5225,6 +6234,69 @@ window.ANKI = {
    ]
   },
   {
+   "id": "the-one-thing-the-surprisingly-simple-truth-about-extraordinary-results--gary-keller-and-jay-papasan",
+   "title": "The ONE Thing: The Surprisingly Simple Truth About Extraordinary Results",
+   "author": "Gary Keller and Jay Papasan",
+   "subject": "focusing on a single most-important task to achieve extraordinary results",
+   "total": 10,
+   "highlights": [
+    {
+     "id": "3b96ee5784cb81cd",
+     "loc": 78,
+     "theme": "work",
+     "text": "Unfortunately, many would get most of them done, but not necessarily what mattered most. Results suffered. Frustration followed. So, in an effort to help them succeed, I started shortening my list: If you can do just three things this week. ... If you can do just two things this week. ... Finally, out of desperation, I went as small as I could possibly go and asked: “What’s the ONE Thing you can do this week such that by doing it everything else would be easier or unnecessary?” And the most awesome thing happened. Results went through the roof.",
+     "date": "2026-04-12",
+     "q": "What question does Keller say to ask to find your single most important task each week?"
+    },
+    {
+     "id": "6afd810efc39fe2b",
+     "loc": 89,
+     "theme": "work",
+     "text": "“Going small” is ignoring all the things you could do and doing what you should do. It’s recognizing that not all things matter equally and finding the things that matter most. It’s a tighter way to connect what you do with what you want. It’s realizing that extraordinary results are directly determined by how narrow you can make your focus.",
+     "date": "2026-04-12",
+     "q": "According to Keller, what does 'going small' mean?"
+    },
+    {
+     "id": "f2156eb721a4eed3",
+     "loc": 1425,
+     "theme": "work",
+     "text": "Live with purpose and you know where you want to go. Live by priority and you’ll know what to do to get there.",
+     "date": "2026-04-05"
+    },
+    {
+     "id": "8175c9abc2501684",
+     "loc": 1430,
+     "theme": "work",
+     "text": "Purpose has the power to shape our lives only in direct proportion to the power of the priority we connect it to. Purpose without priority is powerless.",
+     "date": "2026-04-05",
+     "q": "According to Keller, what determines how much power purpose has to shape our lives?"
+    },
+    {
+     "id": "a17cb9e4f9f30eeb",
+     "loc": 1458,
+     "theme": "work",
+     "text": "By thinking through the filter of Goal Setting to the Now, you set a future goal and then methodically drill down to what you should be doing right now.",
+     "date": "2026-04-05",
+     "q": "What does the 'Goal Setting to the Now' filter involve?"
+    },
+    {
+     "id": "21f630302a80d801",
+     "loc": 1472,
+     "theme": "work",
+     "text": "So, based on my goal today, what’s the ONE Thing I can do right NOW so I’m on track to achieve my goal today, so I’m on track to achieve my goal this week, so I’m on track to achieve my goal this month, so I’m on track to achieve my goal this year, so I’m on track to achieve my five-year goal, so I’m on track to achieve my someday goal?",
+     "date": "2026-04-05"
+    },
+    {
+     "id": "b945c9be5e84d46c",
+     "loc": 1886,
+     "theme": "work",
+     "text": "THE FOUR THIEVES OF PRODUCTIVITY Inability to Say “No” Fear of Chaos Poor Health Habits Environment Doesn’t Support Your Goals",
+     "date": "2026-04-05",
+     "q": "What are Keller's Four Thieves of Productivity?"
+    }
+   ]
+  },
+  {
    "id": "the-personal-mba-master-the-art-of-business--josh-kaufman",
    "title": "The Personal MBA: Master the Art of Business",
    "author": "Josh Kaufman",
@@ -5254,6 +6326,40 @@ window.ANKI = {
      "text": "Every business fundamentally relies on two additional factors: people and systems.",
      "date": "2017-12-01",
      "q": "What two additional factors does every business fundamentally rely on?"
+    }
+   ]
+  },
+  {
+   "id": "the-rinzai-zen-way-a-guide-to-practice--meido-moore",
+   "title": "The Rinzai Zen Way: A Guide to Practice",
+   "author": "Meido Moore",
+   "subject": "the theory and practice of Rinzai Zen Buddhism",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "45c8e3e9f4eff830",
+     "loc": 225,
+     "theme": "mindfulness",
+     "text": "A separate transmission outside the scriptures. Not dependent upon words or letters. Direct pointing* at the human mind. Seeing one’s nature and becoming Buddha.",
+     "date": "2026-05-02",
+     "q": "What four principles does Rinzai Zen use to describe its approach to awakening?"
+    }
+   ]
+  },
+  {
+   "id": "the-scaling-era-an-oral-history-of-ai-20192025--dwarkesh-patel-and-gavin-leech",
+   "title": "The Scaling Era: An Oral History of AI, 2019–2025",
+   "author": "Dwarkesh Patel and Gavin Leech",
+   "subject": "an oral history of the scaling era of artificial intelligence, 2019-2025",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "d7f00971363917cd",
+     "loc": 45,
+     "theme": "ideas",
+     "text": "A new technology arrives—call it the thing. Broadly speaking, we made it by having it read the entire internet until it learned how to respond when we talk to it. Through some 15 trillion rounds of trial and error, it wound up pretty smart.3 We don’t really know how the resulting model works. We didn’t design it so much as grow it.",
+     "date": "2026-04-18",
+     "q": "How do the authors characterize the creation of large AI models, in contrast to conventional engineering?"
     }
    ]
   },
@@ -6449,6 +7555,23 @@ window.ANKI = {
    ]
   },
   {
+   "id": "unreasonable-hospitality-the-remarkable-power-of-giving-people-more-than-they-ex--will-guidara",
+   "title": "Unreasonable Hospitality: The Remarkable Power of Giving People More Than They Expect (The Unreasonable Hospitality Collection)",
+   "author": "Will Guidara",
+   "subject": "delivering exceptional hospitality by giving people more than they expect in business",
+   "total": 2,
+   "highlights": [
+    {
+     "id": "e65811619f02f7f6",
+     "loc": 1346,
+     "theme": "work",
+     "text": "If your business involves making people happy, then you can’t be good at it if you don’t care what people think.",
+     "date": "2026-03-20",
+     "q": "According to Guidara, why can't you be good at a business built on making people happy if you don't care what people think?"
+    }
+   ]
+  },
+  {
    "id": "unwinding-anxiety-new-science-shows-how-to-break-the-cycles-of-worry-and-fear-to--judson-brewer-md-phd",
    "title": "Unwinding Anxiety: New Science Shows How to Break the Cycles of Worry and Fear to Heal Your Mind",
    "author": "Judson Brewer MD PhD",
@@ -6851,6 +7974,23 @@ window.ANKI = {
      "text": "Part 1 (first gear) will help you get started mapping out your own anxiety “habit loops.” Part 2 (second gear) will help you tap into your brain’s reward system to systematically work with anxiety (and other habits). Part 3 (third gear) will help you tap into your own natural neural capacities to step away from anxiety-related habits (e.g., worry, procrastination,",
      "date": "2023-06-20",
      "q": "In Brewer's three-gear framework, what is the purpose of first, second, and third gear?"
+    }
+   ]
+  },
+  {
+   "id": "votos-drogas-y-violencia-la-logica-politica-de-las-guerras-criminales-en-mexico--guillermo-trejo-and-sandra-ley",
+   "title": "Votos, drogas y violencia: La lógica política de las guerras criminales en México (Spanish Edition)",
+   "author": "Guillermo Trejo and Sandra Ley",
+   "subject": "how Mexico's democratic transition triggered large-scale criminal wars and violence",
+   "total": 1,
+   "highlights": [
+    {
+     "id": "3c0a353d083b6336",
+     "loc": 274,
+     "theme": "ideas",
+     "text": "Uno de los sucesos más sorprendentes de la transición mexicana a la democracia fue el estallido de guerras criminales y violencia criminal a gran escala tras el fin de siete décadas de gobierno de partido único.",
+     "date": "2026-05-13",
+     "q": "¿Cuál fue uno de los sucesos más sorprendentes de la transición mexicana a la democracia según los autores?"
     }
    ]
   },
@@ -7760,6 +8900,23 @@ window.ANKI = {
    ]
   },
   {
+   "id": "writing-my-wrongs-life-death-and-redemption-in-an-american-prison--shaka-senghor",
+   "title": "Writing My Wrongs: Life, Death, and Redemption in an American Prison",
+   "author": "Shaka Senghor",
+   "subject": "a man's path from drug dealing and prison to redemption and self-forgiveness",
+   "total": 2,
+   "highlights": [
+    {
+     "id": "72948fa7cbe6bdc0",
+     "loc": 136,
+     "theme": "mindfulness",
+     "text": "People had told me about the healing power of forgiveness, but it had taken me until now to understand that forgiveness wasn’t only about letting other people off the hook. It was about me. I had to free myself from the anger, fear, and hurt of my past. I had to forgive the people I hated. Most important, I had to forgive myself.",
+     "date": "2026-04-25",
+     "q": "According to Senghor, whom did he most importantly have to forgive, and why was forgiveness ultimately about himself?"
+    }
+   ]
+  },
+  {
    "id": "you-can-be-a-stock-market-genius-uncover-the-secret-hiding-places-of-stock-marke--joel-greenblatt",
    "title": "You Can Be a Stock Market Genius: Uncover the Secret Hiding Places of Stock Market P",
    "author": "Joel Greenblatt",
@@ -7962,9 +9119,81 @@ window.ANKI = {
      "q": "What does giving up the expectation of being paid for your passion allow you to do, according to the authors?"
     }
    ]
+  },
+  {
+   "id": "zen-mind-beginner-s-mind-informal-talks-on-zen-meditation-and-practice--shunryu-suzuki-and-david-chadwick",
+   "title": "Zen Mind, Beginner's Mind: Informal Talks on Zen Meditation and Practice",
+   "author": "Shunryu Suzuki and David Chadwick",
+   "subject": "Zen Buddhist meditation and the practice of a beginner's mind",
+   "total": 10,
+   "highlights": [
+    {
+     "id": "7f3a8320606deac4",
+     "loc": 196,
+     "theme": "mindfulness",
+     "text": "This is the purpose of all Zen teaching—to make you wonder and to answer",
+     "date": "2015-11-02",
+     "q": "According to Suzuki, what is the purpose of all Zen teaching?"
+    },
+    {
+     "id": "0300176a6e09603f",
+     "loc": 201,
+     "theme": "mindfulness",
+     "text": "The innocence of the first inquiry—what am I?—is needed throughout Zen practice.",
+     "date": "2015-11-02",
+     "q": "What quality of the first inquiry ('what am I?') does Suzuki say is needed throughout Zen practice?"
+    },
+    {
+     "id": "b6fffaa7aea4cdb5",
+     "loc": 318,
+     "theme": "mindfulness",
+     "text": "This is the most important teaching: not two, and not one. Our body and mind are not two and not one. If you think your body and mind are two, that is wrong; if you think that they are one, that is also wrong. Our body and mind are both two and one.",
+     "date": "2026-04-08",
+     "q": "How does Suzuki describe the relationship between body and mind in his 'most important teaching'?"
+    },
+    {
+     "id": "5016add7e9b83e19",
+     "loc": 340,
+     "theme": "mindfulness",
+     "text": "When you have this posture, you have the right state of mind, so there is no need to try to attain some special state. When you try to attain something, your mind starts to wander about somewhere else. When you do not try to attain anything, you have your own body and mind right here.",
+     "date": "2015-11-04",
+     "q": "According to Suzuki, what happens to your mind when you try to attain something during practice?"
+    },
+    {
+     "id": "8f4e108e9f15307f",
+     "loc": 342,
+     "theme": "mindfulness",
+     "text": "Kill the Buddha if the Buddha exists somewhere else. Kill the Buddha, because you should resume your own Buddha nature.",
+     "date": "2015-11-04"
+    },
+    {
+     "id": "2b21590c29956c6e",
+     "loc": 343,
+     "theme": "mindfulness",
+     "text": "Doing something is expressing our own nature. We do not exist for the sake of something else. We exist for the sake of ourselves.",
+     "date": "2015-11-04",
+     "q": "For whose sake does Suzuki say we exist when doing something?"
+    },
+    {
+     "id": "0411b07405f622fb",
+     "loc": 354,
+     "theme": "mindfulness",
+     "text": "When we have our body and mind in order, everything else will exist in the right place, in the right way.",
+     "date": "2026-04-08",
+     "q": "According to Suzuki, what follows when we have our body and mind in order?"
+    },
+    {
+     "id": "a5a96a13c117f338",
+     "loc": 410,
+     "theme": "mindfulness",
+     "text": "CONTROL    “To give your sheep or cow a large, spacious meadow is the way to control him.”",
+     "date": "2026-04-08",
+     "q": "What metaphor does Suzuki use to describe the best way to control your mind?"
+    }
+   ]
   }
  ],
- "generated": "2026-09-05",
+ "generated": "2026-09-06",
  "latest": {
   "date": "2026-09-02",
   "title": "What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry"
