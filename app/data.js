@@ -3398,14 +3398,6 @@ window.ANKI = {
      "q": "What is the central reframe Burkeman offers about living as a limited human in an era of infinite tasks?"
     },
     {
-     "id": "249c449705905e52",
-     "loc": 233,
-     "theme": "mindfulness",
-     "text": "Because our problem, it turns out, was never that we hadn’t yet found the right way to achieve control over life, or safety from life. Our real problem was imagining that any of that might be possible in the first place for finite humans, who, after all, just find themselves unavoidably in life, with all the limitations and feelings of claustrophobia and lack of escape routes that entails.",
-     "date": "2026-08-02",
-     "q": "According to Burkeman, what was our real problem regarding control over life?"
-    },
-    {
      "id": "642387f284d9a07e",
      "loc": 236,
      "theme": "mindfulness",
@@ -9195,7 +9187,7 @@ window.ANKI = {
  ],
  "generated": "2026-09-08",
  "latest": {
-  "date": "2026-09-02",
-  "title": "What the Dormouse Said: How the Sixties Counterculture Shaped the Personal Computer Industry"
+  "date": "2026-09-05",
+  "title": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts"
  }
 };
