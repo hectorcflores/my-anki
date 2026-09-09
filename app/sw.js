@@ -1,6 +1,6 @@
 // Offline cache for My Anki. Bump CACHE when shipping new content —
 // old caches are dropped on activate, so a deploy never serves a stale deck.
-const CACHE = "my-anki-202609082044";
+const CACHE = "my-anki-202609091714";
 const ASSETS = [
   "./",
   "./index.html",

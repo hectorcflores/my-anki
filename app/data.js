@@ -9185,7 +9185,7 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-08",
+ "generated": "2026-09-09",
  "latest": {
   "date": "2026-09-05",
   "title": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts"
