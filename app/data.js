@@ -6,12 +6,12 @@ window.ANKI = {
    "label": "Work"
   },
   {
-   "id": "mindfulness",
-   "label": "Mindfulness"
-  },
-  {
    "id": "ideas",
    "label": "Ideas"
+  },
+  {
+   "id": "mindfulness",
+   "label": "Mindfulness"
   },
   {
    "id": "health",
@@ -7484,6 +7484,260 @@ window.ANKI = {
    ]
   },
   {
+   "id": "tripping-on-utopia-margaret-mead-the-cold-war-and-the-troubled-birth-of-psychede--benjamin-breen",
+   "title": "Tripping on Utopia: Margaret Mead, the Cold War, and the Troubled Birth of Psychedelic Science",
+   "author": "Benjamin Breen",
+   "subject": "the first era of psychedelic science and Margaret Mead's circle before the 1960s counterculture",
+   "total": 31,
+   "highlights": [
+    {
+     "id": "f7fd7c82aa623175",
+     "loc": 256,
+     "theme": "ideas",
+     "text": "This book uncovers the secret history of the first wave of psychedelic science, a radical field that sought to harness the power of psychedelic substances to explore human consciousness, pioneer groundbreaking therapies, and even transform global society.",
+     "date": "2024-08-28",
+     "q": "What was the goal of the first wave of psychedelic science according to Breen?"
+    },
+    {
+     "id": "1233cd86a08fad60",
+     "loc": 263,
+     "theme": "ideas",
+     "text": "Taken together, they make it clear that the first era of global experimentation with consciousness-expanding substances took place much earlier than commonly thought, in the 1920s through the 1950s, rather than the 1960s and 1970s. Put another way: Timothy Leary and the Baby Boomers did not usher in the first psychedelic era. They ended it.",
+     "date": "2024-08-28",
+     "q": "When does Breen argue the first global era of psychedelic experimentation actually took place, and how does he characterize Timothy Leary's role?"
+    },
+    {
+     "id": "41a78347c5e505ce",
+     "loc": 266,
+     "theme": "ideas",
+     "text": "More than anyone else, it was the group of interdisciplinary scientists connected by the anthropologists Margaret Mead and Gregory Bateson in the years surrounding World War II who shaped the development of psychedelic research from the 1930s onward.",
+     "date": "2024-08-28",
+     "q": "Which figures does Breen credit with shaping psychedelic research from the 1930s onward?"
+    },
+    {
+     "id": "a902fbbeb5e7b4dc",
+     "loc": 268,
+     "theme": "ideas",
+     "text": "This group included anthropologists, drug researchers, psychologists, neuroscientists, and pioneers of early computer science. Brought together over a period of two decades in conferences funded by the Josiah Macy, Jr. Foundation, this “Macy circle” shared a commitment to applied, interdisciplinary science that not only challenged conventional norms but explicitly sought to create a new global culture.",
+     "date": "2024-08-28",
+     "q": "What was the 'Macy circle' and what did its members share a commitment to?"
+    },
+    {
+     "id": "299c00ca3c72bbe6",
+     "loc": 290,
+     "theme": "ideas",
+     "text": "Mead and Bateson and their circle matter to the history of psychedelics for one reason above all: their shared vision of science as a tool for expanding human consciousness.",
+     "date": "2024-08-28",
+     "q": "For what single reason does Breen say Mead, Bateson and their circle matter to the history of psychedelics?"
+    },
+    {
+     "id": "ef6417e3f1951db1",
+     "loc": 291,
+     "theme": "ideas",
+     "text": "Mead’s primary goal in life, she once said, was “to keep the future safe.” Achieving this, she believed, meant enlarging the collective “awareness” of the human species so that we could “learn consciously to create civilizations within which an increasing proportion of human beings will realize more of what they have it in them to be.”",
+     "date": "2024-08-28",
+     "q": "What did Mead say her primary goal in life was, and how did she believe it could be achieved?"
+    },
+    {
+     "id": "b7762a671bc93f63",
+     "loc": 307,
+     "theme": "ideas",
+     "text": "They imagined the creation of a new, global culture built on vast diversity rather than uniformity. Mead spoke of a “cultural evolution” that would push humanity past the old boundaries of race, nation, and gender—and even of states of consciousness.",
+     "date": "2024-08-28",
+     "q": "What kind of global culture did Mead's 'cultural evolution' envision?"
+    },
+    {
+     "id": "5c78ef3df2cf13d4",
+     "loc": 453,
+     "theme": "ideas",
+     "text": "“The purpose of anthropology,” Benedict once said, “is to make the world safe for human differences.”",
+     "date": "2024-08-29",
+     "q": "According to Ruth Benedict, what is the purpose of anthropology?"
+    },
+    {
+     "id": "1dadb8c861aaa302",
+     "loc": 533,
+     "theme": "ideas",
+     "text": "Ruth Benedict’s 1922 article “The Vision in Plains Culture” (one of the works that inspired Mead to become an anthropologist) had offered an especially influential new perspective on peyote. Western scientists, Benedict noted, assumed that altered states of consciousness reduced the capacity for thought—that they were a form of intoxication. But what if the pursuit of visionary states was, in some cultures, a constructive goal? In these “Dionysian” cultures, as she dubbed them, visionary or trance states offered a source of new knowledge, mutual understanding, and social cohesion, not an escape into fantasy.",
+     "date": "2024-08-29",
+     "q": "How did Benedict's concept of 'Dionysian' cultures reframe the value of visionary or trance states?"
+    },
+    {
+     "id": "c880c2a9b2a5e7f2",
+     "loc": 564,
+     "theme": "ideas",
+     "text": "The book that Mead wrote about her time with the Omaha, The Changing Culture of an Indian Tribe (1932), reflected the ambivalence of the Omaha men and women she met. Peyote, Phillips said, allowed some to see up to fifty years into the future. But Mead quoted another Omaha who said peyote “took the Indian way back, hundreds of years.” Mead herself argued that “the peyote cult” was an innovative response to modernity rather than a remnant from a vanishing world. It was, indeed, a tool for the creation of a new, hybrid culture. By linking together “Christian and aboriginal Indian religious elements,” peyote had successfully “reassembled the antagonistic elements of the tribe.” This idea—that drugs could be a tool for the creation of a new culture—was genuinely original. Peyote and related tools for the alteration of consciousness, like psilocybin mushrooms, were usually imagined as survivals from a premodern past. But what if they were, instead, pathways to a glorious future?",
+     "date": "2024-08-29",
+     "q": "What original idea about peyote did Mead advance in her study of the Omaha?"
+    },
+    {
+     "id": "2dd7d3753eeb7946",
+     "loc": 580,
+     "theme": "ideas",
+     "text": "Mead and Bateson, as they later wrote, came to believe they were engaged in “building a new world” that would synthesize “the old values of many contrasting and contradictory cultural systems into a new form which will use but transcend them all.”",
+     "date": "2024-08-29"
+    },
+    {
+     "id": "c348b010f412ff67",
+     "loc": 686,
+     "theme": "ideas",
+     "text": "Social and sexual identities comprised a vast spectrum of forms, far beyond the binary of male and female, they theorized. These forms could then be mapped in a kind of personality chart they called “the Squares.” On the y axis of the chart they plotted “Northern” (masculine-presenting) and “Southern” (feminine-presenting) personality types. A perpendicular line, the x axis, tracked two additional categories of personality: “Fey” and “Turk.” The former mapped onto narcissism, individuality, and introversion; the latter to extroversion and “care for others.” Recording these traits on a chart was just a means to an end. For, they believed, by scientifically identifying how personality cut across racial and sexual categories, they would be able to overcome the barriers these categories imposed on the world. A man and a woman from utterly different cultures might, in their system, be revealed as far more alike than two women or two men from the same culture.",
+     "date": "2024-08-29",
+     "q": "How did Mead and Bateson's 'Squares' chart map personality across sexual and racial categories?"
+    },
+    {
+     "id": "13329580a8a6a17b",
+     "loc": 749,
+     "theme": "ideas",
+     "text": "Mead believed that every individual, every society, follows patterns of behavior that “remain below the surface of consciousness.” Taken together, they are that which we call “culture”: how we walk, how we respond to pain, how we nurse our babies, how we have sex, how we sleep, how we dress, how we die. Mead was not alone in seeking to understand these subconscious patterns and, in surfacing them, to demonstrate that Western culture was in no way inherently superior.",
+     "date": "2024-08-29",
+     "q": "How did Mead define 'culture' in terms of subconscious patterns of behavior?"
+    },
+    {
+     "id": "bb2d113f159681e2",
+     "loc": 788,
+     "theme": "ideas",
+     "text": "In May 1934, as Margaret Mead, back in New York City, was finalizing her plans to divorce Reo Fortune, a neurologist was administering mescaline to the philosopher Walter Benjamin in Berlin. Long before similar claims were made by countercultural figures of the 1950s and 1960s, Benjamin contemplated, like Mead, the possibility that Dionysian drug experiences could transform modern society. They were a potential entryway, he thought, to “a profane illumination, a materialistic, anthropological inspiration” that offered an alternative to Western individualism. But Benjamin also wrote that “such intoxication has its dark side.”",
+     "date": "2024-08-29",
+     "q": "What did Walter Benjamin contemplate about Dionysian drug experiences after taking mescaline in 1934?"
+    },
+    {
+     "id": "1613a35e5bb39b93",
+     "loc": 962,
+     "theme": "ideas",
+     "text": "For Mead, the highlight was a hypnotist named Milton H. Erickson. Born in a silver-mining camp in the scrubland of eastern Nevada, Erickson had an uncommon gift for observing elements of human behavior that others missed. As a child he had struggled with dyslexia and polio, and the adult Erickson believed that his remarkable ability to induce hypnosis grew out of these early challenges—a kind of superpower gleaned from his observation of hidden “tells” and unspoken cues. To Mead’s delight, Erickson managed to hypnotize a Yale professor at the meeting itself.",
+     "date": "2024-08-31",
+     "q": "To what did the hypnotist Milton Erickson attribute his ability to induce hypnosis?"
+    },
+    {
+     "id": "51c855d88ae84b9e",
+     "loc": 979,
+     "theme": "ideas",
+     "text": "In mid-1942, Stanley Lovell, the chief of research for the OSS, met with Milton Erickson to discuss the military uses of hypnosis. Afterward, an excited Lovell began to dream up ideas for weaponized altered states. What if a Nazi POW could be put in a trance, he asked, then smuggled back into Germany and induced to “assassinate Hitler in that posthypnotic state”? It was perhaps the first formulation of the concept of a “Manchurian candidate.” The idea was never put into action, but it was not considered fanciful, either.",
+     "date": "2024-09-01",
+     "q": "What weaponized use of hypnosis did OSS research chief Stanley Lovell propose after meeting Erickson in 1942?"
+    },
+    {
+     "id": "38630d42bf7ded50",
+     "loc": 1018,
+     "theme": "health",
+     "text": "But they also recognized that traditional Freudian talk therapy simply did not work in a battlefront context: it was far too slow. In a classified 1943 report published by the Macy Foundation, Grinker and Spiegel argued that injected pentothal, a potent hypnotic drug, acted as a shortcut for obtaining what they called “a therapeutically effective discharge of emotions associated with a recall of a repressed memory.” Grinker and Spiegel harnessed the same nascent concepts to describe the effects of narcosynthesis. Traumatized soldiers were stuck in thought loops that reinforced a painful memory each time it was relived. Injection of pentothal with talk therapy, they said, speedily transformed this “malignant cycle” into a “benign cycle,” restoring order to a disordered mind. They called their new technique “narcosynthesis.”",
+     "date": "2024-09-01",
+     "q": "What was 'narcosynthesis' as developed by Grinker and Spiegel for treating traumatized soldiers?"
+    },
+    {
+     "id": "035e68c32827b40d",
+     "loc": 1286,
+     "theme": "ideas",
+     "text": "Hofmann realizes that he must have unwittingly exposed himself to the substance he had just synthesized, the twenty-fifth in a series of compounds derived from a fungus called ergot: LSD-25. If the drug had managed to affect him despite his precautions, it must be extraordinarily potent.",
+     "date": "2024-09-14",
+     "q": "How did Hofmann realize LSD-25 was extraordinarily potent?"
+    },
+    {
+     "id": "03e8ca730a338f57",
+     "loc": 1295,
+     "theme": "ideas",
+     "text": "Since at least the sixteenth century, midwives had been scraping off the reddish powder of ergot from barley and administering it to pregnant women to induce labor. This potential medical use had in fact been the reason for Hofmann’s research into ergot-derived drugs in the first place. Later, when he discussed the role of psychedelics in human society, Hofmann would claim that LSD had put him in mind of childbirth in a distinctly different way. “I had the feeling that I saw the earth and the beauty of nature as it had been when it was created, at the first day of creation,” the chemist said in one interview. “I was reborn.”",
+     "date": "2024-09-14",
+     "q": "What was the original medical use of ergot that led Hofmann to research ergot-derived drugs?"
+    },
+    {
+     "id": "0207ae23ec33af2d",
+     "loc": 1326,
+     "theme": "ideas",
+     "text": "This link between psychedelics and war trauma is not new. It stretched back to some of the earliest accounts of psychedelic experiences, such as the Aztec man who told an early Spanish missionary that peyote allowed him to see his own death in battle. In the mescaline experiments of the 1920s and 1930s, too, it had appeared. An early mescaline patient, who had served in World War I and lost a brother in the conflict, spent his mescaline trip seeing “wavy lines” of “brilliant colors.” This standard visual hallucination reminded him, he wrote, of “coloured lines of trenches on a war trench map—the red, blue, brown, purple lines which used to represent various objectives to be reached at successive stages of an attack.”",
+     "date": "2024-09-14",
+     "q": "How far back does the link between psychedelics and war trauma stretch in Breen's account?"
+    },
+    {
+     "id": "489ff4cae82f6c7a",
+     "loc": 1349,
+     "theme": "ideas",
+     "text": "Margaret Mead fundamentally disagreed. Rather than envisioning the postwar world as split between three hermetically sealed empires, she began describing it as an interconnected whole. Human society, she said, was now “a great complicated machine” in which every part was mutually dependent. “We,” she declared, apparently meaning not just scientists but everyone who cared what scientists like her had to say, had a “responsibility for keeping it in good repair and improving it.” The machine was not, as more skeptical commentators like George Orwell saw it, an inhuman juggernaut poised to trample the human spirit. The machine was us.",
+     "date": "2024-09-14",
+     "q": "How did Mead describe postwar human society against Orwell's more skeptical view of the 'machine'?"
+    },
+    {
+     "id": "7a015a02cf810625",
+     "loc": 1356,
+     "theme": "ideas",
+     "text": "The task of the postwar world, Mead believed, was for the scientists and engineers who had made the defeat of Fascism possible to learn humility as they confronted a fundamental truth: science created the conditions for winning the war, but science alone could not create the conditions for a lasting peace.",
+     "date": "2024-09-14",
+     "q": "What fundamental truth did Mead believe postwar scientists needed to confront about science and peace?"
+    },
+    {
+     "id": "a08e948b5e8d7f85",
+     "loc": 1362,
+     "theme": "ideas",
+     "text": "But any attempt to create a “synthetic culture”—a society wholly invented by scientists, to match the era’s synthetic drugs and chemicals—would fail. What was needed was an explosive, radical, vivid diversity, one that interwove scientific modernity with hundreds of other living cultural traditions so that human nature could be realized to its fullest possible extent.",
+     "date": "2024-09-14",
+     "q": "Why did Mead believe an attempt at a wholly scientist-invented 'synthetic culture' would fail?"
+    },
+    {
+     "id": "ce766eb75f5a6ab7",
+     "loc": 1418,
+     "theme": "ideas",
+     "text": "Bateson was evoking the widely held belief that there would soon be breakthroughs in the human sciences to rival the Manhattan Project. After all, scientists in those years were celebrating not just a new era of wonder drugs such as penicillin, but a genuinely revolutionary approach to thinking about consciousness and communication. Starting with a series of Macy conferences that began in March 1946—later dubbed the “cybernetics conferences”—Mead, Bateson, and colleagues such as Norbert Wiener of MIT and Claude Shannon at Bell Labs were reimagining the brain itself as a computer.",
+     "date": "2024-09-14",
+     "q": "What did the Macy 'cybernetics conferences' beginning in 1946 reimagine the brain as?"
+    },
+    {
+     "id": "cc0ddadd09f5f846",
+     "loc": 1422,
+     "theme": "ideas",
+     "text": "History’s first general-purpose digital computer, ENIAC, had been announced at the beginning of that year. ENIAC was a weapon of war, used to calculate atomic bomb yields. Crucially, however, it could be reprogrammed—altered for peacetime use, gifted with new potentials. What if the human mind was the same? Perhaps assuring human survival meant developing a new science of sanity, a new set of tools for reprogramming minds and societies stuck in self-destructive feedback loops.",
+     "date": "2024-09-14",
+     "q": "How did the reprogrammability of ENIAC inspire a new vision for reprogramming minds and societies?"
+    },
+    {
+     "id": "92d63312af028045",
+     "loc": 1430,
+     "theme": "ideas",
+     "text": "Around the world, as colonized peoples fought for independence, gender roles shifted, mind-altering drugs multiplied, the American civil rights movement and early gay liberation struggled into existence, and global population jagged upward at an unprecedented rate, the period from 1945 to 1960 was among the most radical eras of social experimentation in history. This fact has, in popular consciousness, been overshadowed by the attention lavished on the 1960s and 1970s. But looked at another way, these decades were an aftereffect, an echo. It was in the late 1940s and 1950s that the forces of change, stored up during the war like a coiled spring, most rapidly unwound themselves.",
+     "date": "2024-09-14",
+     "q": "Why does Breen argue the 1945-1960 period was among the most radical eras of social experimentation in history?"
+    },
+    {
+     "id": "e7ad675bf604d695",
+     "loc": 1647,
+     "theme": "ideas",
+     "text": "Sex hormones and psychedelic drugs were linked in the midcentury scientific imagination due to the perception that these two categories of drugs, uniquely, had the ability to reshape one’s core identity. This was not a transient alteration of consciousness; it was not the treatment of a symptom. It was an explosive, self-directed transformation, an atom bomb for the self.",
+     "date": "2024-09-15",
+     "q": "Why were sex hormones and psychedelic drugs linked in the midcentury scientific imagination?"
+    },
+    {
+     "id": "3512cb228079977e",
+     "loc": 1675,
+     "theme": "ideas",
+     "text": "In World War II, Bateson believed he had seen the earliest stirrings of a new science of “social manipulation” in which “our tools are people.” Not just seen, in fact, but directly participated in it, helped to inspire it. Like a hero from the Greek tragedies he loved, he now saw himself as someone who had been allowed to survive a terrifying ordeal so that he might serve as a warning.",
+     "date": "2024-09-15"
+    },
+    {
+     "id": "55ba5bbeeea3f6d4",
+     "loc": 1714,
+     "theme": "mindfulness",
+     "text": "“As I was walking down 125th Street, I suddenly stopped and stared around me in amazement,” Ginsberg wrote. He was seeing something he had never noticed before, something that now inspired awe: the accumulated “intelligence and care” that had gone into molding the cornices and rooftops of the buildings in Harlem. All around him were these relics of the consciousness of people long dead. He had a sudden awareness of a “vast endless space reaching back into time and reaching forward into the future.” And he felt a parallel awareness that he was also one of the “artifacts of that long evolution.” It was a glimpse of something “longer than my own life, extending beyond my life and my former consciousness.”",
+     "date": "2024-09-15"
+    },
+    {
+     "id": "678341c1e99a808b",
+     "loc": 1809,
+     "theme": "ideas",
+     "text": "As postwar wonder drugs became a big business, however, they also became a growing factor in military strategy. If narcosynthesis could “clear” the mind of trauma, could a modified version of the same technique be used to induce it? If a drug like LSD was useful for modeling psychosis as part of psychiatric research, might it also be useful for causing psychosis among an enemy army battalion—or an enemy city? Such questions were on the minds of drug researchers in 1949 for a simple reason: this was a key moment in the Cold War, the year that NATO was founded, the Soviet Union tested its first atomic bomb, and the Chinese Communist Party came to power.",
+     "date": "2024-10-20",
+     "q": "What Cold War questions about weaponizing drugs like LSD were on drug researchers' minds in 1949?"
+    },
+    {
+     "id": "8d40bdf361fd3036",
+     "loc": 1936,
+     "theme": "ideas",
+     "text": "But a case could be made that Harold Abramson was the single most influential—and infamous—psychedelic researcher of the twentieth century. He came to see the drug as a potential pathway to a union of the sciences, and as a powerful new tool for dissolving psychic trauma. Yet today he is mostly known for violating medical ethics as a drug researcher for the CIA.",
+     "date": "2024-10-20",
+     "q": "For what is Harold Abramson, arguably the most influential psychedelic researcher of the century, mostly known today?"
+    }
+   ]
+  },
+  {
    "id": "una-realidad-aparte-nuevas-conversaciones-con-don-juan-coleccion-popular-spanish--carlos-castaneda",
    "title": "Una realidad aparte Nuevas conversaciones con don Juan (Colección Popular) (Spanish Edition)",
    "author": "Carlos Castaneda",
@@ -9185,7 +9439,7 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-09",
+ "generated": "2026-09-10",
  "latest": {
   "date": "2026-09-05",
   "title": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts"
