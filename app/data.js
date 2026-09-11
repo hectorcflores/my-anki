@@ -41,6 +41,31 @@ window.ANKI = {
    ]
   },
   {
+   "id": "7-rules-of-power-surprising-but-true-advice-on-how-to-get-things-done-and-advanc--jeffery-pfeffer",
+   "title": "7 Rules of Power: Surprising--but True--Advice on How to Get Things Done and Advance Your Career",
+   "author": "Jeffery Pfeffer",
+   "subject": "how to acquire and wield power to advance your career",
+   "total": 2,
+   "highlights": [
+    {
+     "id": "d8c8e45c01b5b85e",
+     "loc": 576,
+     "theme": "work",
+     "text": "How people think of themselves invariably influences what they project to others and what behaviors they will enact. The lesson: use self-descriptive adjectives that convey power, and eschew attitudes that, even if accurate, fairly or unfairly, diminish your status.",
+     "date": "2026-09-10",
+     "q": "What lesson does Pfeffer draw from the way self-perception influences what you project to others?"
+    },
+    {
+     "id": "a0625e28a43fb911",
+     "loc": 600,
+     "theme": "work",
+     "text": "Another way to move past imposter syndrome is to do what this woman and other people sometimes do: push or force themselves, even in situations where they are uncomfortable, to present and sell themselves. With experience comes more comfort as well as skill. Getting over imposter syndrome is a first step on a person’s path to power.",
+     "date": "2026-09-10",
+     "q": "According to Pfeffer, how can forcing yourself to present and sell yourself help overcome imposter syndrome?"
+    }
+   ]
+  },
+  {
    "id": "a-love-supreme-the-story-of-john-coltrane-s-signature-album--ashley-kahn-and-elvin-jones",
    "title": "A Love Supreme: The Story of John Coltrane's Signature Album",
    "author": "Ashley Kahn and Elvin Jones",
@@ -9439,9 +9464,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-10",
+ "generated": "2026-09-11",
  "latest": {
-  "date": "2026-09-05",
-  "title": "Meditations for Mortals: Four Weeks to Embrace Your Limitations and Make Time for What Counts"
+  "date": "2026-09-10",
+  "title": "7 Rules of Power: Surprising--but True--Advice on How to Get Things Done and Advance Your Career"
  }
 };
