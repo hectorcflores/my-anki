@@ -45,7 +45,7 @@ window.ANKI = {
    "title": "7 Rules of Power: Surprising--but True--Advice on How to Get Things Done and Advance Your Career",
    "author": "Jeffery Pfeffer",
    "subject": "how to acquire and wield power to advance your career",
-   "total": 2,
+   "total": 4,
    "highlights": [
     {
      "id": "d8c8e45c01b5b85e",
@@ -9464,9 +9464,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-11",
+ "generated": "2026-09-12",
  "latest": {
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "title": "7 Rules of Power: Surprising--but True--Advice on How to Get Things Done and Advance Your Career"
  }
 };
