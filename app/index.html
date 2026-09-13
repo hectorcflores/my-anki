@@ -134,6 +134,11 @@
     .milestone-stack span:nth-child(2) { transform: translateX(9px) rotate(10deg); }
     .milestone-stack span:last-child { display: grid; place-items: center; font-size: 20px; color: var(--good); }
 
+    .card-footer { border-top: 1px solid var(--border); padding-top: 4px; display: flex; justify-content: flex-end; }
+    .card-footer button, .hide-notice button { font: inherit; font-size: 0.8125rem; border: 0; background: transparent; color: var(--muted-foreground); padding: 8px 10px; min-height: 44px; }
+    .hide-notice { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border); border-radius: 10px; background: #18181b; padding: 4px 12px; margin-top: 14px; font-size: 0.8125rem; }
+    .hide-notice button { color: var(--foreground); text-decoration: underline; text-underline-offset: 3px; }
+
     /* ---- Controls ---- */
     .controls { display: grid; gap: 0.5rem; margin-top: auto; padding-top: 1.25rem; }
     .btn {
@@ -325,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260913-milestone-copy";
+    const APP_BUILD = "20260913-hide-card";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -579,13 +584,76 @@
       localStorage.setItem("my-anki.answers.v1", JSON.stringify({day: dateStr(Date.now()), count}));
       if (count % 5 === 0) milestoneUntil = Date.now() + 2000;
     }
+    // Visibility is independent of ratings: immutable hide/restore events
+    // preserve review history and survive a regenerated deck with the same IDs.
+    function visibilityKey() { return "my-anki.visibility.v1." + (authUser?.uid || "guest"); }
+    function visibilityData(key = visibilityKey()) {
+      try { return JSON.parse(localStorage.getItem(key)) || {states:{},pending:[]}; }
+      catch { return {states:{},pending:[]}; }
+    }
+    function mergeVisibility(data, event) {
+      const old = data.states[event.cardId];
+      if (!old || event.at > old.at || (event.at === old.at && event.id > old.id)) data.states[event.cardId] = event;
+    }
+    function isHidden(id) { return visibilityData().states[id]?.hidden === true; }
+    let hideUndo = null;
+    function setCardHidden(id, hidden) {
+      const key = visibilityKey(), data = visibilityData(key);
+      const event = {id:crypto.randomUUID(),cardId:id,hidden,at:Math.max(Date.now(),(data.states[id]?.at || 0)+1)};
+      mergeVisibility(data,event); data.pending.push(event);
+      localStorage.setItem(key,JSON.stringify(data));
+      if (isSyncEnabled()) syncVisibility().then(()=>settleSyncStatus(true)).catch(()=>settleSyncStatus(false));
+    }
+    function hideCurrentCard(id) {
+      if (session.queue[0]?.id !== id) return;
+      setCardHidden(id,true); hideUndo = {id,key:visibilityKey()};
+      session.queue = session.queue.filter(c=>c.id !== id);
+      session.pending = session.pending.filter(c=>c.id !== id);
+      session.revealed = false; render();
+    }
+    function undoHide() {
+      if (!hideUndo || hideUndo.key !== visibilityKey()) return;
+      const id = hideUndo.id; setCardHidden(id,false); hideUndo = null;
+      session = newSession("all",id); render();
+    }
+    function hideNotice() {
+      return hideUndo?.key === visibilityKey() ? '<div class="hide-notice" role="status"><span>Card hidden</span><button id="undoHide" type="button">Undo</button></div>' : "";
+    }
+    let visibilityFlight = null;
+    function syncVisibility() {
+      if (!isSyncEnabled() || !navigator.onLine) return Promise.resolve();
+      if (visibilityFlight) return visibilityFlight;
+      visibilityFlight = syncVisibilityInner().finally(()=>{visibilityFlight=null;});
+      return visibilityFlight;
+    }
+    async function syncVisibilityInner() {
+      const cfg=liveCfg(),key=visibilityKey();
+      // Local-only choices follow the first account that signs in.
+      const guestKey="my-anki.visibility.v1.guest",guest=visibilityData(guestKey);
+      if (guest.pending.length) {
+        const data=visibilityData(key);
+        for(const event of guest.pending) {mergeVisibility(data,event);if(!data.pending.some(e=>e.id===event.id))data.pending.push(event);}
+        localStorage.setItem(key,JSON.stringify(data));localStorage.removeItem(guestKey);
+      }
+      while (visibilityData(key).pending.length) {
+        const event=visibilityData(key).pending[0];
+        await fsCreateDoc(cfg,`${rootOf(cfg)}/${cfg.tenant}/visibility/${event.id}`,event);
+        const data=visibilityData(key);data.pending=data.pending.filter(e=>e.id!==event.id);localStorage.setItem(key,JSON.stringify(data));
+      }
+      const rows=await fsListCollection(cfg,"visibility");
+      const data=visibilityData(key),before=JSON.stringify(data.states);
+      for(const row of rows)mergeVisibility(data,row);
+      localStorage.setItem(key,JSON.stringify(data));
+      if(key===visibilityKey() && before!==JSON.stringify(data.states))whenSafe("session");
+    }
+
     function highlightTime(c) {
       const value = Date.parse(c.highlightedAt || c.date || "");
       return Number.isFinite(value) ? value : -Infinity;
     }
     function buildQueue() {
       const now = Date.now();
-      const eligible = cards.filter(c => !srs[c.id]?.leech);
+      const eligible = cards.filter(c => !srs[c.id]?.leech && !isHidden(c.id));
       const pending = eligible.filter(c => srs[c.id] && srs[c.id].st !== "rev" && srs[c.id].due > now);
       const due = eligible.filter(c => srs[c.id] && srs[c.id].due <= now)
         .sort((a,b) => srs[a.id].due - srs[b.id].due || a.id.localeCompare(b.id));
@@ -971,6 +1039,7 @@
       setSyncStatus("syncing");
       try {
         await pullReviewsInner(cfgOverride);
+        await syncVisibility();
       } catch (e) {
         settleSyncStatus(false);
         throw e;        // callers still decide what a failed pull means
@@ -1684,7 +1753,7 @@
       if (!isSyncEnabled()) return setSyncStatus("local");
       if (!navigator.onLine) return setSyncStatus("offline");
       if (!ok) return setSyncStatus("issue");
-      if (loadOutbox().length) return setSyncStatus("pending");
+      if (loadOutbox().length || visibilityData().pending.length) return setSyncStatus("pending");
       localStorage.setItem(LASTSYNC_KEY, String(Date.now()));
       setSyncStatus("synced");
     }
@@ -1735,6 +1804,8 @@
     function render() {
       const s = session;
       clearWaitTimer();
+      s.queue = s.queue.filter(c => !isHidden(c.id));
+      s.pending = s.pending.filter(c => !isHidden(c.id));
       promotePending(s);
 
       if (milestoneUntil > Date.now()) {
@@ -1754,7 +1825,8 @@
       }
       if (!s.queue.length) {
         app.innerHTML = `${headerHtml("")}
-          <div class="done"><div class="big">✓</div><h2>All caught up</h2></div>${footNote()}`;
+          <div class="done"><div class="big">✓</div><h2>All caught up</h2></div>${hideNotice()}${footNote()}`;
+        document.getElementById("undoHide")?.addEventListener("click",undoHide);
         // No countdown or waiting message. Resume quietly when a card is due.
         if (s.pending.length) waitTimer = setInterval(() => render(), 1000);
         return;
@@ -1786,13 +1858,16 @@
         ${headerHtml(st ? "" : "new")}
         <div class="progress"><div style="width:${pct}%"></div></div>
         ${leftLine()}
-        <div class="stage">${front}${back}</div>
+        <div class="stage">${front}${back}<div class="card-footer"><button id="hideCard" type="button">Hide card</button></div></div>
         <div class="controls">
           ${s.revealed ? `<div class="grades">${grades}</div>`
                        : `<button class="btn" id="reveal">Show answer</button>`}
         </div>
+        ${hideNotice()}
         ${footDeck() ? `<p class="foot-note">${footDeck()}</p>` : ""}`;
 
+      document.getElementById("hideCard")?.addEventListener("click",()=>hideCurrentCard(c.id));
+      document.getElementById("undoHide")?.addEventListener("click",undoHide);
       const rv = document.getElementById("reveal");
       if (rv) rv.addEventListener("click", () => { s.revealed = true; render(); });
       document.querySelectorAll(".grade").forEach(b => b.addEventListener("click", () => {

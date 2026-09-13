@@ -169,3 +169,22 @@ To ship a new deck by hand: replace `app/data.js`, bump `CACHE` in
 ```bash
 cd app && python3 -m http.server 8790
 ```
+
+## Hide card
+
+The card footer offers Hide card and a persistent Undo notice for the latest
+hide in the current tab. Hiding does not grade the card or increment the
+milestone. It preserves the Kindle source and review history. Stable card IDs
+keep hidden cards excluded after nightly deck refreshes.
+
+Visibility uses a separate owner-only immutable event collection at
+`my_anki/{uid}/visibility`, with a local offline outbox. Account-scoped state
+prevents one signed-in account's choices leaking to another. Guest choices
+are adopted by the first account that signs in. Last action timestamp wins;
+equal timestamps use event ID ordering. Devices with badly wrong clocks can
+therefore require an explicit restore after syncing. Old app builds do not
+understand visibility; update all devices. The shared database rules are
+versioned in the sibling my-pomodoro repository.
+
+Run `node app/test/visibility.test.mjs` for hide/undo, reopen, offline, and
+cross-device recovery checks.
