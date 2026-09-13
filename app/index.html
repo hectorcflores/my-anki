@@ -316,7 +316,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260912-five-cards";
+    const APP_BUILD = "20260912-two-fresh-three-reviews";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -565,6 +565,7 @@
     // Five distinct cards per local calendar day. Repeating one of today's
     // learning cards does not spend another slot. State already syncs by ID.
     const DAILY_CARD_LIMIT = 5;
+    const DAILY_FRESH_TARGET = 2;
     function touchedToday(st) {
       return !!st && st.__lastReviewAt != null && dateStr(st.__lastReviewAt) === dateStr(Date.now());
     }
@@ -588,13 +589,20 @@
       const budget = Math.max(0, DAILY_CARD_LIMIT - dailyCardsUsed());
       const due = eligible.filter(c => srs[c.id] && !touchedToday(srs[c.id]) && srs[c.id].due <= now)
         .sort((a, b) => srs[a.id].due - srs[b.id].due || a.id.localeCompare(b.id));
-      const selected = due.slice(0, budget);
       const fresh = eligible.filter(c => !srs[c.id])
         .sort((a, b) => {
           const at = highlightTime(a), bt = highlightTime(b);
           return at === bt ? a.id.localeCompare(b.id) : (at > bt ? -1 : 1);
-        }).slice(0, Math.max(0, budget - selected.length));
-      return { cards: [...repeated, ...selected, ...fresh], pending,
+        });
+      // intro survives grade replay and identifies today's new-card slots,
+      // including cards removed from the catalog. Again never spends twice.
+      const freshUsed = Object.values(srs).filter(st => touchedToday(st) &&
+        st.intro != null && dateStr(st.intro) === dateStr(now)).length;
+      const reserved = fresh.slice(0, Math.min(budget, Math.max(0, DAILY_FRESH_TARGET - freshUsed)));
+      const selected = due.slice(0, budget - reserved.length);
+      // If either pool is short, fill the unused slots from the other pool.
+      const extraFresh = fresh.slice(reserved.length, budget - selected.length);
+      return { cards: [...repeated, ...reserved, ...selected, ...extraFresh], pending,
                backlog: Math.max(0, due.length - selected.length) };
     }
     function dueCards() { return buildQueue().cards; }

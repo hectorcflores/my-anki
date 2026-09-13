@@ -19,9 +19,27 @@ test('freshest five appear first, deterministically across reopen',()=>{
  assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],expected);
  assert.deepEqual([...d.run('newSession("all").queue.map(c=>c.id)')],expected);
 });
-test('due reviews take priority; newest cards fill remaining places',()=>{
+test('two fresh cards lead, with spare review slots filled by fresh cards',()=>{
  const d=device();d.run(`srs.c0=${JSON.stringify(state())};srs.c1=${JSON.stringify(state({due:Date.now()-2*DAY}))}`);
- assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c1','c0','c11','c10','c9']);
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c11','c10','c1','c0','c9']);
+});
+test('large overdue backlog still reserves two newest cards',()=>{
+ const d=device();d.run(`for(let i=0;i<8;i++)srs['c'+i]=${JSON.stringify(state())}`);
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c11','c10','c0','c1','c2']);
+ d.run('applyGrade("c11",3);session=newSession("all")');
+ assert.deepEqual([...d.run('session.queue.map(c=>c.id)')],['c10','c0','c1','c2']);
+ d.run('applyGrade("c10",0);session=newSession("all")');
+ assert.deepEqual([...d.run('session.queue.map(c=>c.id)')],['c0','c1','c2']);
+ assert.equal(d.run('session.pending.length'),1);
+});
+test('three reviews already done leave room for two fresh cards',()=>{
+ const d=device();d.run(`for(let i=0;i<8;i++)srs['c'+i]=${JSON.stringify(state())}`);
+ d.run('for(let i=0;i<3;i++)applyGrade("c"+i,3)');
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c11','c10']);
+});
+test('only one unseen card fills the other four slots with reviews',()=>{
+ const d=device();d.run(`for(let i=0;i<11;i++)srs['c'+i]=${JSON.stringify(state())}`);
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c11','c0','c1','c10','c2']);
 });
 test('missing a week never produces more than five cards',()=>{
  const d=device(50);d.run(`srs=Object.fromEntries(cards.map(c=>[c.id,${JSON.stringify(state({due:Date.now()-7*DAY}))}]))`);

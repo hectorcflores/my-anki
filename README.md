@@ -4,8 +4,10 @@ Spaced repetition over my Kindle highlights, at
 [hectorcflores.github.io/my-anki/](https://hectorcflores.github.io/my-anki/).
 
 The app opens into a single daily stack of at most five distinct cards, with
-no category selector. Due reviews come first, oldest due date first; remaining
-places use the freshest eligible Kindle highlights. Exact highlight timestamps
+no category selector. Two places are reserved for the freshest unseen Kindle
+highlights, shown first; three are for due reviews, oldest due date first.
+If either pool is short, the other fills the remaining places. Cards already
+reviewed today count toward these limits, including after reopening the app. Exact highlight timestamps
 break ties within a day; missing dates sort last. Existing non-fiction and
 quality filters remain, but small categories no longer exclude eligible cards.
 
@@ -133,7 +135,7 @@ node app/test/sync.test.mjs
 node app/test/scheduler.test.mjs
 ```
 
-`scheduler.test.mjs` covers the five-card cap, due-first and freshest-first
+`scheduler.test.mjs` covers the five-card cap, two-fresh/three-review and freshest-first
 selection, missing days, no refill after completion, waiting-card restoration,
 and same-day highlight timestamps.
 
