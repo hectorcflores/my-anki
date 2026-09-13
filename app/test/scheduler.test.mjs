@@ -21,12 +21,12 @@ test('backlog still leaves two fresh slots',()=>{
  const d=device();d.run(`for(let i=0;i<8;i++)srs['c'+i]=${JSON.stringify(state())}`);
  assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c11','c10','c0','c1','c2']);
 });
-test('five answers trigger a two-second milestone without extra copy',()=>{
+test('five answers trigger a two-second milestone with next-five copy',()=>{
  const d=device();d.run('for(let i=0;i<5;i++)recordAnswer();render()');
  assert.equal(d.run('answersToday()'),5);
  assert.ok(d.run('milestoneUntil-Date.now()')>1500);
  assert.ok(d.run('app.innerHTML').includes('5 reviewed today'));
- assert.ok(!d.run('app.innerHTML').includes('Your next five'));
+ assert.ok(d.run('app.innerHTML').includes('Your next five are ready.'));
  d.run('milestoneUntil=Date.now()-1;render()');
  assert.ok(!d.run('app.innerHTML').includes('milestone-stack'));
 });

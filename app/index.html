@@ -127,6 +127,7 @@
 
     .stage.milestone { min-height: 250px; align-items: center; justify-content: center; gap: 16px; }
     .milestone h2 { margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; }
+    .milestone-caption { margin: 0; font-size: 0.8125rem; color: var(--muted-foreground); }
     .milestone-stack { position: relative; width: 70px; height: 58px; }
     .milestone-stack span { position: absolute; left: 12px; top: 0; width: 46px; height: 54px; background: var(--card); border: 1px solid var(--ring); border-radius: 6px; }
     .milestone-stack span:first-child { transform: translateX(-9px) rotate(-10deg); }
@@ -324,7 +325,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260913-continuous-review";
+    const APP_BUILD = "20260913-milestone-copy";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -1741,6 +1742,7 @@
           <div class="stage milestone" role="status">
             <div class="milestone-stack" aria-hidden="true"><span></span><span></span><span>✓</span></div>
             <h2>${answersToday()} reviewed today</h2>
+            <p class="milestone-caption">Your next five are ready.</p>
           </div>`;
         waitTimer = setInterval(() => render(), Math.max(1, milestoneUntil - Date.now()));
         return;
