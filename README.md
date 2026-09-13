@@ -3,11 +3,11 @@
 Spaced repetition over my Kindle highlights, at
 [hectorcflores.github.io/my-anki/](https://hectorcflores.github.io/my-anki/).
 
-The app opens straight into a review session — there is no browse view. Theme
-pills at the top switch decks (Investing, Finance, Growth, Relationships,
-Mindfulness) and show each deck's due count. Only highlights aligned with
-their source book's core subject enter a deck; tangential ones are filtered
-out upstream.
+The app opens into a single daily stack of at most five distinct cards, with
+no category selector. Due reviews come first, oldest due date first; remaining
+places use the freshest eligible Kindle highlights. Exact highlight timestamps
+break ties within a day; missing dates sort last. Existing non-fiction and
+quality filters remain, but small categories no longer exclude eligible cards.
 
 Static site, no build step, no backend. Add it to your home screen and it runs
 offline as a standalone app.
@@ -52,39 +52,22 @@ other cards.
 
 Scheduling state lives in `localStorage` under `my-anki.srs.v2`.
 
-Two daily limits, both of them Anki's, both counted per **account** rather than
-per device and both derived from card state rather than a separate counter — so
-reopening the app can't refill either one, and 20 new cards means 20 across
-phone and laptop together:
+There is one limit: **five distinct cards per local calendar day**. Both new
+cards and due reviews use it. Again and Hard may bring the same learning card
+back later that day without using another slot. Finishing five cards cannot
+refill the stack by reopening the app. Missing days never raises the daily
+limit; older reviews retain their due dates and wait for a place on a later day.
 
-- **200 reviews a day** — Anki's own default, and deliberately loose: an
-  ordinary day on a deck this size never reaches it. That is the point. The cap
-  is a brake for the day you come back from three weeks away, not a daily
-  ration; without it, every card that came due while you were gone lands in a
-  single session and the deck punishes you for the days you skipped. With it,
-  the backlog drains oldest-due-first over as many days as it takes, and
-  nothing is dropped or silently rescheduled. Learning and relearning cards are
-  exempt: a card you just graded Again has to come back within the session or
-  the grade was a lie.
-- **20 new cards a day**, applied *second*. This is Anki v3's limit order: the
-  review limit is applied first, and the new-card limit is then applied to
-  whatever count is left beneath it. A day whose reviews fill the cap therefore
-  introduces nothing new on its own, with no separate "pause new cards when
-  behind" rule — which matters because every new card introduced today becomes
-  several more reviews on exactly the days you are already failing to clear.
+The limit is derived from saved review state and shared once devices sync.
+Simultaneous offline devices cannot enforce an account-wide limit atomically;
+use one device at a time or let sync complete when switching. Reviews already
+done before installing this smaller limit still count today.
 
-There is exactly one queue, built over the whole deck, and every theme pill is
-a filtered view of it. Both limits therefore apply once, across all themes
-together, the way a parent deck's limits cap its subdecks in Anki — which is
-also what makes the pill numbers add up to All instead of each theme quietly
-opening its own budget of 20.
-
-The app reports one number, in one vocabulary: what is left. The bar shows the
-count for the deck you are on, and the line under the progress bar spells out
-what it counts ("13 cards left in Investing") — both read the same expression
-the active pill does, so they cannot drift apart. Progress is the bar itself.
-An earlier build put "4 / 47" in the bar directly above a pill reading 43: both
-correct (47 was today's total, 43 what remained), together unreadable.
+The count includes today's learning cards waiting to return. Rebuilding a
+session restores these waiting cards from saved state, and due learning steps
+take priority at the next question boundary. The current answer is preserved.
+The four grading rules and historical review replay are unchanged by this
+queue/UI change; this is not a full canonical-Anki scheduler migration.
 
 The footer carries the deck's own provenance — the day the nightly job
 published it, and the newest Kindle highlight it was built from, going amber at
@@ -150,11 +133,9 @@ node app/test/sync.test.mjs
 node app/test/scheduler.test.mjs
 ```
 
-`scheduler.test.mjs` covers the daily limits: that a backlog is capped instead
-of dumped, that the cap spends oldest-due-first, that learning cards are never
-held back by it, that new cards get only the room left beneath the cap, and
-that the pill numbers add up to All. Every one of those takes a week of not opening the app
-to observe by hand, which is the whole reason they are tests.
+`scheduler.test.mjs` covers the five-card cap, due-first and freshest-first
+selection, missing days, no refill after completion, waiting-card restoration,
+and same-day highlight timestamps.
 
 `sync.test.mjs` is a deterministic harness — an in-memory Firestore plus one `vm` context per
 simulated device — for the one class of bug that can't be reproduced by

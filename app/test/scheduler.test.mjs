@@ -1,137 +1,77 @@
-// Daily-limit tests. The sync suite covers the one class of bug that can't be
-// reproduced by clicking; this one covers the other — a queue whose size
-// depends on what day it is and how far behind you are, which takes a week of
-// not opening the app to observe by hand.
-//
-//   node app/test/scheduler.test.mjs
-import assert from "node:assert/strict";
-import { getScriptSource } from "./extract-script.mjs";
-import { createDevice } from "./device.mjs";
-import { createFakeFirestore } from "./fake-firestore.mjs";
-
+// Five-card daily stack and learning-delay regressions, using the real app code.
+import assert from 'node:assert/strict';
+import {getScriptSource} from './extract-script.mjs';
+import {createDevice} from './device.mjs';
+import {createFakeFirestore} from './fake-firestore.mjs';
 const source = getScriptSource();
 const DAY = 864e5;
-
-// Two themes, so the pill arithmetic has something to be wrong about.
-function deckOf(counts) {
-  const highlights = [];
-  for (const [theme, n] of Object.entries(counts))
-    for (let i = 0; i < n; i++)
-      highlights.push({ id: `${theme}-${i}`, theme, text: `text ${theme} ${i}`, loc: i });
-  return {
-    themes: Object.keys(counts).map((t) => ({ id: t, label: t })),
-    books: [{ id: "b1", title: "Test Book", author: "Author", highlights }],
-  };
+function device(n=12) {
+  return createDevice({source, firestore:createFakeFirestore(), deck:{
+    themes:[{id:'work',label:'Work'}], books:[{id:'b',title:'Book',author:'Author',
+      highlights:Array.from({length:n},(_,i)=>({id:`c${i}`,theme:'work',text:'test',loc:i,
+        date:`2026-09-${String(i+1).padStart(2,'0')}`}))}]
+  }});
 }
-
-function device(deck) {
-  return createDevice({ source, firestore: createFakeFirestore(), deck });
-}
-
-// A card in review state, overdue by `daysAgo`, last actually reviewed then.
-function reviewCard(daysAgo) {
-  const at = Date.now() - daysAgo * DAY;
-  return { st: "rev", step: 0, ef: 2.5, ivl: 10, due: at, reps: 3, lapses: 0,
-           intro: at - 30 * DAY, __lastReviewAt: at };
-}
-
-const tests = [];
-const test = (name, fn) => tests.push([name, fn]);
-
-test("a backlog is capped at MAX_REVIEWS_PER_DAY, not dumped in one session", () => {
-  // 260 overdue cards is a month away from a deck this size.
-  const d = device(deckOf({ work: 160, health: 100 }));
-  const cap = d.run("MAX_REVIEWS_PER_DAY");
-  d.run(`srs = Object.fromEntries(cards.map(c => [c.id, ${JSON.stringify(reviewCard(7))}]))`);
-  const q = d.run("buildQueue()");
-  assert.equal(q.cards.length, cap);
-  assert.equal(q.backlog, 260 - cap);
+function state(extra={}) {return {st:'rev',ef:2.5,ivl:10,reps:3,lapses:0,due:Date.now()-DAY,intro:Date.now()-30*DAY,...extra};}
+const tests=[];const test=(name,fn)=>tests.push([name,fn]);
+test('freshest five appear first, deterministically across reopen',()=>{
+ const d=device();const expected=['c11','c10','c9','c8','c7'];
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],expected);
+ assert.deepEqual([...d.run('newSession("all").queue.map(c=>c.id)')],expected);
 });
-
-test("the cap spends oldest-due-first, so nothing is starved", () => {
-  const d = device(deckOf({ work: 260 }));
-  d.run(`srs = {}; cards.forEach((c, i) => srs[c.id] = { st: "rev", ef: 2.5, ivl: 10, reps: 3,
-          lapses: 0, due: Date.now() - (260 - i) * ${DAY}, intro: 0, __lastReviewAt: 0 })`);
-  const ids = d.run("buildQueue().cards.map(c => c.id)");
-  const expected = d.run("cards.slice().sort((a,b) => srs[a.id].due - srs[b.id].due)"
-    + `.slice(0, MAX_REVIEWS_PER_DAY).map(c => c.id)`);
-  assert.deepEqual([...ids], [...expected]);
+test('due reviews take priority; newest cards fill remaining places',()=>{
+ const d=device();d.run(`srs.c0=${JSON.stringify(state())};srs.c1=${JSON.stringify(state({due:Date.now()-2*DAY}))}`);
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c1','c0','c11','c10','c9']);
 });
-
-test("learning cards are never held back by the review cap", () => {
-  // The cap is fully spent by overdue reviews; a card mid-learning-step still
-  // has to come back this session or the grade that put it there was a lie.
-  const d = device(deckOf({ work: 260 }));
-  d.run(`srs = Object.fromEntries(cards.map(c => [c.id, ${JSON.stringify(reviewCard(7))}]))`);
-  d.run(`srs["work-0"] = { st: "lrn", step: 0, ef: 2.5, ivl: 0, due: Date.now() - 60e3,
-          reps: 0, lapses: 0, intro: Date.now(), __lastReviewAt: Date.now() }`);
-  const q = d.run("buildQueue()");
-  assert.ok([...q.cards.map(c => c.id)].includes("work-0"));
-  assert.equal(q.cards.length, d.run("MAX_REVIEWS_PER_DAY") + 1);
+test('missing a week never produces more than five cards',()=>{
+ const d=device(50);d.run(`srs=Object.fromEntries(cards.map(c=>[c.id,${JSON.stringify(state({due:Date.now()-7*DAY}))}]))`);
+ assert.equal(d.run('buildQueue().cards.length'),5);assert.equal(d.run('buildQueue().backlog'),45);
 });
-
-test("new cards get only what is left under the review cap", () => {
-  // Anki v3's limit order, which is the whole reason this app needs no
-  // separate "pause new cards when behind" rule: reviews are taken first, and
-  // new cards fill whatever room is left beneath the same cap.
-  const d = device(deckOf({ work: 160, health: 100 }));
-  const cap = d.run("MAX_REVIEWS_PER_DAY");
-  const newLimit = d.run("NEW_PER_DAY");
-  const overdue = (n) => d.run(
-    `srs = Object.fromEntries(cards.slice(0, ${n}).map(c => [c.id, ${JSON.stringify(reviewCard(7))}]))`);
-  const freshInQueue = () => d.run("buildQueue().cards.filter(c => !srs[c.id]).length");
-
-  overdue(cap + 5);        // cap fully spent by the backlog
-  assert.equal(freshInQueue(), 0);
-
-  overdue(cap - 5);        // five slots left, so five new cards, not twenty
-  assert.equal(freshInQueue(), 5);
-
-  overdue(10);             // an ordinary day never reaches the cap
-  assert.equal(freshInQueue(), newLimit);
+test('five completed cards prevent a refill and leave other due dates unchanged',()=>{
+ const d=device();d.run(`srs.c0=${JSON.stringify(state())}`);const due=d.run('srs.c0.due');
+ d.run(`for(let i=1;i<=5;i++)srs['c'+i]=${JSON.stringify(state({due:Date.now()+DAY,__lastReviewAt:Date.now()}))}`);
+ assert.equal(d.run('newSession("all").queue.length'),0);assert.equal(d.run('srs.c0.due'),due);
 });
-
-test("today's reviews spend the budget, so reopening the app can't refill it", () => {
-  const d = device(deckOf({ work: 260 }));
-  const cap = d.run("MAX_REVIEWS_PER_DAY");
-  d.run(`srs = Object.fromEntries(cards.map(c => [c.id, ${JSON.stringify(reviewCard(7))}]))`);
-  // Ten of them already graded today — an older intro, so they count as
-  // reviews rather than as today's new cards.
-  d.run(`cards.slice(0, 10).forEach(c => { srs[c.id].__lastReviewAt = Date.now();
-          srs[c.id].due = Date.now() + 5 * ${DAY} })`);
-  assert.equal(d.run("reviewsDoneToday()"), 10);
-  assert.equal(d.run("buildQueue().cards.length"), cap - 10);
+test('Again repeats the same card without admitting a sixth',()=>{
+ const d=device();d.run('for(const c of buildQueue().cards)applyGrade(c.id,0)');
+ assert.equal(d.run('dailyCardsUsed()'),5);assert.equal(d.run('buildQueue().cards.length'),0);
+ assert.equal(d.run('buildQueue().pending.length'),5);
+ d.run('srs.c11.due=Date.now()-1');
+ assert.deepEqual([...d.run('buildQueue().cards.map(c=>c.id)')],['c11']);
 });
-
-test("a new card introduced today does not eat the review budget", () => {
-  const d = device(deckOf({ work: 260 }));
-  d.run(`srs = {}; cards.slice(0, 10).forEach(c => srs[c.id] = { st: "lrn", step: 1, ef: 2.5,
-          ivl: 0, due: Date.now() + 6e5, reps: 0, lapses: 0,
-          intro: Date.now(), __lastReviewAt: Date.now() })`);
-  assert.equal(d.run("reviewsDoneToday()"), 0);
-  assert.equal(d.run("newIntroducedToday()"), 10);
+test('pending learning cards survive rebuilding and return when due',()=>{
+ const d=device();d.run('applyGrade("c11",0);session=newSession("all")');
+ assert.equal(d.run('session.pending.length'),1);
+ d.run('srs.c11.due=Date.now()-1;promotePending(session)');
+ assert.equal(d.run('session.queue[0].id'),'c11');assert.equal(d.run('session.pending.length'),0);
 });
-
-test("the pill numbers add up to All", () => {
-  const d = device(deckOf({ work: 160, health: 100 }));
-  d.run(`srs = Object.fromEntries(cards.slice(0, 20).map(c => [c.id, ${JSON.stringify(reviewCard(2))}]))`);
-  const all = d.run("dueCards('all').length");
-  const work = d.run("dueCards('work').length");
-  const health = d.run("dueCards('health').length");
-  assert.equal(work + health, all);
-  assert.ok(all > 0);
+test('pending learning counts as unfinished, not completed progress',()=>{
+ const d=device();d.run('applyGrade("c11",0);session=newSession("all")');
+ assert.equal(d.run('cardsLeft()'),5);assert.equal(d.run('progress(session).done'),0);
 });
-
-test("an untouched deck still opens with exactly NEW_PER_DAY cards", () => {
-  const d = device(deckOf({ work: 160, health: 100 }));
-  assert.equal(d.run("dueCards('all').length"), d.run("NEW_PER_DAY"));
-  assert.equal(d.run("buildQueue().backlog"), 0);
+test('yesterday learning cards count toward today five-card limit',()=>{
+ const d=device();d.run(`srs=Object.fromEntries(cards.map(c=>[c.id,${JSON.stringify(state({st:'lrn',step:1,ivl:0}))}]))`);
+ assert.equal(d.run('buildQueue().cards.length'),5);
 });
-
-let failed = 0;
-for (const [name, fn] of tests) {
-  try { fn(); console.log(`PASS  ${name}`); }
-  catch (e) { failed++; console.log(`FAIL  ${name}\n      ${e.message}`); }
-}
-console.log(`\n${tests.length - failed}/${tests.length} passed`);
-process.exit(failed ? 1 : 0);
+test('yesterday completed cards do not spend today budget',()=>{
+ const d=device();d.run(`for(let i=0;i<5;i++)srs['c'+i]=${JSON.stringify(state({due:Date.now()+DAY,__lastReviewAt:Date.now()-DAY}))}`);
+ assert.equal(d.run('buildQueue().cards.length'),5);assert.equal(d.run('dailyCardsUsed()'),0);
+});
+test('a deck refresh cannot refund a completed card absent from catalog',()=>{
+ const d=device();d.run(`srs.removed=${JSON.stringify(state({__lastReviewAt:Date.now()}))}`);
+ assert.equal(d.run('buildQueue().cards.length'),4);
+});
+test('missing or invalid highlight dates come after dated highlights',()=>{
+ const d=device();d.run('cards.find(c=>c.id==="c11").date="invalid";cards.find(c=>c.id==="c10").date=null');
+ assert.equal(d.run('buildQueue().cards[0].id'),'c9');
+});
+test('precise timestamps break ties within the same highlight day',()=>{
+ const d=device();d.run('cards.find(c=>c.id==="c10").date="2026-09-12";cards.find(c=>c.id==="c10").highlightedAt="2026-09-12T18:00:00";cards.find(c=>c.id==="c11").highlightedAt="2026-09-12T12:00:00"');
+ assert.equal(d.run('buildQueue().cards[0].id'),'c10');
+});
+test('the header has no category selector',()=>{
+ const d=device();assert.ok(!d.run('headerHtml("5")').includes('data-theme'));
+});
+let failed=0;
+for(const [name,fn] of tests){try{fn();console.log(`PASS  ${name}`)}catch(e){failed++;console.log(`FAIL  ${name}\n${e.stack}`)}}
+console.log(`${tests.length-failed}/${tests.length} passed`);process.exitCode=failed?1:0;
