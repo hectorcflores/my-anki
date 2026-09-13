@@ -125,6 +125,14 @@
     .note-box { background: var(--note-bg); color: var(--note); border-radius: calc(var(--radius) - 2px); padding: 0.6rem 0.75rem; font-size: 0.8rem; margin: 0; }
     .note-box::before { content: "your note — "; font-weight: 700; }
 
+    .stage.milestone { min-height: 250px; align-items: center; justify-content: center; gap: 16px; }
+    .milestone h2 { margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; }
+    .milestone-stack { position: relative; width: 70px; height: 58px; }
+    .milestone-stack span { position: absolute; left: 12px; top: 0; width: 46px; height: 54px; background: var(--card); border: 1px solid var(--ring); border-radius: 6px; }
+    .milestone-stack span:first-child { transform: translateX(-9px) rotate(-10deg); }
+    .milestone-stack span:nth-child(2) { transform: translateX(9px) rotate(10deg); }
+    .milestone-stack span:last-child { display: grid; place-items: center; font-size: 20px; color: var(--good); }
+
     /* ---- Controls ---- */
     .controls { display: grid; gap: 0.5rem; margin-top: auto; padding-top: 1.25rem; }
     .btn {
@@ -316,7 +324,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260912-two-fresh-three-reviews";
+    const APP_BUILD = "20260913-continuous-review";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -548,31 +556,27 @@
     // been touched today yet, so it grows/shrinks with the actual queue
     // instead of being a frozen snapshot from session start.
     function progress(s) {
-      const done = Math.min(DAILY_CARD_LIMIT, Object.values(srs)
-        .filter(st => touchedToday(st) && (st.st === "rev" || st.leech)).length);
-      const remaining = new Set([...s.queue, ...s.pending].map(c => c.id)).size;
-      return { done, total: done + remaining };
+      return { done: answersToday() % 5, total: 5 };
     }
-    function cardsLeft() {
-      const q = buildQueue();
-      return q.cards.length + q.pending.length;
-    }
-    function leftLine() {
-      const n = cardsLeft();
-      return `<p class="left-line"><b>${n} card${n === 1 ? "" : "s"} left today</b></p>`;
-    }
-
-    // Five distinct cards per local calendar day. Repeating one of today's
-    // learning cards does not spend another slot. State already syncs by ID.
-    const DAILY_CARD_LIMIT = 5;
-    const DAILY_FRESH_TARGET = 2;
+    function cardsLeft() { return session.queue.length; }
+    function leftLine() { return ""; }
     function touchedToday(st) {
       return !!st && st.__lastReviewAt != null && dateStr(st.__lastReviewAt) === dateStr(Date.now());
     }
-    function dailyCardsUsed() {
-      // Include saved states absent from the latest catalog: a deck refresh
-      // must not refund cards already reviewed today.
-      return Object.values(srs).filter(touchedToday).length;
+    function dailyCardsUsed() { return Object.values(srs).filter(touchedToday).length; }
+    // This presentation counter counts answers on this device; scheduling and
+    // review history continue to use the existing synced state.
+    function answersToday() {
+      try {
+        const value = JSON.parse(localStorage.getItem("my-anki.answers.v1"));
+        return value?.day === dateStr(Date.now()) ? Number(value.count) || 0 : 0;
+      } catch { return 0; }
+    }
+    let milestoneUntil = 0;
+    function recordAnswer() {
+      const count = answersToday() + 1;
+      localStorage.setItem("my-anki.answers.v1", JSON.stringify({day: dateStr(Date.now()), count}));
+      if (count % 5 === 0) milestoneUntil = Date.now() + 2000;
     }
     function highlightTime(c) {
       const value = Date.parse(c.highlightedAt || c.date || "");
@@ -581,29 +585,17 @@
     function buildQueue() {
       const now = Date.now();
       const eligible = cards.filter(c => !srs[c.id]?.leech);
-      const started = eligible.filter(c => touchedToday(srs[c.id]))
-        .sort((a, b) => srs[a.id].__lastReviewAt - srs[b.id].__lastReviewAt || a.id.localeCompare(b.id))
-        .slice(0, DAILY_CARD_LIMIT);
-      const repeated = started.filter(c => srs[c.id].due <= now);
-      const pending = started.filter(c => srs[c.id].st !== "rev" && srs[c.id].due > now);
-      const budget = Math.max(0, DAILY_CARD_LIMIT - dailyCardsUsed());
-      const due = eligible.filter(c => srs[c.id] && !touchedToday(srs[c.id]) && srs[c.id].due <= now)
-        .sort((a, b) => srs[a.id].due - srs[b.id].due || a.id.localeCompare(b.id));
-      const fresh = eligible.filter(c => !srs[c.id])
-        .sort((a, b) => {
-          const at = highlightTime(a), bt = highlightTime(b);
-          return at === bt ? a.id.localeCompare(b.id) : (at > bt ? -1 : 1);
-        });
-      // intro survives grade replay and identifies today's new-card slots,
-      // including cards removed from the catalog. Again never spends twice.
-      const freshUsed = Object.values(srs).filter(st => touchedToday(st) &&
-        st.intro != null && dateStr(st.intro) === dateStr(now)).length;
-      const reserved = fresh.slice(0, Math.min(budget, Math.max(0, DAILY_FRESH_TARGET - freshUsed)));
-      const selected = due.slice(0, budget - reserved.length);
-      // If either pool is short, fill the unused slots from the other pool.
-      const extraFresh = fresh.slice(reserved.length, budget - selected.length);
-      return { cards: [...repeated, ...reserved, ...selected, ...extraFresh], pending,
-               backlog: Math.max(0, due.length - selected.length) };
+      const pending = eligible.filter(c => srs[c.id] && srs[c.id].st !== "rev" && srs[c.id].due > now);
+      const due = eligible.filter(c => srs[c.id] && srs[c.id].due <= now)
+        .sort((a,b) => srs[a.id].due - srs[b.id].due || a.id.localeCompare(b.id));
+      const fresh = eligible.filter(c => !srs[c.id]).sort((a,b) => {
+        const at = highlightTime(a), bt = highlightTime(b);
+        return at === bt ? a.id.localeCompare(b.id) : (at > bt ? -1 : 1);
+      });
+      const reserved = fresh.slice(0,2);
+      const selected = due.slice(0,5-reserved.length);
+      const extra = fresh.slice(reserved.length,5-selected.length);
+      return {cards:[...reserved,...selected,...extra], pending, backlog:due.length-selected.length};
     }
     function dueCards() { return buildQueue().cards; }
 
@@ -1744,39 +1736,26 @@
       clearWaitTimer();
       promotePending(s);
 
-      if (!s.queue.length && s.pending.length) {
-        // Everything left this session is a card that was graded Again/Hard
-        // and genuinely has to wait out its own step delay — not a fixed
-        // number of other cards, its real `due` timestamp. Ticks itself so
-        // the app moves on the moment that time arrives, with no polling
-        // once you navigate away (setTheme() starts a fresh session, and
-        // clearWaitTimer() above always tears this down first).
-        const soonest = Math.min(...s.pending.map(c => srs[c.id].due));
-        const { done: wDone, total: wTotal } = progress(s);
-        app.innerHTML = `
-          ${headerHtml("waiting")}
-          <div class="progress"><div style="width:${Math.round(100 * wDone / wTotal)}%"></div></div>
-          <div class="done">
-            <div class="wait-time" id="waitTime">${fmtCountdown(soonest - Date.now())}</div>
-            <p>${s.pending.length} card${s.pending.length === 1 ? "" : "s"} due back shortly —<br>this is the real wait, not a shortcut.</p>
-          </div>
-          ${footNote()}`;
-          waitTimer = setInterval(() => render(), 1000);
+      if (milestoneUntil > Date.now()) {
+        app.innerHTML = `${headerHtml("")}
+          <div class="stage milestone" role="status">
+            <div class="milestone-stack" aria-hidden="true"><span></span><span></span><span>✓</span></div>
+            <h2>${answersToday()} reviewed today</h2>
+          </div>`;
+        waitTimer = setInterval(() => render(), Math.max(1, milestoneUntil - Date.now()));
         return;
       }
-
       if (!s.queue.length) {
-        const doneToday = Math.min(DAILY_CARD_LIMIT, dailyCardsUsed());
-        app.innerHTML = `
-          ${headerHtml("")}
-          <div class="progress"><div style="width:100%"></div></div>
-          <div class="done">
-            <div class="big">✓</div>
-            <h2>${doneToday ? "Done for today" : "Nothing to review"}</h2>
-            <p>${doneToday ? `${doneToday} card${doneToday === 1 ? "" : "s"} reviewed today.<br>Come back tomorrow for up to five.` : "Your next cards will appear when they are due."}</p>
-          </div>
-          ${footNote()}`;
-          return;
+        const next = buildQueue();
+        s.queue = next.cards;
+        s.pending = next.pending;
+      }
+      if (!s.queue.length) {
+        app.innerHTML = `${headerHtml("")}
+          <div class="done"><div class="big">✓</div><h2>All caught up</h2></div>${footNote()}`;
+        // No countdown or waiting message. Resume quietly when a card is due.
+        if (s.pending.length) waitTimer = setInterval(() => render(), 1000);
+        return;
       }
 
       const c = s.queue[0];
@@ -1802,7 +1781,7 @@
         `<button class="grade g${g}" data-g="${g}"><b>${label}</b><span>${delayLabel(st, g, c.id)}</span></button>`).join("");
 
       app.innerHTML = `
-        ${headerHtml(`${cardsLeft()}${st ? "" : " · new"}`)}
+        ${headerHtml(st ? "" : "new")}
         <div class="progress"><div style="width:${pct}%"></div></div>
         ${leftLine()}
         <div class="stage">${front}${back}</div>
@@ -1815,7 +1794,9 @@
       const rv = document.getElementById("reveal");
       if (rv) rv.addEventListener("click", () => { s.revealed = true; render(); });
       document.querySelectorAll(".grade").forEach(b => b.addEventListener("click", () => {
+        if (s.queue[0]?.id !== c.id || milestoneUntil > Date.now()) return;
         const next = applyGrade(c.id, Number(b.dataset.g));
+        recordAnswer();
         s.queue.shift();
         // Progress is derived from __lastReviewAt now (see progress()), so
         // grading this card already counted it — every grade, including a

@@ -3,13 +3,15 @@
 Spaced repetition over my Kindle highlights, at
 [hectorcflores.github.io/my-anki/](https://hectorcflores.github.io/my-anki/).
 
-The app opens into a single daily stack of at most five distinct cards, with
-no category selector. Two places are reserved for the freshest unseen Kindle
-highlights, shown first; three are for due reviews, oldest due date first.
-If either pool is short, the other fills the remaining places. Cards already
-reviewed today count toward these limits, including after reopening the app. Exact highlight timestamps
-break ties within a day; missing dates sort last. Existing non-fiction and
-quality filters remain, but small categories no longer exclude eligible cards.
+The app offers continuous review in batches of five, with no categories.
+Each new batch reserves two places for the freshest unseen highlights and
+three for due reviews; either pool fills unused places when the other is short.
+After every five answers, a card-stack milestone appears for two seconds and
+then review continues automatically. There is no daily cap or waiting countdown.
+Again/Hard cards return only when their scheduled time arrives.
+The milestone's daily answer counter is local to this device; review history
+and scheduling still sync across devices. Repeated answers count toward the
+milestone. Exact highlight timestamps determine freshness.
 
 Static site, no build step, no backend. Add it to your home screen and it runs
 offline as a standalone app.
@@ -135,9 +137,8 @@ node app/test/sync.test.mjs
 node app/test/scheduler.test.mjs
 ```
 
-`scheduler.test.mjs` covers the five-card cap, two-fresh/three-review and freshest-first
-selection, missing days, no refill after completion, waiting-card restoration,
-and same-day highlight timestamps.
+`scheduler.test.mjs` covers continuous batches, fresh/review selection,
+the two-second milestone, day rollover, and scheduled learning delays.
 
 `sync.test.mjs` is a deterministic harness — an in-memory Firestore plus one `vm` context per
 simulated device — for the one class of bug that can't be reproduced by
