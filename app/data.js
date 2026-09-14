@@ -12054,7 +12054,7 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-13",
+ "generated": "2026-09-14",
  "latest": {
   "date": "2026-09-11",
   "title": "7 Rules of Power: Surprising--but True--Advice on How to Get Things Done and Advance Your Career"
