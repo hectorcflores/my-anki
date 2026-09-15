@@ -2479,6 +2479,49 @@ window.ANKI = {
    ]
   },
   {
+   "id": "hold-on-to-your-dreams-arthur-russell-and-the-downtown-music-scene-1973-1992-e-d--tim-lawrence",
+   "title": "Hold On to Your Dreams: Arthur Russell and the Downtown Music Scene, 1973-1992 (e-Duke books scholarly collection.)",
+   "author": "Tim Lawrence",
+   "subject": "the life and work of avant-garde composer-musician Arthur Russell in New York's downtown music scene",
+   "total": 4,
+   "highlights": [
+    {
+     "id": "0751e1012cce2dd5",
+     "loc": 89,
+     "theme": "ideas",
+     "text": "Responding to the simultaneous release of two posthumous compilations of Russell's work, David Toop and the Wire ran a cover feature about the composer-musician in January and as Mancuso's guests rolled into his East Village gathering, I met Steve Knutson, who was hoping to give the Loft host a vinyl copy of Calling out of Context-one of the albums that had prompted Toop to write his piece.",
+     "date": "2026-09-14",
+     "highlightedAt": "2026-09-14"
+    },
+    {
+     "id": "280fb4a5c757f4cc",
+     "loc": 101,
+     "theme": "ideas",
+     "text": "As my research deepened, I began to realize that it wasn't just Russell who cut an oblique figure; so, somewhat strangely, did the city in which he made his music. Between disco, punk, new wave, no wave, hip-hop, and electro forged their distinctive sounds, the eclectic compositionalmovement of \"new music\" fashioned a compositional alternative to serialism, and free jazz continued to accelerate away from bebop, hard bop, and modal jazz.",
+     "date": "2026-09-14",
+     "highlightedAt": "2026-09-14",
+     "q": "What range of genres was forging distinctive sounds in the downtown New York scene where Russell worked?"
+    },
+    {
+     "id": "27553ec6e0e9c8d9",
+     "loc": 230,
+     "theme": "ideas",
+     "text": "equipped with a portable tape recorder or, when it became available, a Sony Walkman, Russell would play Abba alongside Mongolian throat music, or Bohannon back-to-back with Terry Riley, or Peggy Seeger followed by Grandmaster selections that were drawn from the global spectrum of sound and summoned the disjunctive backdrop of the city.",
+     "date": "2026-09-14",
+     "highlightedAt": "2026-09-14"
+    },
+    {
+     "id": "97bb73d53ee9a992",
+     "loc": 246,
+     "theme": "ideas",
+     "text": "Along the way he cofounded Sleeping Bag Records, one of the most influential independent labels for hip-hop and club music in the 198os.",
+     "date": "2026-09-14",
+     "highlightedAt": "2026-09-14",
+     "q": "What influential 1980s independent hip-hop and club label did Russell cofound?"
+    }
+   ]
+  },
+  {
    "id": "i-couldn-t-even-imagine-that-they-would-kill-us-an-oral-history-of-the-attacks-a--john-gibler-and-ariel-dorfman",
    "title": "I Couldn't Even Imagine That They Would Kill Us: An Oral History of the Attacks Against the Students of Ayotzinapa (City Lights Open Media)",
    "author": "John Gibler and Ariel Dorfman",
@@ -12054,9 +12097,9 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-14",
+ "generated": "2026-09-15",
  "latest": {
-  "date": "2026-09-11",
-  "title": "7 Rules of Power: Surprising--but True--Advice on How to Get Things Done and Advance Your Career"
+  "date": "2026-09-14",
+  "title": "Hold On to Your Dreams: Arthur Russell and the Downtown Music Scene, 1973-1992 (e-Duke books scholarly collection.)"
  }
 };
