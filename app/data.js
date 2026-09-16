@@ -2483,7 +2483,7 @@ window.ANKI = {
    "title": "Hold On to Your Dreams: Arthur Russell and the Downtown Music Scene, 1973-1992 (e-Duke books scholarly collection.)",
    "author": "Tim Lawrence",
    "subject": "the life and work of avant-garde composer-musician Arthur Russell in New York's downtown music scene",
-   "total": 4,
+   "total": 5,
    "highlights": [
     {
      "id": "0751e1012cce2dd5",
@@ -9696,7 +9696,7 @@ window.ANKI = {
      "theme": "work",
      "text": "when you have all of these factors in play and a team of ambitious, opinionated, competitive, smart people, there is tremendous “tension in the machine.”",
      "date": "2021-08-30",
-     "highlightedAt": "2021-08-30T16:50:19"
+     "highlightedAt": "2021-08-30T21:50:19"
     },
     {
      "id": "6a11340787d42f76",
@@ -12099,7 +12099,7 @@ window.ANKI = {
  ],
  "generated": "2026-09-16",
  "latest": {
-  "date": "2026-09-14",
+  "date": "2026-09-16",
   "title": "Hold On to Your Dreams: Arthur Russell and the Downtown Music Scene, 1973-1992 (e-Duke books scholarly collection.)"
  }
 };
