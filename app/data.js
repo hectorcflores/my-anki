@@ -9696,7 +9696,7 @@ window.ANKI = {
      "theme": "work",
      "text": "when you have all of these factors in play and a team of ambitious, opinionated, competitive, smart people, there is tremendous “tension in the machine.”",
      "date": "2021-08-30",
-     "highlightedAt": "2021-08-30T21:50:19"
+     "highlightedAt": "2021-08-30T16:50:19"
     },
     {
      "id": "6a11340787d42f76",
