@@ -12097,7 +12097,7 @@ window.ANKI = {
    ]
   }
  ],
- "generated": "2026-09-22",
+ "generated": "2026-09-23",
  "latest": {
   "date": "2026-09-16",
   "title": "Hold On to Your Dreams: Arthur Russell and the Downtown Music Scene, 1973-1992 (e-Duke books scholarly collection.)"
