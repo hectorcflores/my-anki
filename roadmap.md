@@ -58,6 +58,7 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 - El sitio fue validado en producción mostrando **Synced · just now** contra el backend dedicado.
 - La entrega real desde la extensión fue validada con *Million Dollar Weekend*: 31 highlights llegaron en un solo lote y My Anki creó 31 tarjetas del libro.
 - La extensión recupera la fecha original de cada highlight desde la API del lector de Kindle. Las 31 tarjetas de *Million Dollar Weekend* conservan fechas del 8 al 11 de febrero de 2024.
+- La extensión sincroniza los seis libros más recientemente anotados en cada pasada. Un libro que recibe un highlight nuevo entra automáticamente en esa ventana.
 - El sistema anterior de extracción y sus alertas no deben retirarse hasta completar una prueba real de extremo a extremo.
 
 ## Validación técnica — 26 de septiembre de 2026
@@ -72,6 +73,8 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 | Fechas originales | Completado | La API del lector devolvió fecha para 31 de 31 highlights. My Anki conserva esas fechas, del 8 al 11 de febrero de 2024, sin sustituirlas por la fecha de importación. |
 | Repetición sin duplicados | Completado | Una entrega posterior completó las fechas de las tarjetas existentes sin duplicarlas. La caché conserva ambos lotes inmutables y la app los combina en las mismas 31 tarjetas. |
 | Persistencia después de actualizar el deck | Completado | Una recarga de `data.js` ya no elimina el libro importado. La versión publicada conserva 99 libros y las 31 tarjetas fechadas después de recargar. |
+| Libros recientes completos | Completado | La versión 0.1.5 reemplazó el piloto de un solo libro. La primera ejecución real recogió 94 highlights de seis libros y actualizó el catálogo de 99 a 103 libros sin duplicar libros ya presentes. |
+| Fecha visible por tarjeta | Completado | El pie de cada tarjeta muestra su propia fecha original y, por separado, cuándo se actualizó el deck. Ya no presenta la fecha más reciente de toda la biblioteca como si perteneciera a la tarjeta visible. |
 
 Validación final de la extensión instalada: el mismo libro llegó sin reiniciar el importador. La app quedó en **Synced · just now**, con 99 libros y 31 tarjetas de *Million Dollar Weekend*. Un lote inicial sin fechas y otro posterior con fechas se combinan deliberadamente en las mismas tarjetas; no producen duplicados.
 
