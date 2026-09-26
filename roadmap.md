@@ -56,7 +56,7 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 - My Anki ya usa su propio proyecto Firebase (`my-anki-hector`). Ya no comparte lecturas, escrituras ni cuota con Pomodoro.
 - La cuenta de My Anki, el progreso local y las tarjetas ocultas se migraron sin borrar el calendario de repaso.
 - El sitio fue validado en producción mostrando **Synced · just now** contra el backend dedicado.
-- La entrega final desde la copia instalada de la extensión todavía requiere una validación real después de recargar la versión 0.1.3 en Chrome.
+- La entrega real desde la extensión fue validada con *Million Dollar Weekend*: 31 highlights llegaron en un solo lote y My Anki creó una tarjeta nueva del libro.
 - El sistema anterior de extracción y sus alertas no deben retirarse hasta completar una prueba real de extremo a extremo.
 
 ## Validación técnica — 26 de septiembre de 2026
@@ -67,8 +67,8 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 | Evitar gasto repetido de cuota | Completado | Los lotes tienen identificador determinista, las lecturas usan caché y cursor incremental, y un HTTP 429 pausa los reintentos. En operación normal se crea un documento por lote y se consultan solamente lotes posteriores al cursor. |
 | Conservar progreso durante la migración | Completado | La migración conserva SRS y tarjetas ocultas, reinicia solamente cursores del backend anterior y publica el estado local como baseline en el proyecto nuevo. |
 | Login de Google en producción | Completado | El flujo popup quedó validado en Chrome y el sitio mostró **Synced · just now**. El redirect anterior perdía su resultado entre GitHub Pages y `firebaseapp.com`. |
-| Highlight real extensión → My Anki | Pendiente de prueba final | Amazon cargó *Million Dollar Weekend* con 31 highlights. La extensión instalada quedó sin responder después de cambiar sus archivos; debe recargarse una vez antes de repetir la entrega. |
-| Repetición sin duplicados | Implementado; pendiente de prueba real | El ID del documento es SHA-256 de la firma del lote y un HTTP 409 se trata como reintento exitoso. Las pruebas automatizadas pasan; falta repetir el mismo lote instalado en Chrome. |
+| Highlight real extensión → My Anki | Completado | Amazon entregó *Million Dollar Weekend* con 31 highlights. La caché local recibió un lote con ID `5115f917ebdbb3cfc50ddd631b076c452b629931`; la app mostró **Recall · Million Dollar Weekend** y el mazo pasó de 98 a 99 tarjetas. |
+| Repetición sin duplicados | Completado | Se volvió a abrir el importador con el mismo lote. My Anki quedó sincronizado con 99 tarjetas y la caché de Firestore conservó exactamente un lote con los mismos 31 highlights. |
 
 Fallas reales encontradas y corregidas:
 
@@ -78,6 +78,7 @@ Fallas reales encontradas y corregidas:
 - La migración consultaba una colección Brain Gym que no existe en el proyecto nuevo.
 - Los eventos antiguos de tarjetas ocultas incluían metadatos que las reglas nuevas rechazaban.
 - La comunicación externa de la extensión podía quedarse esperando para siempre. La versión 0.1.3 acepta las dos formas válidas del remitente de Chrome, responde los errores y corta la espera con una instrucción recuperable.
+- Al completar una entrega, la extensión recargaba también el importador y reiniciaba el mismo lote en un ciclo. Ahora actualiza solamente las pestañas de revisión; el importador puede confirmar el éxito y cerrarse.
 
 Pruebas automatizadas aprobadas:
 
@@ -88,7 +89,7 @@ Pruebas automatizadas aprobadas:
 - ID estable, reintento idempotente y recuperación de la extensión sin abrir pestañas duplicadas.
 - Suite de extracción del Kindle Notebook.
 
-Commits principales: `b1b079d`, `bf099a7`, `a55c798`, `210b7b4` y `42a6040`.
+Commits principales: `b1b079d`, `bf099a7`, `a55c798`, `210b7b4`, `42a6040` y `7bcf291`.
 
 ## Fase 1: estabilizar la infraestructura compartida
 
@@ -120,7 +121,7 @@ Trabajo:
 
 Criterio de salida: un highlight controlado de Kindle aparece como tarjeta nueva en My Anki, conserva su fuente y no vuelve a crearse al repetir la sincronización.
 
-**Estado: implementación completada; prueba real pendiente.** Falta recargar la versión 0.1.3 de la extensión instalada, enviar el lote real y repetirlo.
+**Estado: completado.** El lote real se entregó, apareció como tarjeta nueva y una segunda entrega idéntica no creó otro lote ni otra tarjeta.
 
 ## Fase 3: automatización y recuperación
 
