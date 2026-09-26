@@ -34,7 +34,7 @@ const chrome = {
   },
 };
 
-const context = { chrome, console, Date, JSON, Promise, setTimeout, clearTimeout };
+const context = { chrome, console, Date, JSON, Promise, URL, setTimeout, clearTimeout };
 vm.createContext(context);
 vm.runInContext(readFileSync(new URL("../background.js", import.meta.url), "utf8"), context);
 
@@ -50,6 +50,10 @@ function invoke(listener, message, sender = {}) {
 const first = await invoke(internalListener, { type: "sync-one-book" });
 assert.equal(first.ok, true);
 assert.equal(createdTabs.length, 1, "the first collected batch opens the importer");
+const externalBatch = await invoke(externalListener, { type: "get-kindle-batch" },
+  { url: "https://hectorcflores.github.io/my-anki/app/import.html" });
+assert.equal(externalBatch.batch.signature, first.batch.signature,
+  "the published importer is accepted even when Chrome supplies sender.url instead of sender.origin");
 
 await invoke(internalListener, { type: "sync-one-book" });
 assert.equal(createdTabs.length, 1, "an active importer is not opened twice");

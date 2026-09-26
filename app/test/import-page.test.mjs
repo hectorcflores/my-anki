@@ -19,4 +19,6 @@ assert.match(html, /response\.status!==409/, "an already-created batch is treate
 assert.doesNotMatch(html, /const id=crypto\.randomUUID\(\)/, "imports must not use a new random id on every retry");
 assert.match(html, /signInWithPopup\(instance,provider\)/,
   "the importer must receive the authenticated user without cross-origin redirect state");
+assert.match(html, /extension did not respond/,
+  "a stale extension must produce a recovery instruction instead of hanging forever");
 console.log("PASS import page: deterministic batch id and idempotent retry");

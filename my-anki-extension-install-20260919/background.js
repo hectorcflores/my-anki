@@ -66,12 +66,16 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
 // Only the published My Anki page can read the extracted batch. Amazon
 // credentials remain in Chrome's Kindle tab and never enter this message.
 chrome.runtime.onMessageExternal.addListener((message, sender, respond) => {
-  if (sender.origin !== "https://hectorcflores.github.io") return;
+  let senderOrigin = sender.origin;
+  if (!senderOrigin && sender.url) {
+    try { senderOrigin = new URL(sender.url).origin; } catch {}
+  }
+  if (senderOrigin !== "https://hectorcflores.github.io") return;
   if (message?.type === "get-kindle-batch") {
     chrome.storage.local.get([LOCAL_BATCH, LOCAL_STATUS]).then(values => respond({
       batch: values[LOCAL_BATCH] || null,
       status: values[LOCAL_STATUS] || status("NOT_YET_SYNCED")
-    }));
+    })).catch(error => respond({ error: error.message || "EXTENSION_STORAGE_FAILED" }));
     return true;
   }
   if (message?.type === "mark-kindle-imported") {
@@ -82,7 +86,7 @@ chrome.runtime.onMessageExternal.addListener((message, sender, respond) => {
       const tabs = await chrome.tabs.query({ url: "https://hectorcflores.github.io/my-anki/app/*" });
       await Promise.all(tabs.map(tab => chrome.tabs.reload(tab.id)));
       respond({ ok: true });
-    });
+    }).catch(error => respond({ error: error.message || "EXTENSION_STORAGE_FAILED" }));
     return true;
   }
   if (message?.type === "mark-kindle-import-failed") {
@@ -91,7 +95,7 @@ chrome.runtime.onMessageExternal.addListener((message, sender, respond) => {
       const openedSignature = typeof opened === "object" ? opened.signature : opened;
       if (openedSignature !== message.signature) return;
       return chrome.storage.local.remove(LAST_OPENED);
-    }).then(() => respond({ ok: true }));
+    }).then(() => respond({ ok: true })).catch(error => respond({ error: error.message || "EXTENSION_STORAGE_FAILED" }));
     return true;
   }
   return undefined;
