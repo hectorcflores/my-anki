@@ -70,6 +70,8 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 | Highlight real extensión → My Anki | Completado | Amazon entregó *Million Dollar Weekend* con 31 highlights. La caché local recibió un lote con ID `5115f917ebdbb3cfc50ddd631b076c452b629931`; la app mostró **Recall · Million Dollar Weekend** y el mazo pasó de 98 a 99 tarjetas. |
 | Repetición sin duplicados | Completado | Se volvió a abrir el importador con el mismo lote. My Anki quedó sincronizado con 99 tarjetas y la caché de Firestore conservó exactamente un lote con los mismos 31 highlights. |
 
+Validación final de la extensión instalada: después de recargar el arreglo `7bcf291`, el mismo lote mostró **Your Kindle highlights are now in My Anki** una sola vez, sin reiniciar el importador. La app quedó en **Synced · just now**, con 99 tarjetas y un único lote de 31 highlights.
+
 Fallas reales encontradas y corregidas:
 
 - Las reglas de Firestore no estaban publicadas y el primer envío recibió HTTP 403.
@@ -88,6 +90,7 @@ Pruebas automatizadas aprobadas:
 - Importación incremental, pausa por cuota y ausencia de escrituras en rutas de Pomodoro.
 - ID estable, reintento idempotente y recuperación de la extensión sin abrir pestañas duplicadas.
 - Suite de extracción del Kindle Notebook.
+- Las 15 pruebas de Pomodoro también pasan en su repositorio separado.
 
 Commits principales: `b1b079d`, `bf099a7`, `a55c798`, `210b7b4`, `42a6040` y `7bcf291`.
 
