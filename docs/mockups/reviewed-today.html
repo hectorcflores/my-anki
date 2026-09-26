@@ -1,0 +1,66 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;650;700&display=swap');
+#anki-five-options {font-family:Geist,Inter,system-ui,sans-serif;}
+#anki-five-options * {box-sizing:border-box}
+#anki-five-options .example {max-width:390px;margin:0 auto 30px}
+#anki-five-options .option-name {font-size:14px;font-weight:600;margin:0 0 10px}
+#anki-five-options .phone {background:#09090b;color:#fafafa;border:1px solid #27272a;border-radius:20px;padding:20px 16px 16px;min-height:420px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+#anki-five-options .top {display:flex;justify-content:space-between;align-items:center;gap:10px}
+#anki-five-options .brand {font-size:18.4px;font-weight:700;letter-spacing:-.02em}
+#anki-five-options .identity {display:flex;align-items:center;gap:6px}
+#anki-five-options .sync {font-size:12px;color:#a1a1aa;border:1px solid #27272a;border-radius:999px;padding:3px 9px;white-space:nowrap}
+#anki-five-options .sync::before {content:'';display:inline-block;width:6px;height:6px;background:#4ade80;border-radius:50%;margin-right:6px}
+#anki-five-options .avatar {font-size:11px;font-weight:600;border:1px solid #27272a;border-radius:999px;padding:3px 4px}
+#anki-five-options .avatar span {background:#27272a;display:grid;place-items:center;width:20px;height:20px;border-radius:50%}
+#anki-five-options .milestone {font-size:12px;color:#a1a1aa;line-height:1.5}
+#anki-five-options .milestone b {color:#fafafa;font-weight:600}
+#anki-five-options .tick {color:#4ade80;margin-left:5px}
+#anki-five-options .subtitle {margin-top:5px}
+#anki-five-options .centerline {text-align:center;margin-top:22px}
+#anki-five-options .pill-wrap {margin-top:20px}
+#anki-five-options .status-pill {display:inline-flex;align-items:center;border:1px solid #27272a;border-radius:999px;padding:5px 10px;background:#101012}
+#anki-five-options .question-box {margin-top:24px;background:#101012;border:1px solid #27272a;border-radius:12px;padding:20px;box-shadow:0 1px 2px #0006}
+#anki-five-options .label {color:#a1a1aa;font-size:11.5px;font-weight:650;text-transform:uppercase;letter-spacing:.08em}
+#anki-five-options .question {font-size:18.4px;font-weight:650;line-height:1.45;letter-spacing:-.01em;margin:16px 0 0}
+#anki-five-options .answer-text {font-size:15px;line-height:1.5;border-top:1px solid #27272a;margin-top:16px;padding-top:14px;color:#fafafa}
+#anki-five-options .actions {margin-top:auto;padding-top:24px}
+#anki-five-options button {font:inherit;cursor:pointer}
+#anki-five-options .show-answer {background:#fafafa;color:#18181b;border:0;border-radius:10px;width:100%;height:48px;font-size:15px;font-weight:600}
+#anki-five-options .grade-row {display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+#anki-five-options .rating {background:#09090b;border:1px solid #27272a;border-radius:10px;font-size:13px;font-weight:650;padding:12px 0}
+#anki-five-options .rating:nth-child(1){color:#f87171}#anki-five-options .rating:nth-child(2){color:#fbbf24}#anki-five-options .rating:nth-child(3){color:#4ade80}#anki-five-options .rating:nth-child(4){color:#60a5fa}
+#anki-five-options .footer-status {text-align:center;margin-bottom:12px}
+#anki-five-options .foot {text-align:center;color:#a1a1aa;font-size:11px;margin-top:14px}
+#anki-five-options .toast-slot {margin-top:auto;padding-top:20px;display:flex;justify-content:center}
+#anki-five-options .toast {border:1px solid #27272a;border-radius:10px;background:#18181b;padding:9px 14px;box-shadow:0 4px 14px #0005}
+#anki-five-options .phone[data-style="5"] .actions {margin-top:0;padding-top:12px}
+#anki-five-options button:focus-visible {outline:2px solid #52525b;outline-offset:3px}
+</style>
+<div id="anki-five-options">
+  <section class="example"><h3 class="option-name">1 · Under the title</h3><div class="phone" data-style="1" aria-label="Under the title mockup"></div></section>
+  <section class="example"><h3 class="option-name">2 · Centered above the card</h3><div class="phone" data-style="2" aria-label="Centered status mockup"></div></section>
+  <section class="example"><h3 class="option-name">3 · Quiet status pill</h3><div class="phone" data-style="3" aria-label="Status pill mockup"></div></section>
+  <section class="example"><h3 class="option-name">4 · Above the answer button</h3><div class="phone" data-style="4" aria-label="Above the answer button mockup"></div></section>
+  <section class="example"><h3 class="option-name">5 · Brief confirmation</h3><div class="phone" data-style="5" aria-label="Brief confirmation mockup"></div></section>
+</div>
+<script>
+(() => {
+ const root=document.getElementById('anki-five-options');
+ const status='<span class="milestone"><b class="count">5</b> reviewed today<span class="tick">✓</span></span>';
+ root.querySelectorAll('.phone').forEach(phone=>{
+  const variant=phone.dataset.style;
+  phone.innerHTML=`<div class="top"><div><div class="brand">My Anki</div>${variant==='1'?'<div class="subtitle">'+status+'</div>':''}</div><div class="identity"><span class="sync">Synced</span><span class="avatar"><span>H</span></span></div></div>${variant==='2'?'<div class="centerline">'+status+'</div>':''}${variant==='3'?'<div class="pill-wrap"><div class="status-pill">'+status+'</div></div>':''}<div class="question-box"><div class="label">Recall · Your Money or Your Life</div><p class="question">How do the authors redefine retirement?</p><div class="answer-text" hidden>Retirement means having the freedom to choose how you spend your time.</div></div>${variant==='5'?'<div class="toast-slot"><div class="toast">'+status+'</div></div>':''}<div class="actions">${variant==='4'?'<div class="footer-status">'+status+'</div>':''}<button class="show-answer" type="button">Show answer</button><div class="grade-row" hidden></div></div><div class="foot">deck 13 Sep · newest highlight 11 Sep</div>`;
+  const state={count:5,greenCheck:true};
+  const show=phone.querySelector('.show-answer'), grades=phone.querySelector('.grade-row'), answer=phone.querySelector('.answer-text');
+  grades.style.display='none';
+  for(const label of ['Again','Hard','Good','Easy']) {
+   const button=document.createElement('button');button.type='button';button.className='rating';button.textContent=label;
+   button.addEventListener('click',()=>{state.count++;render();answer.hidden=true;grades.hidden=true;grades.style.display='none';show.hidden=false;phone.querySelector('.question').textContent=state.count%2===0?'What does financial independence give you?':'How do the authors redefine retirement?';if(variant==='5')phone.querySelector('.toast').style.visibility='hidden';});grades.append(button);
+  }
+  show.addEventListener('click',()=>{answer.hidden=false;show.hidden=true;grades.hidden=false;grades.style.display='grid';if(variant==='5')phone.querySelector('.toast').style.visibility='hidden';});
+  function render(){phone.querySelector('.count').textContent=state.count;phone.querySelector('.tick').style.color=state.greenCheck?'#4ade80':'#a1a1aa';}
+  render();
+  if(globalThis.Tweak){const tweak=new Tweak({container:phone,onChange:render});tweak.addToggle(state,'greenCheck',{label:'Green checkmark'});}
+ });
+})();
+</script>

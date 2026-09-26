@@ -8,7 +8,7 @@
 // still running the old build" — old localStorage keys, old Firestore
 // collection, old sync global — to run against the working tree in one shared
 // fake backend.
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -26,8 +26,10 @@ function extractInlineScript(html) {
 }
 
 export function getScriptSource(ref) {
+  const bundledGit = "/Users/hectorcflores/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/git";
+  const git = existsSync(bundledGit) ? bundledGit : "git";
   const html = ref
-    ? execFileSync("git", ["show", `${ref}:${REL_PATH}`], { cwd: REPO_ROOT, encoding: "utf8" })
+    ? execFileSync(git, ["show", `${ref}:${REL_PATH}`], { cwd: REPO_ROOT, encoding: "utf8" })
     : readFileSync(path.join(REPO_ROOT, REL_PATH), "utf8");
   return extractInlineScript(html);
 }

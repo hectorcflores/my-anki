@@ -9,6 +9,7 @@
 // the migration scenarios exercise a staggered rollout.
 import vm from "node:vm";
 import crypto from "node:crypto";
+import { TextEncoder } from "node:util";
 
 function makeLocalStorage(seed = {}) {
   const store = new Map(Object.entries(seed));
@@ -58,7 +59,8 @@ export function createDevice({ source, firestore, deck, localStorageSeed = {}, l
 
   const sandbox = {
     console,
-    crypto: { randomUUID: () => crypto.randomUUID() },
+    crypto: { randomUUID: () => crypto.randomUUID(), subtle: crypto.webcrypto.subtle },
+    TextEncoder,
     localStorage,
     document: makeDocument(),
     navigator: { onLine: true },

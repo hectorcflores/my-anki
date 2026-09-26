@@ -9,14 +9,15 @@ const setStatus=text=>document.querySelector("#status").textContent=text;
 const string=value=>String(value??"");
 function encodeHighlight(highlight){return{mapValue:{fields:{text:{stringValue:string(highlight.h||highlight.n)},location:{integerValue:string(highlight.l||0)}}}}}
 function encodeBook(book){return{mapValue:{fields:{asin:{stringValue:string(book.asin)},title:{stringValue:string(book.title)},author:{stringValue:string(book.author)},highlights:{arrayValue:{values:(book.highlights||[]).map(encodeHighlight)}}}}}}
+async function stableImportId(signature){const bytes=new TextEncoder().encode(String(signature||""));const digest=await crypto.subtle.digest("SHA-256",bytes);return Array.from(new Uint8Array(digest)).map(byte=>byte.toString(16).padStart(2,"0")).join("").slice(0,40)}
 async function importBatch(user){
  const result=await chrome.runtime.sendMessage(EXTENSION_ID,{type:"get-kindle-batch"});const batch=result?.batch;
  if(!batch?.books?.length)throw new Error("No Kindle highlights are ready yet. Open your Kindle notebook first.");
- const id=crypto.randomUUID(),token=await user.getIdToken();
+ const id=await stableImportId(batch.signature),token=await user.getIdToken();
  const name="projects/"+FIREBASE.projectId+"/databases/(default)/documents/my_anki/"+user.uid+"/imports/"+id;
  const fields={source:{stringValue:"my-anki-kindle-extension"},collectedAt:{timestampValue:batch.collectedAt},books:{arrayValue:{values:batch.books.map(encodeBook)}}};
  const response=await fetch("https://firestore.googleapis.com/v1/projects/"+FIREBASE.projectId+"/databases/(default)/documents:commit?key="+FIREBASE.apiKey,{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+token},body:JSON.stringify({writes:[{update:{name,fields},updateTransforms:[{fieldPath:"createdAt",setToServerValue:"REQUEST_TIME"}],currentDocument:{exists:false}}]})});
- if(!response.ok)throw new Error("Import failed ("+response.status+")");
+ if(!response.ok&&response.status!==409)throw new Error("Import failed ("+response.status+")");
  await chrome.runtime.sendMessage(EXTENSION_ID,{type:"mark-kindle-imported",signature:batch.signature});
  setStatus("Your Kindle highlights are now in My Anki.");setTimeout(()=>window.close(),1400);
 }
@@ -27,7 +28,7 @@ function showConnect(instance,auth,provider){
  const button=document.createElement("button");button.textContent="Continue with Google";document.querySelector("#action").append(button);
  button.addEventListener("click",async()=>{button.disabled=true;setStatus("Connecting My Anki…");try{const result=await auth.signInWithPopup(instance,provider);await useUser(result.user||instance.currentUser)}catch(error){const popupIssues=["auth/popup-blocked","auth/popup-closed-by-user","auth/cancelled-popup-request","auth/operation-not-supported-in-this-environment"];if(popupIssues.includes(error.code))await auth.signInWithRedirect(instance,provider);else{console.error(error);setStatus(error.message||"Sign-in could not finish.");button.disabled=false}}});
 }
-async function useUser(user){if(started)return;started=true;try{await importBatch(user)}catch(error){console.error(error);setStatus(error.message||"The import could not finish.")}}
+async function useUser(user){if(started)return;started=true;try{await importBatch(user)}catch(error){console.error(error);try{const result=await chrome.runtime.sendMessage(EXTENSION_ID,{type:"get-kindle-batch"});await chrome.runtime.sendMessage(EXTENSION_ID,{type:"mark-kindle-import-failed",signature:result?.batch?.signature})}catch{}setStatus(error.message||"The import could not finish.")}}
 try{
  const [{initializeApp},auth]=await Promise.all([import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js")]);
  const instance=auth.getAuth(initializeApp(FIREBASE));const provider=new auth.GoogleAuthProvider();

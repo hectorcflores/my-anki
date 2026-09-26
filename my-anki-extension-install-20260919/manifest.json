@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "My Anki",
+  "version": "0.1.2",
+  "description": "Privately collect Kindle highlights from the signed-in notebook.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://read.amazon.com/notebook*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "My Anki",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon-16.png",
+      "32": "icon-32.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://read.amazon.com/notebook*"
+      ],
+      "js": [
+        "extract.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://hectorcflores.github.io/*"
+    ]
+  }
+}

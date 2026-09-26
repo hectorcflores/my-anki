@@ -622,7 +622,7 @@
     }
     let visibilityFlight = null;
     function syncVisibility() {
-      if (!isSyncEnabled() || !navigator.onLine) return Promise.resolve();
+      if (!isSyncEnabled() || !navigator.onLine || isQuotaPaused()) return Promise.resolve();
       if (visibilityFlight) return visibilityFlight;
       visibilityFlight = syncVisibilityInner().finally(()=>{visibilityFlight=null;});
       return visibilityFlight;
@@ -715,6 +715,15 @@
     // stray probe below knows where to start looking for anything the old app
     // wrote afterwards.
     const FS_IMPORT_KEY = "my-anki.fs-import.v1";
+    // Kindle imports are cached locally and fetched incrementally. Without a
+    // cursor every app open re-read every immutable batch ever uploaded,
+    // wasting the shared Firebase quota that Pomodoro also relies on.
+    const KINDLE_IMPORT_CACHE_KEY = "my-anki.kindle-imports.v1";
+    const KINDLE_IMPORT_CURSOR_KEY = "my-anki.kindle-import-cursor.v1";
+    // A Firestore 429 means the shared project has exhausted its quota. Keep
+    // all local work and wait for the next daily reset instead of having each
+    // open tab retry and make the outage worse for the other apps.
+    const QUOTA_PAUSE_KEY = "my-anki.quota-pause-until.v1";
     // The old app's queue of grades that never reached the server. Read (and
     // emptied) by the scavenger below; the one old key this build writes to.
     const LEGACY_OUTBOX_KEY = "brain-gym.outbox.v1";
@@ -803,6 +812,33 @@
       return `https://firestore.googleapis.com/v1/projects/${cfg.projectId}/databases/(default)/documents`;
     }
 
+    function pacificOffsetMinutes(at) {
+      const zone = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", timeZoneName: "longOffset" })
+        .formatToParts(at).find(part => part.type === "timeZoneName")?.value || "GMT-08:00";
+      const match = zone.match(/GMT([+-])(\d{2}):(\d{2})/);
+      return match ? (match[1] === "+" ? 1 : -1) * (Number(match[2]) * 60 + Number(match[3])) : -480;
+    }
+    function nextPacificReset() {
+      const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" })
+        .formatToParts(new Date()).filter(part => part.type !== "literal").map(part => [part.type, part.value]));
+      const midnight = Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day) + 1);
+      return midnight - pacificOffsetMinutes(new Date(midnight)) * 60e3 + 5 * 60e3;
+    }
+    function quotaPauseUntil() { return Number(localStorage.getItem(QUOTA_PAUSE_KEY)) || 0; }
+    function isQuotaPaused() {
+      const until = quotaPauseUntil();
+      if (until > Date.now()) { setSyncStatus("pending"); return true; }
+      if (until) localStorage.removeItem(QUOTA_PAUSE_KEY);
+      return false;
+    }
+    function throwFsError(label, res) {
+      if (res.status === 429) {
+        localStorage.setItem(QUOTA_PAUSE_KEY, String(nextPacificReset()));
+        setSyncStatus("pending");
+      }
+      throw new Error(`${label}: HTTP ${res.status}`);
+    }
+
     // Creates a document that must not already exist, with `createdAt` set to
     // the server's write time rather than anything the client claims. Both
     // properties come from the same feature — Firestore's `:commit` endpoint,
@@ -826,14 +862,14 @@
         }),
       });
       if (res.status === 409) return { created: false };   // already there: idempotent no-op
-      if (!res.ok) throw new Error(`fsCreateDoc ${relPath}: HTTP ${res.status}`);
+      if (!res.ok) throwFsError(`fsCreateDoc ${relPath}`, res);
       return { created: true };
     }
 
     async function fsGetDoc(cfg, relPath) {
       const res = await fetch(`${fsBase(cfg)}/${relPath}?key=${encodeURIComponent(cfg.apiKey)}`, { headers: await cfgHeaders(cfg) });
       if (res.status === 404) return null;
-      if (!res.ok) throw new Error(`fsGetDoc ${relPath}: HTTP ${res.status}`);
+      if (!res.ok) throwFsError(`fsGetDoc ${relPath}`, res);
       const doc = await res.json();
       return fsDecodeFields(doc.fields || {});
     }
@@ -864,7 +900,7 @@
         headers: { "Content-Type": "application/json", ...(await cfgHeaders(cfg)) },
         body: JSON.stringify({ structuredQuery }),
       });
-      if (!res.ok) throw new Error(`fsQueryReviews: HTTP ${res.status}`);
+      if (!res.ok) throwFsError("fsQueryReviews", res);
       const rows = await res.json();
       // The document's own createTime (not the round-tripped `createdAt`
       // field) is the cursor value — it's metadata Firestore always sets
@@ -889,7 +925,7 @@
         headers: { "Content-Type": "application/json", ...(await cfgHeaders(cfg)) },
         body: JSON.stringify({ structuredQuery }),
       });
-      if (!res.ok) throw new Error(`fsQueryReviewsForCard: HTTP ${res.status}`);
+      if (!res.ok) throwFsError("fsQueryReviewsForCard", res);
       const rows = await res.json();
       // __id feeds replayCard's tiebreak below — two rows can share a
       // reviewedAt millisecond, and without a stable secondary sort the
@@ -904,8 +940,20 @@
     // Kindle batches are immutable owner-only imports. They become ordinary
     // My Anki cards in memory; their stable hash keeps review history intact
     // across devices and repeated imports.
+    function loadKindleImports() {
+      try { return JSON.parse(localStorage.getItem(KINDLE_IMPORT_CACHE_KEY)) || []; } catch { return []; }
+    }
     async function importKindleCards() {
-      const imports = await fsListCollection(liveCfg(), "imports");
+      if (isQuotaPaused()) return;
+      const cached = loadKindleImports();
+      const cursor = localStorage.getItem(KINDLE_IMPORT_CURSOR_KEY) || null;
+      const added = await fsListCollection(liveCfg(), "imports", cursor);
+      const known = new Set(cached.map(batch => batch.__id));
+      const imports = cached.concat(added.filter(batch => !known.has(batch.__id)));
+      if (added.length) {
+        localStorage.setItem(KINDLE_IMPORT_CACHE_KEY, JSON.stringify(imports));
+        localStorage.setItem(KINDLE_IMPORT_CURSOR_KEY, added[added.length - 1].createdAt);
+      }
       const byBook = new Map();
       for (const batch of imports) for (const book of (batch.books || [])) {
         const key = `${book.asin || ""}|${book.title || "Untitled"}`;
@@ -923,18 +971,27 @@
       applyDeck({ ...BASE_DECK, books: [...BASE_DECK.books, ...byBook.values()] });
     }
 
-    async function fsListCollection(cfg, collectionId) {
+    async function fsListCollection(cfg, collectionId, afterIso = null) {
       const structuredQuery = { from: [{ collectionId }] };
+      if (afterIso) {
+        structuredQuery.where = {
+          fieldFilter: { field: { fieldPath: "createdAt" }, op: "GREATER_THAN", value: { timestampValue: afterIso } },
+        };
+        structuredQuery.orderBy = [
+          { field: { fieldPath: "createdAt" }, direction: "ASCENDING" },
+          { field: { fieldPath: "__name__" }, direction: "ASCENDING" },
+        ];
+      }
       const parent = `${fsBase(cfg)}/${rootOf(cfg)}/${cfg.tenant}`;
       const res = await fetch(`${parent}:runQuery?key=${encodeURIComponent(cfg.apiKey)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(await cfgHeaders(cfg)) },
         body: JSON.stringify({ structuredQuery }),
       });
-      if (!res.ok) throw new Error(`fsListCollection ${collectionId}: HTTP ${res.status}`);
+      if (!res.ok) throwFsError(`fsListCollection ${collectionId}`, res);
       const rows = await res.json();
       return rows.filter(r => r.document)
-        .map(r => ({ ...fsDecodeFields(r.document.fields || {}), __id: r.document.name.split("/").pop() }));
+        .map(r => ({ ...fsDecodeFields(r.document.fields || {}), createdAt: r.document.createTime, __id: r.document.name.split("/").pop() }));
     }
 
     // ---- Outbox: grades queue here first, sync is never on the critical
@@ -1003,7 +1060,7 @@
 
     let flushing = false;
     async function flushOutbox() {
-      if (!isSyncEnabled() || flushing) return;
+      if (!isSyncEnabled() || flushing || isQuotaPaused()) return;
       flushing = true;
       let ok = true;
       setSyncStatus("syncing");
@@ -1058,7 +1115,7 @@
     // the few cards where it's needed for a proper replay from full history
     // instead of a wrong incremental patch.
     async function pullReviews(cfgOverride = null) {
-      if (!isSyncEnabled()) return;
+      if (!isSyncEnabled() || isQuotaPaused()) return;
       setSyncStatus("syncing");
       try {
         await pullReviewsInner(cfgOverride);
@@ -1957,6 +2014,7 @@
           if (!user) { setSyncStatus("local"); render(); return; }
           syncState = navigator.onLine ? "syncing" : "offline";
           render();
+          if (isQuotaPaused()) return;
           try {
             scavengeLegacyOutbox();
             await importLegacyTenant();

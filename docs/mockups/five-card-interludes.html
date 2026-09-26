@@ -1,0 +1,78 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+#anki-interludes{font-family:Geist,Inter,system-ui,sans-serif}
+#anki-interludes *{box-sizing:border-box}
+#anki-interludes .demo{max-width:390px;margin:0 auto 32px}
+#anki-interludes .demo-label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+#anki-interludes .demo-label h3{font-size:14px;font-weight:600;margin:0}
+#anki-interludes .shell{background:#09090b;color:#fafafa;border:1px solid #27272a;border-radius:20px;padding:20px 16px 16px}
+#anki-interludes .top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:24px}
+#anki-interludes .brand{font-size:18.4px;font-weight:700;letter-spacing:-.02em}
+#anki-interludes .account-area{display:flex;align-items:center;gap:6px}
+#anki-interludes .sync{font-size:12px;color:#a1a1aa;border:1px solid #27272a;border-radius:999px;padding:3px 9px}
+#anki-interludes .sync::before{content:'';display:inline-block;background:#4ade80;width:6px;height:6px;border-radius:50%;margin-right:6px}
+#anki-interludes .avatar{font-size:11px;background:#27272a;border-radius:50%;height:24px;width:24px;display:grid;place-items:center}
+#anki-interludes .stage{height:250px;background:#101012;border:1px solid #27272a;border-radius:12px;position:relative;overflow:hidden;box-shadow:0 1px 2px #0006}
+#anki-interludes .milestone{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;gap:10px}
+#anki-interludes .stage h2{font-size:24px;line-height:1.25;letter-spacing:-.025em;margin:0;font-weight:600}
+#anki-interludes .muted{font-size:13px;color:#a1a1aa;margin:0}
+#anki-interludes .check{color:#4ade80;font-size:24px;line-height:1}
+#anki-interludes .number{font-size:64px;font-weight:600;line-height:1;letter-spacing:-.06em}
+#anki-interludes .number .check{font-size:22px;vertical-align:middle;margin-left:12px}
+#anki-interludes .dots{display:flex;gap:9px;margin-bottom:10px}
+#anki-interludes .dot{width:25px;height:4px;border-radius:999px;background:#fafafa}
+#anki-interludes .line-layout{align-items:flex-start;gap:14px}
+#anki-interludes .line-layout .eyebrow{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#a1a1aa;font-weight:600}
+#anki-interludes .line-layout h2{font-size:30px;max-width:200px}
+#anki-interludes .row-line{display:flex;align-items:center;gap:12px}
+#anki-interludes .track{position:absolute;bottom:0;left:0;right:0;height:3px;background:#27272a}
+#anki-interludes .track span{display:block;width:100%;height:100%;background:#fafafa;transform-origin:left}
+#anki-interludes .stacked{position:relative;width:70px;height:58px;margin-bottom:5px}
+#anki-interludes .stacked span{position:absolute;width:46px;height:54px;background:#101012;border:1px solid #52525b;border-radius:6px;left:12px;top:0}
+#anki-interludes .stacked span:first-child{transform:translateX(-9px) rotate(-10deg)}
+#anki-interludes .stacked span:nth-child(2){transform:translateX(9px) rotate(10deg)}
+#anki-interludes .stacked span:last-child{display:grid;place-items:center;font-size:20px;color:#4ade80}
+#anki-interludes .question-area{padding:20px;height:100%}
+#anki-interludes .source{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:#a1a1aa;font-weight:600}
+#anki-interludes .question{font-size:18.4px;line-height:1.45;font-weight:600;letter-spacing:-.01em;margin:16px 0}
+#anki-interludes .answer{border-top:1px solid #27272a;padding-top:12px;font-size:14px;line-height:1.5}
+#anki-interludes .controls{height:72px;padding-top:24px}
+#anki-interludes .action{width:100%;height:48px;border:0;border-radius:10px;background:#fafafa;color:#18181b;font:600 15px Geist,system-ui;cursor:pointer}
+#anki-interludes .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+#anki-interludes .grade{height:48px;background:#09090b;border:1px solid #27272a;border-radius:10px;font:600 13px Geist,system-ui;cursor:pointer}
+#anki-interludes .foot{font-size:11px;color:#a1a1aa;text-align:center;margin-top:14px}
+@keyframes ankiSlide{from{transform:translateY(16px)}to{transform:translateY(0)}}
+@keyframes ankiDrain{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+#anki-interludes .arrive{animation:ankiSlide .22s ease-out}
+@media(prefers-reduced-motion:reduce){#anki-interludes .arrive,#anki-interludes .track span{animation:none!important}}
+</style>
+<div id="anki-interludes">
+<section class="demo" data-version="1" aria-label="Simple confirmation"><div class="demo-label"><h3>1 · Simple confirmation</h3><button class="btn replay" type="button">Play transition</button></div><div class="shell"></div></section>
+<section class="demo" data-version="2" aria-label="Number first"><div class="demo-label"><h3>2 · Number first</h3><button class="btn replay" type="button">Play transition</button></div><div class="shell"></div></section>
+<section class="demo" data-version="3" aria-label="Five marks"><div class="demo-label"><h3>3 · Five marks</h3><button class="btn replay" type="button">Play transition</button></div><div class="shell"></div></section>
+<section class="demo" data-version="4" aria-label="Editorial pause"><div class="demo-label"><h3>4 · Editorial pause</h3><button class="btn replay" type="button">Play transition</button></div><div class="shell"></div></section>
+<section class="demo" data-version="5" aria-label="Next stack"><div class="demo-label"><h3>5 · Next stack</h3><button class="btn replay" type="button">Play transition</button></div><div class="shell"></div></section>
+</div>
+<script>
+(()=>{
+const root=document.getElementById('anki-interludes');
+const layouts=[
+ n=>`<div class="milestone"><span class="check" aria-hidden="true">✓</span><h2>${n} reviewed today</h2><p class="muted">On to the next five.</p></div>`,
+ n=>`<div class="milestone"><div class="number">${n}<span class="check" aria-hidden="true">✓</span></div><p class="muted">reviewed today</p></div>`,
+ n=>`<div class="milestone"><div class="dots" aria-hidden="true">${'<span class="dot"></span>'.repeat(5)}</div><h2>${n} reviewed today</h2><p class="muted">Keep your rhythm.</p></div>`,
+ n=>`<div class="milestone line-layout"><div class="eyebrow">Today</div><h2>${n} cards<br>reviewed.</h2><div class="row-line"><span class="check" aria-hidden="true">✓</span><p class="muted">Next five coming up.</p></div></div><div class="track" aria-hidden="true"><span></span></div>`,
+ n=>`<div class="milestone"><div class="stacked" aria-hidden="true"><span></span><span></span><span>✓</span></div><h2>${n} reviewed today</h2><p class="muted">Your next five are ready.</p></div>`
+];
+root.querySelectorAll('.demo').forEach(demo=>{
+const shell=demo.querySelector('.shell'),version=Number(demo.dataset.version)-1;
+shell.innerHTML='<div class="top"><span class="brand">My Anki</span><div class="account-area"><span class="sync">Synced</span><span class="avatar">H</span></div></div><div class="stage" aria-live="polite"></div><div class="controls"></div><div class="foot">deck 13 Sep · newest highlight 11 Sep</div>';
+const stage=shell.querySelector('.stage'),controls=shell.querySelector('.controls'),replay=demo.querySelector('.replay');
+const state={seconds:2};let timer=null,total=5,step=0;
+function milestone(play){clearTimeout(timer);stage.innerHTML=layouts[version](total);controls.replaceChildren();if(play){const bar=stage.querySelector('.track span');if(bar)bar.style.animation=`ankiDrain ${state.seconds}s linear forwards`;timer=setTimeout(()=>{step=0;nextCard();},state.seconds*1000);}}
+function nextCard(){stage.innerHTML='<div class="question-area arrive"><div class="source">Recall · Your Money or Your Life</div><p class="question">'+['How do the authors redefine retirement?','What does financial independence give you?','What does money represent in your life?','How can you identify what is enough?','What makes spending worthwhile?'][step]+'</p></div>';controls.innerHTML='<button class="action" type="button">Show answer</button>';controls.querySelector('button').onclick=()=>{stage.querySelector('.question-area').insertAdjacentHTML('beforeend','<div class="answer">'+['The freedom to choose how you spend your time.','Freedom to make choices without depending on paid work.','The life energy you exchange for it.','By comparing your spending with what brings fulfillment.','Its contribution to what you value.'][step]+'</div>');controls.innerHTML='<div class="grades"></div>';['Again','Hard','Good','Easy'].forEach((label,i)=>{const b=document.createElement('button');b.className='grade';b.type='button';b.style.color=['#f87171','#fbbf24','#4ade80','#60a5fa'][i];b.textContent=label;b.onclick=()=>{total++;step++;if(step===5)milestone(true);else nextCard();};controls.firstChild.append(b);});};}
+replay.onclick=()=>{total=5;milestone(true);replay.textContent='Replay transition';};
+milestone(false);
+if(globalThis.Tweak){const tweak=new Tweak({container:demo,onChange:()=>milestone(false)});tweak.addSlider(state,'seconds',{label:'Pause duration',min:1,max:3,step:.5,unit:'s'});}
+});
+})();
+</script>
