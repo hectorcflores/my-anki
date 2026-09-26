@@ -638,7 +638,12 @@
       }
       while (visibilityData(key).pending.length) {
         const event=visibilityData(key).pending[0];
-        await fsCreateDoc(cfg,`${rootOf(cfg)}/${cfg.tenant}/visibility/${event.id}`,event);
+        // Events pulled from the former backend carry read-only Firestore
+        // metadata (`createdAt` and `__id`). Never copy that metadata into a
+        // new write: the dedicated backend stamps its own createdAt and its
+        // rules intentionally reject unknown fields.
+        const {id,cardId,hidden,at}=event;
+        await fsCreateDoc(cfg,`${rootOf(cfg)}/${cfg.tenant}/visibility/${id}`,{id,cardId,hidden,at});
         const data=visibilityData(key);data.pending=data.pending.filter(e=>e.id!==event.id);localStorage.setItem(key,JSON.stringify(data));
       }
       const rows=await fsListCollection(cfg,"visibility");

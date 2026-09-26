@@ -7,7 +7,8 @@ const UID = "hector-uid";
 const cardId = "aaaaaaaaaaaaaaaa";
 const hiddenId = "bbbbbbbbbbbbbbbb";
 const state = { st: "rev", ivl: 7, due: 123456, reps: 3, ef: 2.5, lapses: 0, intro: 100, __lastReviewAt: 300 };
-const hiddenEvent = { id: "visibility-old", cardId: hiddenId, hidden: true, at: 250 };
+const hiddenEvent = { id: "visibility-old", cardId: hiddenId, hidden: true, at: 250,
+  createdAt: "2026-01-01T00:00:00.000Z", __id: "visibility-old" };
 const seed = {
   "my-anki.backend.v1": "my-reading-list-3fa75",
   "my-anki.srs.v2": JSON.stringify({ [cardId]: state }),
@@ -32,6 +33,12 @@ assert.deepEqual(device.snapshotSrs(), { [cardId]: state }, "local scheduling st
 const visibility = JSON.parse(device.localStorage.getItem(`my-anki.visibility.v1.${UID}`));
 assert.equal(visibility.pending.length, 1, "the current hidden state is queued for the dedicated backend");
 assert.equal(visibility.pending[0].id, hiddenEvent.id);
+
+await device.call("syncVisibility");
+const copiedVisibility = Object.entries(firestore._dump()).find(([name]) => name.endsWith(`/my_anki/${UID}/visibility/${hiddenEvent.id}`));
+assert.ok(copiedVisibility, "the hidden-card choice is copied to the dedicated backend");
+assert.deepEqual(Object.keys(copiedVisibility[1]).sort(), ["at", "cardId", "createdAt", "hidden", "id"],
+  "old Firestore metadata is not copied into the new write");
 
 await device.call("migrateOrRebuild");
 const baseline = Object.entries(firestore._dump()).find(([name]) => name.endsWith(`/my_anki/${UID}/meta/baseline`));
