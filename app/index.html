@@ -1800,6 +1800,21 @@
       return "";
     }
 
+    // The whole review screen is re-rendered after every action, including
+    // its header. Delegate the account click from the stable #app root so the
+    // freshly-created Sign in button never loses its handler.
+    app.addEventListener("click", (event) => {
+      if (!event.target.closest?.("#accountBtn")) return;
+      if (authState === "out") {
+        authApi?.signIn().catch((error) => {
+          console.warn("My Anki sign-in failed", error);
+          setSyncStatus("issue");
+        });
+      } else if (authState === "in" && confirm("Sign out of My Anki?")) {
+        authApi?.signOutUser();
+      }
+    });
+
     const LASTSYNC_KEY = "my-anki.lastsync.v1";
     let syncState = "local";   // local | syncing | synced | pending | offline | issue
     let agoTimer = null;
