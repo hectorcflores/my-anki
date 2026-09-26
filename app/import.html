@@ -31,7 +31,6 @@ async function useUser(user){if(started)return;started=true;try{await importBatc
 try{
  const [{initializeApp},auth]=await Promise.all([import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js")]);
  const instance=auth.getAuth(initializeApp(FIREBASE));const provider=new auth.GoogleAuthProvider();
- auth.getRedirectResult(instance).catch(error=>console.warn(error));
  auth.onAuthStateChanged(instance,user=>{if(user)useUser(user);else showConnect(instance,auth,provider)});
 }catch(error){console.error(error);setStatus(error.message||"The import could not finish.")}
 </script></html>
