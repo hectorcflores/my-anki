@@ -53,9 +53,42 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 - El sitio actual ya funciona como aplicación web instalable y seguirá siendo el respaldo.
 - Todavía no existe un proyecto nativo de iPhone ni una versión de TestFlight.
 - El icono `myA` está aplicado al sitio y a la extensión.
-- La entrega completa hacia My Anki todavía no ha sido validada.
-- Firebase agotó temporalmente su cuota gratuita compartida. Antes de continuar, la integración debe evitar afectar Pomodoro u otras aplicaciones del mismo proyecto.
+- My Anki ya usa su propio proyecto Firebase (`my-anki-hector`). Ya no comparte lecturas, escrituras ni cuota con Pomodoro.
+- La cuenta de My Anki, el progreso local y las tarjetas ocultas se migraron sin borrar el calendario de repaso.
+- El sitio fue validado en producción mostrando **Synced · just now** contra el backend dedicado.
+- La entrega final desde la copia instalada de la extensión todavía requiere una validación real después de recargar la versión 0.1.3 en Chrome.
 - El sistema anterior de extracción y sus alertas no deben retirarse hasta completar una prueba real de extremo a extremo.
+
+## Validación técnica — 26 de septiembre de 2026
+
+| Requisito | Estado | Evidencia |
+|---|---|---|
+| Aislar My Anki de Pomodoro | Completado | My Anki usa `my-anki-hector`; Pomodoro permanece en `my-reading-list-3fa75`. Una importación ya no puede consumir la cuota de Pomodoro. |
+| Evitar gasto repetido de cuota | Completado | Los lotes tienen identificador determinista, las lecturas usan caché y cursor incremental, y un HTTP 429 pausa los reintentos. En operación normal se crea un documento por lote y se consultan solamente lotes posteriores al cursor. |
+| Conservar progreso durante la migración | Completado | La migración conserva SRS y tarjetas ocultas, reinicia solamente cursores del backend anterior y publica el estado local como baseline en el proyecto nuevo. |
+| Login de Google en producción | Completado | El flujo popup quedó validado en Chrome y el sitio mostró **Synced · just now**. El redirect anterior perdía su resultado entre GitHub Pages y `firebaseapp.com`. |
+| Highlight real extensión → My Anki | Pendiente de prueba final | Amazon cargó *Million Dollar Weekend* con 31 highlights. La extensión instalada quedó sin responder después de cambiar sus archivos; debe recargarse una vez antes de repetir la entrega. |
+| Repetición sin duplicados | Implementado; pendiente de prueba real | El ID del documento es SHA-256 de la firma del lote y un HTTP 409 se trata como reintento exitoso. Las pruebas automatizadas pasan; falta repetir el mismo lote instalado en Chrome. |
+
+Fallas reales encontradas y corregidas:
+
+- Las reglas de Firestore no estaban publicadas y el primer envío recibió HTTP 403.
+- My Anki y Pomodoro compartían proyecto y cuota; un HTTP 429 afectaba a ambas apps.
+- El redirect de Google regresaba a la app sin conservar la sesión.
+- La migración consultaba una colección Brain Gym que no existe en el proyecto nuevo.
+- Los eventos antiguos de tarjetas ocultas incluían metadatos que las reglas nuevas rechazaban.
+- La comunicación externa de la extensión podía quedarse esperando para siempre. La versión 0.1.3 acepta las dos formas válidas del remitente de Chrome, responde los errores y corta la espera con una instrucción recuperable.
+
+Pruebas automatizadas aprobadas:
+
+- 19 escenarios de sincronización y migración entre dispositivos.
+- 8 escenarios del scheduler y la sesión de cinco tarjetas.
+- Ocultar, deshacer, modo offline, recuperación y aislamiento por cuenta.
+- Importación incremental, pausa por cuota y ausencia de escrituras en rutas de Pomodoro.
+- ID estable, reintento idempotente y recuperación de la extensión sin abrir pestañas duplicadas.
+- Suite de extracción del Kindle Notebook.
+
+Commits principales: `b1b079d`, `bf099a7`, `a55c798`, `210b7b4` y `42a6040`.
 
 ## Fase 1: estabilizar la infraestructura compartida
 
@@ -71,6 +104,8 @@ Trabajo:
 
 Criterio de salida: una prueba de importación tiene un costo pequeño y conocido, y Pomodoro continúa sincronizando normalmente.
 
+**Estado: completado.** El aislamiento por proyecto elimina el riesgo compartido. Las pruebas confirman que la ruta de importación no toca datos de Pomodoro.
+
 ## Fase 2: completar la entrega segura
 
 Objetivo: llevar un highlight extraído por la extensión hasta My Anki.
@@ -84,6 +119,8 @@ Trabajo:
 - Preservar libro, autor, texto, nota, ubicación y fecha disponible.
 
 Criterio de salida: un highlight controlado de Kindle aparece como tarjeta nueva en My Anki, conserva su fuente y no vuelve a crearse al repetir la sincronización.
+
+**Estado: implementación completada; prueba real pendiente.** Falta recargar la versión 0.1.3 de la extensión instalada, enviar el lote real y repetirlo.
 
 ## Fase 3: automatización y recuperación
 
