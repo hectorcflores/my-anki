@@ -13,7 +13,11 @@ function encodeBook(book){return{mapValue:{fields:{asin:{stringValue:string(book
 try{
  const [{initializeApp},auth]=await Promise.all([import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js")]);
  const instance=auth.getAuth(initializeApp(FIREBASE));let user=instance.currentUser;
- if(!user){await auth.signInWithPopup(instance,new auth.GoogleAuthProvider());user=instance.currentUser}
+ if(!user){
+  await auth.getRedirectResult(instance);
+  user=instance.currentUser;
+  if(!user){ await auth.signInWithRedirect(instance,new auth.GoogleAuthProvider()); throw new Error("SIGN_IN_REDIRECTING"); }
+ }
  const result=await chrome.runtime.sendMessage(EXTENSION_ID,{type:"get-kindle-batch"});const batch=result?.batch;
  if(!batch?.books?.length)throw new Error("No Kindle highlights are ready yet. Open your Kindle notebook first.");
  const id=crypto.randomUUID(),token=await user.getIdToken();
