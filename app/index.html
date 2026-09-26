@@ -2018,9 +2018,14 @@
         auth.getRedirectResult(instance).catch((e) => console.warn(e));
         window.MyAnkiSync.start({
           onAuthChange(cb) {
+            let reported = false;
             auth.onAuthStateChanged(instance, (u) => {
+              reported = true;
               cb(u ? { uid: u.uid, email: u.email, getToken: () => u.getIdToken() } : null);
             });
+            // If Firebase's saved-session lookup stalls, keep the app usable:
+            // render the normal Sign in button instead of waiting forever.
+            setTimeout(() => { if (!reported) cb(null); }, 3000);
           },
           async signIn() {
             try {
