@@ -26,7 +26,7 @@ function showConnect(instance,auth,provider){
  if(document.querySelector("#action button")) return;
  setStatus("Connect My Anki once to add Kindle highlights.");
  const button=document.createElement("button");button.textContent="Continue with Google";document.querySelector("#action").append(button);
- button.addEventListener("click",async()=>{button.disabled=true;setStatus("Connecting My Anki…");try{const result=await Promise.race([auth.signInWithPopup(instance,provider),new Promise((_,reject)=>setTimeout(()=>reject(Object.assign(new Error("popup timeout"),{code:"auth/popup-timeout"})),5000))]);await useUser(result.user||instance.currentUser)}catch(error){const popupIssues=["auth/popup-blocked","auth/popup-closed-by-user","auth/cancelled-popup-request","auth/operation-not-supported-in-this-environment","auth/popup-timeout"];if(popupIssues.includes(error.code))await auth.signInWithRedirect(instance,provider);else{console.error(error);setStatus(error.message||"Sign-in could not finish.");button.disabled=false}}});
+ button.addEventListener("click",async()=>{button.disabled=true;setStatus("Connecting My Anki…");try{await auth.signInWithRedirect(instance,provider)}catch(error){console.error(error);setStatus(error.message||"Sign-in could not finish.");button.disabled=false}});
 }
 async function useUser(user){if(started)return;started=true;try{await importBatch(user)}catch(error){console.error(error);try{const result=await chrome.runtime.sendMessage(EXTENSION_ID,{type:"get-kindle-batch"});await chrome.runtime.sendMessage(EXTENSION_ID,{type:"mark-kindle-import-failed",signature:result?.batch?.signature})}catch{}setStatus(error.message||"The import could not finish.")}}
 try{

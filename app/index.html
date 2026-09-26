@@ -2131,22 +2131,7 @@
             setTimeout(() => { if (!reported) cb(null); }, 3000);
           },
           async signIn() {
-            try {
-              await Promise.race([
-                auth.signInWithPopup(instance, provider),
-                new Promise((_, reject) => setTimeout(() => reject(Object.assign(new Error("popup timeout"), { code: "auth/popup-timeout" })), 5000)),
-              ]);
-            } catch (e) {
-              const popupIssues = [
-                "auth/popup-blocked",
-                "auth/popup-closed-by-user",
-                "auth/cancelled-popup-request",
-                "auth/operation-not-supported-in-this-environment",
-                "auth/popup-timeout",
-              ];
-              if (popupIssues.includes(e.code)) await auth.signInWithRedirect(instance, provider);
-              else throw e;
-            }
+            await auth.signInWithRedirect(instance, provider);
           },
           signOutUser: () => auth.signOut(instance),
         });
