@@ -84,7 +84,11 @@ chrome.runtime.onMessageExternal.addListener((message, sender, respond) => {
       [LOCAL_STATUS]: status("IMPORTED", "Your Kindle highlights are in My Anki.")
     }).then(async () => {
       const tabs = await chrome.tabs.query({ url: "https://hectorcflores.github.io/my-anki/app/*" });
-      await Promise.all(tabs.map(tab => chrome.tabs.reload(tab.id)));
+      // Refresh review screens so the new card appears, but never refresh the
+      // importer that is waiting for this response. Reloading it here used to
+      // restart the same successful import forever.
+      const reviewTabs = tabs.filter(tab => tab.id !== sender.tab?.id && !tab.url?.includes("/import.html"));
+      await Promise.all(reviewTabs.map(tab => chrome.tabs.reload(tab.id)));
       respond({ ok: true });
     }).catch(error => respond({ error: error.message || "EXTENSION_STORAGE_FAILED" }));
     return true;

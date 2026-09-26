@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 
 const storage = new Map();
 const createdTabs = [];
+const reloadedTabs = [];
 let internalListener;
 let externalListener;
 const chrome = {
@@ -17,7 +18,10 @@ const chrome = {
   } },
   tabs: {
     async query(options) {
-      if (options?.url) return [];
+      if (options?.url) return [
+        { id: 21, url: "https://hectorcflores.github.io/my-anki/app/import.html" },
+        { id: 22, url: "https://hectorcflores.github.io/my-anki/app/" },
+      ];
       return [{ id: 7, url: "https://read.amazon.com/notebook" }];
     },
     async get() { return { id: 7, url: "https://read.amazon.com/notebook" }; },
@@ -25,7 +29,7 @@ const chrome = {
       return { ok: true, payload: { books: [{ asin: "B001", title: "Book", highlights: [{ l: 1, h: "Text" }] }] } };
     },
     async create(tab) { createdTabs.push(tab); return { id: 10 + createdTabs.length, ...tab }; },
-    async reload() {},
+    async reload(id) { reloadedTabs.push(id); },
   },
   action: { async setBadgeBackgroundColor() {}, async setBadgeText() {}, async setTitle() {} },
   runtime: {
@@ -64,7 +68,8 @@ await invoke(internalListener, { type: "sync-one-book" });
 assert.equal(createdTabs.length, 2, "a failed importer can recover on the next collection");
 
 await invoke(externalListener, { type: "mark-kindle-imported", signature: first.batch.signature },
-  { origin: "https://hectorcflores.github.io" });
+  { origin: "https://hectorcflores.github.io", tab: { id: 21 }, url: "https://hectorcflores.github.io/my-anki/app/import.html" });
+assert.deepEqual(reloadedTabs, [22], "success refreshes the review app without restarting the importer");
 await invoke(internalListener, { type: "sync-one-book" });
 assert.equal(createdTabs.length, 2, "an imported batch never opens another importer tab");
 
