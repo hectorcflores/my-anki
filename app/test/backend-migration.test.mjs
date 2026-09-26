@@ -22,6 +22,8 @@ const device = createDevice({ source: getScriptSource(), firestore, deck: makeDe
 device.setAuthUser({ uid: UID, email: "h@example.com", getToken: async () => "token" });
 
 device.call("prepareBackendMigration");
+assert.equal(device.call("needsBrainGymProjectMigration"), false,
+  "the dedicated backend must not query the old in-project Brain Gym collection");
 assert.equal(device.localStorage.getItem("my-anki.backend.v1"), "my-anki-hector");
 assert.equal(device.localStorage.getItem("my-anki.migrated.v1"), null, "the old cloud baseline marker is reset");
 assert.equal(device.localStorage.getItem("my-anki.cursor.v1"), null, "the old cloud cursor is reset");

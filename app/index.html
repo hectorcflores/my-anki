@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-dedicated-firebase";
+    const APP_BUILD = "20260926-auth-import";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -769,6 +769,13 @@
     // The same account's data as it stood under the old name — the source of
     // the one-time import and of the stray probe that follows it.
     function brainGymCfg() { return { ...liveCfg(), root: LEGACY_COLLECTION }; }
+    // Brain Gym lived only in the former shared Firebase project. Once My
+    // Anki moved to its dedicated project there is no old collection to read
+    // there, and asking for it only creates a permissions error. Historical
+    // builds/tests that still point at the shared project keep the migration.
+    function needsBrainGymProjectMigration() {
+      return FIREBASE.projectId !== "my-anki-hector";
+    }
 
     // The first dedicated My Anki backend replaces the Firebase project that
     // was shared with Pomodoro. Keep all local card state, but reset only the
@@ -1485,6 +1492,7 @@
     // produce one copy, not two, and a re-run after a failed attempt is a
     // sequence of no-ops.
     async function importBrainGymCollection() {
+      if (!needsBrainGymProjectMigration()) return;
       if (localStorage.getItem(FS_IMPORT_KEY)) return;
       const src = brainGymCfg();
       // Fold anything on the old side this device hasn't applied yet. The
@@ -1546,6 +1554,7 @@
     // stops finding anything once every device is on this build, and can be
     // deleted along with the import.
     async function probeBrainGymStrays() {
+      if (!needsBrainGymProjectMigration()) return;
       const tip = localStorage.getItem(FS_IMPORT_KEY);
       if (!tip) return;   // import hasn't run yet — it will copy everything anyway
       const src = brainGymCfg();
