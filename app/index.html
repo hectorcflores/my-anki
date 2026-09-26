@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-persistent-kindle-imports";
+    const APP_BUILD = "20260926-recent-kindle-books";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -991,6 +991,46 @@
     function loadKindleImports() {
       try { return JSON.parse(localStorage.getItem(KINDLE_IMPORT_CACHE_KEY)) || []; } catch { return []; }
     }
+    function matchText(value) {
+      return String(value || "").normalize("NFKC").toLocaleLowerCase("en-US")
+        .replace(/[‘’‚‛]/g, "'").replace(/[“”„‟]/g, '"').replace(/[–—−]/g, "-")
+        .replace(/…/g, "...").replace(/\s+/g, " ").trim();
+    }
+    function sameHighlight(left, right) {
+      const a = matchText(left.text), b = matchText(right.text);
+      if (!a || !b) return false;
+      if (a === b) return true;
+      const [short, long] = a.length <= b.length ? [a, b] : [b, a];
+      return short.length >= 20 && long.startsWith(short);
+    }
+    function deckWithKindleImports(data) {
+      const merged = data.books.map(book => ({ ...book, highlights: book.highlights.map(highlight => ({ ...highlight })) }));
+      for (const imported of kindleBooks) {
+        const title = matchText(imported.title);
+        const index = merged.findIndex(book => matchText(book.title) === title);
+        if (index < 0) { merged.push(imported); continue; }
+
+        const book = merged[index];
+        for (const incoming of imported.highlights) {
+          const existing = book.highlights.findIndex(highlight => sameHighlight(highlight, incoming));
+          if (existing < 0) book.highlights.push(incoming);
+          else {
+            // Preserve the static card id/question so existing review history
+            // remains attached, while Amazon remains authoritative for the
+            // original timestamp and any note/page metadata it supplied.
+            const current = book.highlights[existing];
+            book.highlights[existing] = {
+              ...current,
+              ...(incoming.note ? { note: incoming.note } : {}),
+              ...(incoming.page ? { page: incoming.page } : {}),
+              ...(incoming.highlightedAt ? { date: incoming.date, highlightedAt: incoming.highlightedAt } : {})
+            };
+          }
+        }
+        book.total = book.highlights.length;
+      }
+      return { ...data, books: merged };
+    }
     async function importKindleCards() {
       if (isQuotaPaused()) return;
       const cached = loadKindleImports();
@@ -1026,7 +1066,7 @@
       }
       kindleBooks = [...byBook.values()];
       if (!kindleBooks.length) return;
-      applyDeck({ ...baseDeck, books: [...baseDeck.books, ...kindleBooks] });
+      applyDeck(deckWithKindleImports(baseDeck));
     }
 
     async function fsListCollection(cfg, collectionId, afterIso = null) {
@@ -1735,7 +1775,7 @@
       const keepCardId = session.queue[0]?.id;
       baseDeck = data;
       baseDeckSnapshot = JSON.stringify(data);
-      applyDeck({ ...data, books: [...data.books, ...kindleBooks] });
+      applyDeck(deckWithKindleImports(data));
       // Keep the current card when it is still eligible after a deck update.
       session = newSession(activeTheme, keepCardId);
       render();

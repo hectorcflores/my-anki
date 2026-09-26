@@ -75,18 +75,40 @@ async function fetchBook(book) {
   throw new Error("PAGINATION_INCOMPLETE");
 }
 
-async function collectOneBook() {
+const RECENT_BOOK_LIMIT = 6;
+
+function annotatedTime(book) {
+  const value = Date.parse(book.annotated || "");
+  return Number.isFinite(value) ? value : -Infinity;
+}
+
+async function collectRecentBooks() {
   if (document.querySelector("#ap_email, input[type='password']")) {
     throw new Error("AMAZON_SIGN_IN_REQUIRED");
   }
-  const [book] = KindleCollector.readBooks(document);
-  if (!book) throw new Error("KINDLE_NOTEBOOK_NOT_READY");
-  return { books: [await fetchBook(book)] };
+  const books = KindleCollector.readBooks(document)
+    .map((book, index) => ({ ...book, index }))
+    .sort((left, right) => annotatedTime(right) - annotatedTime(left) || left.index - right.index)
+    .slice(0, RECENT_BOOK_LIMIT);
+  if (!books.length) throw new Error("KINDLE_NOTEBOOK_NOT_READY");
+
+  const collected = [];
+  const failed = [];
+  for (const book of books) {
+    try { collected.push(await fetchBook(book)); }
+    catch (error) {
+      if (error.message === "AMAZON_SIGN_IN_REQUIRED") throw error;
+      failed.push({ asin: book.asin, title: book.title, error: error.message || "COLLECTION_FAILED" });
+    }
+    await pause(500);
+  }
+  if (!collected.length) throw new Error(failed[0]?.error || "COLLECTION_FAILED");
+  return { books: collected, failed };
 }
 
 chrome.runtime.onMessage.addListener((message, _sender, respond) => {
-  if (message?.type !== "collect-one-book") return undefined;
-  collectOneBook()
+  if (message?.type !== "collect-recent-books") return undefined;
+  collectRecentBooks()
     .then((payload) => respond({ ok: true, payload }))
     .catch((error) => respond({ ok: false, error: error.message || "UNKNOWN_ERROR" }));
   return true;
@@ -108,10 +130,11 @@ function showPilotStatus(result) {
   document.body.append(badge);
 }
 
-// The extension collects the first visible book as soon as a signed-in Notebook is
-// ready. This keeps collection independent from whether Chrome shows the popup.
+// Collect the six most recently annotated books as soon as a signed-in
+// Notebook is ready. A book highlighted later moves into this window, while
+// the stable batch signature makes an unchanged repeat a no-op in My Anki.
 window.setTimeout(() => {
-  chrome.runtime.sendMessage({ type: "sync-one-book" })
+  chrome.runtime.sendMessage({ type: "sync-recent-books" })
     .then(showPilotStatus)
     .catch(() => showPilotStatus());
 }, 1_500);

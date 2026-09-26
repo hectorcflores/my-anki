@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "My Anki",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Privately collect Kindle highlights from the signed-in notebook.",
   "permissions": [
     "storage",

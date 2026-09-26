@@ -3,7 +3,7 @@ const output = document.querySelector("#status");
 const pill = document.querySelector("#pill");
 
 const copy = {
-  NOT_YET_SYNCED: "Open your Kindle notebook, then sync one book.",
+  NOT_YET_SYNCED: "Open your Kindle notebook, then sync recent books.",
   OPEN_KINDLE_NOTEBOOK: "Open read.amazon.com/notebook first.",
   AMAZON_SIGN_IN_REQUIRED: "Sign into Amazon in the Kindle notebook, then try again.",
   KINDLE_NOTEBOOK_NOT_READY: "Kindle is still loading. Try again in a moment.",
@@ -28,7 +28,7 @@ button.addEventListener("click", async () => {
   pill.dataset.state = "working";
   pill.textContent = "Checking";
   try {
-    show(await chrome.runtime.sendMessage({ type: "sync-one-book" }));
+    show(await chrome.runtime.sendMessage({ type: "sync-recent-books" }));
   } finally {
     button.disabled = false;
   }

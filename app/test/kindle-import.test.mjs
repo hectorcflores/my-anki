@@ -70,6 +70,31 @@ assert.equal(device.run("cards.find(card => card.book.title === 'Fresh Book').hi
 assert.equal(device.run("baseDeckSnapshot === JSON.stringify(baseDeck)"), true,
   "deck freshness compares the published deck separately from Kindle imports");
 
+// A recent-book sync often overlaps the static deck. It must enrich that
+// existing card rather than create a duplicate with a different imported id.
+const mergeBackend = createFakeFirestore();
+const mergeDevice = createDevice({ source, firestore: mergeBackend, deck: {
+  themes: [{ id: "ideas", label: "Ideas" }],
+  books: [{ id: "static-book", title: "Fresh Book", author: "Author", total: 1, highlights: [
+    { id: "static-card-id", theme: "ideas", text: "A fresh highlight", loc: 42, q: "Existing question" },
+  ] }],
+}, localStorageSeed: seed });
+mergeDevice.setAuthUser({ uid: UID, email: "h@example.com", getToken: async () => "token" });
+const mergeProject = mergeDevice.run("FIREBASE.projectId");
+mergeBackend.seedCreate(`projects/${mergeProject}/databases/(default)/documents/my_anki/${UID}/imports/overlap`, {
+  source: "my-anki-kindle-extension", collectedAt: new Date("2026-09-27T12:00:00Z"),
+  books: [{ asin: "B001", title: "Fresh Book", author: "Author", highlights: [
+    { text: "A fresh highlight", location: 42, highlightedAt: new Date("2026-09-24T08:00:00Z") },
+  ] }],
+});
+await mergeDevice.call("importKindleCards");
+assert.equal(mergeDevice.run("books.length"), 1, "an imported book already in the deck is not duplicated");
+assert.equal(mergeDevice.run("cards.length"), 1, "an imported highlight already in the deck is not duplicated");
+assert.equal(mergeDevice.run("cards[0].id"), "static-card-id", "the existing card id preserves its review history");
+assert.equal(mergeDevice.run("cards[0].highlightedAt"), "2026-09-24T08:00:00.000Z",
+  "the imported original timestamp enriches the existing card");
+assert.equal(mergeDevice.run("cards[0].q"), "Existing question", "the generated question is preserved");
+
 const importQueries = calls.filter(call => call.body?.structuredQuery?.from?.[0]?.collectionId === "imports");
 assert.equal(importQueries.length, 3, "each explicit check performs one bounded imports query");
 assert.equal(importQueries[0].body.structuredQuery.where, undefined, "a fresh device loads its complete import history once");

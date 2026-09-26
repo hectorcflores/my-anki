@@ -12,7 +12,7 @@ Firestore path. Amazon cookies and passwords never leave Amazon's page.
 3. Choose **Load unpacked** and select this `extension` folder.
 4. Open `https://read.amazon.com/notebook` and sign into Amazon directly if
    Amazon asks. Credentials stay on Amazon's page.
-5. Open the extension and choose **Sync one book**.
+5. Open the extension and choose **Sync recent books**.
 
 The extension only collects while the Kindle notebook is the active tab. A
 successful import is marked **Updated** only after Firestore accepts the batch.

@@ -51,7 +51,7 @@ function invoke(listener, message, sender = {}) {
   });
 }
 
-const first = await invoke(internalListener, { type: "sync-one-book" });
+const first = await invoke(internalListener, { type: "sync-recent-books" });
 assert.equal(first.ok, true);
 assert.match(first.batch.signature, /2026-05-19T06:54:00\.000Z/,
   "the stable batch identity changes when original dates are backfilled");
@@ -61,18 +61,18 @@ const externalBatch = await invoke(externalListener, { type: "get-kindle-batch" 
 assert.equal(externalBatch.batch.signature, first.batch.signature,
   "the published importer is accepted even when Chrome supplies sender.url instead of sender.origin");
 
-await invoke(internalListener, { type: "sync-one-book" });
+await invoke(internalListener, { type: "sync-recent-books" });
 assert.equal(createdTabs.length, 1, "an active importer is not opened twice");
 
 await invoke(externalListener, { type: "mark-kindle-import-failed", signature: first.batch.signature },
   { origin: "https://hectorcflores.github.io" });
-await invoke(internalListener, { type: "sync-one-book" });
+await invoke(internalListener, { type: "sync-recent-books" });
 assert.equal(createdTabs.length, 2, "a failed importer can recover on the next collection");
 
 await invoke(externalListener, { type: "mark-kindle-imported", signature: first.batch.signature },
   { origin: "https://hectorcflores.github.io", tab: { id: 21 }, url: "https://hectorcflores.github.io/my-anki/app/import.html" });
 assert.deepEqual(reloadedTabs, [22], "success refreshes the review app without restarting the importer");
-await invoke(internalListener, { type: "sync-one-book" });
+await invoke(internalListener, { type: "sync-recent-books" });
 assert.equal(createdTabs.length, 2, "an imported batch never opens another importer tab");
 
 console.log("PASS extension background: retry after failure and no duplicate importer tabs");

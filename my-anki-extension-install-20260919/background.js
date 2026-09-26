@@ -27,7 +27,7 @@ async function openImporterIfNeeded(batch) {
   await chrome.storage.local.set({ [LAST_OPENED]: { signature, at: Date.now() } });
   await chrome.tabs.create({ url: IMPORTER_URL, active: true });
 }
-async function syncOneBook(sourceTabId) {
+async function syncRecentBooks(sourceTabId) {
   const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const tab = sourceTabId ? await chrome.tabs.get(sourceTabId) : activeTab;
   if (!tab?.id || !tab.url?.startsWith("https://read.amazon.com/notebook")) {
@@ -36,13 +36,13 @@ async function syncOneBook(sourceTabId) {
     return result;
   }
   try {
-    const result = await chrome.tabs.sendMessage(tab.id, { type: "collect-one-book" });
+    const result = await chrome.tabs.sendMessage(tab.id, { type: "collect-recent-books" });
     if (!result?.ok) throw new Error(result?.error || "KINDLE_EXTENSION_NOT_READY");
     const batch = { version: 1, collectedAt: new Date().toISOString(), source: "chrome-extension-local-pilot", ...result.payload };
     batch.signature = signatureFor(batch);
     const saved = status("SAVED_LOCALLY", "Your highlights are being added to My Anki.");
     await chrome.storage.local.set({ [LOCAL_BATCH]: batch, [LOCAL_STATUS]: saved });
-    const highlightCount = batch.books[0]?.highlights?.length || 0;
+    const highlightCount = batch.books.reduce((sum, book) => sum + (book.highlights?.length || 0), 0);
     await chrome.action.setBadgeBackgroundColor({ color: "#4ade80" });
     await chrome.action.setBadgeText({ text: String(highlightCount) });
     await chrome.action.setTitle({ title: "My Anki: adding " + highlightCount + " Kindle highlights" });
@@ -56,7 +56,7 @@ async function syncOneBook(sourceTabId) {
   }
 }
 chrome.runtime.onMessage.addListener((message, sender, respond) => {
-  if (message?.type === "sync-one-book") { syncOneBook(sender.tab?.id).then(respond); return true; }
+  if (message?.type === "sync-recent-books") { syncRecentBooks(sender.tab?.id).then(respond); return true; }
   if (message?.type === "get-status") {
     chrome.storage.local.get(LOCAL_STATUS).then(values => respond(values[LOCAL_STATUS] || status("NOT_YET_SYNCED")));
     return true;
