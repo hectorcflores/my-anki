@@ -56,7 +56,8 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 - My Anki ya usa su propio proyecto Firebase (`my-anki-hector`). Ya no comparte lecturas, escrituras ni cuota con Pomodoro.
 - La cuenta de My Anki, el progreso local y las tarjetas ocultas se migraron sin borrar el calendario de repaso.
 - El sitio fue validado en producción mostrando **Synced · just now** contra el backend dedicado.
-- La entrega real desde la extensión fue validada con *Million Dollar Weekend*: 31 highlights llegaron en un solo lote y My Anki creó una tarjeta nueva del libro.
+- La entrega real desde la extensión fue validada con *Million Dollar Weekend*: 31 highlights llegaron en un solo lote y My Anki creó 31 tarjetas del libro.
+- La extensión recupera la fecha original de cada highlight desde la API del lector de Kindle. Las 31 tarjetas de *Million Dollar Weekend* conservan fechas del 8 al 11 de febrero de 2024.
 - El sistema anterior de extracción y sus alertas no deben retirarse hasta completar una prueba real de extremo a extremo.
 
 ## Validación técnica — 26 de septiembre de 2026
@@ -67,10 +68,12 @@ La primera app se construirá en SwiftUI y se distribuirá privadamente mediante
 | Evitar gasto repetido de cuota | Completado | Los lotes tienen identificador determinista, las lecturas usan caché y cursor incremental, y un HTTP 429 pausa los reintentos. En operación normal se crea un documento por lote y se consultan solamente lotes posteriores al cursor. |
 | Conservar progreso durante la migración | Completado | La migración conserva SRS y tarjetas ocultas, reinicia solamente cursores del backend anterior y publica el estado local como baseline en el proyecto nuevo. |
 | Login de Google en producción | Completado | El flujo popup quedó validado en Chrome y el sitio mostró **Synced · just now**. El redirect anterior perdía su resultado entre GitHub Pages y `firebaseapp.com`. |
-| Highlight real extensión → My Anki | Completado | Amazon entregó *Million Dollar Weekend* con 31 highlights. La caché local recibió un lote con ID `5115f917ebdbb3cfc50ddd631b076c452b629931`; la app mostró **Recall · Million Dollar Weekend** y el mazo pasó de 98 a 99 tarjetas. |
-| Repetición sin duplicados | Completado | Se volvió a abrir el importador con el mismo lote. My Anki quedó sincronizado con 99 tarjetas y la caché de Firestore conservó exactamente un lote con los mismos 31 highlights. |
+| Highlight real extensión → My Anki | Completado | Amazon entregó *Million Dollar Weekend* con 31 highlights. La app creó 31 tarjetas y el catálogo pasó de 98 a 99 libros. |
+| Fechas originales | Completado | La API del lector devolvió fecha para 31 de 31 highlights. My Anki conserva esas fechas, del 8 al 11 de febrero de 2024, sin sustituirlas por la fecha de importación. |
+| Repetición sin duplicados | Completado | Una entrega posterior completó las fechas de las tarjetas existentes sin duplicarlas. La caché conserva ambos lotes inmutables y la app los combina en las mismas 31 tarjetas. |
+| Persistencia después de actualizar el deck | Completado | Una recarga de `data.js` ya no elimina el libro importado. La versión publicada conserva 99 libros y las 31 tarjetas fechadas después de recargar. |
 
-Validación final de la extensión instalada: después de recargar el arreglo `7bcf291`, el mismo lote mostró **Your Kindle highlights are now in My Anki** una sola vez, sin reiniciar el importador. La app quedó en **Synced · just now**, con 99 tarjetas y un único lote de 31 highlights.
+Validación final de la extensión instalada: el mismo libro llegó sin reiniciar el importador. La app quedó en **Synced · just now**, con 99 libros y 31 tarjetas de *Million Dollar Weekend*. Un lote inicial sin fechas y otro posterior con fechas se combinan deliberadamente en las mismas tarjetas; no producen duplicados.
 
 Fallas reales encontradas y corregidas:
 
@@ -81,6 +84,8 @@ Fallas reales encontradas y corregidas:
 - Los eventos antiguos de tarjetas ocultas incluían metadatos que las reglas nuevas rechazaban.
 - La comunicación externa de la extensión podía quedarse esperando para siempre. La versión 0.1.3 acepta las dos formas válidas del remitente de Chrome, responde los errores y corta la espera con una instrucción recuperable.
 - Al completar una entrega, la extensión recargaba también el importador y reiniciaba el mismo lote en un ciclo. Ahora actualiza solamente las pestañas de revisión; el importador puede confirmar el éxito y cerrarse.
+- La primera versión de la extensión omitía las fechas originales y la app usaba por error la fecha de recolección del lote. La extensión ahora consulta las anotaciones del lector de Kindle y My Anki mantiene cada timestamp original.
+- Una actualización del deck publicado reemplazaba toda la biblioteca en memoria y hacía desaparecer los libros importados. El deck publicado y los libros Kindle ahora se mantienen por separado y se combinan después de cada actualización.
 
 Pruebas automatizadas aprobadas:
 
@@ -89,10 +94,10 @@ Pruebas automatizadas aprobadas:
 - Ocultar, deshacer, modo offline, recuperación y aislamiento por cuenta.
 - Importación incremental, pausa por cuota y ausencia de escrituras en rutas de Pomodoro.
 - ID estable, reintento idempotente y recuperación de la extensión sin abrir pestañas duplicadas.
-- Suite de extracción del Kindle Notebook.
+- Suite de extracción del Kindle Notebook, recuperación de fechas y persistencia de libros importados después de actualizar el deck.
 - Las 15 pruebas de Pomodoro también pasan en su repositorio separado.
 
-Commits principales: `b1b079d`, `bf099a7`, `a55c798`, `210b7b4`, `42a6040` y `7bcf291`.
+Commits principales: `b1b079d`, `bf099a7`, `a55c798`, `210b7b4`, `42a6040`, `7bcf291`, `b87f347` y `943b512`.
 
 ## Fase 1: estabilizar la infraestructura compartida
 
