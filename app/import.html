@@ -25,12 +25,15 @@ function showConnect(instance,auth,provider){
  if(document.querySelector("#action button")) return;
  setStatus("Connect My Anki once to add Kindle highlights.");
  const button=document.createElement("button");button.textContent="Continue with Google";document.querySelector("#action").append(button);
- button.addEventListener("click",async()=>{button.disabled=true;setStatus("Connecting My Anki…");try{await auth.signInWithPopup(instance,provider)}catch(error){const popupIssues=["auth/popup-blocked","auth/popup-closed-by-user","auth/cancelled-popup-request","auth/operation-not-supported-in-this-environment"];if(popupIssues.includes(error.code))await auth.signInWithRedirect(instance,provider);else{console.error(error);setStatus(error.message||"Sign-in could not finish.");button.disabled=false}}});
+ button.addEventListener("click",async()=>{button.disabled=true;setStatus("Connecting My Anki…");try{const result=await auth.signInWithPopup(instance,provider);await useUser(result.user||instance.currentUser)}catch(error){const popupIssues=["auth/popup-blocked","auth/popup-closed-by-user","auth/cancelled-popup-request","auth/operation-not-supported-in-this-environment"];if(popupIssues.includes(error.code))await auth.signInWithRedirect(instance,provider);else{console.error(error);setStatus(error.message||"Sign-in could not finish.");button.disabled=false}}});
 }
 async function useUser(user){if(started)return;started=true;try{await importBatch(user)}catch(error){console.error(error);setStatus(error.message||"The import could not finish.")}}
 try{
  const [{initializeApp},auth]=await Promise.all([import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js")]);
  const instance=auth.getAuth(initializeApp(FIREBASE));const provider=new auth.GoogleAuthProvider();
- auth.onAuthStateChanged(instance,user=>{if(user)useUser(user);else showConnect(instance,auth,provider)});
+ let authReported=false;
+ auth.onAuthStateChanged(instance,user=>{authReported=true;if(user)useUser(user);else showConnect(instance,auth,provider)});
+ auth.getRedirectResult(instance).then(result=>{if(result?.user)useUser(result.user)}).catch(console.error);
+ setTimeout(()=>{if(instance.currentUser)useUser(instance.currentUser);else if(!authReported)showConnect(instance,auth,provider)},3000);
 }catch(error){console.error(error);setStatus(error.message||"The import could not finish.")}
 </script></html>
