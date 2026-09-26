@@ -56,6 +56,9 @@ const datedIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id
 assert.deepEqual(datedIds, firstIds, "date backfill upgrades the existing card instead of duplicating it");
 assert.equal(device.run("cards.find(card => card.book.title === 'Fresh Book').highlightedAt"), "2026-05-19T06:54:00.000Z",
   "the original Kindle timestamp replaces the missing legacy date");
+device.run("rebuildAfterStartup()");
+assert.equal(device.run("session.queue[0].book.title"), "Fresh Book",
+  "a fresher imported card replaces an untouched stale question after startup sync");
 
 await device.call("importKindleCards");
 const repeatedIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id)")));

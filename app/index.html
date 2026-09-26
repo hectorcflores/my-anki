@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-recent-kindle-books";
+    const APP_BUILD = "20260926-fresh-after-sync";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -1760,6 +1760,13 @@
       session = newSession(activeTheme, session.queue[0]?.id);
       render();
     }
+    function rebuildAfterStartup() {
+      // A startup import may add fresher cards after the first offline paint.
+      // Replace an untouched question so the new material leads immediately;
+      // preserve it only when the answer is already open.
+      session = newSession(activeTheme, session.revealed ? session.queue[0]?.id : undefined);
+      render();
+    }
     // Called right after a grade is applied and the card is no longer on
     // screen mid-answer — the one moment it's always safe to apply anything
     // that was waiting.
@@ -2150,8 +2157,7 @@
             await drainPendingRebuild();
             await migrateOrRebuild();
             await reconcile();
-            session = newSession(activeTheme, session.queue[0]?.id);
-            render();
+            rebuildAfterStartup();
             settleSyncStatus(true);
           } catch (e) {
             console.warn("My Anki sync: startup failed", e);
