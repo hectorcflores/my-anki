@@ -2131,7 +2131,11 @@
             setTimeout(() => { if (!reported) cb(null); }, 3000);
           },
           async signIn() {
-            await auth.signInWithRedirect(instance, provider);
+            // Keep the whole OAuth exchange attached to this page. Firebase's
+            // redirect flow stores its result under authDomain; on GitHub
+            // Pages that is a different site, so modern browser storage
+            // partitioning can lose the result on the way back.
+            await auth.signInWithPopup(instance, provider);
           },
           signOutUser: () => auth.signOut(instance),
         });

@@ -17,4 +17,6 @@ assert.equal(first, second, "the same Kindle batch always receives the same Fire
 assert.notEqual(first, other, "different Kindle batches receive different ids");
 assert.match(html, /response\.status!==409/, "an already-created batch is treated as a successful retry");
 assert.doesNotMatch(html, /const id=crypto\.randomUUID\(\)/, "imports must not use a new random id on every retry");
+assert.match(html, /signInWithPopup\(instance,provider\)/,
+  "the importer must receive the authenticated user without cross-origin redirect state");
 console.log("PASS import page: deterministic batch id and idempotent retry");
