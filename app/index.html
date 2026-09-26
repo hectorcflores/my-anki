@@ -380,7 +380,8 @@
       const h = (hash(deckSnapshot) >>> 0).toString(16).padStart(8, "0").slice(0, 6);
       el.textContent = `deck ${books.length}·${h} · app ${APP_BUILD}`;
     }
-    applyDeck(window.ANKI);
+    const BASE_DECK = window.ANKI;
+    applyDeck(BASE_DECK);
 
     // ---- Spaced repetition: SM-2 with Anki's learning steps ----
     //
@@ -900,6 +901,28 @@
 
     // Every document in one collection, unfiltered — used by reconcile() to
     // discover every meta/baseline* doc without knowing their ids up front.
+    // Kindle batches are immutable owner-only imports. They become ordinary
+    // My Anki cards in memory; their stable hash keeps review history intact
+    // across devices and repeated imports.
+    async function importKindleCards() {
+      const imports = await fsListCollection(liveCfg(), "imports");
+      const byBook = new Map();
+      for (const batch of imports) for (const book of (batch.books || [])) {
+        const key = `${book.asin || ""}|${book.title || "Untitled"}`;
+        const target = byBook.get(key) || { id: `kindle-${book.asin || "unknown"}`, title: book.title || "Untitled", author: book.author || "Kindle", subject: "your Kindle highlights", total: 0, highlights: [] };
+        for (const raw of (book.highlights || [])) {
+          if (!raw.text) continue;
+          const id = (await sha256Hex(`${key}|${raw.location || 0}|${raw.text}`)).slice(0, 16);
+          if (target.highlights.some(h => h.id === id)) continue;
+          target.highlights.push({ id, loc: raw.location || 0, theme: "ideas", text: raw.text, date: String(batch.collectedAt || "").slice(0, 10), highlightedAt: batch.collectedAt || null, q: "What is the key idea in this highlight?" });
+        }
+        target.total = target.highlights.length;
+        byBook.set(key, target);
+      }
+      if (!byBook.size) return;
+      applyDeck({ ...BASE_DECK, books: [...BASE_DECK.books, ...byBook.values()] });
+    }
+
     async function fsListCollection(cfg, collectionId) {
       const structuredQuery = { from: [{ collectionId }] };
       const parent = `${fsBase(cfg)}/${rootOf(cfg)}/${cfg.tenant}`;
@@ -1938,6 +1961,7 @@
             scavengeLegacyOutbox();
             await importLegacyTenant();
             await importBrainGymCollection();
+            await importKindleCards();
             await flushOutbox();
             await probeBrainGymStrays();
             await drainPendingRebuild();
