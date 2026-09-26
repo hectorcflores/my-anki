@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><title>My Anki import</title><p id="status">Connecting My Anki…</p>
+<script type="module">
+const EXTENSION_ID='lkgpmdblaofjhnklakmldipkhcjaiamd';
+const FIREBASE={apiKey:'AIzaSyA5_DhdTdqjCVDeOgklUFcnJ1lwfESiP8Y',authDomain:'my-reading-list-3fa75.firebaseapp.com',projectId:'my-reading-list-3fa75',appId:'1:101190488885:web:f0401ddd67b862f163b27c'};
+const status=t=>document.querySelector('#status').textContent=t;
+try {
+ const [{initializeApp},auth]=await Promise.all([import('https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js'),import('https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js')]);
+ const instance=auth.getAuth(initializeApp(FIREBASE)); let user=instance.currentUser;
+ if(!user){ await auth.signInWithPopup(instance,new auth.GoogleAuthProvider()); user=instance.currentUser; }
+ const result=await chrome.runtime.sendMessage(EXTENSION_ID,{type:'get-kindle-batch'});
+ if(!result?.batch) throw Error('No Kindle highlights are ready yet. Open the Kindle notebook first.');
+ const id=crypto.randomUUID(), token=await user.getIdToken();
+ const name=`projects/${FIREBASE.projectId}/databases/(default)/documents/my_anki/${user.uid}/imports/${id}`;
+ const fields={source:{stringValue:'my-anki-kindle-extension'},collectedAt:{timestampValue:result.batch.collectedAt},books:{arrayValue:{values:result.batch.books.map(b=>({mapValue:{fields:{asin:{stringValue:b.asin||''},title:{stringValue:b.title||''},author:{stringValue:b.author||''},highlights:{arrayValue:{values:(b.highlights||[]).map(h=>({mapValue:{fields:{text:{stringValue:h.h||h.n||''},location:{integerValue:String(h.l||0)}}}}))}}}}}))}};
+ const res=await fetch(`https://firestore.googleapis.com/v1/projects/${FIREBASE.projectId}/databases/(default)/documents:commit?key=${FIREBASE.apiKey}`,{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${token}`},body:JSON.stringify({writes:[{update:{name,fields},updateTransforms:[{fieldPath:'createdAt',setToServerValue:'REQUEST_TIME'}],currentDocument:{exists:false}}]})});
+ if(!res.ok) throw Error(`Import failed (${res.status})`); status('Highlights imported into My Anki.');
+} catch(e){ status(e.message); console.error(e); }
+</script>
