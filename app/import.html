@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="en">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>My Anki</title>
-<style>:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#08080a;color:#f7f7f8;font:600 18px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}main{width:min(420px,calc(100% - 48px));padding:36px;border:1px solid #303035;border-radius:28px;background:#111114;box-sizing:border-box}.a{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;color:#08080a;background:#fff;font-size:25px;font-weight:900}p{color:#b7b7c1;margin:16px 0 0;font-weight:500}</style>
-<main><div class="a">A</div><h1>My Anki</h1><p id="status">Adding your Kindle highlights…</p></main>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Anki</title>
+<style>:root{color-scheme:dark}body{margin:0;min-height:100vh;display:grid;place-items:center;background:#08080a;color:#f7f7f8;font:600 18px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}main{width:min(420px,calc(100% - 48px));padding:36px;border:1px solid #303035;border-radius:28px;background:#111114;box-sizing:border-box}.a{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;color:#08080a;background:#fff;font-size:25px;font-weight:900}p{color:#b7b7c1;margin:16px 0;font-weight:500}button{width:100%;border:0;border-radius:14px;padding:15px;background:#fff;color:#17171b;font:700 16px/1 Inter,system-ui,sans-serif;cursor:pointer}</style>
+<main><div class="a">A</div><h1>My Anki</h1><p id="status">Adding your Kindle highlights…</p><div id="action"></div></main>
 <script type="module">
 const EXTENSION_ID="lkgpmdblaofjhnklakmldipkhcjaiamd";
 const FIREBASE={apiKey:"AIzaSyA5_DhdTdqjCVDeOgklUFcnJ1lwfESiP8Y",authDomain:"my-reading-list-3fa75.firebaseapp.com",projectId:"my-reading-list-3fa75",appId:"1:101190488885:web:f0401ddd67b862f163b27c"};
@@ -10,14 +9,7 @@ const setStatus=text=>document.querySelector("#status").textContent=text;
 const string=value=>String(value??"");
 function encodeHighlight(highlight){return{mapValue:{fields:{text:{stringValue:string(highlight.h||highlight.n)},location:{integerValue:string(highlight.l||0)}}}}}
 function encodeBook(book){return{mapValue:{fields:{asin:{stringValue:string(book.asin)},title:{stringValue:string(book.title)},author:{stringValue:string(book.author)},highlights:{arrayValue:{values:(book.highlights||[]).map(encodeHighlight)}}}}}}
-try{
- const [{initializeApp},auth]=await Promise.all([import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js")]);
- const instance=auth.getAuth(initializeApp(FIREBASE));let user=instance.currentUser;
- if(!user){
-  await auth.getRedirectResult(instance);
-  user=instance.currentUser;
-  if(!user){ await auth.signInWithRedirect(instance,new auth.GoogleAuthProvider()); throw new Error("SIGN_IN_REDIRECTING"); }
- }
+async function importBatch(user){
  const result=await chrome.runtime.sendMessage(EXTENSION_ID,{type:"get-kindle-batch"});const batch=result?.batch;
  if(!batch?.books?.length)throw new Error("No Kindle highlights are ready yet. Open your Kindle notebook first.");
  const id=crypto.randomUUID(),token=await user.getIdToken();
@@ -27,5 +19,15 @@ try{
  if(!response.ok)throw new Error("Import failed ("+response.status+")");
  await chrome.runtime.sendMessage(EXTENSION_ID,{type:"mark-kindle-imported",signature:batch.signature});
  setStatus("Your Kindle highlights are now in My Anki.");setTimeout(()=>window.close(),1400);
+}
+try{
+ const [{initializeApp},auth]=await Promise.all([import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"),import("https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js")]);
+ const instance=auth.getAuth(initializeApp(FIREBASE));const user=instance.currentUser;
+ if(user) await importBatch(user);
+ else{
+  setStatus("Connect My Anki once to add Kindle highlights.");
+  const button=document.createElement("button");button.textContent="Continue with Google";document.querySelector("#action").append(button);
+  button.addEventListener("click",async()=>{button.disabled=true;setStatus("Connecting My Anki…");try{const result=await auth.signInWithPopup(instance,new auth.GoogleAuthProvider());await importBatch(result.user)}catch(error){console.error(error);setStatus(error.message||"Sign-in could not finish.");button.disabled=false}});
+ }
 }catch(error){console.error(error);setStatus(error.message||"The import could not finish.")}
 </script></html>
