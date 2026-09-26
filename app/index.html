@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-fresh-after-sync";
+    const APP_BUILD = "20260926-card-date-footer";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -1841,16 +1841,20 @@
     };
     const daysSince = (iso) => Math.floor((Date.now() - Date.parse(iso + "T12:00:00")) / DAY);
 
-    // The pipeline, made visible from inside the app. Without this line a
-    // Kindle sync that quietly stopped three days ago looks exactly like three
-    // days with nothing new to highlight, and there is no way to tell them
-    // apart short of opening a terminal. Two facts answer it: when this deck
-    // was published, and the newest highlight it was built from. The build
-    // date goes amber at 3 days, the same threshold at which my-readwise
-    // emails about a stalled sync.
-    function footDeck() {
+    // On a card, show that card's own original Kindle date. The former global
+    // "newest highlight" line looked like it described the card on screen and
+    // made a correctly scheduled older review look broken. Away from a card,
+    // keep the global newest date as a library-health signal.
+    function footDeck(currentCard = null) {
       if (!deckMeta.generated) return "";
       const stale = daysSince(deckMeta.generated) >= 3;
+      if (currentCard) {
+        const raw = currentCard.highlightedAt || currentCard.date;
+        const highlighted = Number.isFinite(Date.parse(raw || ""))
+          ? `highlighted ${fmtDay(String(raw).slice(0, 10))}`
+          : "highlight date unavailable";
+        return `<span class="${stale ? "stale" : ""}">${highlighted} \u00b7 ${stale ? "\u26a0 " : ""}deck updated ${fmtDay(deckMeta.generated)}</span>`;
+      }
       const newestCard = cards.reduce((latest, card) => {
         const timestamp = highlightTime(card);
         return timestamp > (latest?.timestamp ?? -Infinity)
@@ -2075,7 +2079,7 @@
                        : `<button class="btn" id="reveal">Show answer</button>`}
         </div>
         ${hideNotice()}
-        ${footDeck() ? `<p class="foot-note">${footDeck()}</p>` : ""}`;
+        ${footDeck(c) ? `<p class="foot-note">${footDeck(c)}</p>` : ""}`;
 
       document.getElementById("hideCard")?.addEventListener("click",()=>hideCurrentCard(c.id));
       document.getElementById("undoHide")?.addEventListener("click",undoHide);

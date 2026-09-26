@@ -63,6 +63,10 @@ test('footer uses the newest card timestamp instead of stale build metadata',()=
   books:[{id:'new',title:'New Book',author:'Author',highlights:[{id:'new-card',theme:'work',text:'test',loc:1,highlightedAt:'2026-09-20T18:00:00Z'}]}]
  }});
  assert.ok(d.run('footDeck()').includes('newest highlight 20 Sep, New Book'));
+ assert.ok(d.run('footDeck(cards[0])').includes('highlighted 20 Sep'),
+  'a visible card shows its own original highlight date');
+ assert.ok(!d.run('footDeck(cards[0])').includes('newest highlight'),
+  'the visible-card footer cannot be mistaken for the library-wide newest date');
 });
 let failed=0;
 for(const [name,fn] of tests){try{fn();console.log(`PASS  ${name}`)}catch(e){failed++;console.log(`FAIL  ${name}\n${e.stack}`)}}
