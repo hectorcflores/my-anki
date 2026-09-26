@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-kindle-import";
+    const APP_BUILD = "20260926-dedicated-firebase";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -698,11 +698,12 @@
     // config below is public by design — access control lives in Firestore
     // rules keyed to request.auth.uid, not in these values.
     const FIREBASE = {
-      apiKey: "AIzaSyA5_DhdTdqjCVDeOgklUFcnJ1lwfESiP8Y",
-      authDomain: "my-reading-list-3fa75.firebaseapp.com",
-      projectId: "my-reading-list-3fa75",
-      appId: "1:101190488885:web:f0401ddd67b862f163b27c",
+      apiKey: "AIzaSyB5H4o8k4wiqBFBQHPg33l26eY-MstD9d0",
+      authDomain: "my-anki-hector.firebaseapp.com",
+      projectId: "my-anki-hector",
+      appId: "1:178084388970:web:f299fe42cf5b38eb1bea13",
     };
+    const BACKEND_KEY = "my-anki.backend.v1";
     const LEGACY_CONFIG_KEY = "my-anki.sync.v1";
     const AUTH_MIGRATED_KEY = "my-anki.auth-migrated.v1";
     const OUTBOX_KEY = "my-anki.outbox.v1";
@@ -768,6 +769,34 @@
     // The same account's data as it stood under the old name — the source of
     // the one-time import and of the stray probe that follows it.
     function brainGymCfg() { return { ...liveCfg(), root: LEGACY_COLLECTION }; }
+
+    // The first dedicated My Anki backend replaces the Firebase project that
+    // was shared with Pomodoro. Keep all local card state, but reset only the
+    // cloud cursors so that state becomes the new project's baseline. The uid
+    // is preserved by the Auth migration, so visibility keeps the same key.
+    function prepareBackendMigration() {
+      if (localStorage.getItem(BACKEND_KEY) === FIREBASE.projectId) return;
+      // No backend marker existed before this release. FS_IMPORT_KEY proves
+      // this device already completed the Brain Gym -> My Anki migration on
+      // the former shared project. Without that proof this is a fresh device
+      // or an older Brain Gym build, whose own migration must remain intact.
+      if (!localStorage.getItem(BACKEND_KEY) && !localStorage.getItem(FS_IMPORT_KEY)) {
+        localStorage.setItem(BACKEND_KEY, FIREBASE.projectId);
+        return;
+      }
+      localStorage.removeItem(MIGRATED_KEY);
+      localStorage.removeItem(CURSOR_KEY);
+      localStorage.removeItem(RECONCILE_KEY);
+      localStorage.removeItem(QUOTA_PAUSE_KEY);
+      localStorage.removeItem(KINDLE_IMPORT_CURSOR_KEY);
+      const key = visibilityKey(), data = visibilityData(key);
+      const pendingIds = new Set(data.pending.map(event => event.id));
+      for (const event of Object.values(data.states)) {
+        if (!pendingIds.has(event.id)) data.pending.push(event);
+      }
+      localStorage.setItem(key, JSON.stringify(data));
+      localStorage.setItem(BACKEND_KEY, FIREBASE.projectId);
+    }
     async function cfgHeaders(cfg) {
       return cfg.auth && authUser ? { Authorization: "Bearer " + await authUser.getToken() } : {};
     }
@@ -2012,6 +2041,7 @@
           authUser = user;
           authState = user ? "in" : "out";
           if (!user) { setSyncStatus("local"); render(); return; }
+          prepareBackendMigration();
           syncState = navigator.onLine ? "syncing" : "offline";
           render();
           if (isQuotaPaused()) return;

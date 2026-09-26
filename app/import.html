@@ -4,7 +4,7 @@
 <main><div class="a">A</div><h1>My Anki</h1><p id="status">Adding your Kindle highlights…</p><div id="action"></div></main>
 <script type="module">
 const EXTENSION_ID="lkgpmdblaofjhnklakmldipkhcjaiamd";
-const FIREBASE={apiKey:"AIzaSyA5_DhdTdqjCVDeOgklUFcnJ1lwfESiP8Y",authDomain:"my-reading-list-3fa75.firebaseapp.com",projectId:"my-reading-list-3fa75",appId:"1:101190488885:web:f0401ddd67b862f163b27c"};
+const FIREBASE={apiKey:"AIzaSyB5H4o8k4wiqBFBQHPg33l26eY-MstD9d0",authDomain:"my-anki-hector.firebaseapp.com",projectId:"my-anki-hector",appId:"1:178084388970:web:f299fe42cf5b38eb1bea13"};
 const setStatus=text=>document.querySelector("#status").textContent=text;
 const string=value=>String(value??"");
 function encodeHighlight(highlight){return{mapValue:{fields:{text:{stringValue:string(highlight.h||highlight.n)},location:{integerValue:string(highlight.l||0)}}}}}

@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "My Anki",
+        "supportEmail": "hectorcflores@gmail.com",
+        "authorizedRedirectUris": [
+          "https://hectorcflores.github.io"
+        ]
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

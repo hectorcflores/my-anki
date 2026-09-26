@@ -27,6 +27,11 @@ import { createDevice, makeDeck } from "./device.mjs";
 
 const OLD = getScriptSource("brain-gym-import");   // the Brain Gym build
 const NEW = getScriptSource();                     // the working tree
+// Brain Gym and early My Anki shared one Firebase project. Keep exercising
+// that historical migration against the current migration code with its
+// original project id; the live build now uses a dedicated Firebase project
+// and its separate cutover is covered by backend-migration.test.mjs.
+const MIGRATION_BUILD = NEW.replace('projectId: "my-anki-hector"', 'projectId: "my-reading-list-3fa75"');
 
 const UID = "hector-uid";
 const OLD_ROOT = "brain_gym", NEW_ROOT = "my_anki";
@@ -263,7 +268,7 @@ await scenario("M1 — importing Brain Gym preserves this device's state exactly
   assert.ok(oldReviewIds.length >= 3, "fixture check: the old build should have logged its grades");
 
   // Same physical device reopening on the new build: same localStorage.
-  const dev = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldDev.localStorage });
+  const dev = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldDev.localStorage });
   await dev.signIn(user());
 
   assert.deepEqual(dev.snapshotSrs(), before, "review state must survive the migration untouched");
@@ -290,7 +295,7 @@ await scenario("M2 — a device still on Brain Gym converges once it migrates to
 
   // A picks up the new build and grades a card — that grade lands in the new
   // collection, somewhere B cannot see yet.
-  const newA = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldA.localStorage });
+  const newA = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldA.localStorage });
   await newA.signIn(user());
   newA.call("applyGrade", "c3", 3);
   await drainOutbox(newA);
@@ -301,7 +306,7 @@ await scenario("M2 — a device still on Brain Gym converges once it migrates to
   await drainOutbox(oldB);
 
   // B migrates. Its late grade has to come across, and A's has to be folded in.
-  const newB = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldB.localStorage });
+  const newB = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldB.localStorage });
   await newB.signIn(user());
   await newA.call("pullReviews");
 
@@ -320,8 +325,8 @@ await scenario("M3 — a migration race copies each review once and converges", 
   await oldB.call("migrateOrRebuild");
   const oldCount = Object.keys(reviewsIn(fs, OLD_ROOT)).length;
 
-  const newA = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldA.localStorage });
-  const newB = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldB.localStorage });
+  const newA = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldA.localStorage });
+  const newB = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldB.localStorage });
   await newA.signIn(user());
   await newB.signIn(user());
 
@@ -330,7 +335,7 @@ await scenario("M3 — a migration race copies each review once and converges", 
 
   // Re-running the import is a no-op.
   const countBefore = fs._docCount();
-  const reopened = createDevice({ source: NEW, firestore: fs, deck, localStorage: newA.localStorage });
+  const reopened = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: newA.localStorage });
   await reopened.signIn(user());
   assert.equal(fs._docCount(), countBefore, "a second run of the import must not write anything");
   assert.deepEqual(reopened.snapshotSrs(), newA.snapshotSrs(), "and must not change local state");
@@ -344,7 +349,7 @@ await scenario("M4 — a wiped device rebuilds full history through the migratio
   const expected = oldDev.snapshotSrs();
 
   // Brand-new install: empty localStorage, only what's on the server.
-  const dev = createDevice({ source: NEW, firestore: fs, deck, localStorageSeed: { "my-anki.client.v1": "device-fresh" } });
+  const dev = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorageSeed: { "my-anki.client.v1": "device-fresh" } });
   await dev.signIn(user());
   assert.deepEqual(dev.snapshotSrs(), expected, "a fresh device must reconstruct the pre-migration state");
 });
@@ -359,7 +364,7 @@ await scenario("M5 — renamed keys are copied once, originals left intact", asy
     "brain-gym.cursor.v1": "2023-11-14T22:13:20.005Z",
     "brain-gym.newcount.v1": "7",
   };
-  const dev = createDevice({ source: NEW, firestore: fs, deck: makeDeck(["c1"]), localStorageSeed: seed });
+  const dev = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck: makeDeck(["c1"]), localStorageSeed: seed });
   const ls = dev.localStorage._dump();
   for (const suffix of ["srs.v2", "client.v1", "migrated.v1", "cursor.v1"]) {
     assert.equal(ls[`my-anki.${suffix}`], seed[`brain-gym.${suffix}`], `${suffix} should be copied across`);
@@ -371,7 +376,7 @@ await scenario("M5 — renamed keys are copied once, originals left intact", asy
 
   // Reopening must not overwrite state the new build has since changed.
   dev.run(`srs = { c1: { st: "rev", reps: 99, __lastReviewAt: 5000 } }; saveSrs(srs);`);
-  const reopened = createDevice({ source: NEW, firestore: fs, deck: makeDeck(["c1"]), localStorage: dev.localStorage });
+  const reopened = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck: makeDeck(["c1"]), localStorage: dev.localStorage });
   assert.equal(reopened.snapshotSrs().c1.reps, 99, "the copy must not re-run over newer state");
 });
 
@@ -380,7 +385,7 @@ await scenario("M6 — grades stranded in the old outbox are recovered and share
   const fs = createFakeFirestore();
   const deck = makeDeck(["c1", "c2"]);
   const oldDev = await oldDeviceWithHistory(fs, deck, OLD_CLIENT_A, [["c1", 3]]);
-  const migrated = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldDev.localStorage });
+  const migrated = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldDev.localStorage });
   await migrated.signIn(user());
   const before = migrated.snapshotSrs();
   assert.equal(before.c2, undefined, "fixture check: c2 unseen so far");
@@ -391,7 +396,7 @@ await scenario("M6 — grades stranded in the old outbox are recovered and share
     { id: "stranded-1", cardId: "c2", grade: 3, reviewedAt: new Date(9_000_000).toISOString() },
   ]));
 
-  const reopened = createDevice({ source: NEW, firestore: fs, deck, localStorage: migrated.localStorage });
+  const reopened = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: migrated.localStorage });
   await reopened.signIn(user());
   await drainOutbox(reopened);
 
@@ -402,7 +407,7 @@ await scenario("M6 — grades stranded in the old outbox are recovered and share
   assert.ok(Object.values(reviewsIn(fs, NEW_ROOT)).some(r => r.cardId === "c2"), "and must reach the shared log");
 
   // The other device sees it like any other review.
-  const other = createDevice({ source: NEW, firestore: fs, deck, localStorageSeed: CLIENT_B });
+  const other = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorageSeed: CLIENT_B });
   await other.signIn(user());
   assert.deepEqual(other.snapshotSrs(), reopened.snapshotSrs(), "the second device converges on the recovered grade");
 });
@@ -412,7 +417,7 @@ await scenario("M7 — an out-of-order stranded grade is replayed, not folded ba
   const fs = createFakeFirestore();
   const deck = makeDeck(["c1"]);
   const oldDev = await oldDeviceWithHistory(fs, deck, OLD_CLIENT_A, [["c1", 3]]);
-  const dev = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldDev.localStorage });
+  const dev = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldDev.localStorage });
   await dev.signIn(user());
   // A newer grade on the new build...
   dev.call("applyGrade", "c1", 3);
@@ -424,13 +429,13 @@ await scenario("M7 — an out-of-order stranded grade is replayed, not folded ba
     { id: "stranded-old", cardId: "c1", grade: 2, reviewedAt: new Date(lastApplied - 5000).toISOString() },
   ]));
 
-  const reopened = createDevice({ source: NEW, firestore: fs, deck, localStorage: dev.localStorage });
+  const reopened = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: dev.localStorage });
   await reopened.signIn(user());
   await drainOutbox(reopened);
   await reopened.call("pullReviews");
 
   assert.equal(reopened.localStorage.getItem("brain-gym.outbox.v1"), "[]");
-  const other = createDevice({ source: NEW, firestore: fs, deck, localStorageSeed: CLIENT_B });
+  const other = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorageSeed: CLIENT_B });
   await other.signIn(user());
   assert.deepEqual(other.snapshotSrs(), reopened.snapshotSrs(),
     "a device replaying the log from scratch must land where the recovering device did");
@@ -441,9 +446,9 @@ await scenario("M8 — a grade written to the old collection post-migration is r
   const fs = createFakeFirestore();
   const deck = makeDeck(["c1", "c2"]);
   const oldDev = await oldDeviceWithHistory(fs, deck, OLD_CLIENT_A, [["c1", 3]]);
-  const devA = createDevice({ source: NEW, firestore: fs, deck, localStorage: oldDev.localStorage });
+  const devA = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: oldDev.localStorage });
   await devA.signIn(user());
-  const devB = createDevice({ source: NEW, firestore: fs, deck, localStorageSeed: CLIENT_B });
+  const devB = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorageSeed: CLIENT_B });
   await devB.signIn(user());
   assert.deepEqual(devA.snapshotSrs(), devB.snapshotSrs(), "fixture check: both migrated and converged");
 
@@ -451,7 +456,7 @@ await scenario("M8 — a grade written to the old collection post-migration is r
   // into the old collection — after both devices finished importing.
   seedReview(fs, devA, "stray-1", { cardId: "c2", grade: 3, clientId: "device-a", ts: 9_500_000, root: OLD_ROOT });
 
-  const reopened = createDevice({ source: NEW, firestore: fs, deck, localStorage: devA.localStorage });
+  const reopened = createDevice({ source: MIGRATION_BUILD, firestore: fs, deck, localStorage: devA.localStorage });
   await reopened.signIn(user());
   const c2 = reopened.snapshotSrs().c2;
   assert.ok(c2, "the stray must be recovered even though it was written by this device's own old build");
