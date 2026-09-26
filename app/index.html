@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-auth-import";
+    const APP_BUILD = "20260926-original-dates";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -1002,8 +1002,17 @@
         for (const raw of (book.highlights || [])) {
           if (!raw.text) continue;
           const id = (await sha256Hex(`${key}|${raw.location || 0}|${raw.text}`)).slice(0, 16);
-          if (target.highlights.some(h => h.id === id)) continue;
-          target.highlights.push({ id, loc: raw.location || 0, theme: "ideas", text: raw.text, date: String(batch.collectedAt || "").slice(0, 10), highlightedAt: batch.collectedAt || null, q: "What is the key idea in this highlight?" });
+          const highlightedAt = raw.highlightedAt || raw.date || null;
+          const candidate = { id, loc: raw.location || 0, theme: "ideas", text: raw.text,
+            note: raw.note || "", page: raw.page || null,
+            date: highlightedAt ? String(highlightedAt).slice(0, 10) : null,
+            highlightedAt, q: "What is the key idea in this highlight?" };
+          const existing = target.highlights.findIndex(highlight => highlight.id === id);
+          if (existing < 0) target.highlights.push(candidate);
+          // A later delivery may backfill the real Kindle timestamp onto a
+          // highlight first imported by extension v0.1.3. Upgrade that card
+          // in place; its stable id preserves all review history.
+          else if (highlightedAt) target.highlights[existing] = { ...target.highlights[existing], ...candidate };
         }
         target.total = target.highlights.length;
         byBook.set(key, target);
@@ -1785,8 +1794,15 @@
     function footDeck() {
       if (!deckMeta.generated) return "";
       const stale = daysSince(deckMeta.generated) >= 3;
-      const latest = deckMeta.latest
-        ? ` \u00b7 newest highlight ${fmtDay(deckMeta.latest.date)}, ${esc(shortTitle(deckMeta.latest.title))}`
+      const newestCard = cards.reduce((latest, card) => {
+        const timestamp = highlightTime(card);
+        return timestamp > (latest?.timestamp ?? -Infinity)
+          ? { timestamp, date: String(card.highlightedAt || card.date).slice(0, 10), title: card.book.title }
+          : latest;
+      }, null);
+      const latestHighlight = newestCard || deckMeta.latest;
+      const latest = latestHighlight
+        ? ` \u00b7 newest highlight ${fmtDay(latestHighlight.date)}, ${esc(shortTitle(latestHighlight.title))}`
         : "";
       return `<span class="${stale ? "stale" : ""}">${stale ? "\u26a0 " : ""}deck ${fmtDay(deckMeta.generated)}${latest}</span>`;
     }

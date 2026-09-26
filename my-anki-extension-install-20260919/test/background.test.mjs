@@ -26,7 +26,7 @@ const chrome = {
     },
     async get() { return { id: 7, url: "https://read.amazon.com/notebook" }; },
     async sendMessage() {
-      return { ok: true, payload: { books: [{ asin: "B001", title: "Book", highlights: [{ l: 1, h: "Text" }] }] } };
+      return { ok: true, payload: { books: [{ asin: "B001", title: "Book", highlights: [{ l: 1, h: "Text", d: "2026-05-19T06:54:00.000Z" }] }] } };
     },
     async create(tab) { createdTabs.push(tab); return { id: 10 + createdTabs.length, ...tab }; },
     async reload(id) { reloadedTabs.push(id); },
@@ -53,6 +53,8 @@ function invoke(listener, message, sender = {}) {
 
 const first = await invoke(internalListener, { type: "sync-one-book" });
 assert.equal(first.ok, true);
+assert.match(first.batch.signature, /2026-05-19T06:54:00\.000Z/,
+  "the stable batch identity changes when original dates are backfilled");
 assert.equal(createdTabs.length, 1, "the first collected batch opens the importer");
 const externalBatch = await invoke(externalListener, { type: "get-kindle-batch" },
   { url: "https://hectorcflores.github.io/my-anki/app/import.html" });

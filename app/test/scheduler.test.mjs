@@ -57,6 +57,13 @@ test('precise highlight timestamps determine freshness',()=>{
  const d=device();d.run('cards.find(c=>c.id==="c10").highlightedAt="2026-09-12T18:00:00";cards.find(c=>c.id==="c11").highlightedAt="2026-09-12T12:00:00"');
  assert.equal(d.run('buildQueue().cards[0].id'),'c10');
 });
+test('footer uses the newest card timestamp instead of stale build metadata',()=>{
+ const d=createDevice({source,firestore:createFakeFirestore(),deck:{
+  generated:'2026-09-26',latest:{date:'2026-09-16',title:'Old Book'},themes:[{id:'work',label:'Work'}],
+  books:[{id:'new',title:'New Book',author:'Author',highlights:[{id:'new-card',theme:'work',text:'test',loc:1,highlightedAt:'2026-09-20T18:00:00Z'}]}]
+ }});
+ assert.ok(d.run('footDeck()').includes('newest highlight 20 Sep, New Book'));
+});
 let failed=0;
 for(const [name,fn] of tests){try{fn();console.log(`PASS  ${name}`)}catch(e){failed++;console.log(`FAIL  ${name}\n${e.stack}`)}}
 console.log(`${tests.length-failed}/${tests.length} passed`);process.exitCode=failed?1:0;

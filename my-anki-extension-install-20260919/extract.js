@@ -7,6 +7,72 @@
     return String(element?.innerText || element?.textContent || "").trim();
   }
 
+  // The notebook HTML does not expose a date per highlight. The Kindle web
+  // reader does: its annotation response carries `modifiedTimestamp` for
+  // each highlight. This is the JavaScript port of my-readwise/dates.py,
+  // which previously supplied the original dates used by My Anki.
+  const MIN_MATCH_CHARS = 20;
+  const QUOTES = {
+    "‘": "'", "’": "'", "‚": "'", "‛": "'",
+    "“": '"', "”": '"', "„": '"', "‟": '"',
+    "–": "-", "—": "-", "−": "-", " ": " ", "…": "..."
+  };
+
+  function normalize(value) {
+    return String(value || "").normalize("NFKC")
+      .split("").map((character) => QUOTES[character] || character).join("")
+      .replace(/\s+/g, " ").trim().toLocaleLowerCase("en-US");
+  }
+
+  function compatible(left, right) {
+    if (!left || !right) return false;
+    if (left === right) return true;
+    const [short, long] = left.length <= right.length ? [left, right] : [right, left];
+    return short.length >= MIN_MATCH_CHARS && long.startsWith(short);
+  }
+
+  function extractReaderSession(html) {
+    const tokenMatch = String(html || "").match(/var\s+deviceToken\s*=\s*(\{.*?\})\s*;/s);
+    if (!tokenMatch) return null;
+    let token;
+    try { token = JSON.parse(tokenMatch[1]).deviceSessionToken; } catch { return null; }
+    if (!token) return null;
+    const assetIds = [];
+    const add = (id) => { if (id && !assetIds.includes(id)) assetIds.push(id); };
+    for (const match of String(html).matchAll(/assetId(?:\\x22|")\s*:\s*(?:\\x22|")(CR![A-Z0-9]+)/g)) add(match[1]);
+    for (const match of String(html).matchAll(/CR![A-Z0-9]{20,40}/g)) add(match[0]);
+    return assetIds.length ? { token, assetIds } : null;
+  }
+
+  function parseReaderAnnotations(body) {
+    const data = typeof body === "string" ? JSON.parse(body) : body;
+    return (data?.annotations || []).flatMap((annotation) => {
+      if (annotation.type !== "kindle.highlight" || !annotation.context || !annotation.modifiedTimestamp) return [];
+      const start = Number(annotation.start ?? annotation.position ?? 0);
+      const end = Number(annotation.end ?? start);
+      const timestamp = Number(annotation.modifiedTimestamp);
+      if (![start, end, timestamp].every(Number.isFinite)) return [];
+      return [{ text: String(annotation.context), start, end, timestamp }];
+    }).sort((left, right) => left.start - right.start || left.end - right.end);
+  }
+
+  function applyDates(highlights, annotations) {
+    const ordered = highlights.map((highlight, index) => ({
+      index,
+      location: Number.isFinite(Number(highlight.l)) ? Number(highlight.l) : Number.MAX_SAFE_INTEGER,
+      text: normalize(highlight.h)
+    })).filter((highlight) => highlight.text).sort((left, right) => left.location - right.location);
+    const candidates = annotations.map((annotation) => ({ ...annotation, text: normalize(annotation.text), used: false }));
+    const output = highlights.map((highlight) => ({ ...highlight }));
+    for (const highlight of ordered) {
+      const match = candidates.find((annotation) => !annotation.used && compatible(highlight.text, annotation.text));
+      if (!match) continue;
+      match.used = true;
+      output[highlight.index].d = new Date(match.timestamp).toISOString();
+    }
+    return output;
+  }
+
   function readBooks(document) {
     return Array.from(document.querySelectorAll(BOOK_ROW)).map((element) => {
       const asin = element.id;
@@ -51,5 +117,8 @@
     };
   }
 
-  globalThis.KindleCollector = { readBooks, readAnnotations, pagination };
+  globalThis.KindleCollector = {
+    readBooks, readAnnotations, pagination,
+    extractReaderSession, parseReaderAnnotations, applyDates
+  };
 })();

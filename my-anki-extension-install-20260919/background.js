@@ -10,7 +10,7 @@ function status(code, detail = "") {
 function signatureFor(batch) {
   return JSON.stringify((batch.books || []).map(book => ({
     asin: book.asin || "", title: book.title || "",
-    highlights: (book.highlights || []).map(h => [h.l || 0, h.h || h.n || ""])
+    highlights: (book.highlights || []).map(h => [h.l || 0, h.h || h.n || "", h.d || ""])
   })));
 }
 async function openImporterIfNeeded(batch) {

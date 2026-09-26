@@ -1,7 +1,46 @@
 /* global KindleCollector */
 const NOTEBOOK = "https://read.amazon.com/notebook";
+const READER = "https://read.amazon.com/";
 
 const pause = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
+async function fetchWithBackoff(url, options = {}) {
+  const waits = [0, 2_000, 8_000, 20_000];
+  let response;
+  for (const wait of waits) {
+    if (wait) await pause(wait);
+    try { response = await fetch(url, { credentials: "include", ...options }); }
+    catch { response = null; }
+    if (response && ![429, 503].includes(response.status)) return response;
+  }
+  if (!response) throw new Error("AMAZON_DATES_NETWORK_FAILED");
+  return response;
+}
+
+async function addOriginalDates(book, highlights) {
+  const shell = await fetchWithBackoff(`${READER}?asin=${encodeURIComponent(book.asin)}`);
+  if (shell.status === 401 || shell.status === 403 || shell.url.includes("/ap/signin")) {
+    throw new Error("AMAZON_SIGN_IN_REQUIRED");
+  }
+  if (!shell.ok) throw new Error(`AMAZON_DATES_READER_${shell.status}`);
+  const session = KindleCollector.extractReaderSession(await shell.text());
+  if (!session) throw new Error("AMAZON_DATES_SESSION_UNAVAILABLE");
+
+  let sawEmptyResponse = false;
+  for (const assetId of session.assetIds) {
+    const guid = encodeURIComponent(`${assetId},${assetId}`);
+    const url = `${READER}service/mobile/reader/getAnnotations?asin=${encodeURIComponent(book.asin)}&guid=${guid}&clientVersion=20000100`;
+    const response = await fetchWithBackoff(url, { headers: { "x-adp-session-token": session.token } });
+    if (!response.ok) continue;
+    let annotations;
+    try { annotations = KindleCollector.parseReaderAnnotations(await response.text()); }
+    catch { throw new Error("AMAZON_DATES_RESPONSE_INVALID"); }
+    if (annotations.length) return KindleCollector.applyDates(highlights, annotations);
+    sawEmptyResponse = true;
+  }
+  if (sawEmptyResponse) return highlights;
+  throw new Error("AMAZON_DATES_UNAVAILABLE");
+}
 
 async function fetchBook(book) {
   const highlights = [];
@@ -20,7 +59,17 @@ async function fetchBook(book) {
     const page = new DOMParser().parseFromString(await response.text(), "text/html");
     highlights.push(...KindleCollector.readAnnotations(page));
     ({ token, state } = KindleCollector.pagination(page));
-    if (!token) return { ...book, highlights };
+    if (!token) {
+      try {
+        const dated = await addOriginalDates(book, highlights);
+        return { ...book, highlights: dated, datesMatched: dated.filter((highlight) => highlight.d).length };
+      } catch (error) {
+        if (error.message === "AMAZON_SIGN_IN_REQUIRED") throw error;
+        // Dates are an enrichment. Keep the highlights safe and explicitly
+        // undated if Amazon's undocumented reader endpoint changes.
+        return { ...book, highlights, datesMatched: 0, datesError: error.message || "AMAZON_DATES_UNAVAILABLE" };
+      }
+    }
     await pause(350);
   }
   throw new Error("PAGINATION_INCOMPLETE");

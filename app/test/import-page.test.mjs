@@ -21,4 +21,6 @@ assert.match(html, /signInWithPopup\(instance,provider\)/,
   "the importer must receive the authenticated user without cross-origin redirect state");
 assert.match(html, /extension did not respond/,
   "a stale extension must produce a recovery instruction instead of hanging forever");
+assert.match(html, /fields\.highlightedAt=\{timestampValue:/,
+  "the importer must preserve each highlight's original Kindle timestamp");
 console.log("PASS import page: deterministic batch id and idempotent retry");

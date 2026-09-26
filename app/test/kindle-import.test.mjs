@@ -38,15 +38,31 @@ await device.call("importKindleCards");
 const firstIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id)")));
 assert.equal(firstIds.length, 2, "one imported highlight becomes exactly one new card");
 assert.equal(new Set(firstIds).size, 2, "the imported card id is unique");
+assert.equal(device.run("cards.find(card => card.book.title === 'Fresh Book').highlightedAt"), null,
+  "a legacy import without an original date stays undated instead of using its collection time");
 assert.ok(device.localStorage.getItem("my-anki.kindle-import-cursor.v1"), "the import cursor is saved");
 assert.ok(device.localStorage.getItem("my-anki.kindle-imports.v1"), "the imported batch is cached locally");
 
+const datedImportName = `projects/${projectId}/databases/(default)/documents/my_anki/${UID}/imports/stable-import-with-date`;
+backend.seedCreate(datedImportName, {
+  source: "my-anki-kindle-extension",
+  collectedAt: new Date("2026-09-27T12:00:00Z"),
+  books: [{ asin: "B001", title: "Fresh Book", author: "Author", highlights: [
+    { text: "A fresh highlight", location: 42, highlightedAt: new Date("2026-05-19T06:54:00Z") },
+  ] }],
+});
 await device.call("importKindleCards");
-const secondIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id)")));
-assert.deepEqual(secondIds, firstIds, "repeating import does not duplicate the card");
+const datedIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id)")));
+assert.deepEqual(datedIds, firstIds, "date backfill upgrades the existing card instead of duplicating it");
+assert.equal(device.run("cards.find(card => card.book.title === 'Fresh Book').highlightedAt"), "2026-05-19T06:54:00.000Z",
+  "the original Kindle timestamp replaces the missing legacy date");
+
+await device.call("importKindleCards");
+const repeatedIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id)")));
+assert.deepEqual(repeatedIds, firstIds, "repeating import does not duplicate the card");
 
 const importQueries = calls.filter(call => call.body?.structuredQuery?.from?.[0]?.collectionId === "imports");
-assert.equal(importQueries.length, 2, "each explicit check performs one bounded imports query");
+assert.equal(importQueries.length, 3, "each explicit check performs one bounded imports query");
 assert.equal(importQueries[0].body.structuredQuery.where, undefined, "a fresh device loads its complete import history once");
 assert.equal(importQueries[1].body.structuredQuery.where?.fieldFilter?.op, "GREATER_THAN",
   "later checks request only imports after the saved cursor");
