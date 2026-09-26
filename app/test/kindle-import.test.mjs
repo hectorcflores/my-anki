@@ -61,6 +61,15 @@ await device.call("importKindleCards");
 const repeatedIds = JSON.parse(JSON.stringify(device.run("cards.map(card => card.id)")));
 assert.deepEqual(repeatedIds, firstIds, "repeating import does not duplicate the card");
 
+const refreshedDeck = makeDeck(["aaaaaaaaaaaaaaaa", "cccccccccccccccc"]);
+device.run(`swapDeck(${JSON.stringify(refreshedDeck)})`);
+assert.equal(device.run("cards.filter(card => card.book.title === 'Fresh Book').length"), 1,
+  "a published deck refresh keeps the imported Kindle book");
+assert.equal(device.run("cards.find(card => card.book.title === 'Fresh Book').highlightedAt"), "2026-05-19T06:54:00.000Z",
+  "a published deck refresh keeps the imported card's original timestamp");
+assert.equal(device.run("baseDeckSnapshot === JSON.stringify(baseDeck)"), true,
+  "deck freshness compares the published deck separately from Kindle imports");
+
 const importQueries = calls.filter(call => call.body?.structuredQuery?.from?.[0]?.collectionId === "imports");
 assert.equal(importQueries.length, 3, "each explicit check performs one bounded imports query");
 assert.equal(importQueries[0].body.structuredQuery.where, undefined, "a fresh device loads its complete import history once");

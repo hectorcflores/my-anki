@@ -330,7 +330,7 @@
 
     // Bumped by hand alongside sw.js's CACHE constant on every deploy — see
     // updateVerhint() below for why this exists.
-    const APP_BUILD = "20260926-original-dates";
+    const APP_BUILD = "20260926-persistent-kindle-imports";
 
     // ---- The deck itself: not a load-time constant ----
     // A single-file, one-fetch app used to be a safe assumption: one device,
@@ -381,6 +381,13 @@
       el.textContent = `deck ${books.length}·${h} · app ${APP_BUILD}`;
     }
     const BASE_DECK = window.ANKI;
+    // Keep the published deck separate from the Kindle books layered onto it.
+    // A background refresh replaces only the published half; otherwise every
+    // new data.js briefly erases the locally imported books until the next
+    // Firestore import finishes.
+    let baseDeck = BASE_DECK;
+    let baseDeckSnapshot = JSON.stringify(BASE_DECK);
+    let kindleBooks = [];
     applyDeck(BASE_DECK);
 
     // ---- Spaced repetition: SM-2 with Anki's learning steps ----
@@ -1017,8 +1024,9 @@
         target.total = target.highlights.length;
         byBook.set(key, target);
       }
-      if (!byBook.size) return;
-      applyDeck({ ...BASE_DECK, books: [...BASE_DECK.books, ...byBook.values()] });
+      kindleBooks = [...byBook.values()];
+      if (!kindleBooks.length) return;
+      applyDeck({ ...baseDeck, books: [...baseDeck.books, ...kindleBooks] });
     }
 
     async function fsListCollection(cfg, collectionId, afterIso = null) {
@@ -1725,7 +1733,9 @@
 
     function swapDeck(data) {
       const keepCardId = session.queue[0]?.id;
-      applyDeck(data);
+      baseDeck = data;
+      baseDeckSnapshot = JSON.stringify(data);
+      applyDeck({ ...data, books: [...data.books, ...kindleBooks] });
       // Keep the current card when it is still eligible after a deck update.
       session = newSession(activeTheme, keepCardId);
       render();
@@ -1758,7 +1768,7 @@
       let data;
       try { data = parseDeckText(text); } catch (e) { console.warn("My Anki: bad data.js, ignoring", e); return; }
       if (!data || !Array.isArray(data.themes) || !Array.isArray(data.books)) return;
-      if (JSON.stringify(data) === deckSnapshot) return;   // already current
+      if (JSON.stringify(data) === baseDeckSnapshot) return;   // published deck already current
       whenSafe({ deck: data });
     }
 
