@@ -1,2 +1,7 @@
 .DS_Store
 firebase-debug.log
+
+# Native iOS build products and personal Xcode settings
+ios/**/xcuserdata/
+ios/**/DerivedData/
+ios/**/*.xcuserstate

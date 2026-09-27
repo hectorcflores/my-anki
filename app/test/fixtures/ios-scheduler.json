@@ -1,0 +1,3076 @@
+[
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": null,
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ef": 2.5,
+      "ivl": 0,
+      "due": 1780000060000,
+      "reps": 0,
+      "lapses": 0,
+      "intro": 1780000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": null,
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ef": 2.5,
+      "ivl": 0,
+      "due": 1780000330000,
+      "reps": 0,
+      "lapses": 0,
+      "intro": 1780000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": null,
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ef": 2.5,
+      "ivl": 0,
+      "due": 1780000600000,
+      "reps": 0,
+      "lapses": 0,
+      "intro": 1780000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": null,
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ef": 2.5,
+      "ivl": 3,
+      "due": 1780259200000,
+      "reps": 1,
+      "lapses": 0,
+      "intro": 1780000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000330000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000330000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000330000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000330000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000330000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000060000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "lrn",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 4,
+      "ef": 2.5,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780172800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780172800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 3,
+      "ef": 2.5,
+      "due": 1780259200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780604800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 8,
+      "ef": 2.5,
+      "due": 1780691200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1782592000000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 31,
+      "ef": 2.5,
+      "due": 1782678400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 361,
+      "ef": 2.5,
+      "due": 1811190400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 362,
+      "ef": 2.5,
+      "due": 1811276800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 1780086400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780172800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 1780172800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 3,
+      "ef": 2.5,
+      "due": 1780259200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 1780604800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 8,
+      "ef": 2.5,
+      "due": 1780691200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 1782592000000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 31,
+      "ef": 2.5,
+      "due": 1782678400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 361,
+      "ef": 2.5,
+      "due": 1811190400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rel",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 362,
+      "ef": 2.5,
+      "due": 1811276800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.35,
+      "due": 1780172800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 3,
+      "ef": 2.5,
+      "due": 1780259200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 4,
+      "ef": 2.65,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 3,
+      "ef": 2.35,
+      "due": 1780259200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 5,
+      "ef": 2.5,
+      "due": 1780432000000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.65,
+      "due": 1780604800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 8,
+      "ef": 2.35,
+      "due": 1780691200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 17,
+      "ef": 2.5,
+      "due": 1781468800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 22,
+      "ef": 2.65,
+      "due": 1781900800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 36,
+      "ef": 2.35,
+      "due": 1783110400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 74,
+      "ef": 2.5,
+      "due": 1786393600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 97,
+      "ef": 2.65,
+      "due": 1788380800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 434,
+      "ef": 2.35,
+      "due": 1817497600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 904,
+      "ef": 2.5,
+      "due": 1858105600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 0,
+      "ivl": 1174,
+      "ef": 2.65,
+      "due": 1881433600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.35,
+      "due": 1780172800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 3,
+      "ef": 2.5,
+      "due": 1780259200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 4,
+      "ef": 2.65,
+      "due": 1780345600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 3,
+      "ef": 2.35,
+      "due": 1780259200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 5,
+      "ef": 2.5,
+      "due": 1780432000000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 2,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.65,
+      "due": 1780604800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 8,
+      "ef": 2.35,
+      "due": 1780691200000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 17,
+      "ef": 2.5,
+      "due": 1781468800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 7,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 22,
+      "ef": 2.65,
+      "due": 1781900800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 36,
+      "ef": 2.35,
+      "due": 1783110400000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 74,
+      "ef": 2.5,
+      "due": 1786393600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 30,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 97,
+      "ef": 2.65,
+      "due": 1788380800000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 0,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rel",
+      "step": 0,
+      "ivl": 1,
+      "ef": 2.3,
+      "due": 1780000600000,
+      "reps": 4,
+      "lapses": 8,
+      "intro": 1700000000000,
+      "leech": true
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 1,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 434,
+      "ef": 2.35,
+      "due": 1817497600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 2,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 904,
+      "ef": 2.5,
+      "due": 1858105600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  },
+  {
+    "cardID": "fe978e44aec68a75",
+    "prev": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 365,
+      "ef": 2.5,
+      "due": 0,
+      "reps": 4,
+      "lapses": 7,
+      "intro": 1700000000000
+    },
+    "grade": 3,
+    "now": 1780000000000,
+    "expected": {
+      "st": "rev",
+      "step": 1,
+      "ivl": 1174,
+      "ef": 2.65,
+      "due": 1881433600000,
+      "reps": 5,
+      "lapses": 7,
+      "intro": 1700000000000
+    }
+  }
+]

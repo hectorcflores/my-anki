@@ -1,0 +1,33 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 77;
+ objects = {
+ A00000000000000000000001 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 2700;}; buildConfigurationList = A00000000000000000000002; compatibilityVersion = "Xcode 16.0"; developmentRegion = en; knownRegions = (en, Base); mainGroup = A00000000000000000000003; preferredProjectObjectVersion = 77; productRefGroup = A00000000000000000000004; projectDirPath = ""; projectRoot = ""; packageReferences = (B00000000000000000000001, B00000000000000000000002); targets = (A00000000000000000000005);};
+ A00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000011, A00000000000000000000012); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+ A00000000000000000000003 = {isa = PBXGroup; children = (A00000000000000000000006, A00000000000000000000004); sourceTree = "<group>";};
+ A00000000000000000000004 = {isa = PBXGroup; children = (A00000000000000000000007); name = Products; sourceTree = "<group>";};
+ A00000000000000000000005 = {isa = PBXNativeTarget; buildConfigurationList = A00000000000000000000008; buildPhases = (A00000000000000000000009, A0000000000000000000000A, A0000000000000000000000B); buildRules = (); dependencies = (); fileSystemSynchronizedGroups = (A00000000000000000000006); name = MyAnki; packageProductDependencies = (B00000000000000000000003, B00000000000000000000004, B00000000000000000000005); productName = MyAnki; productReference = A00000000000000000000007; productType = "com.apple.product-type.application";};
+ A00000000000000000000006 = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B00000000000000000000009); path = .; sourceTree = "<group>";};
+ A00000000000000000000007 = {isa = PBXFileReference; explicitFileType = wrapper.application; path = MyAnki.app; sourceTree = BUILT_PRODUCTS_DIR;};
+ A00000000000000000000008 = {isa = XCConfigurationList; buildConfigurations = (A00000000000000000000013, A00000000000000000000014); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+ A00000000000000000000009 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+ A0000000000000000000000A = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000006, B00000000000000000000007, B00000000000000000000008); runOnlyForDeploymentPostprocessing = 0;};
+ A0000000000000000000000B = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+ A00000000000000000000011 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0;}; name = Debug;};
+ A00000000000000000000012 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0;}; name = Release;};
+ A00000000000000000000013 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_FILE = Info.plist; ALWAYS_SEARCH_USER_PATHS = NO; INFOPLIST_KEY_CFBundleDisplayName = "My Anki"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; PRODUCT_BUNDLE_IDENTIFIER = com.hectorcflores.myanki; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0;}; name = Debug;};
+ A00000000000000000000014 = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_FILE = Info.plist; ALWAYS_SEARCH_USER_PATHS = NO; INFOPLIST_KEY_CFBundleDisplayName = "My Anki"; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; PRODUCT_BUNDLE_IDENTIFIER = com.hectorcflores.myanki; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; CURRENT_PROJECT_VERSION = 1; MARKETING_VERSION = 0.1.0;}; name = Release;};
+ B00000000000000000000001 = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git"; requirement = {kind = exactVersion; version = 12.19.2;};};
+ B00000000000000000000002 = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git"; requirement = {kind = exactVersion; version = 10.0.0;};};
+ B00000000000000000000003 = {isa = XCSwiftPackageProductDependency; package = B00000000000000000000001; productName = FirebaseCore;};
+ B00000000000000000000004 = {isa = XCSwiftPackageProductDependency; package = B00000000000000000000001; productName = FirebaseAuth;};
+ B00000000000000000000005 = {isa = XCSwiftPackageProductDependency; package = B00000000000000000000002; productName = GoogleSignIn;};
+ B00000000000000000000006 = {isa = PBXBuildFile; productRef = B00000000000000000000003;};
+ B00000000000000000000007 = {isa = PBXBuildFile; productRef = B00000000000000000000004;};
+ B00000000000000000000008 = {isa = PBXBuildFile; productRef = B00000000000000000000005;};
+ B00000000000000000000009 = {isa = PBXFileSystemSynchronizedBuildFileExceptionSet; membershipExceptions = (Info.plist); target = A00000000000000000000005;};
+ };
+ rootObject = A00000000000000000000001;
+}
