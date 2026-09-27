@@ -4,7 +4,7 @@
 
 ## Código y compilación
 
-La licencia de Apple ya permite usar Xcode 27. El proyecto `ios/MyAnki/MyAnki.xcodeproj` resuelve Firebase 12.19.2 y Google Sign-In 10.0.0 mediante Swift Package Manager. Compilación Debug para iOS Simulator completada con firma desactivada. El mínimo provisional es iOS 17. Una compilación para simulador no prueba firma Personal Team, inicio de sesión ni funcionamiento real en iPhone.
+La licencia de Apple ya permite usar Xcode 27. El proyecto `ios/MyAnki/MyAnki.xcodeproj` resuelve Firebase 12.19.2 y Google Sign-In 10.0.0 mediante Swift Package Manager. Compilación Debug para iOS Simulator completada con firma desactivada. El mínimo provisional es iOS 17. El 26 de septiembre abrió correctamente en el simulador aislado “My Anki iPhone” (iPhone 17 Pro, iOS 27): se comprobó la tarjeta, el botón Show answer, Hide card, la fecha disponible, el icono myA y el botón Sign in with Google. Una compilación o arranque en simulador no prueba firma Personal Team, inicio de sesión ni funcionamiento real en iPhone.
 
 La app implementa Show answer, Again/Hard/Good/Easy con intervalos, grupos de cinco con interludio y continuación automática, Hide/Undo, fecha disponible y almacenamiento atómico por cuenta. Hay una vista previa local aislada que nunca se sube a la cuenta. El código de autenticación y sincronización está integrado; los flujos reales todavía están pendientes.
 
@@ -28,7 +28,7 @@ Reproducir las pruebas nativas con `./tools/test-ios-core.sh` y las web con `nod
 
 ## Pendientes reales
 
-El simulador iPhone 17 Pro con iOS 26.4 se quedó en el arranque de Apple; no se comprobó visualmente la app. Se creó otro simulador aislado «My Anki iPhone» con iOS 27, que seguía ejecutando la migración inicial de contenedores. No declarar validado el arranque ni Google Sign-In basándose en la compilación.
+Un simulador iPhone 17 Pro con iOS 26.4 se quedó en el arranque de Apple. El simulador aislado «My Anki iPhone» con iOS 27 terminó su preparación y permitió comprobar visualmente el arranque de My Anki. No declarar validado Google Sign-In basándose en ese arranque.
 
 La Mac no detectó un iPhone físico conectado y `security find-identity -v -p codesigning` informó cero identidades válidas. Falta conectar el iPhone y configurar la cuenta Apple/Personal Team en Xcode, además de confirmar modelo e iOS. Estas acciones personales no pueden sustituirse por credenciales entregadas al asistente.
 
